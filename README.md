@@ -1,6 +1,7 @@
 # HackTX Landing Website
 
 This is a work in progress.
+To view the site, please go to https://freetail-hackers.gitlab.io/hacktx-website/.
 
 ## Local Development
 
