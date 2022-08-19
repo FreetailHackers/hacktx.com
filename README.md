@@ -1,7 +1,7 @@
 # HackTX Landing Website
 
 This is a work in progress.
-To view the site, please go to https://freetail-hackers.gitlab.io/hacktx-website/.
+The default URL for the site is https://freetail-hackers.gitlab.io/hacktx-website/, although you can (and should) also visit it by going to https://hacktx.com.
 
 ## Local Development
 
