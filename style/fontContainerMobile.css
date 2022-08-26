@@ -1,0 +1,53 @@
+@media screen and (max-width: 800px) {
+  .heading {
+    font-size: 4vw;
+  }
+  .normal-text {
+    font-size: 3vw;
+  }
+  #button1img {
+    width: 33vw;
+  }
+
+  #registerButton {
+    margin-top: 77vw;
+    margin-left: 63.5vw;
+    width: 33vw;
+    height: 8vw;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+  }
+  #buttontext {
+    top: 38%;
+    font-size: 5.6vw;
+    width: 100%;
+  }
+  #whatDiv {
+    margin-top: 146vw;
+    margin-left: 8vw;
+    width: 50vw;
+  }
+  #Schedule {
+    margin-top: 10vw;
+    margin-left: 55vw;
+    width: 28vw;
+    height: 35vw;
+  }
+  #whoDiv {
+    margin-top: 10vw;
+    margin-left: 6vw;
+    width: 58vw;
+  }
+  #attendDiv {
+    margin-top: 15vw;
+    margin-left: 33vw;
+    width: 55vw;
+  }
+
+  #inclusionDiv {
+    margin-top: 10vw;
+    margin-left: 6vw;
+    width: 40vw;
+  }
+}

@@ -102,23 +102,4 @@
   #ArrowSign {
     display: none;
   }
-
-  #button1img {
-    width: 33vw;
-  }
-
-  #registerButton {
-    margin-top: 77vw;
-    margin-left: 63.5vw;
-    width: 33vw;
-    height: 8vw;
-    position: absolute;
-    justify-content: center;
-    justify-items: center;
-  }
-  #buttontext {
-    top: 38%;
-    font-size: 5.6vw;
-    width: 100%;
-  }
 }
