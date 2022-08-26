@@ -173,3 +173,9 @@ body {
 #registerButton:hover {
   transform: scale(1.1);
 }
+a:link {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
