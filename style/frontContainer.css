@@ -45,9 +45,8 @@
   margin-left: 10vw;
   width: 24vw;
   padding: 3vw;
-  background-color: #8c2d27;
+  background-color: #845b2e;
   border-radius: 2vw;
-  box-shadow: 5px 5px 10px;
 }
 #Schedule {
   display: flex;
@@ -58,27 +57,24 @@
   width: 28vw;
   height: 35vw;
   padding: 3vw;
-  background-color: #8c2d27;
+  background-color: #845b2e;
   border-radius: 2vw;
-  box-shadow: 5px 5px 10px;
 }
 #whoDiv {
   margin-top: -10vw;
   margin-left: 6vw;
   width: 28vw;
   padding: 3vw;
-  background-color: #8c2d27;
+  background-color: #845b2e;
   border-radius: 2vw;
-  box-shadow: 5px 5px 10px;
 }
 #attendDiv {
   margin-top: 20vw;
   margin-left: 57vw;
   width: 30vw;
   padding: 3vw;
-  background-color: #8c2d27;
+  background-color: #845b2e;
   border-radius: 2vw;
-  box-shadow: 5px 5px 10px;
 }
 
 #inclusionDiv {
@@ -86,7 +82,6 @@
   margin-left: 6vw;
   width: 30vw;
   padding: 3vw;
-  background-color: #8c2d27;
+  background-color: #845b2e;
   border-radius: 2vw;
-  box-shadow: 5px 5px 10px;
 }
