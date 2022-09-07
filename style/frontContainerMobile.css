@@ -2,9 +2,12 @@
   .heading {
     font-size: 4vw;
   }
+
   .normal-text {
     font-size: 3vw;
+
   }
+
   #button1img {
     width: 33vw;
   }
@@ -18,27 +21,32 @@
     justify-content: center;
     justify-items: center;
   }
+
   #buttontext {
     top: 38%;
     font-size: 5.6vw;
     width: 100%;
   }
+
   #whatDiv {
     margin-top: 146vw;
     margin-left: 8vw;
     width: 50vw;
   }
-  #Schedule {
-    margin-top: 10vw;
-    margin-left: 55vw;
-    width: 28vw;
-    height: 35vw;
+
+  #schedule {
+    /* margin-top: 10vw; */
+    margin-left: 40vw;
+    width: 50vw;
+    max-height: 500vw;
   }
+
   #whoDiv {
     margin-top: 10vw;
     margin-left: 6vw;
     width: 58vw;
   }
+
   #attendDiv {
     margin-top: 15vw;
     margin-left: 33vw;
@@ -49,5 +57,14 @@
     margin-top: 10vw;
     margin-left: 6vw;
     width: 40vw;
+  }
+
+  #schedule .schedule-text .schedule-event-name {
+    font-size: 3vw;
+    width: 45vw;
+  }
+
+  #schedule .schedule-text .schedule-item:focus-within p:nth-of-type(2) {
+    font-size: 2vw;
   }
 }
