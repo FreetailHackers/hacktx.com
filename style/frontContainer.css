@@ -89,43 +89,6 @@
   border-radius: 2vw;
 }
 
-.subheading {
-  font-size: 2vw;
-  font-family: Arial;
-  color: #fff;
-  padding-top: 2vw;
-  padding-bottom: 1vw;
-  font-style: italic;
-}
-
-#faq {
-  margin-top: 10vw;
-  width: 80vw;
-  margin-left: 5vw;
-  padding: 3vw;
-  background-color: #845b2e;
-  border-radius: 2vw;
-  display: flex;
-  flex-direction: column;
-  max-height: 100vw;
-  overflow-y: scroll;
-}
-#faq::-webkit-scrollbar {
-  width: 20px;
-}
-#faq::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-#faq::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
-}
-#faq::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
-}
-
 #schedule {
   display: flex;
   flex-direction: column;
@@ -203,6 +166,25 @@
 #schedule #saturday-schedule.active,
 #schedule #sunday-schedule.active {
   display: block;
+}
+
+#schedule ::-webkit-scrollbar {
+  width: 20px;
+}
+
+#schedule ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#schedule ::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+#schedule ::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }
 
 #schedule .schedule-heading {
