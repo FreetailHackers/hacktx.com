@@ -3,9 +3,13 @@
     font-size: 4vw;
   }
 
+  .subheading {
+    font-size: 3vw;
+    padding-top: 3vw;
+  }
+
   .normal-text {
     font-size: 3vw;
-
   }
 
   #button1img {
