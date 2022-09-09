@@ -46,7 +46,7 @@
   margin-left: 10vw;
   width: 24vw;
   padding: 3vw;
-  background-color: #845b2e;
+  background-color: #845b2edd;
   border-radius: 2vw;
 }
 
@@ -59,15 +59,15 @@
   width: 28vw;
   height: 35vw;
   padding: 3vw;
-  background-color: #845b2e;
+  background-color: #845b2edd;
   border-radius: 2vw;
 } */
 #whoDiv {
-  margin-top: -10vw;
+  margin-top: 5vw;
   margin-left: 6vw;
   width: 28vw;
   padding: 3vw;
-  background-color: #845b2e;
+  background-color: #845b2edd;
   border-radius: 2vw;
 }
 
@@ -76,7 +76,7 @@
   margin-left: 57vw;
   width: 30vw;
   padding: 3vw;
-  background-color: #845b2e;
+  background-color: #845b2edd;
   border-radius: 2vw;
 }
 
@@ -85,29 +85,28 @@
   margin-left: 6vw;
   width: 30vw;
   padding: 3vw;
-  background-color: #845b2e;
+  background-color: #845b2edd;
   border-radius: 2vw;
 }
 
 .subheading {
   font-size: 2vw;
   font-family: Arial;
-  color: #fff;
+  color: rgb(136, 193, 255);
   padding-top: 2vw;
   padding-bottom: 1vw;
-  font-style: italic;
 }
 
 #faq {
-  margin-top: 10vw;
+  margin: 5vw;
+  margin-top: 15vw;
   width: 80vw;
-  margin-left: 5vw;
-  padding: 3vw;
-  background-color: #845b2e;
+  padding: 5vw;
+  background-color: #845b2edd;
   border-radius: 2vw;
   display: flex;
   flex-direction: column;
-  max-height: 100vw;
+  max-height: 40vw;
   overflow-y: scroll;
 }
 #faq::-webkit-scrollbar {
@@ -135,9 +134,9 @@
   margin-left: 63vw;
   width: 28vw;
   padding: 3vw;
-  background-color: #845b2e;
+  background-color: #845b2edd;
   border-radius: 2vw;
-  max-height: 105vw;
+  height: 30vw;
   /* position: absolute;
   right: 5vw;
   top: 85vw;
@@ -165,7 +164,7 @@
 }
 
 #schedule .schedule-text {
-  max-height: 36vw;
+  height: 30vw;
   overflow-y: auto;
   color: white;
   cursor: pointer;
@@ -208,4 +207,64 @@
 #schedule .schedule-heading {
   color: white;
   margin: 1vw;
+}
+
+#specialThanks {
+  margin: 10vw;
+  border-radius: 2vw;
+  width: 70vw;
+  text-align: center;
+  padding: 5vw;
+  background-color: #845b2edd;
+}
+#specialThanksHeading {
+  padding-bottom: 1vw;
+}
+#TBC {
+  width: 15vw;
+  border-radius: 1vw;
+  margin-right: 1vw;
+}
+#CNS {
+  width: 15vw;
+  background-color: white;
+  padding: 1.4vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border-radius: 1vw;
+  margin-right: 1vw;
+}
+#SOS {
+  width: 12vw;
+  margin-right: 1vw;
+}
+
+#EE {
+  width: 6vw;
+  padding: 4vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#AL {
+  width: 17vw;
+  padding: 2vw;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
+  margin-right: 3vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#DR {
+  width: 6vw;
+  margin-right: 3vw;
+}
+
+#JD {
+  width: 12vw;
+  margin-right: 3vw;
 }
