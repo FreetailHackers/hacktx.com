@@ -173,13 +173,13 @@ body {
 #registerButton:hover {
   transform: scale(1.1);
 }
+
 a:link {
   color: #fff;
 }
 a:visited {
   color: #fff;
 }
-
 
 #schedule {
   display: flex;
@@ -199,61 +199,75 @@ a:visited {
   width: 40vw;
   z-index: 100;  */
 }
-  #schedule ::-webkit-scrollbar {
-    width: 20px; }
-  #schedule ::-webkit-scrollbar-track {
-    background-color: transparent; }
-  #schedule ::-webkit-scrollbar-thumb {
-    background-color: #d6dee1;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box; }
-  #schedule ::-webkit-scrollbar-thumb:hover {
-    background-color: #a8bbbf; }
-  #schedule .schedule-heading {
-    color: white;
-    margin: 1vw;
+#schedule ::-webkit-scrollbar {
+  width: 20px;
 }
-    #schedule .schedule-heading #saturday-button, #schedule .schedule-heading #sunday-button {
-      font-size: 3vw;
-      cursor: pointer;
-      display: inline;
-      width: 45%;
-      text-align: center;
-      border-radius: 5vw;
-      border: 0.3vw solid rgba(255, 255, 255, 0);
-      padding: 0px 10px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    #schedule .schedule-heading #saturday-button.active, #schedule .schedule-heading #sunday-button.active {
-      border-radius: 5vw;
-      border: 0.3vw solid white; }
-  #schedule .schedule-text {
-    max-height: 25vw;
-    overflow-y: auto;
-    color: white;
-    cursor: pointer; }
-    #schedule .schedule-text .schedule-event-name {
-      display: inline-block;
-      font-size: 1.5vw;
-      width: 30vw; }
-    #schedule .schedule-text p:nth-of-type(1) {
-      margin: 0;
-      padding-top: 10px; }
-    #schedule .schedule-text p:nth-of-type(2) {
-      margin: 0;
-      max-height: 0;
-      transition: max-height 0.3s;
-      overflow: hidden;
-    }
-    #schedule .schedule-text .schedule-item:focus-within p:nth-of-type(2) {
-      max-height: 10vw;
-      size: 1vw;
-    }
-  #schedule #saturday-schedule, #schedule #sunday-schedule {
-    display: none; }
-  #schedule #saturday-schedule.active, #schedule #sunday-schedule.active {
-    display: block; }
+#schedule ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#schedule ::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#schedule ::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+#schedule .schedule-heading {
+  color: white;
+  margin: 1vw;
+}
+#schedule .schedule-heading #saturday-button,
+#schedule .schedule-heading #sunday-button {
+  font-size: 3vw;
+  cursor: pointer;
+  display: inline;
+  width: 45%;
+  text-align: center;
+  border-radius: 5vw;
+  border: 0.3vw solid rgba(255, 255, 255, 0);
+  padding: 0px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#schedule .schedule-heading #saturday-button.active,
+#schedule .schedule-heading #sunday-button.active {
+  border-radius: 5vw;
+  border: 0.3vw solid white;
+}
+#schedule .schedule-text {
+  max-height: 25vw;
+  overflow-y: auto;
+  color: white;
+  cursor: pointer;
+}
+#schedule .schedule-text .schedule-event-name {
+  display: inline-block;
+  font-size: 1.5vw;
+  width: 30vw;
+}
+#schedule .schedule-text p:nth-of-type(1) {
+  margin: 0;
+  padding-top: 10px;
+}
+#schedule .schedule-text p:nth-of-type(2) {
+  margin: 0;
+  max-height: 0;
+  transition: max-height 0.3s;
+  overflow: hidden;
+}
+#schedule .schedule-text .schedule-item:focus-within p:nth-of-type(2) {
+  max-height: 10vw;
+  size: 1vw;
+}
+#schedule #saturday-schedule,
+#schedule #sunday-schedule {
+  display: none;
+}
+#schedule #saturday-schedule.active,
+#schedule #sunday-schedule.active {
+  display: block;
+}
 
 #faq ::-webkit-scrollbar {
   width: 20px;
