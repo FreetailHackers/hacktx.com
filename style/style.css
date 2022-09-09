@@ -254,3 +254,23 @@ a:visited {
     display: none; }
   #schedule #saturday-schedule.active, #schedule #sunday-schedule.active {
     display: block; }
+
+#faq ::-webkit-scrollbar {
+  width: 20px;
+}
+#faq ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#faq ::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#faq ::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+#faq .schedule-heading {
+  color: white;
+  margin: 1vw;
+}
