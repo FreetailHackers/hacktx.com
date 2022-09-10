@@ -67,6 +67,11 @@
     z-index: -1;
   }
 
+  #Sun {
+    width: 70vw;
+    left: 50vw;
+  }
+
   #Clouds {
     display: none;
   }

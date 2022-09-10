@@ -63,6 +63,9 @@
     width: 40vw;
   }
 
+  #schedule {
+    height: 37vw;
+  }
   #schedule .schedule-text .schedule-event-name {
     font-size: 3vw;
     width: 45vw;
