@@ -65,3 +65,21 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+const questions = document.getElementsByClassName("question");
+for (const question of questions) {
+  question.addEventListener("click", () => {
+    // Keep track of previous opened question
+    let previous = undefined;
+    for (const other of questions) {
+      if (other.children[1].classList.contains("active")) {
+        previous = other;
+      }
+      other.children[1].classList.remove("active");
+    }
+    // Collapse if user clicked on already opened question
+    if (previous !== question) {
+      question.children[1].classList.toggle("active");
+    }
+  });
+}

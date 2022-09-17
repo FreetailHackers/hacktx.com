@@ -10,6 +10,16 @@
   color: #fff;
 }
 
+.answer {
+  max-height: 0;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.active {
+  max-height: 200px;
+}
+
 #button1img {
   position: absolute;
   width: 20vw;
@@ -94,20 +104,19 @@
   font-family: Arial;
   color: rgb(136, 193, 255);
   padding-top: 2vw;
-  padding-bottom: 1vw;
+}
+
+.subheading::before {
+  content: '+ ';
 }
 
 #faq {
   margin: 5vw;
-  margin-top: 15vw;
+  margin-top: 10vw;
   width: 80vw;
   padding: 5vw;
   background-color: #845b2edd;
   border-radius: 2vw;
-  display: flex;
-  flex-direction: column;
-  max-height: 40vw;
-  overflow-y: scroll;
 }
 #faq::-webkit-scrollbar {
   width: 20px;
@@ -123,6 +132,15 @@
 }
 #faq::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
+}
+
+#questions {
+  display: grid;
+  /* Split FAQ questions into two columns */
+  /* I honestly have no clue how this works I just copy pasted this */
+  grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
+  max-height: 75vw;
+  overflow-y: scroll;
 }
 
 #schedule {
@@ -187,6 +205,7 @@
   transition: max-height 0.3s;
   overflow: hidden;
 }
+/faq
 
 #schedule .schedule-text .schedule-item:focus-within p:nth-of-type(2) {
   max-height: 10vw;
