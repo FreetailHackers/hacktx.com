@@ -136,6 +136,7 @@
 
 #questions {
   display: grid;
+  cursor: pointer;
   /* Split FAQ questions into two columns */
   /* I honestly have no clue how this works I just copy pasted this */
   grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
@@ -205,7 +206,6 @@
   transition: max-height 0.3s;
   overflow: hidden;
 }
-/faq
 
 #schedule .schedule-text .schedule-item:focus-within p:nth-of-type(2) {
   max-height: 10vw;
