@@ -41,21 +41,17 @@ window.addEventListener("scroll", () => {
   if (window.innerWidth > 800) {
     if (scrollPercent < 10) {
       sunRef.style.top = scrollPercent * 3 + "vw";
-      sunRef.style.left = "12vw";
     } else if (scrollPercent < 16) {
       sunRef.style.top = scrollPercent * 4 + "vw";
-      sunRef.style.left = scrollPercent * 3 + "vw";
     } else if (scrollPercent < 20) {
       sunRef.style.top = scrollPercent * 5 + "vw";
-      sunRef.style.left = scrollPercent * 2 + "vw";
     } else if (scrollPercent < 30) {
       sunRef.style.top = scrollPercent * 5 + "vw";
-      sunRef.style.left = scrollPercent + "vw";
     } else {
       sunRef.style.top = scrollPercent * 4.3 + "vw";
     }
   } else {
-    sunRef.style.left = "50vw";
+    sunRef.style.left = "30vw";
     if (scrollPercent < 10) {
       sunRef.style.top = scrollPercent * 5 + "vw";
     } else if (scrollPercent < 16) {

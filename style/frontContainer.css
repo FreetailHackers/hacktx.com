@@ -17,7 +17,16 @@
 
 #registerButton {
   margin-top: 36vw;
-  margin-left: 40vw;
+  margin-left: 28vw;
+  width: 20vw;
+  height: 8vw;
+  position: absolute;
+  justify-content: center;
+  justify-items: center;
+}
+#volunteerButton {
+  margin-top: 36vw;
+  margin-left: 53vw;
   width: 20vw;
   height: 8vw;
   position: absolute;
@@ -38,6 +47,9 @@
 }
 
 #registerButton:hover {
+  transform: scale(1.1);
+}
+#volunteerButton:hover {
   transform: scale(1.1);
 }
 

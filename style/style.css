@@ -139,7 +139,7 @@ body {
 #Sun {
   position: absolute;
   top: 0vw;
-  left: 12vw;
+  left: 35vw;
   width: 45vw;
   z-index: -1;
   transition: top 0.2s, left 0.2s;
