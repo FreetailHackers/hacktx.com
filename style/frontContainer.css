@@ -272,6 +272,16 @@
   margin-right: 3vw;
 }
 
+#SCM {
+  width: 7vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-right: 3vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
 #JD {
   width: 12vw;
   margin-right: 3vw;
