@@ -224,21 +224,21 @@
 #specialThanks {
   margin: 10vw;
   border-radius: 2vw;
-  width: 70vw;
+  width: 76vw;
   text-align: center;
-  padding: 5vw;
+  padding: 2vw;
   background-color: #845b2edd;
 }
 #specialThanksHeading {
   padding-bottom: 1vw;
 }
 #TBC {
-  width: 15vw;
+  width: 12vw;
   border-radius: 1vw;
   margin-right: 1vw;
 }
 #CS {
-  width: 15vw;
+  width: 10vw;
   background-color: white;
   padding: 1.4vw;
   padding-top: 1.5vw;
@@ -256,45 +256,58 @@
   border-radius: 1vw;
   padding: 1.4vw;
   padding-top: 1vw;
+  margin-right: 1vw;
   padding-bottom: 1vw;
 }
 
 #EE {
   width: 6vw;
-  padding: 4vw;
+  padding: 2vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  margin-top: 1vw;
+  background-color: white;
+}
+
+#AL {
+  width: 12vw;
+  padding: 2vw;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
   margin-right: 1vw;
   border-radius: 1vw;
   background-color: white;
 }
 
-#AL {
-  width: 17vw;
-  padding: 2vw;
-  padding-top: 0vw;
-  padding-bottom: 0vw;
-  margin-right: 3vw;
-  border-radius: 1vw;
-  background-color: white;
-}
-
 #DR {
-  width: 6vw;
-  margin-right: 3vw;
+  width: 5vw;
+  margin-right: 2vw;
 }
 
 #SCM {
-  width: 7vw;
+  width: 6vw;
   padding: 2vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
-  margin-right: 3vw;
+  margin-right: 2vw;
   border-radius: 1vw;
   background-color: white;
 }
 
 #JD {
-  width: 12vw;
-  margin-right: 3vw;
+  width: 10vw;
+  margin-right: 1vw;
+}
+
+#TL {
+  width: 10vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-top: 1vw;
+  margin-right: 2vw;
+  border-radius: 1vw;
+  background-color: white;
 }
