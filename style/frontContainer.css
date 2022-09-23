@@ -272,42 +272,63 @@
 }
 
 #AL {
-  width: 12vw;
+  width: 14vw;
   padding: 2vw;
-  padding-top: 0vw;
-  padding-bottom: 0vw;
+  padding-top: 1.6vw;
+  padding-bottom: 1.6vw;
   margin-right: 1vw;
   border-radius: 1vw;
   background-color: white;
 }
 
 #DR {
-  width: 5vw;
-  margin-right: 2vw;
-}
-
-#SCM {
-  width: 6vw;
+  width: 6.6vw;
+  margin-top: 1vw;
   padding: 2vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
-  margin-right: 2vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#SCM {
+  width: 10vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-right: 1vw;
   border-radius: 1vw;
   background-color: white;
 }
 
 #JD {
-  width: 10vw;
-  margin-right: 1vw;
-}
-
-#TL {
-  width: 10vw;
+  width: 9.6vw;
   padding: 2vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
   margin-top: 1vw;
   margin-right: 2vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#TL {
+  width: 14vw;
+  padding: 2vw;
+  padding-top: 2.3vw;
+  padding-bottom: 2.3vw;
+  margin-top: 1vw;
+  margin-right: 2vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+#M {
+  width: 15vw;
+  padding: 2vw;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
+  margin-right: 1vw;
   border-radius: 1vw;
   background-color: white;
 }
