@@ -1,272 +1,305 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/styles.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>HackTX 2021</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="../scripts/navbar.js"></script>
-    </head>
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png">
-    <link rel="manifest" href="../../assets/icons/site.webmanifest">
-    <body style= "height: 1080px; background-position: -50px -100px; background-size: 2100px; background-image: url('../assets/backgroundF.png');"> 
-      <nav id="navigation-bar" style = "background-color: #37355b; height: 90px;">
-            <img id="freetail-logo" src="../assets/logo.png">
-            <ul>
-                <button>☰</button>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="companies.html">Companies</a></li>
-                <li><a href="challenges.html">Challenges</a></li>
-                <li><a href="faq.html">Extra</a></li>
-            </ul>
-        </nav>
-        
-        <div class="general">
-            <img class="general-header" src="../assets/Schedule.png">
-            <img id="scrollImgSchedule" src="../assets/scrollEnd.png">
-            <div class="events">
-              <div class="legend">
-                <div class="legend-key">
-                  <div class="square milestone"></div>
-                  <div >Key Event</div>
-                </div>
-                <div class="legend-key">
-                  <div class="square beginner"></div>
-                  <div >Workshop</div>
-                </div>
-                <div class="legend-key">
-                  <div class="square speaker"></div>
-                  <div >Speaker Event</div>
-                </div>
-                <div class="legend-key">
-                  <div class="square funevent"></div>
-                  <div >Fun Event</div>
-                </div>
-              </div>
-              <div class="schedulenotes">
-                *All times are in Central Time (CT)* <br />
-          
-              </div>
-                <div class="eventsWrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HackTX 2021</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../scripts/navbar.js"></script>
+  </head>
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="../../assets/icons/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../../assets/icons/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="../../assets/icons/favicon-16x16.png"
+  />
+  <link rel="manifest" href="../../assets/icons/site.webmanifest" />
+  <body
+    style="
+      height: 1080px;
+      background-position: -50px -100px;
+      background-size: 2100px;
+      background-image: url('../assets/backgroundF.png');
+    "
+  >
+    <nav id="navigation-bar" style="background-color: #37355b; height: 90px">
+      <img id="freetail-logo" src="../assets/logo.png" />
+      <ul>
+        <button>☰</button>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="companies.html">Companies</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+        <li><a href="faq.html">Extra</a></li>
+      </ul>
+    </nav>
 
-                    <div class="eventColumn">
-                      <div class="dayheader">Saturday, Oct 30</div>
-                      <div class="event" id='breakfast'>
-                        <h1>Breakfast is Served</h1>
-                        <h2>10:00-11:00am</h2>
-                      </div>
-                      <div class="event milestone" id='opening'>
-                        <h1>Opening Ceremony (GDC 2.216)</h1>
-                        <h2>11:00-11:30am</h2>
-                      </div>
-                      <div class="event beginner" id='gitIntro'>
-                        <h1>Intro to Git (GDC 5.302)</h1>
-                        <h2>11:30-12:30am</h2>
-                      </div>
-                      <div class="event" id='hackingstarts'>
-                        <h1>Hacking Starts</h1>
-                        <h2>12:00pm</h2>
-                      </div>
-                      <div class="event beginner" id='pythoIntro'>
-                        <h1>Intro to Python (GDC 5.302)</h1>
-                        <h2>12:30-1:30pm</h2>
-                      </div>
-                      <div class="eventRow">
-                        <div class="smallEvent" id='teammatching'>
-                          <h1>Team Matching</h1>
-                          <h2>1:00pm</h2>
-                        </div>
-                        <div class="smallEvent speaker" id='ploombtalk'>
-                          <h1>Talk w/ Ploomb</h1>
-                          <h2>1:00pm</h2>
-                        </div>
-                      </div>
-                      <div class="event speaker" id='mlhtalk'>
-                        <h1>MLH Talk</h1>
-                        <h2>2:00-3:00pm</h2>
-                      </div>
-                      <div class="event funevent" id='hackOlympics'>
-                        <h1>Hackathon Olympics (GDC Courtyard)</h1>
-                        <h2>3:00-4:00pm</h2>
-                      </div>
-                      <div class="event" id='howtorecruit'>
-                        <h1>How to Recruit (GDC 5.302)</h1>
-                        <h2>4:30-5:00pm</h2>
-                      </div>
-                      <div class="event" id='dindin'>
-                        <h1>Dinner (GDC Atrium)</h1>
-                        <h2>6:00-7:00pm</h2>
-                      </div>
-                      <div class="event funevent" id='gamenight'>
-                        <h1>Virtual Game Night</h1>
-                        <h2>7:00pm</h2>
-                      </div>
-                      <div class="event" id='resume'>
-                        <h1>Resume Reviews (GDC 5.302)</h1>
-                        <h2>8:00-9:00pm</h2>
-                      </div>
-                      <div class="event funevent" id='smashbros'>
-                        <h1>Smash Bros Ultimate Tourney (GDC 5.302)</h1>
-                        <h2>9:00pm</h2>
-                      </div>
-                    </div>
-                    <div class="eventColumn">
-                      <div class="dayheader">Sunday, Oct 31</div>
-                      <div class="event" id='officehours'>
-                        <h1>Office Hours (GDC 5.302)</h1>
-                        <h2>11:00am</h2>
-                      </div>
-                      <div class="eventRow">
-                        <div class="smallEvent" id='hackends'>
-                          <h1>Hacking Ends</h1>
-                          <h2>12:00pm</h2>
-                        </div>
-                        <div class="smallEvent" id='lunchs'>
-                          <h1>Lunch</h1>
-                          <h2>12:00pm</h2>
-                        </div>
-                      </div>
-                      <div class="event milestone" id='judging'>
-                        <h1>Judging</h1>
-                        <h2 style="font-weight: bolder;">1:00-3:00pm</h2>
-                      </div>
-                      <div class="event milestone" id='closing'>
-                        <h1>Closing Ceremony (GDC 2.216)</h1>
-                        <h2>4:00pm</h2>
-                      </div>
-                    </div>
-                </div>
-            </div>
+    <div class="general">
+      <img class="general-header" src="../assets/Schedule.png" />
+      <img id="scrollImgSchedule" src="../assets/scrollEnd.png" />
+      <div class="events">
+        <div class="legend">
+          <div class="legend-key">
+            <div class="square milestone"></div>
+            <div>Key Event</div>
+          </div>
+          <div class="legend-key">
+            <div class="square beginner"></div>
+            <div>Workshop</div>
+          </div>
+          <div class="legend-key">
+            <div class="square speaker"></div>
+            <div>Speaker Event</div>
+          </div>
+          <div class="legend-key">
+            <div class="square funevent"></div>
+            <div>Fun Event</div>
+          </div>
         </div>
+        <div class="schedulenotes">
+          *All times are in Central Time (CT)* <br />
+        </div>
+        <div class="eventsWrapper">
+          <div class="eventColumn">
+            <div class="dayheader">Saturday, Oct 30</div>
+            <div class="event" id="breakfast">
+              <h1>Breakfast is Served</h1>
+              <h2>10:00-11:00am</h2>
+            </div>
+            <div class="event milestone" id="opening">
+              <h1>Opening Ceremony (GDC 2.216)</h1>
+              <h2>11:00-11:30am</h2>
+            </div>
+            <div class="event beginner" id="gitIntro">
+              <h1>Intro to Git (GDC 5.302)</h1>
+              <h2>11:30-12:30am</h2>
+            </div>
+            <div class="event" id="hackingstarts">
+              <h1>Hacking Starts</h1>
+              <h2>12:00pm</h2>
+            </div>
+            <div class="event beginner" id="pythoIntro">
+              <h1>Intro to Python (GDC 5.302)</h1>
+              <h2>12:30-1:30pm</h2>
+            </div>
+            <div class="eventRow">
+              <div class="smallEvent" id="teammatching">
+                <h1>Team Matching</h1>
+                <h2>1:00pm</h2>
+              </div>
+              <div class="smallEvent speaker" id="ploombtalk">
+                <h1>Talk w/ Ploomb</h1>
+                <h2>1:00pm</h2>
+              </div>
+            </div>
+            <div class="event speaker" id="mlhtalk">
+              <h1>MLH Talk</h1>
+              <h2>2:00-3:00pm</h2>
+            </div>
+            <div class="event funevent" id="hackOlympics">
+              <h1>Hackathon Olympics (GDC Courtyard)</h1>
+              <h2>3:00-4:00pm</h2>
+            </div>
+            <div class="event" id="howtorecruit">
+              <h1>How to Recruit (GDC 5.302)</h1>
+              <h2>4:30-5:00pm</h2>
+            </div>
+            <div class="event" id="dindin">
+              <h1>Dinner (GDC Atrium)</h1>
+              <h2>6:00-7:00pm</h2>
+            </div>
+            <div class="event funevent" id="gamenight">
+              <h1>Virtual Game Night</h1>
+              <h2>7:00pm</h2>
+            </div>
+            <div class="event" id="resume">
+              <h1>Resume Reviews (GDC 5.302)</h1>
+              <h2>8:00-9:00pm</h2>
+            </div>
+            <div class="event funevent" id="smashbros">
+              <h1>Smash Bros Ultimate Tourney (GDC 5.302)</h1>
+              <h2>9:00pm</h2>
+            </div>
+          </div>
+          <div class="eventColumn">
+            <div class="dayheader">Sunday, Oct 31</div>
+            <div class="event" id="officehours">
+              <h1>Office Hours (GDC 5.302)</h1>
+              <h2>11:00am</h2>
+            </div>
+            <div class="eventRow">
+              <div class="smallEvent" id="hackends">
+                <h1>Hacking Ends</h1>
+                <h2>12:00pm</h2>
+              </div>
+              <div class="smallEvent" id="lunchs">
+                <h1>Lunch</h1>
+                <h2>12:00pm</h2>
+              </div>
+            </div>
+            <div class="event milestone" id="judging">
+              <h1>Judging</h1>
+              <h2 style="font-weight: bolder">1:00-3:00pm</h2>
+            </div>
+            <div class="event milestone" id="closing">
+              <h1>Closing Ceremony (GDC 2.216)</h1>
+              <h2>4:00pm</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Development -->
-        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <!-- Development -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 
-        <!-- Production -->
-        <script src="https://unpkg.com/@popperjs/core@2"></script>
-        <script src="https://unpkg.com/tippy.js@6"></script>
+    <!-- Production -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 
-        <script>
-          tippy('#opening', {
-            content: 'Join us in GDC 2.216 as we kick off our event with some general information and resources to guide you throughout the weekend. <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#breakfast', {
-            content: 'Join us for some breakfast if you are attending in person! We will be in GDC atrium',
-            placement: 'bottom',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#gitIntro', {
-            content: 'Learn how to use a system to keep track of your code changes and collaborate on software development in GDC 5.302!<br/><br/><a target="_blank" href="https://utexas.zoom.us/my/castle.room">Castle Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#hackingstarts', {
-            content: 'Go go go!',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#pythoIntro', {
-            content: 'Let’s learn how to code in Python! Beginner friendly, assumes no prior coding experience :) Happening in GDC 5.304 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#teammatching', {
-            content: "Don't have a team? We gotchu",
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#ploombtalk', {
-            content: 'Tune in <a style = "color: white" href="https://utexas.zoom.us/my/castle.room">here</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#mlhtalk', {
-            content: 'Tune in <a style = "color: white" href="https://utexas.zoom.us/my/adventure.room">here</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#hackOlympics', {
-            content: 'Join us for some exciting in-person games in the GDC Courtyard or via Zoom! <br><br><a target="_blank" href="https://utexas.zoom.us/my/castle.room">Castle Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#howtorecruit', {
-            content: 'Learn how to recruit for technical internships and full time positions. Happening in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#dindin', {
-            content: 'Hungry? Come for dinner at GDC Atrium!',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#gamenight', {
-            content: 'Join us for some exciting virtual games! <br><br><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#resume', {
-            content: 'Feel free to hop in and get help with your project, resume, submission, or anything else! Happening in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/castle.room">Castle Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#smashbros', {
-            content: 'Enough said. Happening in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room"> Adventure Room</a>',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#officehours', {
-            content: 'Come join us for breakfast or to ask questions in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/adventure.room">Adventure Room</a>',
-            placement: 'bottom',
-            allowHTML: true,
-            interactive: true
-          })
-          tippy('#hackends', {
-            content: 'Time to submit your projects!',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#lunchs', {
-            content: 'Come join us for lunch in GDC Atrium if you are attending in-person :)',
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#judging', {
-            content: "Time to see what y'all made!",
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-          tippy('#closing', {
-            content: "Thanks for coming y'all! <br/>Join us in GDC 2.216 or via Zoom <br/><br/><a target='_blank' href='https://utexas.zoom.us/adventure.room'>Adventure Room</a>",
-            placement: 'top',
-            allowHTML: true,
-            interactive: true,
-          });
-        </script>
-    </body>
+    <script>
+      tippy("#opening", {
+        content:
+          'Join us in GDC 2.216 as we kick off our event with some general information and resources to guide you throughout the weekend. <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#breakfast", {
+        content:
+          "Join us for some breakfast if you are attending in person! We will be in GDC atrium",
+        placement: "bottom",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#gitIntro", {
+        content:
+          'Learn how to use a system to keep track of your code changes and collaborate on software development in GDC 5.302!<br/><br/><a target="_blank" href="https://utexas.zoom.us/my/castle.room">Castle Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#hackingstarts", {
+        content: "Go go go!",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#pythoIntro", {
+        content:
+          'Let’s learn how to code in Python! Beginner friendly, assumes no prior coding experience :) Happening in GDC 5.304 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#teammatching", {
+        content: "Don't have a team? We gotchu",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#ploombtalk", {
+        content:
+          'Tune in <a style = "color: white" href="https://utexas.zoom.us/my/castle.room">here</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#mlhtalk", {
+        content:
+          'Tune in <a style = "color: white" href="https://utexas.zoom.us/my/adventure.room">here</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#hackOlympics", {
+        content:
+          'Join us for some exciting in-person games in the GDC Courtyard or via Zoom! <br><br><a target="_blank" href="https://utexas.zoom.us/my/castle.room">Castle Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#howtorecruit", {
+        content:
+          'Learn how to recruit for technical internships and full time positions. Happening in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#dindin", {
+        content: "Hungry? Come for dinner at GDC Atrium!",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#gamenight", {
+        content:
+          'Join us for some exciting virtual games! <br><br><a target="_blank" href="https://utexas.zoom.us/my/adventure.room">Adventure Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#resume", {
+        content:
+          'Feel free to hop in and get help with your project, resume, submission, or anything else! Happening in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/castle.room">Castle Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#smashbros", {
+        content:
+          'Enough said. Happening in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/my/adventure.room"> Adventure Room</a>',
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#officehours", {
+        content:
+          'Come join us for breakfast or to ask questions in GDC 5.302 or via Zoom <br/><br/><a target="_blank" href="https://utexas.zoom.us/adventure.room">Adventure Room</a>',
+        placement: "bottom",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#hackends", {
+        content: "Time to submit your projects!",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#lunchs", {
+        content:
+          "Come join us for lunch in GDC Atrium if you are attending in-person :)",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#judging", {
+        content: "Time to see what y'all made!",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy("#closing", {
+        content:
+          "Thanks for coming y'all! <br/>Join us in GDC 2.216 or via Zoom <br/><br/><a target='_blank' href='https://utexas.zoom.us/adventure.room'>Adventure Room</a>",
+        placement: "top",
+        allowHTML: true,
+        interactive: true,
+      });
+    </script>
+  </body>
 </html>
