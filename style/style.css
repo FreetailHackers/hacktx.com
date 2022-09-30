@@ -124,25 +124,24 @@ body {
 
 .bounce {
   animation: bounce 3s infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 @keyframes bounce {
   0%,
   100% {
-    transform: rotate(-20deg);
+    transform: rotate(-10deg);
   }
   50% {
-    transform: rotate(20deg);
+    transform: rotate(10deg);
   }
 }
 
 #Sun {
-  position: absolute;
+  position: fixed;
   top: 0vw;
   left: 35vw;
   width: 45vw;
   z-index: -1;
-  transition: top 0.2s, left 0.2s;
   overflow-x: hidden;
 }
 
