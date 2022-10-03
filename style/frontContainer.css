@@ -315,7 +315,7 @@
   padding-top: 2.3vw;
   padding-bottom: 2.3vw;
   margin-top: 1vw;
-  margin-right: 2vw;
+  margin-right: 1vw;
   border-radius: 1vw;
   background-color: white;
 }
@@ -325,6 +325,16 @@
   padding-top: 0vw;
   padding-bottom: 0vw;
   margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#QV {
+  width: 14vw;
+  padding: 2vw;
+  padding-top: 2.5vw;
+  padding-bottom: 2.5vw;
+  margin-top: 1vw;
   border-radius: 1vw;
   background-color: white;
 }
