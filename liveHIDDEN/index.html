@@ -1,259 +1,565 @@
 <!DOCTYPE html>
 
-<head>
-  <meta charset="utf-8">
-	<title>HackTX 2022</title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HackTX 2022</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style/style.css">
-</head>
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-        <script src="https://unpkg.com/tippy.js@6"></script>
-<body>
-  <div id = "header" class="noselect">
-    <img class="layerimg" src="./assets/backgrounds/Header.svg"/>
-  </div>
-  <div id = "layer1" >
-    <div id = "layer1title" onclick="togglelayer1()" class="noselect" >HOME</div>
-    <div id = "layer1content"></div>
-    <img class="layerimg" src="./assets/backgrounds/Layer1.svg"/>
-  </div>
-  <div id = "layer2">
-    <div id = "layer2title" onclick="togglelayer2()" class="noselect">SCHEDULE</div>
-    <div id = "layer2content">
+  <body>
+    <div id="header" class="noselect">
+      <img class="layerimg" src="./assets/backgrounds/Header.svg" />
+    </div>
+    <div id="layer1">
+      <div id="layer1title" onclick="togglelayer1()" class="noselect">HOME</div>
+      <div id="layer1content"></div>
+      <img class="layerimg" src="./assets/backgrounds/Layer1.svg" />
+    </div>
+    <div id="layer2">
+      <div id="layer2title" onclick="togglelayer2()" class="noselect">
+        SCHEDULE
+      </div>
+      <div id="layer2content">
         <div class="events" id="schedule">
           <div class="legend">
             <div class="legend-key">
               <div class="square milestone"></div>
-              <div >Key Event</div>
+              <div>Key Event</div>
             </div>
             <div class="legend-key">
               <div class="square beginner"></div>
-              <div >Workshop</div>
+              <div>Workshop</div>
             </div>
             <div class="legend-key">
               <div class="square speaker"></div>
-              <div >Speaker Event</div>
+              <div>Speaker Event</div>
             </div>
             <div class="legend-key">
               <div class="square funevent"></div>
-              <div >Fun Event</div>
+              <div>Fun Event</div>
             </div>
           </div>
           <div class="schedulenotes">
             *All times are in Central Time (CT)* <br />
-      
           </div>
-            <div class="eventsWrapper">
-              <div class="eventColumn">
-                <div class="dayheader">Saturday, Oct 15</div>
-                <div class="event" id='checkin'>
-                  <h1>Check-In</h1>
-                  <h2>9:00am</h2>
-                </div>
-                <div class="event milestone" id='opening'>
-                  <h1>Opening Ceremony (GDC 2.216)</h1>
-                  <h2>10:30am-11:00am</h2>
-                </div>
-                <div class="event" id='hackingstarts'>
-                  <h1>Hacking Starts</h1>
-                  <h2>12:00pm</h2>
-                </div>
-                <div class="event beginner" id='gitIntro'>
-                  <h1>Workshops: Intro to Hackathons & Ideation, Intro to React</h1>
-                  <h2>11:00am-12:00pm</h2>
-                </div>
-                <div class="event beginner" id='lunch'>
-                  <h1>Lunch</h1>
-                  <h2>12:00pm</h2>
-                </div>
-                <div class="event speaker" id='sponsor'>
-                  <h1>Sponsor Networking</h1>
-                  <h2>2:00pm</h2>
-                </div>
-                <div class="event beginner" id='TXB'>
-                  <h1>Workshops by Texas Blockchain</h1>
-                  <h2>3:00-4:00pm</h2>
-                </div>
-                <div class="event funevent" id='CTF'>
-                  <h1>CTF by ISSS</h1>
-                  <h2>4:30-5:00pm</h2>
-                </div>
-                <div class="event" id='dindin'>
-                  <h1>Dinner (GDC Atrium)</h1>
-                  <h2>6:00-7:00pm</h2>
-                </div>
-                <div class="event funevent" id='gamenight'>
-                  <h1>MLH Mini-event</h1>
-                  <h2>8:00pm</h2>
-                </div>
-                <div class="event" id='FreetailMG'>
-                  <h1>Freetail Hackers Meet & Greet</h1>
-                  <h2>9:00-10:00pm</h2>
-                </div>
-                <div class="event" id='meetup'>
-                  <h1>Hackathon Organizer Meetup</h1>
-                  <h2>10:00-11:00pm</h2>
-                </div>
-                <div class="event" id='gongcha'>
-                  <h1>Midnight Snack (Gong Cha)</h1>
-                  <h2>11:00pm</h2>
-                </div>
-                <div class="event funevent" id='game'>
-                  <h1>Movie & Game Night</h1>
-                  <h2>12:00am</h2>
-                </div>
+
+          <div class="eventsWrapper">
+            <div class="eventColumn">
+              <div class="dayheader">Saturday, Oct 15</div>
+              <div class="event" id="checkIn">
+                <h1>Check-In (GDC Courtyard)</h1>
+                <h2>9:00am-10:30am</h2>
               </div>
-              <div class="eventColumn">
-                <div class="dayheader">Sunday, Oct 16</div>
-                <div class="event" id='officehours'>
-                  <h1>Sunrise Watch Party</h1>
-                  <h2>7:15am</h2>
-                </div>
-                <div class="event" id='smashbros'>
-                  <h1>Breakfast</h1>
-                  <h2>8:00am</h2>
-                </div>
-                <div class="event beginner" id='smashbros'>
-                  <h1>Workshop: How to Pitch</h1>
-                  <h2>9:00am</h2>
-                </div>
-                <div class="event" id='smashbros'>
-                  <h1>Hacking Ends</h1>
-                  <h2>12:00pm</h2>
-                </div>
-                <div class="event" id='smashbros'>
-                  <h1>Lunch</h1>
-                  <h2>12:00pm</h2>
-                </div>
-                <div class="event" id='smashbros'>
-                  <h1>Judging Begins</h1>
-                  <h2>1:00pm</h2>
-                </div>
-                <div class="event milestone" id='smashbros'>
-                  <h1>Closing Ceremony</h1>
-                  <h2>4:00pm</h2>
-                </div>
-
-
+              <div class="event milestone" id="openingCeremony">
+                <h1>Opening Ceremony (GDC 2.216)</h1>
+                <h2>10:30am-11:00am</h2>
               </div>
+              <div class="event" id="hackingStarts">
+                <h1>Hacking Starts, Team Matching Closes</h1>
+                <h2>11:00pm</h2>
+              </div>
+              <div class="event beginner" id="introHackathons">
+                <h1>Workshop: Intro to Hackathons & Ideation (GDC 2.216)</h1>
+                <h2>11:00am-12:00pm</h2>
+              </div>
+              <div class="event beginner" id="introRobotics">
+                <h1>Workshop: Robotics & AI (GDC 6.302)</h1>
+                <h2>11:00am-12:00pm</h2>
+              </div>
+              <div class="event" id="saturdayLunch">
+                <h1>Lunch (GDC Courtyard), Team Assignments Sent Out</h1>
+                <h2>12:00pm</h2>
+              </div>
+              <div class="event beginner" id="introGit">
+                <h1>Workshop: Intro to Git & Web Dev (GDC 2.216)</h1>
+                <h2>1:00pm-2:00pm</h2>
+              </div>
+              <div class="event beginner" id="introReact">
+                <h1>Workshop: React.js (GDC 6.302)</h1>
+                <h2>1:00pm-2:00pm</h2>
+              </div>
+              <div class="event beginner" id="introML">
+                <h1>Workshop: Intro to Machine Learning (GDC 2.216)</h1>
+                <h2>2:00pm-3:00pm</h2>
+              </div>
+              <div class="event speaker" id="johnDeere">
+                <h1>John Deere Talk (GDC 6.302)</h1>
+                <h2>2:00pm-2:30pm</h2>
+              </div>
+              <div class="event speaker" id="arriveLogistics">
+                <h1>Arrive Logistics Talk (GDC 6.302)</h1>
+                <h2>2:30pm-3:00pm</h2>
+              </div>
+              <div class="event" id="sponsorExpo">
+                <h1>Sponsor Expo (GDC Atrium)</h1>
+                <h2>3:00-4:00pm</h2>
+              </div>
+              <div class="event beginner" id="introBlockchain">
+                <h1>Workshops by Texas Blockchain (GDC 2.216)</h1>
+                <h2>4:00pm-6:00pm</h2>
+              </div>
+              <div class="event funevent" id="ctf">
+                <h1>CTF by ISSS (GDC 6.302)</h1>
+                <h2>4:00pm-6:00pm</h2>
+              </div>
+              <div class="event" id="dinner">
+                <h1>Dinner (GDC Courtyard)</h1>
+                <h2>6:00-8:00pm</h2>
+              </div>
+              <div class="event beginner" id="mlhSnyk">
+                <h1>MLH Workshop - Snyk (GDC 2.216)</h1>
+                <h2>7:00pm-8:00pm</h2>
+              </div>
+              <div class="event funevent" id="gameNight">
+                <h1>Game Night (GDC 6.302)</h1>
+                <h2>7:00pm-8:00pm</h2>
+              </div>
+              <div class="event beginner" id="googleCloud">
+                <h1>Intro to Google Cloud (GDC 2.216)</h1>
+                <h2>8:00pm-9:00pm</h2>
+              </div>
+              <div class="event beginner" id="mlhTBD">
+                <h1>MLH Activity [TBD] (GDC 6.302)</h1>
+                <h2>8:00pm-9:00pm</h2>
+              </div>
+              <div class="event" id="meetGreet">
+                <h1>Freetail Hackers Meet & Greet (GDC 6.302)</h1>
+                <h2>9:00pm-10:00pm</h2>
+              </div>
+              <div class="event" id="winnersPanel">
+                <h1>Past Hackathon Winners Panel (GDC 2.216)</h1>
+                <h2>9:00pm-10:00pm</h2>
+              </div>
+              <div class="event funevent" id="funTBD">
+                <h1>Fun Activity [TBD] (GDC 2.216)</h1>
+                <h2>10:00pm-11:00pm</h2>
+              </div>
+              <div class="event" id="organizerMeetup">
+                <h1>Hackathon Organizer Meetup (GDC 6.302)</h1>
+                <h2>10:00-11:00pm</h2>
+              </div>
+              <div class="event" id="officeHours">
+                <h1>Submission Office Hours (GDC Atrium)</h1>
+                <h2>10:00pm-11:00pm</h2>
+              </div>
+              <div class="event" id="submissionDeadline">
+                <h1>Submission Deadline</h1>
+                <h2>11:00pm</h2>
+              </div>
+              <div class="event" id="quietHours">
+                <h1>Quiet Hours</h1>
+                <h2>11:00pm</h2>
+              </div>
+              <div class="event" id="midnightSnack">
+                <h1>Midnight Snack ft. Gong Cha (GDC Atrium)</h1>
+                <h2>11:00pm-12:00pm</h2>
+              </div>
+              <div class="event funevent" id="game">
+                <h1>Movie Night (GDC 2.216)</h1>
+                <h2>12:00am</h2>
+              </div>
+            </div>
 
+            <div class="eventColumn">
+              <div class="dayheader">Sunday, Oct 16</div>
+              <div class="event funevent" id="sunriseParty">
+                <h1>
+                  Sunrise Watch Party (At East Mall Fountain, Meeting in Atrium)
+                </h1>
+                <h2>7:15am-8:00am</h2>
+              </div>
+              <div class="event" id="breakfast">
+                <h1>Breakfast (GDC Atrium)</h1>
+                <h2>8:00am-9:00am</h2>
+              </div>
+              <div class="event beginner" id="introPitching">
+                <h1>Workshop: How to Pitch (GDC 2.216)</h1>
+                <h2>9:00am-10:00am</h2>
+              </div>
+              <div class="event" id="hackingEnds">
+                <h1>Hacking Ends</h1>
+                <h2>11:00am</h2>
+              </div>
+              <div class="event" id="sundayLunch">
+                <h1>Lunch (GDC Courtyard)</h1>
+                <h2>11:00am-1:00pm</h2>
+              </div>
+              <div class="event" id="judging">
+                <h1>Judging (WCP)</h1>
+                <h2>1:00pm-4:00pm</h2>
+              </div>
+              <div class="event milestone" id="closingCeremony">
+                <h1>Closing Ceremony (WCP Auditorium)</h1>
+                <h2>4:30pm-5:00pm</h2>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <img class="layerimg" src="./assets/backgrounds/Layer2.svg" />
     </div>
+    <div id="layer3">
+      <div id="layer3title" onclick="togglelayer3()" class="noselect">
+        SPONSORS
+      </div>
+      <div id="layer3content">
+        <div id="specialThanks" style="margin-top: 15vw">
+          <div id="specialThanksHeading" class="heading"><b>Sponsors</b></div>
+          <a
+            href="https://www.meta.com/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="M" src="../assets/sponsors/M.jpeg" />
+          </a>
+          <a
+            href="https://www.arrivelogistics.com/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="AL" src="../assets/sponsors/AL.png" />
+          </a>
+          <a
+            href="https://www.deere.com/en/index.html"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="JD" src="../assets/sponsors/JD.png" />
+          </a>
+          <br />
+          <a
+            href="https://www.scm-lp.com/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="SCM" src="../assets/sponsors/SCM.png" />
+          </a>
+          <a
+            href="https://devrev.ai/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="DR" src="../assets/sponsors/DR.png" />
+          </a>
+          <a href="" style="text-decoration: none" target="_blank">
+            <img id="TL" src="../assets/sponsors/TL.png" />
+          </a>
+          <a
+            href="https://qvest.us/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="QV" src="../assets/sponsors/QV.png" />
+          </a>
+        </div>
+        <div id="specialThanks">
+          <div id="specialThanksHeading" class="heading">
+            <b>Blockchain Track Supporters</b>
+          </div>
+          <a href="https://solana.org/" class="blockchaintext" target="_blank">
+            Solana Foundation
+          </a>
+          <a
+            href="https://near.foundation/"
+            class="blockchaintext"
+            target="_blank"
+          >
+            Near Foundation
+          </a>
+          <a
+            href="https://www.bnbchain.org/en"
+            class="blockchaintext"
+            target="_blank"
+          >
+            BNB Chain
+          </a>
+          <a
+            href="https://www.niftory.com/"
+            class="blockchaintext"
+            target="_blank"
+          >
+            Niftory
+          </a>
+        </div>
+        <div id="specialThanks">
+          <div id="specialThanksHeading" class="heading">
+            <b>Special Thanks</b>
+          </div>
+          <a
+            href="https://www.texasblockchain.org/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="TBC" src="../assets/sponsors/TBC.jpeg" />
+          </a>
+          <a
+            href="https://cs.utexas.edu/"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="CS" src="../assets/sponsors/CS.png" />
+          </a>
+          <a
+            href="https://cloud.google.com/gcp"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="GCP" src="../assets/sponsors/GCP.png" />
+          </a>
+          <a
+            href="https://universityunions.utexas.edu/events-entertainment"
+            style="text-decoration: none"
+            target="_blank"
+          >
+            <img id="EE" src="../assets/sponsors/EE.png" />
+          </a>
+        </div>
+      </div>
+      <img class="layerimg" src="./assets/backgrounds/Layer3.svg" />
     </div>
-    <img class="layerimg" src="./assets/backgrounds/Layer2.svg"/>
-  </div>
-  <div id = "layer3">
-    <div id = "layer3title" onclick="togglelayer3()" class="noselect">MAP</div>
-    <div id = "layer3content"></div>
-    <img class="layerimg" src="./assets/backgrounds/Layer3.svg"/>
-  </div>
-  <div id = "layer4">
-    <div id = "layer4title" onclick="togglelayer4()" class="noselect">LINKS</div>
-    <div id = "layer4content">
-
-      <table class="info">
-        <tbody><tr>
-          <td>Devpost</td>
-          <td>
-            <a href="https://hacktx-2022.devpost.com/" target="_blank">https://hacktx-2022.devpost.com/</a>
-          </td>
-        </tr>
-          </tbody><tbody><tr>
-            <td>Discord</td>
-            <td>
-              <a href="https://discord.gg/ZAdz6bnwej" target="_blank">https://discord.gg/ZAdz6bnwej</a>
-            </td>
-          </tr>
-          <tr>
+    <div id="layer4">
+      <div id="layer4title" onclick="togglelayer4()" class="noselect">
+        LINKS
+      </div>
+      <div id="layer4content">
+        <table class="info">
+          <tbody>
+            <tr>
+              <td>Devpost</td>
+              <td>
+                <a href="https://hacktx-2022.devpost.com/" target="_blank"
+                  >https://hacktx-2022.devpost.com/</a
+                >
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Discord</td>
+              <td>
+                <a href="https://discord.gg/ZAdz6bnwej" target="_blank"
+                  >https://discord.gg/ZAdz6bnwej</a
+                >
+              </td>
+            </tr>
+            <tr>
               <td>Guide</td>
               <td>
-                <a href="https://freetailhackers.com/uhsg" target="_blank">Ultimate Hackathon Starting Guide</a>
+                <a href="https://freetailhackers.com/uhsg" target="_blank"
+                  >Ultimate Hackathon Starting Guide</a
+                >
               </td>
             </tr>
-          <tr>
-            <td>Youtube</td>
-            <td>
-              <a href="https://www.youtube.com/channel/UCebi1myLBuB9dMBkN6hYL9g" target="_blank"> Youtube</a>
-              
-            </td>
-          </tr>
-  
-          <tr>
-            <td>Rules</td>
-            <td>
-              <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">Code of Conduct</a>
-            </td>
-          </tr>
+            <tr>
+              <td>Youtube</td>
+              <td>
+                <a
+                  href="https://www.youtube.com/channel/UCebi1myLBuB9dMBkN6hYL9g"
+                  target="_blank"
+                >
+                  Youtube</a
+                >
+              </td>
+            </tr>
 
-          <tr>
+            <tr>
+              <td>Rules</td>
+              <td>
+                <a
+                  href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                  target="_blank"
+                  >Code of Conduct</a
+                >
+              </td>
+            </tr>
+
+            <tr>
               <td>Social Media</td>
               <td>
-                <a href="https://facebook.com/hacktx" target="_blank">Facebook</a> |&nbsp;
-                <a href="https://twitter.com/hacktx" target="_blank">Twitter</a> |&nbsp;
-                <a href="https://instagram.com/freetailhackers" target="_blank">Instagram</a>
+                <a href="https://facebook.com/hacktx" target="_blank"
+                  >Facebook</a
+                >
+                |&nbsp;
+                <a href="https://twitter.com/hacktx" target="_blank">Twitter</a>
+                |&nbsp;
+                <a href="https://instagram.com/freetailhackers" target="_blank"
+                  >Instagram</a
+                >
               </td>
             </tr>
-  
-        </tbody></table>
+          </tbody>
+        </table>
+      </div>
+      <img class="layerimg" src="./assets/backgrounds/Layer4.svg" />
     </div>
-    <img class="layerimg" src="./assets/backgrounds/Layer4.svg"/>
-  </div>
-  <div id = "layer5">
-    <div id = "layer5title" onclick="togglelayer5()" class="noselect">BOUNTIES</div>
-    <div id = "layer5content">
-      <div style="width: 80%; padding-left: 10%; justify-self: center; text-align: left;">
-        <p>You are eligible to submit projects under any of the tracks! There are just specific qualification requirements for Beginner and Blockchain. Please read those descriptions to understand eligibility. </p1>
-        <h1>Beginner Track</h1>
-        <p>New to Coding? Have little experience or this is your first hackathon? No worries, we got you! We have beginner oriented workshops, hands-on mentors, tutorials, and a non-judgement space for you to learn, build a cool new project, and submit for judging with people in similar levels as you! 
-           Team Requirements: At least 67% of your team MUST qualify as a beginner! Ex. Teams of 1 and 2 - everyone must be a beginner. 
-        </p>
-        <h1>General Track</h1>
-        <p>This is our all-in-one track! These include Corporate Sponsored Challenges, MLH Challenges, and HackTX General Challenges hosted by Freetail Hackers. </p>
-        <h1>Blockchain Track</h1>
-        <p>Texas Blockchain is a community of students at UT-Austin exploring and building the 
-           blockchain technologies of the future. We are thrilled to be partnering with Freetail Hackers to host a blockchain track for the first time 
-           ever, and looking forward to onboarding hundreds of students into the Web3 space. We will be hosting workshops before HackTX '22, and have 
-           some of the largest protocols and companies sponsoring the blockchain track (over $40K+ in grants and prizes)!
-        </p>
-        <br>
-        <h2>Challenges and Prizes </h2>
-        <h1>Beginner Track</h1>
-        <p>Prizes are awarded per winning team member! All of these are hosted and sponsored by Freetail Hackers.</p1>
-        <h1> Best Idea Hack - Google Cloud Branded Backpacks</h1>
-        <p>We know that implementation or carrying out a project to the end can be hard, but you might have the best idea in place! So we want to recognize you and award you with Google Cloud Branded Backpacks for your efforts and ideation! Any and all projects within the Beginner Track are also valid for this challenge. </p1>
-        <h1> Best Overall Beginner Hack - Echo Dot</h1>
-        <p>You made it this far, congrats!! We hope that this experience has taught you a little about design, coding, and product management! It is now time to compete for the winning prize of Echo Dots! This challenge is a best overall - which means it will assess hacks on implementation, design, idea, impact, and overall learning! </p1>
-        <h1> Best Design Hack - Wacom Drawing Tablets</h1>
-        <p>Part of what makes a hackathon project really good is that you think of who the end user is, what kind of impact you want to drive, and how to market the message of the product! This challenge judges based on the design aspect of the hack, thinking about components, User Interface and User Experience. This is your chance to win a Wacom Drawing Tablet all for yourself!</p1>
-        <h1> General Track</h1>
-        <p>Prizes are awarded per winning team member!</p1>
-        <h1> Best Overall Hack</h1>
-        <p>- First Place: Mechanical Keyboards AND Fast Track Interview for MLH Fellowship (Paid Internship)
-           <br>
-           - Read More about MLH Fellowship here! https://fellowship.mlh.io/
-           <br>
-           - Second Place: Google/Amazon friendly Color Changing Strip Lights</p1>
-        <h1> Major League Hacking Sponsored Challenges</h1>
-        <p>For the full description: https://hack.mlh.io/prizes. The only ones that are valid for HackTX 2022 are the ones that are the following ones listed: DeSo, Domain.com, GitHub, Capital One, CockroachDB, Twilio, Hedera, Synk (to put above all of these)</p1>
-        <h1> Best Use of DeSo - $DESO coin & Exclusive DeSo Tumbler</h1>
-        <p>DeSo is the official Web3 sponsor of the MLH Hackathon League and the first Layer 1 blockchain custom-built for decentralized social media applications. While a blockchain like Avalanche costs $0.50+ to store just a 200-character post, the DeSo blockchain is built with custom indexing and storage optimizations which make it 10,000X cheaper to store social content on-chain! In order to qualify for the contest, you must launch an app that writes to the DeSo blockchain and implements DeSo identity. While social media apps are a great fit for DeSo, you can also build financial apps, marketplaces, and more on the DeSo blockchain. For inspiration on project ideas, you can check out some of the existing 200+ apps already live on DeSo at [Bithunt.com](http://bithunt.com/) as well as our DeSo APIs. The Best Use of DeSo gets $100 worth of $DESO coin & an exclusive DeSo branded tumbler!</p1>
-        <h1>Most Creative Use of Twilio - Twilio Swag Box & GameGo Console</h1>
-        <p>Twilio allows you to incorporate mobile messaging, phone calls and a ton of other awesome communication features right into your hackathon project using a web service API. Are you building an e-commerce website and want to send text notifications or email confirmations once an order is completed? Or maybe you'd like to verify users based on their mobile numbers? Twilio makes all this possible and more. Build a hack that simplifies your life using any Twilio API for a chance to win some awesome prizes! Get started with $50 in free credit!</p1>
-        <h1>Best Domain Name from Domain.com - Domain.com Branded Backpack</h1>
-        <p>Register a .Tech domain name using http://domain.com/ during the weekend for your chance to win a http://domain.com/ branded backpack for you and each member of your team! Each team may submit one entry per person on the team. The more creative the domain the better!</p1>
-        <h1>Best Use of CockroachDB - 3D Printing Pen</h1>
-        <p>Build your hackathon project on CockroachDB's open source and indestructible SQL database. Utilize CockroachDB in your hack for a chance to win a 3D printing pen for you and each of your team members. What's more, if you submit a verified project and are a US resident, we'll be sending you a free CockroachDB T-shirt while supplies last!</p1>
-        <h1>Best Blockchain Project Using Hedera - Glorious Modular Compact Mechanical Keyboard</h1>
-        <p>Hedera is a next generation blockchain technology that's accessible from familiar programming languages like Java and JavaScript. Their goal? To make Web3 development even more accessible to hackers like you! Build a project on Hedera's test network for a chance to win amazing Glorious Modular Compact Mechanical Keyboards for you and your team!</p1>
-     </div>
+    <div id="layer5">
+      <div id="layer5title" onclick="togglelayer5()" class="noselect">
+        BOUNTIES
+      </div>
+      <div id="layer5content">
+        <div
+          style="
+            width: 80%;
+            padding-left: 10%;
+            justify-self: center;
+            text-align: left;
+          "
+        >
+          <p>
+            You are eligible to submit projects under any of the tracks! There
+            are just specific qualification requirements for Beginner and
+            Blockchain. Please read those descriptions to understand
+            eligibility.
+          </p>
+          <h1>Beginner Track</h1>
+          <p>
+            New to Coding? Have little experience or this is your first
+            hackathon? No worries, we got you! We have beginner oriented
+            workshops, hands-on mentors, tutorials, and a non-judgement space
+            for you to learn, build a cool new project, and submit for judging
+            with people in similar levels as you! Team Requirements: At least
+            67% of your team MUST qualify as a beginner! Ex. Teams of 1 and 2 -
+            everyone must be a beginner.
+          </p>
+          <h1>General Track</h1>
+          <p>
+            This is our all-in-one track! These include Corporate Sponsored
+            Challenges, MLH Challenges, and HackTX General Challenges hosted by
+            Freetail Hackers.
+          </p>
+          <h1>Blockchain Track</h1>
+          <p>
+            Texas Blockchain is a community of students at UT-Austin exploring
+            and building the blockchain technologies of the future. We are
+            thrilled to be partnering with Freetail Hackers to host a blockchain
+            track for the first time ever, and looking forward to onboarding
+            hundreds of students into the Web3 space. We will be hosting
+            workshops before HackTX '22, and have some of the largest protocols
+            and companies sponsoring the blockchain track (over $40K+ in grants
+            and prizes)!
+          </p>
+          <br />
+          <h2>Challenges and Prizes</h2>
+          <h1>Beginner Track</h1>
+          <p>
+            Prizes are awarded per winning team member! All of these are hosted
+            and sponsored by Freetail Hackers.
+          </p>
+          <h1>Best Idea Hack - Google Cloud Branded Backpacks</h1>
+          <p>
+            We know that implementation or carrying out a project to the end can
+            be hard, but you might have the best idea in place! So we want to
+            recognize you and award you with Google Cloud Branded Backpacks for
+            your efforts and ideation! Any and all projects within the Beginner
+            Track are also valid for this challenge.
+          </p>
+          <h1>Best Overall Beginner Hack - Echo Dot</h1>
+          <p>
+            You made it this far, congrats!! We hope that this experience has
+            taught you a little about design, coding, and product management! It
+            is now time to compete for the winning prize of Echo Dots! This
+            challenge is a best overall - which means it will assess hacks on
+            implementation, design, idea, impact, and overall learning!
+          </p>
+          <h1>Best Design Hack - Wacom Drawing Tablets</h1>
+          <p>
+            Part of what makes a hackathon project really good is that you think
+            of who the end user is, what kind of impact you want to drive, and
+            how to market the message of the product! This challenge judges
+            based on the design aspect of the hack, thinking about components,
+            User Interface and User Experience. This is your chance to win a
+            Wacom Drawing Tablet all for yourself!
+          </p>
+          <h1>General Track</h1>
+          <p>Prizes are awarded per winning team member!</p>
+          <h1>Best Overall Hack</h1>
+          <p>
+            - First Place: Mechanical Keyboards AND Fast Track Interview for MLH
+            Fellowship (Paid Internship)
+            <br />
+            - Read More about MLH Fellowship here! https://fellowship.mlh.io/
+            <br />
+            - Second Place: Google/Amazon friendly Color Changing Strip Lights
+          </p>
+          <h1>Major League Hacking Sponsored Challenges</h1>
+          <p>
+            For the full description: https://hack.mlh.io/prizes. The only ones
+            that are valid for HackTX 2022 are the ones that are the following
+            ones listed: DeSo, Domain.com, GitHub, Capital One, CockroachDB,
+            Twilio, Hedera, Synk (to put above all of these)
+          </p>
+          <h1>Best Use of DeSo - $DESO coin & Exclusive DeSo Tumbler</h1>
+          <p>
+            DeSo is the official Web3 sponsor of the MLH Hackathon League and
+            the first Layer 1 blockchain custom-built for decentralized social
+            media applications. While a blockchain like Avalanche costs $0.50+
+            to store just a 200-character post, the DeSo blockchain is built
+            with custom indexing and storage optimizations which make it 10,000X
+            cheaper to store social content on-chain! In order to qualify for
+            the contest, you must launch an app that writes to the DeSo
+            blockchain and implements DeSo identity. While social media apps are
+            a great fit for DeSo, you can also build financial apps,
+            marketplaces, and more on the DeSo blockchain. For inspiration on
+            project ideas, you can check out some of the existing 200+ apps
+            already live on DeSo at [Bithunt.com](http://bithunt.com/) as well
+            as our DeSo APIs. The Best Use of DeSo gets $100 worth of $DESO coin
+            & an exclusive DeSo branded tumbler!
+          </p>
+          <h1>
+            Most Creative Use of Twilio - Twilio Swag Box & GameGo Console
+          </h1>
+          <p>
+            Twilio allows you to incorporate mobile messaging, phone calls and a
+            ton of other awesome communication features right into your
+            hackathon project using a web service API. Are you building an
+            e-commerce website and want to send text notifications or email
+            confirmations once an order is completed? Or maybe you'd like to
+            verify users based on their mobile numbers? Twilio makes all this
+            possible and more. Build a hack that simplifies your life using any
+            Twilio API for a chance to win some awesome prizes! Get started with
+            $50 in free credit!
+          </p>
+          <h1>
+            Best Domain Name from Domain.com - Domain.com Branded Backpack
+          </h1>
+          <p>
+            Register a .Tech domain name using http://domain.com/ during the
+            weekend for your chance to win a http://domain.com/ branded backpack
+            for you and each member of your team! Each team may submit one entry
+            per person on the team. The more creative the domain the better!
+          </p>
+          <h1>Best Use of CockroachDB - 3D Printing Pen</h1>
+          <p>
+            Build your hackathon project on CockroachDB's open source and
+            indestructible SQL database. Utilize CockroachDB in your hack for a
+            chance to win a 3D printing pen for you and each of your team
+            members. What's more, if you submit a verified project and are a US
+            resident, we'll be sending you a free CockroachDB T-shirt while
+            supplies last!
+          </p>
+          <h1>
+            Best Blockchain Project Using Hedera - Glorious Modular Compact
+            Mechanical Keyboard
+          </h1>
+          <p>
+            Hedera is a next generation blockchain technology that's accessible
+            from familiar programming languages like Java and JavaScript. Their
+            goal? To make Web3 development even more accessible to hackers like
+            you! Build a project on Hedera's test network for a chance to win
+            amazing Glorious Modular Compact Mechanical Keyboards for you and
+            your team!
+          </p>
+        </div>
+      </div>
+      <img class="layerimg" src="./assets/backgrounds/Layer5.svg" />
     </div>
-    <img class="layerimg" src="./assets/backgrounds/Layer5.svg"/>
-  </div>
-  <div id = "layer6">
-    <img class="layerimg" src="./assets/backgrounds/Layer6.svg"/>
-    <div id = "layer6content"></div>
-  </div>
-</body>
-
-<script src="js/script.js"></script>
+    <div id="layer6">
+      <img class="layerimg" src="./assets/backgrounds/Layer6.svg" />
+      <div id="layer6content"></div>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

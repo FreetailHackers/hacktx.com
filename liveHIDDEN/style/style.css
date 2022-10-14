@@ -335,3 +335,138 @@ body {
   height: 30px;
   margin-right: 20px;
 }
+.tippy-content {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#specialThanks {
+  margin: 10vw;
+  margin-top: 1vw;
+  margin-bottom: 0vw;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 2vw;
+  width: 76vw;
+  font-size: 2vw;
+  text-align: center;
+  padding: 2vw;
+  background-color: #845b2edd;
+}
+#specialThanksHeading {
+  padding-bottom: 1vw;
+}
+#TBC {
+  width: 12vw;
+  border-radius: 1vw;
+  margin-right: 1vw;
+}
+#CS {
+  width: 10vw;
+  background-color: white;
+  padding: 1.4vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  border-radius: 1vw;
+  margin-right: 1vw;
+}
+#GCP {
+  width: 6vw;
+  background-color: white;
+  border-radius: 1vw;
+  padding: 1.4vw;
+  padding-top: 1vw;
+  margin-right: 1vw;
+  padding-bottom: 1vw;
+}
+
+#EE {
+  width: 6vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  margin-top: 1vw;
+  background-color: white;
+}
+
+#AL {
+  width: 14vw;
+  padding: 2vw;
+  padding-top: 1.6vw;
+  padding-bottom: 1.6vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#DR {
+  width: 6.6vw;
+  margin-top: 1vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#SCM {
+  width: 10vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#JD {
+  width: 9.6vw;
+  padding: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  margin-top: 1vw;
+  margin-right: 2vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#TL {
+  width: 14vw;
+  padding: 2vw;
+  padding-top: 2.3vw;
+  padding-bottom: 2.3vw;
+  margin-top: 1vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+#M {
+  width: 15vw;
+  padding: 2vw;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
+  margin-right: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+
+#QV {
+  width: 14vw;
+  padding: 2vw;
+  padding-top: 2.5vw;
+  padding-bottom: 2.5vw;
+  margin-top: 1vw;
+  border-radius: 1vw;
+  background-color: white;
+}
+.blockchaintext {
+  font-size: 2vw;
+  font-family: Arial;
+  color: #fff;
+  padding: 0.2vw;
+  margin: 1vw;
+}
+
+.blockchaintext:hover {
+  font-size: 2.1vw;
+}
