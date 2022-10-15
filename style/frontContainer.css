@@ -82,6 +82,12 @@
 #volunteerButton:hover {
   transform: scale(1.1);
 }
+#liveButton:hover {
+  transform: scale(1.1);
+}
+#appButton:hover {
+  transform: scale(1.1);
+}
 
 #whatDiv {
   margin-top: 88vw;
