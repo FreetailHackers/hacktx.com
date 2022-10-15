@@ -138,7 +138,7 @@ tooltip(
 );
 tooltip(
   "#googleCloud",
-  "Google is hosting an introductory workshop to their Google Cloud platform! Google cloud can bring you higher computing power and storage security. This workshop is intended for intermediate level coders."
+  "Google is hosting an introductory workshop to their Google Cloud platform! Google cloud can bring you higher computing power and storage security. This workshop is intended for beginner/intermediate level coders."
 );
 tooltip(
   "#meetGreet",
