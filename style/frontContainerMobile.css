@@ -34,6 +34,24 @@
     justify-content: center;
     justify-items: center;
   }
+  #liveButton {
+    margin-top: 97vw;
+    margin-left: 63.5vw;
+    width: 33vw;
+    height: 8vw;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+  }
+  #appButton {
+    margin-top: 112vw;
+    margin-left: 63.5vw;
+    width: 33vw;
+    height: 8vw;
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+  }
 
   #buttontext {
     top: 38%;
