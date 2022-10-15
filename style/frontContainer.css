@@ -28,7 +28,7 @@
 }
 
 #registerButton {
-  margin-top: 36vw;
+  margin-top: 28vw;
   margin-left: 28vw;
   width: 20vw;
   height: 8vw;
@@ -37,7 +37,25 @@
   justify-items: center;
 }
 #volunteerButton {
-  margin-top: 36vw;
+  margin-top: 28vw;
+  margin-left: 53vw;
+  width: 20vw;
+  height: 8vw;
+  position: absolute;
+  justify-content: center;
+  justify-items: center;
+}
+#liveButton {
+  margin-top: 37vw;
+  margin-left: 28vw;
+  width: 20vw;
+  height: 8vw;
+  position: absolute;
+  justify-content: center;
+  justify-items: center;
+}
+#appButton {
+  margin-top: 37vw;
   margin-left: 53vw;
   width: 20vw;
   height: 8vw;
