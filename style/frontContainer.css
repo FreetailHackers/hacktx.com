@@ -28,7 +28,7 @@
 }
 
 #registerButton {
-  margin-top: 28vw;
+  margin-top: 36vw;
   margin-left: 28vw;
   width: 20vw;
   height: 8vw;
@@ -46,8 +46,8 @@
   justify-items: center;
 }
 #liveButton {
-  margin-top: 37vw;
-  margin-left: 28vw;
+  margin-top: 36vw;
+  margin-left: 53vw;
   width: 20vw;
   height: 8vw;
   position: absolute;
