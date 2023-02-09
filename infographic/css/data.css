@@ -1,0 +1,200 @@
+#monthly-hackathons .chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
+
+#monthly-hackathons .chart {
+    background: #f04650;
+    position:absolute;
+    width: 100%;
+}
+
+#monthly-hackathons {
+    position:relative;
+    margin-bottom:420px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(1,16,24, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  text-align: center;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:before {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  background: transparent;
+  content: "\25B2";
+  position: absolute;
+  text-align: center;
+  margin: -1px 0 0 0;
+  left: 0;
+  top: -2em;
+}
+
+.d3-tip h1 {
+    padding:0;
+    margin:0;
+}
+
+.circle {
+    display:inline-block;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    font-size:50px;
+    color:#fff;
+    background: #e1e0dd;
+    padding-top:25px;
+    text-align:center;
+    margin:10px;
+}
+
+.stat {
+    font-size:50px;
+    color:#fff;
+    text-align:center;
+}
+
+a .stat:hover {
+    background: #f04650;
+}
+
+#attendance-growth {
+    margin-bottom:0;
+    padding-bottom:20px;
+}
+
+#attendance-growth .col-sm-3,
+#attendance-growth .col-xs-6 {
+    text-align: center;
+}
+
+#project-growth {
+    padding-bottom: 20px;
+}
+
+#project-growth .stat {
+    display:inline-block;
+    width:150px;
+    padding-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    border-radius:10px;
+}
+
+/* First-time hackers */
+
+#first-time-hackers .chart {
+    margin-left: 3em;
+    float: right;
+    padding-left: 100px;
+}
+
+/* Year Distribution */
+
+#year-distribution .chart {
+    float: left;
+    padding-left: 100px;
+}
+
+polyline {
+    opacity: .5;
+    stroke: white;
+    stroke-width: 2px;
+    fill: none;
+}
+
+#first-time-hackers text,
+#year-distribution text {
+    fill: white;
+}
+
+
+.chart-row {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#first-time-hackers,
+#year-distribution {
+    text-align: center;
+}
+
+
+/* Attendance */
+
+.hacktx-data .fa {
+    font-size: 82px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* University Count */
+
+.texas {
+    width: 270px;
+    height: 270px;
+    padding-top: 70px;
+    padding-left: 40px;
+    display:block;
+    font-size:50px;
+    color:#fff;
+    text-align:center;
+    background-image: url("../images/texas.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.texas:hover {
+    background-image: url("../images/texas-selected.png");
+}
+
+/* Recommendation bar chart */
+
+#recommendation-scale .chart {
+    padding-left: 30px;
+}
+
+#recommendation-scale .rating {
+    fill: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px rgba(0,0,0,.1);
+}
+
+#recommendation-scale .percentage {
+    fill: white;
+    font-weight: 500;
+    text-shadow: 1px 1px rgba(0,0,0,.1);
+}
+
+
+@media (max-width: 768px) {
+    .chart-row {
+        display: inline;
+    }
+    .chart-row p {
+        text-align: left !important;
+    }
+    #first-time-hackers .chart,
+    #year-distribution .chart {
+        float: none;
+        margin-left: 0;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+}
