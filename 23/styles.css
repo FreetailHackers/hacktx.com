@@ -1,0 +1,16 @@
+body {
+    background-color: #bae6ff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+}
+
+.center {
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    position: absolute;
+}
+
+.center > * {
+    text-align: center;
+}
