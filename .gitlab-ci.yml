@@ -8,7 +8,8 @@ pages:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
     # If there are any install/build steps, do them before the copy
-    - cp -r 23 public # Change number for each year
+    - mv current/* archive
+    - mv archive public
   artifacts:
     paths:
       - public
