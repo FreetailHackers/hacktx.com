@@ -14,3 +14,19 @@ body {
 .center > * {
     text-align: center;
 }
+
+.footer {
+    right: 50%;
+    bottom: 10%;
+    transform: translate(50%, 50%);
+    position: absolute;
+    font-size: medium;
+}
+
+.footer > * {
+    text-align: center;
+}
+
+a {
+    color: black;
+}
