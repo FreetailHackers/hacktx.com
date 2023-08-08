@@ -1,0 +1,90 @@
+:root {
+  --reference-width: 1440;
+}
+
+body {
+  margin: 0;
+  font-size: 1.3vw;
+  color: white;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+img,
+div {
+  position: absolute;
+}
+
+h2 {
+  margin: 0 0 0.5em 0;
+}
+
+.box {
+  padding: 1.5em;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 1em;
+}
+
+#mainwall {
+  top: 0;
+}
+
+#background {
+  top: calc(563.83 / var(--reference-width) * 100vw);
+}
+
+#candypile {
+  position: absolute;
+  top: calc(4189.83 / var(--reference-width) * 100vw);
+  width: 100%;
+  z-index: 1;
+}
+
+#conveyor {
+  top: calc(523.83 / var(--reference-width) * 100vw);
+  right: 0;
+  transform-origin: top right;
+  scale: calc(1260.06 / var(--reference-width));
+}
+
+#sewer {
+  top: calc(5073.51 / var(--reference-width) * 100vw);
+}
+
+#title {
+  top: calc(240 / var(--reference-width) * 100vw);
+  scale: calc(1223 / var(--reference-width));
+}
+
+#mentor {
+  top: calc(391 / var(--reference-width) * 100vw);
+  left: calc(232 / var(--reference-width) * 100vw);
+  width: calc(256.71 / var(--reference-width) * 100vw);
+}
+#mentor:hover {
+  content: url("./static/mentor_button(hover).svg");
+}
+
+#register {
+  top: calc(391 / var(--reference-width) * 100vw);
+  scale: calc(256.71 / var(--reference-width));
+  transform-origin: top center;
+}
+#register:hover {
+  content: url("./static/register_button(hover).svg");
+}
+
+#volunteer {
+  top: calc(391 / var(--reference-width) * 100vw);
+  right: calc(232 / var(--reference-width) * 100vw);
+  width: calc(256.71 / var(--reference-width) * 100vw);
+}
+#volunteer:hover {
+  content: url("./static/volunteer_button(hover).svg");
+}
+
+#what {
+  width: calc(480 / var(--reference-width) * 100vw);
+  top: calc(772 / var(--reference-width) * 100vw);
+  left: calc(360 / var(--reference-width) * 100vw);
+}
