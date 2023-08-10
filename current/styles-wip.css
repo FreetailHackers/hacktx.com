@@ -74,6 +74,7 @@ a {
   top: calc(391 / var(--reference-width) * 100vw);
   left: calc(232 / var(--reference-width) * 100vw);
   width: calc(256.71 / var(--reference-width) * 100vw);
+  z-index: 100;
 }
 #mentor:hover {
   content: url("./static/mentor_button(hover).svg");
@@ -83,6 +84,7 @@ a {
   top: calc(391 / var(--reference-width) * 100vw);
   scale: calc(256.71 / var(--reference-width));
   transform-origin: top center;
+  z-index: 100;
 }
 #register:hover {
   content: url("./static/register_button(hover).svg");
@@ -92,6 +94,7 @@ a {
   top: calc(391 / var(--reference-width) * 100vw);
   right: calc(232 / var(--reference-width) * 100vw);
   width: calc(256.71 / var(--reference-width) * 100vw);
+  z-index: 100;
 }
 #volunteer:hover {
   content: url("./static/volunteer_button(hover).svg");
