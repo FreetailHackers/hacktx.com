@@ -103,9 +103,6 @@ a {
   width: calc(256.71 / var(--reference-width) * 100vw);
   z-index: 100;
 }
-#schedule:hover {
-  content: url("./static/schedule_button(hover).svg");
-}
 
 #what {
   top: calc(744 / var(--reference-width) * 100vw);
@@ -191,4 +188,64 @@ a {
   scale: calc(256.71 / var(--reference-width));
   transform-origin: top center;
   z-index: 200;
+}
+
+#caramel {
+  top: calc(509 / var(--reference-width) * 100vw);
+  left: calc(981 / var(--reference-width) * 100vw);
+  width: calc(438.24 / var(--reference-width) * 100vw);
+}
+
+#candycane {
+  top: calc(632 / var(--reference-width) * 100vw);
+  left: calc(962 / var(--reference-width) * 100vw);
+  width: calc(69.4 / var(--reference-width) * 100vw);
+}
+
+#circles {
+  top: calc(1142 / var(--reference-width) * 100vw);
+  left: calc(412 / var(--reference-width) * 100vw);
+  width: calc(543.36 / var(--reference-width) * 100vw);
+}
+
+#chocballs {
+  top: calc(1136 / var(--reference-width) * 100vw);
+  left: calc(224 / var(--reference-width) * 100vw);
+  width: calc(92.8 / var(--reference-width) * 100vw);
+}
+
+#olivia {
+  top: calc(1809 / var(--reference-width) * 100vw);
+  left: calc(282 / var(--reference-width) * 100vw);
+  width: calc(719.86 / var(--reference-width) * 100vw);
+}
+
+#jellycake {
+  top: calc(1814 / var(--reference-width) * 100vw);
+  left: calc(1119 / var(--reference-width) * 100vw);
+  width: calc(101.16 / var(--reference-width) * 100vw);
+}
+
+#star {
+  top: calc(3121 / var(--reference-width) * 100vw);
+  left: calc(560 / var(--reference-width) * 100vw);
+  width: calc(680.42 / var(--reference-width) * 100vw);
+}
+
+#bars {
+  top: calc(3118 / var(--reference-width) * 100vw);
+  left: calc(412 / var(--reference-width) * 100vw);
+  width: calc(80.85 / var(--reference-width) * 100vw);
+}
+
+#corn {
+  top: calc(3666 / var(--reference-width) * 100vw);
+  left: calc(399 / var(--reference-width) * 100vw);
+  width: calc(437.77 / var(--reference-width) * 100vw);
+}
+
+#wrappers {
+  top: calc(3654 / var(--reference-width) * 100vw);
+  left: calc(940 / var(--reference-width) * 100vw);
+  width: calc(123.69 / var(--reference-width) * 100vw);
 }
