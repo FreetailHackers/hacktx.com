@@ -2,12 +2,23 @@
   --reference-width: 1440;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  font-size: 1.3vw;
   color: white;
-  font-family: sans-serif;
-  box-sizing: border-box;
+  font-family: "ruddy", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.05vw;
 }
 
 img,
@@ -17,6 +28,11 @@ div {
 
 h2 {
   margin: 0 0 0.5em 0;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
 }
 
 .box {
@@ -36,15 +52,13 @@ h2 {
 #candypile {
   position: absolute;
   top: calc(4189.83 / var(--reference-width) * 100vw);
-  width: 100%;
-  z-index: 1;
+  z-index: 100;
 }
 
 #conveyor {
   top: calc(523.83 / var(--reference-width) * 100vw);
   right: 0;
-  transform-origin: top right;
-  scale: calc(1260.06 / var(--reference-width));
+  width: calc(1260.06 / var(--reference-width) * 100vw);
 }
 
 #sewer {
@@ -83,8 +97,98 @@ h2 {
   content: url("./static/volunteer_button(hover).svg");
 }
 
+#schedule {
+  top: calc(2164.11 / var(--reference-width) * 100vw);
+  left: calc(417 / var(--reference-width) * 100vw);
+  width: calc(256.71 / var(--reference-width) * 100vw);
+  z-index: 100;
+}
+#schedule:hover {
+  content: url("./static/schedule_button(hover).svg");
+}
+
 #what {
-  width: calc(480 / var(--reference-width) * 100vw);
-  top: calc(772 / var(--reference-width) * 100vw);
+  top: calc(744 / var(--reference-width) * 100vw);
   left: calc(360 / var(--reference-width) * 100vw);
+  width: calc(480 / var(--reference-width) * 100vw);
+}
+#what h2 {
+  color: #d1d481;
+}
+
+#who {
+  top: calc(1322 / var(--reference-width) * 100vw);
+  left: calc(672 / var(--reference-width) * 100vw);
+  width: calc(514 / var(--reference-width) * 100vw);
+}
+#who h2,
+#who a {
+  color: #96b3cd;
+}
+
+#inclusion {
+  top: calc(3324 / var(--reference-width) * 100vw);
+  left: calc(600 / var(--reference-width) * 100vw);
+  width: calc(420 / var(--reference-width) * 100vw);
+}
+#inclusion h2,
+#inclusion a {
+  color: #f5a3c5;
+}
+
+#attend {
+  top: calc(3827 / var(--reference-width) * 100vw);
+  left: calc(371 / var(--reference-width) * 100vw);
+  width: calc(509 / var(--reference-width) * 100vw);
+}
+#attend h2 {
+  color: #f7c96c;
+}
+
+#clutter1 {
+  top: calc(357.55 / var(--reference-width) * 100vw);
+  height: calc(674.34 / var(--reference-width) * 100vw);
+}
+
+#clutter2 {
+  top: calc(761.17 / var(--reference-width) * 100vw);
+  height: calc(1280.64 / var(--reference-width) * 100vw);
+  right: 0;
+}
+
+#clutter3 {
+  top: calc(1375.04 / var(--reference-width) * 100vw);
+  left: calc(35.11 / var(--reference-width) * 100vw);
+  width: calc(711.62 / var(--reference-width) * 100vw);
+}
+
+#clutter4 {
+  top: calc(1986.57 / var(--reference-width) * 100vw);
+  left: calc(44.12 / var(--reference-width) * 100vw);
+  width: calc(1395.88 / var(--reference-width) * 100vw);
+}
+
+#clutter5 {
+  top: calc(2856.28 / var(--reference-width) * 100vw);
+  width: calc(342 / var(--reference-width) * 100vw);
+}
+
+#clutter6 {
+  top: calc(3020 / var(--reference-width) * 100vw);
+  width: calc(347.3 / var(--reference-width) * 100vw);
+  right: 0;
+}
+
+#faq {
+  top: calc(4597 / var(--reference-width) * 100vw);
+  scale: calc(256.71 / var(--reference-width));
+  transform-origin: top center;
+  z-index: 200;
+}
+
+#sponsors {
+  top: calc(5312 / var(--reference-width) * 100vw);
+  scale: calc(256.71 / var(--reference-width));
+  transform-origin: top center;
+  z-index: 200;
 }
