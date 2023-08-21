@@ -10,8 +10,7 @@ html {
 body {
   margin: 0;
   color: white;
-  font-family: "ruddy", sans-serif;
-  font-weight: 700;
+  font-family: "Epilogue", sans-serif;
   font-style: normal;
 }
 
@@ -27,16 +26,20 @@ div {
 h2 {
   text-transform: uppercase;
   margin: 0 0 0.5em 0;
+  font-family: "ruddy", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 .box {
-  padding: 1.5em;
+  padding: 5vw;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 1em;
 }
 
-@media screen and (min-width:481px) {
-
+@media screen and (min-width: 481px) {
   body {
     font-size: 1.05vw;
   }
@@ -44,6 +47,10 @@ h2 {
   *:before,
   *:after {
     box-sizing: inherit;
+  }
+
+  .box {
+    padding: 1.5vw;
   }
 
   #mobile {
@@ -272,7 +279,7 @@ h2 {
   }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 480px) {
   #desktop {
     display: none;
   }
@@ -309,7 +316,6 @@ h2 {
     scale: calc(200 / var(--mobile-width));
   }
 
-
   #mobile-volunteer {
     top: calc(385 / var(--mobile-width) * 100vw);
     scale: calc(197.05 / var(--mobile-width));
@@ -323,7 +329,7 @@ h2 {
     top: calc(802 / var(--mobile-width) * 100vw);
     scale: calc(288.19 / var(--mobile-width));
   }
-  
+
   #what {
     top: calc(972 / var(--mobile-width) * 100vw);
     left: calc(43 / var(--mobile-width) * 100vw);
@@ -333,7 +339,7 @@ h2 {
   #what h2 {
     color: #d1d481;
   }
-  
+
   #jellycake {
     top: calc(1262 / var(--mobile-width) * 100vw);
     scale: calc(279.23 / var(--mobile-width));
@@ -342,18 +348,18 @@ h2 {
   #conveyor-who {
     top: calc(1498 / var(--mobile-width) * 100vw);
   }
-  
+
   #chocoballs {
     top: calc(1512 / var(--mobile-width) * 100vw);
     scale: calc(261 / var(--mobile-width));
   }
-  
+
   #who {
     top: calc(1712 / var(--mobile-width) * 100vw);
     left: calc(43 / var(--mobile-width) * 100vw);
     width: calc(280 / var(--mobile-width) * 100vw);
   }
-  
+
   #who h2,
   #who a {
     color: #96b3cd;
@@ -381,13 +387,13 @@ h2 {
     top: calc(3435 / var(--mobile-width) * 100vw);
     scale: calc(254.06 / var(--mobile-width));
   }
-  
+
   #attend {
     top: calc(3612 / var(--mobile-width) * 100vw);
     left: calc(43 / var(--mobile-width) * 100vw);
     width: calc(280 / var(--mobile-width) * 100vw);
   }
-  
+
   #attend h2 {
     color: #f7c96c;
   }
@@ -400,12 +406,12 @@ h2 {
   #conveyor-inclusion {
     top: calc(4153 / var(--mobile-width) * 100vw);
   }
-  
+
   #cherrystar {
     top: calc(4168 / var(--mobile-width) * 100vw);
     scale: calc(281.76 / var(--mobile-width));
   }
-  
+
   #inclusion {
     top: calc(4411 / var(--mobile-width) * 100vw);
     left: calc(43 / var(--mobile-width) * 100vw);
