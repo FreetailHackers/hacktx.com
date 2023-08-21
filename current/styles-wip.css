@@ -15,10 +15,9 @@ html {
 body {
   margin: 0;
   color: white;
-  font-family: "ruddy", sans-serif;
-  font-weight: 700;
+  font-family: "Epilogue", sans-serif;
   font-style: normal;
-  font-size: 1.05vw;
+  font-size: 1.3vw;
 }
 
 img,
@@ -29,6 +28,7 @@ div {
 h2 {
   margin: 0 0 0.5em 0;
   text-transform: uppercase;
+  font-family: "ruddy", sans-serif;
 }
 
 a {
@@ -36,7 +36,7 @@ a {
 }
 
 .box {
-  padding: 1.5em;
+  padding: 1.5vw;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 1em;
 }
@@ -66,8 +66,9 @@ a {
 }
 
 #title {
-  top: calc(240 / var(--reference-width) * 100vw);
-  scale: calc(1223 / var(--reference-width));
+  top: calc(223 / var(--reference-width) * 100vw);
+  scale: calc(1020.44 / var(--reference-width));
+  transform-origin: top center;
 }
 
 #mentor {
