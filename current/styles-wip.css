@@ -7,6 +7,11 @@ html {
   box-sizing: border-box;
 }
 
+p {
+  margin-bottom: 0;
+  pointer-events: all;
+}
+
 body {
   margin: 0;
   color: white;
@@ -14,22 +19,21 @@ body {
   font-style: normal;
 }
 
-a {
-  text-decoration: none;
-}
-
 img,
 div {
   position: absolute;
+  pointer-events: none;
 }
 
 h2 {
   text-transform: uppercase;
   margin: 0 0 0.5em 0;
   font-family: "ruddy", sans-serif;
+  pointer-events: all;
 }
 
 a {
+  pointer-events: all;
   text-decoration: none;
 }
 
@@ -41,7 +45,8 @@ a {
 
 @media screen and (min-width: 481px) {
   body {
-    font-size: 1.05vw;
+    font-size: 1.01vw;
+    line-height: 1.8vw;
   }
   *,
   *:before,
@@ -295,7 +300,8 @@ a {
   } */
 
   body {
-    font-size: 3vw;
+    font-size: 3.3vw;
+    line-height: 5vw;
   }
 
   #title-screen {
@@ -367,7 +373,7 @@ a {
   }
 
   #wrappedcandy {
-    top: calc(2066 / var(--mobile-width) * 100vw);
+    top: calc((2066 + 20) / var(--mobile-width) * 100vw);
     scale: calc(294.15 / var(--mobile-width));
   }
 
