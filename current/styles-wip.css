@@ -86,8 +86,9 @@ a {
   }
 
   #title {
-    top: calc(240 / var(--reference-width) * 100vw);
-    scale: calc(1223 / var(--reference-width));
+    top: calc(223 / var(--reference-width) * 100vw);
+    scale: calc(1020.44 / var(--reference-width));
+    transform-origin: top center;
   }
 
   #mentor {
