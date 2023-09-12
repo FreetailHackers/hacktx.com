@@ -41,6 +41,10 @@ a {
   text-decoration: none;
 }
 
+.rodeo-link {
+  font-size: 1.75vw;
+}
+
 .box {
   padding: 5vw;
   background: rgba(0, 0, 0, 0.35);
@@ -140,6 +144,13 @@ a {
     z-index: 100;
   }
 
+  #schedule-contents {
+    position: absolute;
+    top: calc(2250 / var(--reference-width) * 100vw);
+    left: calc(350 / var(--reference-width) * 100vw);
+    z-index: 100;
+  }
+
   #what {
     top: calc(744 / var(--reference-width) * 100vw);
     left: calc(360 / var(--reference-width) * 100vw);
@@ -221,10 +232,32 @@ a {
     z-index: 200;
   }
 
+  #faq-contents {
+    position: absolute;
+    top: calc(4700 / var(--reference-width) * 100vw);
+    left: calc(510 / var(--reference-width) * 100vw);
+    z-index: 100;
+  }
+
   #sponsors {
-    top: calc(5312 / var(--reference-width) * 100vw);
+    top: calc(4800 / var(--reference-width) * 100vw);
     scale: calc(256.71 / var(--reference-width));
     transform-origin: top center;
+    z-index: 200;
+  }
+
+  #sponsors-contents {
+    position: absolute;
+    top: calc(5000 / var(--reference-width) * 100vw);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50vw;
+  }
+
+  #sponsors-contents img {
+    position: static;
+    height: 10vw;
     z-index: 200;
   }
 
@@ -290,6 +323,10 @@ a {
 }
 
 @media screen and (max-width: 480px) {
+  .rodeo-link {
+    font-size: 5vw;
+  }
+
   #desktop {
     display: none;
   }
@@ -390,6 +427,14 @@ a {
     scale: calc(169.57 / var(--mobile-width));
   }
 
+  #schedule-contents {
+    position: absolute;
+    top: calc(9000 / var(--reference-width) * 100vw);
+    width: 80%;
+    padding: 10%;
+    text-align: center;
+  }
+
   #conveyor-attend {
     top: calc(3305 / var(--mobile-width) * 100vw);
   }
@@ -451,6 +496,14 @@ a {
   #mobile-faq-title {
     top: calc(5084 / var(--mobile-width) * 100vw);
     scale: calc(169.57 / var(--mobile-width));
+  }
+
+  #faq-contents {
+    position: absolute;
+    top: calc(18500 / var(--reference-width) * 100vw);
+    width: 80%;
+    padding: 10%;
+    text-align: center;
   }
 
   #mobile-sponsers-title {
