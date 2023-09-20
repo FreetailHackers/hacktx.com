@@ -258,6 +258,9 @@ a {
     justify-content: space-evenly;
     background: rgb(255, 255, 255, 0.5);
     z-index: 200;
+    border-radius: 2vw;
+    gap: 1vw;
+    align-content: space-evenly;
   }
 
   #sponsors-contents img {
@@ -526,14 +529,16 @@ a {
     height: 200vw;
     padding: 2vw;
     justify-content: space-evenly;
-    align-content: baseline;
+    align-content: space-evenly;
     gap: 5vw;
     z-index: 200;
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 5vw;
   }
 
   #sponsors-contents img {
     position: static;
-    height: 20vw;
+    width: 40vw;
     z-index: 200;
   }
 }
