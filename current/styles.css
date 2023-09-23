@@ -265,7 +265,7 @@ a {
 
   #sponsors-contents img {
     position: static;
-    height: 10vw;
+    height: 8vw;
     z-index: 200;
   }
 
@@ -521,12 +521,12 @@ a {
 
   #sponsors-contents {
     position: absolute;
-    top: calc(19300 / var(--reference-width) * 100vw);
+    top: calc(19200 / var(--reference-width) * 100vw);
     display: flex;
     flex-flow: row wrap;
     width: 80%;
     left: 10%;
-    height: 200vw;
+    height: 210vw;
     padding: 2vw;
     justify-content: space-evenly;
     align-content: space-evenly;
