@@ -70,6 +70,12 @@ a img {
   pointer-events: all;
 }
 
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 a {
   pointer-events: all;
   text-decoration: none;
@@ -305,11 +311,14 @@ a {
     justify-content: space-evenly;
     background: rgb(255, 255, 255, 0.5);
     z-index: 200;
+    border-radius: 2vw;
+    gap: 1vw;
+    align-content: space-evenly;
   }
 
   #sponsors-contents img {
     position: static;
-    height: 10vw;
+    height: 8vw;
     z-index: 200;
   }
 
@@ -654,6 +663,7 @@ a {
     width: 80%;
     padding: 10%;
     text-align: center;
+    z-index: 100;
   }
 
   #conveyor-attend {
@@ -797,22 +807,28 @@ a {
 
   #sponsors-contents {
     position: absolute;
-    top: calc(19300 / var(--reference-width) * 100vw);
+    top: calc(19200 / var(--reference-width) * 100vw);
     display: flex;
     flex-flow: row wrap;
     width: 80%;
     left: 10%;
-    height: 200vw;
+    height: 210vw;
     padding: 2vw;
     justify-content: space-evenly;
-    align-content: baseline;
+    align-content: space-evenly;
     gap: 5vw;
     z-index: 200;
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 5vw;
   }
 
   #sponsors-contents img {
     position: static;
-    height: 20vw;
+    width: 40vw;
     z-index: 200;
+  }
+
+  #schedule-contents li {
+    margin-top: 3.5vw;
   }
 }
