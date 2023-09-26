@@ -3,6 +3,38 @@
   --mobile-width: 402;
 }
 
+/* Scroll settings */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: repeating-linear-gradient(
+    45deg,
+    #C3073F,
+    #C3073F 10px,
+    #eddde2 10px,
+    #eddde2 20px
+  ); 
+  /* background: #C3073F;  */
+}
+
+::-webkit-scrollbar-track{
+  background: black;
+}
+
+* {
+  overflow-x: hidden;
+  margin:0;
+  padding:0;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -17,6 +49,7 @@ body {
   color: white;
   font-family: "Epilogue", sans-serif;
   font-style: normal;
+  background: black;
 }
 
 img,
@@ -30,6 +63,7 @@ h2 {
   margin: 0 0 0.5em 0;
   font-family: "ruddy", sans-serif;
   pointer-events: all;
+  overflow:hidden;
 }
 
 a img {
@@ -89,10 +123,23 @@ a {
   }
 
   #candypile {
+    animation: candypileslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     position: absolute;
-    top: calc(4189.83 / var(--reference-width) * 100vw);
     z-index: 100;
   }
+
+  @keyframes candypileslide{
+    from{
+      top: calc(4189.83 / var(--reference-width) * 100vw);
+    }
+    to{
+      top: calc(4215 / var(--reference-width) * 100vw);
+    }
+  }
+  
 
   #conveyor {
     top: calc(523.83 / var(--reference-width) * 100vw);
@@ -276,63 +323,186 @@ a {
   }
 
   #caramel {
+    animation: caramelslide;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(509 / var(--reference-width) * 100vw);
-    left: calc(981 / var(--reference-width) * 100vw);
     width: calc(438.24 / var(--reference-width) * 100vw);
   }
 
+  @keyframes caramelslide {
+    from{
+      left: calc(1100 / var(--reference-width) * 100vw);
+    }
+    to{
+      left: calc(981 / var(--reference-width) * 100vw);
+    }
+  }
+
   #candycane {
-    top: calc(632 / var(--reference-width) * 100vw);
+    animation: candycaneslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     left: calc(962 / var(--reference-width) * 100vw);
     width: calc(69.4 / var(--reference-width) * 100vw);
   }
 
+  @keyframes candycaneslide {
+    from{
+      top: calc(580 / var(--reference-width) * 100vw);
+    }
+    to{
+      top: calc(632 / var(--reference-width) * 100vw);
+    }
+  }
+
   #circles {
+    animation: circleslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(1142 / var(--reference-width) * 100vw);
-    left: calc(412 / var(--reference-width) * 100vw);
     width: calc(543.36 / var(--reference-width) * 100vw);
   }
 
+  @keyframes circleslide {
+    from{
+      left: calc(375 / var(--reference-width) * 100vw);
+    }
+    to{ 
+      left: calc(420 / var(--reference-width) * 100vw);
+    }
+  }
+
   #chocballs {
-    top: calc(1136 / var(--reference-width) * 100vw);
+    animation: chocoballslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     left: calc(224 / var(--reference-width) * 100vw);
     width: calc(92.8 / var(--reference-width) * 100vw);
   }
 
+  @keyframes chocoballslide {
+    from{
+      top: calc(1110 / var(--reference-width) * 100vw); 
+    }
+    to{ 
+      top: calc(1170 / var(--reference-width) * 100vw); 
+    }
+  }
+
   #olivia {
+    animation: oliviaslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(1809 / var(--reference-width) * 100vw);
-    left: calc(282 / var(--reference-width) * 100vw);
     width: calc(719.86 / var(--reference-width) * 100vw);
   }
 
+  @keyframes oliviaslide {
+    from{
+      left: calc(265 / var(--reference-width) * 100vw);
+    }
+    to{ 
+      left: calc(320 / var(--reference-width) * 100vw);
+    }
+  }
+
   #jellycake {
-    top: calc(1814 / var(--reference-width) * 100vw);
+    animation: jellycakeslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     left: calc(1119 / var(--reference-width) * 100vw);
     width: calc(101.16 / var(--reference-width) * 100vw);
   }
 
+  @keyframes jellycakeslide {
+    from{
+      top: calc(1790 / var(--reference-width) * 100vw); 
+    }
+    to{ 
+      top: calc(1830 / var(--reference-width) * 100vw);
+    }
+  }
+
   #star {
+    animation: starslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(3121 / var(--reference-width) * 100vw);
-    left: calc(560 / var(--reference-width) * 100vw);
     width: calc(680.42 / var(--reference-width) * 100vw);
   }
 
+  @keyframes starslide {
+    from{
+      left: calc(540 / var(--reference-width) * 100vw);
+    }
+    to{ 
+      left: calc(570 / var(--reference-width) * 100vw);
+    }
+  }
+
+
   #bars {
-    top: calc(3118 / var(--reference-width) * 100vw);
+    animation: barslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     left: calc(412 / var(--reference-width) * 100vw);
     width: calc(80.85 / var(--reference-width) * 100vw);
   }
 
+  @keyframes barslide {
+    from{
+      top: calc(3100 / var(--reference-width) * 100vw); 
+    }
+    to{ 
+      top: calc(3130 / var(--reference-width) * 100vw);
+    }
+  }
+
+
   #corn {
+    animation: cornslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(3666 / var(--reference-width) * 100vw);
-    left: calc(399 / var(--reference-width) * 100vw);
     width: calc(437.77 / var(--reference-width) * 100vw);
   }
 
+  @keyframes cornslide {
+    from{
+      left: calc(385 / var(--reference-width) * 100vw);
+    }
+    to{ 
+      left: calc(410 / var(--reference-width) * 100vw);
+    }
+  }
+
   #wrappers {
+    animation: wrappersslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(3654 / var(--reference-width) * 100vw);
     left: calc(940 / var(--reference-width) * 100vw);
     width: calc(123.69 / var(--reference-width) * 100vw);
+  }
+
+  @keyframes wrappersslide {
+    from{
+      top: calc(3640 / var(--reference-width) * 100vw); 
+    }
+    to{ 
+      top: calc(3665 / var(--reference-width) * 100vw);
+    }
   }
 }
 
@@ -349,10 +519,6 @@ a {
     display: contents;
   }
 
-  /* img,
-  div {
-    position: absolute;
-  } */
 
   body {
     font-size: 3.3vw;
@@ -388,8 +554,20 @@ a {
   }
 
   #candycanes {
-    top: calc(802 / var(--mobile-width) * 100vw);
+    animation: candycanesslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     scale: calc(288.19 / var(--mobile-width));
+  }
+
+  @keyframes candycanesslide {
+    from{
+      top: calc(780 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(815 / var(--mobile-width) * 100vw);
+    }
   }
 
   #what {
@@ -403,8 +581,20 @@ a {
   }
 
   #jellycake {
-    top: calc(1262 / var(--mobile-width) * 100vw);
+    animation: jellycakeslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     scale: calc(279.23 / var(--mobile-width));
+  }
+
+  @keyframes jellycakeslide {
+    from{
+      top: calc(1255 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(1280 / var(--mobile-width) * 100vw);
+    }
   }
 
   #conveyor-who {
@@ -412,8 +602,20 @@ a {
   }
 
   #chocoballs {
-    top: calc(1512 / var(--mobile-width) * 100vw);
+    animation: chocoballsslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     scale: calc(261 / var(--mobile-width));
+  }
+
+  @keyframes chocoballsslide {
+    from{
+      top: calc(1500 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(1525 / var(--mobile-width) * 100vw);
+    }
   }
 
   #who {
@@ -428,9 +630,23 @@ a {
   }
 
   #wrappedcandy {
+    animation: wrappedcandyslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc((2066 + 20) / var(--mobile-width) * 100vw);
     scale: calc(294.15 / var(--mobile-width));
   }
+
+  @keyframes wrappedcandyslide {
+    from{
+      top: calc(2070 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(2095 / var(--mobile-width) * 100vw);
+    }
+  }
+
 
   #mid-schedule {
     top: calc(2144 / var(--mobile-width) * 100vw);
@@ -455,8 +671,20 @@ a {
   }
 
   #caramel {
-    top: calc(3435 / var(--mobile-width) * 100vw);
+    animation: caramelslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     scale: calc(254.06 / var(--mobile-width));
+  }
+
+  @keyframes caramelslide{
+    from{
+      top: calc(3420 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(3450 / var(--mobile-width) * 100vw);
+    }
   }
 
   #attend {
@@ -470,17 +698,42 @@ a {
   }
 
   #chocobars {
-    top: calc(3938 / var(--mobile-width) * 100vw);
+    animation: chocobarsslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     scale: calc(259.45 / var(--mobile-width));
   }
+
+  @keyframes chocobarsslide{
+    from{
+      top: calc(3925 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(3955 / var(--mobile-width) * 100vw);
+    }
+  }
+
 
   #conveyor-inclusion {
     top: calc(4153 / var(--mobile-width) * 100vw);
   }
 
   #cherrystar {
-    top: calc(4168 / var(--mobile-width) * 100vw);
+    animation: cherrystarslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     scale: calc(281.76 / var(--mobile-width));
+  }
+
+  @keyframes cherrystarslide{
+    from{
+      top: calc(4155 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(4180 / var(--mobile-width) * 100vw);
+    }
   }
 
   #inclusion {
@@ -495,13 +748,39 @@ a {
   }
 
   #creepycandy {
+    animation: creepycandyslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(4625 / var(--mobile-width) * 100vw);
     scale: calc(270.74 / var(--mobile-width));
   }
 
+  @keyframes creepycandyslide{
+    from{
+      top: calc(4610 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(4640 / var(--mobile-width) * 100vw);
+    }
+  }
+
   #circlecandy {
+    animation: circlecandyslide;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     top: calc(4740 / var(--mobile-width) * 100vw);
     scale: calc(230.87 / var(--mobile-width));
+  }
+
+  @keyframes circlecandyslide{
+    from{
+      top: calc(4725 / var(--mobile-width) * 100vw);
+    }
+    to{
+      top: calc(4755 / var(--mobile-width) * 100vw);
+    }
   }
 
   #end-screen {
