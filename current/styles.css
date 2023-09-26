@@ -17,22 +17,22 @@
 ::-webkit-scrollbar-thumb:hover {
   background: repeating-linear-gradient(
     45deg,
-    #C3073F,
-    #C3073F 10px,
+    #c3073f,
+    #c3073f 10px,
     #eddde2 10px,
     #eddde2 20px
-  ); 
+  );
   /* background: #C3073F;  */
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: black;
 }
 
 * {
   overflow-x: hidden;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -63,7 +63,7 @@ h2 {
   margin: 0 0 0.5em 0;
   font-family: "ruddy", sans-serif;
   pointer-events: all;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 a img {
@@ -131,15 +131,14 @@ a {
     z-index: 100;
   }
 
-  @keyframes candypileslide{
-    from{
+  @keyframes candypileslide {
+    from {
       top: calc(4189.83 / var(--reference-width) * 100vw);
     }
-    to{
+    to {
       top: calc(4215 / var(--reference-width) * 100vw);
     }
   }
-  
 
   #conveyor {
     top: calc(523.83 / var(--reference-width) * 100vw);
@@ -332,10 +331,10 @@ a {
   }
 
   @keyframes caramelslide {
-    from{
+    from {
       left: calc(1100 / var(--reference-width) * 100vw);
     }
-    to{
+    to {
       left: calc(981 / var(--reference-width) * 100vw);
     }
   }
@@ -350,10 +349,10 @@ a {
   }
 
   @keyframes candycaneslide {
-    from{
+    from {
       top: calc(580 / var(--reference-width) * 100vw);
     }
-    to{
+    to {
       top: calc(632 / var(--reference-width) * 100vw);
     }
   }
@@ -368,10 +367,10 @@ a {
   }
 
   @keyframes circleslide {
-    from{
+    from {
       left: calc(375 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       left: calc(420 / var(--reference-width) * 100vw);
     }
   }
@@ -386,11 +385,11 @@ a {
   }
 
   @keyframes chocoballslide {
-    from{
-      top: calc(1110 / var(--reference-width) * 100vw); 
+    from {
+      top: calc(1110 / var(--reference-width) * 100vw);
     }
-    to{ 
-      top: calc(1170 / var(--reference-width) * 100vw); 
+    to {
+      top: calc(1170 / var(--reference-width) * 100vw);
     }
   }
 
@@ -404,10 +403,10 @@ a {
   }
 
   @keyframes oliviaslide {
-    from{
+    from {
       left: calc(265 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       left: calc(320 / var(--reference-width) * 100vw);
     }
   }
@@ -422,10 +421,10 @@ a {
   }
 
   @keyframes jellycakeslide {
-    from{
-      top: calc(1790 / var(--reference-width) * 100vw); 
+    from {
+      top: calc(1790 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       top: calc(1830 / var(--reference-width) * 100vw);
     }
   }
@@ -440,14 +439,13 @@ a {
   }
 
   @keyframes starslide {
-    from{
+    from {
       left: calc(540 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       left: calc(570 / var(--reference-width) * 100vw);
     }
   }
-
 
   #bars {
     animation: barslide;
@@ -459,14 +457,13 @@ a {
   }
 
   @keyframes barslide {
-    from{
-      top: calc(3100 / var(--reference-width) * 100vw); 
+    from {
+      top: calc(3100 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       top: calc(3130 / var(--reference-width) * 100vw);
     }
   }
-
 
   #corn {
     animation: cornslide;
@@ -478,10 +475,10 @@ a {
   }
 
   @keyframes cornslide {
-    from{
+    from {
       left: calc(385 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       left: calc(410 / var(--reference-width) * 100vw);
     }
   }
@@ -497,10 +494,10 @@ a {
   }
 
   @keyframes wrappersslide {
-    from{
-      top: calc(3640 / var(--reference-width) * 100vw); 
+    from {
+      top: calc(3640 / var(--reference-width) * 100vw);
     }
-    to{ 
+    to {
       top: calc(3665 / var(--reference-width) * 100vw);
     }
   }
@@ -518,7 +515,6 @@ a {
   #mobile {
     display: contents;
   }
-
 
   body {
     font-size: 3.3vw;
@@ -562,10 +558,10 @@ a {
   }
 
   @keyframes candycanesslide {
-    from{
+    from {
       top: calc(780 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(815 / var(--mobile-width) * 100vw);
     }
   }
@@ -589,10 +585,10 @@ a {
   }
 
   @keyframes jellycakeslide {
-    from{
+    from {
       top: calc(1255 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(1280 / var(--mobile-width) * 100vw);
     }
   }
@@ -610,10 +606,10 @@ a {
   }
 
   @keyframes chocoballsslide {
-    from{
+    from {
       top: calc(1500 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(1525 / var(--mobile-width) * 100vw);
     }
   }
@@ -639,14 +635,13 @@ a {
   }
 
   @keyframes wrappedcandyslide {
-    from{
+    from {
       top: calc(2070 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(2095 / var(--mobile-width) * 100vw);
     }
   }
-
 
   #mid-schedule {
     top: calc(2144 / var(--mobile-width) * 100vw);
@@ -659,7 +654,7 @@ a {
 
   #schedule-contents {
     position: absolute;
-    top: calc(9000 / var(--reference-width) * 100vw);
+    top: calc(8900 / var(--reference-width) * 100vw);
     width: 80%;
     padding: 10%;
     text-align: center;
@@ -678,11 +673,11 @@ a {
     scale: calc(254.06 / var(--mobile-width));
   }
 
-  @keyframes caramelslide{
-    from{
+  @keyframes caramelslide {
+    from {
       top: calc(3420 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(3450 / var(--mobile-width) * 100vw);
     }
   }
@@ -705,15 +700,14 @@ a {
     scale: calc(259.45 / var(--mobile-width));
   }
 
-  @keyframes chocobarsslide{
-    from{
+  @keyframes chocobarsslide {
+    from {
       top: calc(3925 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(3955 / var(--mobile-width) * 100vw);
     }
   }
-
 
   #conveyor-inclusion {
     top: calc(4153 / var(--mobile-width) * 100vw);
@@ -727,11 +721,11 @@ a {
     scale: calc(281.76 / var(--mobile-width));
   }
 
-  @keyframes cherrystarslide{
-    from{
+  @keyframes cherrystarslide {
+    from {
       top: calc(4155 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(4180 / var(--mobile-width) * 100vw);
     }
   }
@@ -756,11 +750,11 @@ a {
     scale: calc(270.74 / var(--mobile-width));
   }
 
-  @keyframes creepycandyslide{
-    from{
+  @keyframes creepycandyslide {
+    from {
       top: calc(4610 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(4640 / var(--mobile-width) * 100vw);
     }
   }
@@ -774,11 +768,11 @@ a {
     scale: calc(230.87 / var(--mobile-width));
   }
 
-  @keyframes circlecandyslide{
-    from{
+  @keyframes circlecandyslide {
+    from {
       top: calc(4725 / var(--mobile-width) * 100vw);
     }
-    to{
+    to {
       top: calc(4755 / var(--mobile-width) * 100vw);
     }
   }
