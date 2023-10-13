@@ -300,12 +300,12 @@ a {
 
   #sponsors-contents {
     position: absolute;
-    top: calc(4950 / var(--reference-width) * 100vw);
+    top: calc(4900 / var(--reference-width) * 100vw);
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     left: 10%;
-    height: 40vw;
+    height: 20vw;
     padding: 2vw;
     justify-content: space-evenly;
     background: rgb(255, 255, 255, 0.5);
@@ -315,10 +315,37 @@ a {
     align-content: space-evenly;
   }
 
-  #sponsors-contents img {
+  #sponsors-contents img,
+  #special-thanks-contents img {
     position: static;
-    height: 8vw;
+    height: 3vw;
     z-index: 200;
+  }
+
+  #special-thanks {
+    position: absolute;
+    top: calc(5250 / var(--reference-width) * 100vw);
+    width: 100vw;
+    transform-origin: top center;
+    z-index: 200;
+    text-align: center;
+  }
+
+  #special-thanks-contents {
+    position: absolute;
+    top: calc(5300 / var(--reference-width) * 100vw);
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    left: 10%;
+    height: 20vw;
+    padding: 2vw;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255, 0.5);
+    z-index: 200;
+    border-radius: 2vw;
+    gap: 1vw;
+    align-content: space-evenly;
   }
 
   #caramel {
@@ -806,20 +833,46 @@ a {
     flex-flow: row wrap;
     width: 80%;
     left: 10%;
-    height: 210vw;
+    height: 110vw;
     padding: 2vw;
     justify-content: space-evenly;
     align-content: space-evenly;
-    gap: 5vw;
     z-index: 200;
     background: rgb(255, 255, 255, 0.5);
     border-radius: 5vw;
   }
 
-  #sponsors-contents img {
+  #sponsors-contents img,
+  #special-thanks-contents img {
     position: static;
-    width: 40vw;
+    width: 30vw;
     z-index: 200;
+  }
+
+  #special-thanks {
+    position: absolute;
+    top: calc(21000 / var(--reference-width) * 100vw);
+    width: 100vw;
+    transform-origin: top center;
+    z-index: 200;
+    text-align: center;
+  }
+
+  #special-thanks-contents {
+    position: absolute;
+    top: calc(21200 / var(--reference-width) * 100vw);
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    left: 10%;
+    height: 70vw;
+    padding: 2vw;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255, 0.5);
+    z-index: 200;
+    border-radius: 2vw;
+    gap: 1vw;
+    align-content: space-evenly;
   }
 
   #schedule-contents li {
