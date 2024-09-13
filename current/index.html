@@ -9,20 +9,20 @@
 
   <meta name="og:type" content="website" />
   <meta name="twitter:card" content="photo" />
-  <script src="main.js" type="module"></script>
+  <script src="/src/main.js" type="module"></script>
   <!-- <script src="emailSignup.js" type="module" defer></script> -->
-  <script src="countdown.js" type="module" defer></script>
-  <script src="prizes.js" type="module" defer></script>
+  <script src="/src/countdown.js" type="module" defer></script>
+  <script src="/src/prizes.js" type="module" defer></script>
   <script type="module">
-    import { filterEvents } from "./schedule.js"
-    import { togglefaq } from "./faq.js";
+    import { filterEvents } from "/src/schedule.js"
+    import { togglefaq } from "/src/faq.js";
     window.togglefaq = togglefaq;
     window.filterEvents = filterEvents;
   </script>
 
-  <link rel="stylesheet" type="text/css" href="styleguide.css" />
-  <link rel="stylesheet" type="text/css" href="globals.css" />
-  <link rel="stylesheet" type="text/css" href="hifidelity-idea.css" />
+  <!-- <link rel="stylesheet" href="styleguide.css">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="hifidelity-idea.css"> -->
 </head>
 
 <a id="mlh-trust-badge"

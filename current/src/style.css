@@ -1,3 +1,228 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://api.fontshare.com/css?f[]=chillax&display=swap");
+
+@font-face {
+  font-family: "Sabo-Filled";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/Sabo-Filled[1].otf") format("opentype");
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--black);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+b {
+  font-weight: bold;
+}
+
+:root {
+  --white: #fffefe;
+  --black: #00040f;
+  --gray: #9798AC;
+  --hot-magenta: #ee1fc8;
+  --pink: #ff80bb;
+  --purple: #706DE2;
+  --moody-blue: #7970ff;
+  --mountain-mist: #939393;
+  --pomegranate: #ff421d;
+  --spray: #79ecf7;
+  --white: #fffefe;
+  --blue: #31b9fa;
+  --light-blue: #C3ECFF;
+  --green: #6DA540;
+  --yellow: #FFC144;
+
+  --font-size-s: 16px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 32px;
+  --font-size-xxl: 48px;
+  --font-size-xxxl: 64px;
+  --font-size-xxxxl: 96px;
+
+  --font-family-chillax: "chillax", Helvetica;
+  --font-family-pixel_cowboy_-regular: "Pixel Cowboy -Regular", Helvetica;
+  --font-family-sabo-filled: "Sabo-Filled", Helvetica;
+  color: #ffffff;
+}
+
+.title {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  text-shadow: 
+  0 0 30px var(--moody-blue),
+  0 0 10px var(--moody-blue);
+}
+
+.heading-1 {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.heading-2 {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.subheading-2 {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.subheading-3 {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.chillax-normal-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-normal-white-medium {
+  color: var(--white);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-normal-white-large {
+  color: var(--white);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.chillax-normal-white-32px {
+  color: var(--white);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-normal-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.chillax-medium-hot-magenta-24px {
+  color: var(--hot-magenta);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.chillax-bold-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.chillax-medium-moody-blue-24px {
+  color: var(--moody-blue);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.chillax-normal-hot-magenta-20px {
+  color: var(--hot-magenta);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-normal-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-normal-hot-magenta-32px {
+  color: var(--hot-magenta);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-normal-black-32px {
+  color: var(--black);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.chillax-bold-hot-magenta-32px {
+  color: var(--hot-magenta);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.chillax-bold-hot-magenta-48px {
+  color: var(--hot-magenta);
+  font-family: var(--font-family-chillax);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media (max-width: 910px) {
+  :root {
+    --font-size-s: 16px;
+    --font-size-m: 14px;
+    --font-size-l: 16px;
+    --font-size-xl: 21px;
+    --font-size-xxl: 32px;
+    --font-size-xxxl: 36px;
+    --font-size-xxxxl: 64px;
+  }
+}
+
 section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
