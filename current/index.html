@@ -1,0 +1,320 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>HackTX 2024</title>
+  <link rel="icon" type="image/x-icon" href="/assets/img/bat-logo.svg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1" />
+
+  <meta name="og:type" content="website" />
+  <meta name="twitter:card" content="photo" />
+  <script src="main.js" type="module"></script>
+  <script src="emailSignup.js" type="module" defer></script>
+  <script src="countdown.js" type="module" defer></script>
+  <script src="prizes.js" type="module" defer></script>
+  <script type="module">
+    import { filterEvents } from "./schedule.js"
+    import { togglefaq } from "./faq.js";
+    window.togglefaq = togglefaq;
+    window.filterEvents = filterEvents;
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="styleguide.css" />
+  <link rel="stylesheet" type="text/css" href="globals.css" />
+  <link rel="stylesheet" type="text/css" href="hifidelity-idea.css" />
+</head>
+
+<a id="mlh-trust-badge"
+  style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
+  href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
+  target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
+    alt="Major League Hacking 2025 Hackathon Season" style="width:100%"></a>
+
+<body>
+  <canvas id="bg"></canvas>
+  <nav id="desktop-nav">
+    <a href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="bat-logo" /></a>
+    <div class="navbar-options">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#prizes-anchor">Prizes</a>
+      <a href="#faq">FAQ</a>
+      <!-- <a href="" id="desktop-apply">Apply</a> -->
+    </div>
+  </nav>
+
+  <nav id="mobile-nav">
+    <a href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="WIP" /></a>
+    <a href="#about"><img src="assets/img/about.svg"></a>
+    <a href="#schedule"><img src="assets/img/schedule.svg"></a>
+    <a href="#prizes-anchor"><img src="assets/img/prizes.svg"></a>
+    <a href="#faq"><img src="assets/img/faq.svg"></a>
+    <!-- <a href="" id="mobile-apply">Apply</a> -->
+  </nav>
+  <section class="landing" id="landing">
+    FREETAIL HACKERS X YEAR OF AI PRESENTS
+    <h1 class="title">HackTX 2024</h1>
+    <div class="tags">
+      <p class="tag">November 2-3</p>
+      <p class="tag">Austin, TX</p>
+      <p class="tag">24 Hours</p>
+    </div>
+
+    <div href="#" class="mailing-list">
+      <form id="email-form" class="mailing-list">
+        <input 
+        class="join-the-mailing-list" 
+        placeholder="Join the mailing list!" 
+        type="email" 
+        name="email" 
+        required />
+        <button class="signup">Sign up</button>
+      </form>
+    </div>
+    <div class="dont-miss-out">
+      Don't miss out! <b>Applications open</b>
+      <p class="applications-open">September 21st at 9:00 AM CDT</p>
+    </div>
+
+      <!-- <img draggable="false" class = "eyes" id = "left" src="assets/img/lefteye.png">
+      <img draggable="false" class = "eyes" id = "right" src="assets/img/righteye.png"> -->
+
+      <!-- <img class="splash-image" src="assets/img/Temp Landing.png"> -->
+      <div class="splash-image">
+        
+          <img draggable="false" id = "screen" src="assets/img/screen.png">
+          <img draggable="false" id = "eyes" src="assets/img/eyes.png">
+          <img draggable="false" id = "body" src="assets/img/body.png">
+          <!-- <img draggable="false" id = "splash-bg" src="assets/img/Temp Landing BKGD.png"> -->
+        
+      
+        <img draggable="false" class="scroll-image" src="assets/img/scroll down.png">
+    </div>
+  </section>
+
+
+  <section class="about" id="about">
+    <div class="hack-words chillax-normal-white-32px">
+      <div class="about-mobile-grouping">
+        <div id="countdown"><b>00:00:00:00</b></div>
+        <div id="countdown-labels">
+          <div id="countdown-label">day</div>
+          <div id="countdown-label">hour</div>
+          <div id="countdown-label">min</div>
+          <div id="countdown-label">sec</div>
+        </div>
+        <p class="hack">
+          <b>HackTX</b> is a <b>24 hour</b> event where tech enthusiasts can
+          come together to create something amazing!
+        </p>
+      </div>
+
+      <div id="over-the-years">
+        Over the years, we've had
+        <div id="stats">
+          <span><b>5,000+</b>
+            <p>participants</p>
+          </span>
+          <div class="headerDivider"></div>
+          <span><b>$100K+</b>
+            <p>in prizes</p>
+          </span>
+          <div class="headerDivider"></div>
+          <span><b>12</b>
+            <p>years</p>
+          </span>
+        </div>
+        And so much more to come!
+      </div>
+    </div>
+  </section>
+
+  <section id="arcade-container">
+    hello
+  </section>
+  <section id="schedule">
+    <div class="schedule-title">What's next?</div>
+    <div class="schedule-button-filters">
+      <button onclick="filterEvents('all')" class="schedule-button" id="all">
+        All
+      </button>
+      <button onclick="filterEvents('required')" class="schedule-button" id="required">
+        Required
+      </button>
+      <button onclick="filterEvents('event')" class="schedule-button" id="event">
+        Event
+      </button>
+      <button onclick="filterEvents('food')" class="schedule-button" id="food">
+        Food
+      </button>
+      <button onclick="filterEvents('fun')" class="schedule-button" id="fun">
+        For Fun
+      </button>
+    </div>
+    <div class="schedule-columns">
+      <div class="schedule-column" id="saturday-events">
+        <h2 class="schedule-subheading heading-2">Saturday</h2>
+      </div>
+      <div class="schedule-subject-to-change">
+        <div class="schedule-column" id="sunday-events">
+          <h2 class="schedule-subheading heading-2">Sunday</h2>
+        </div>
+        <h3>* Schedule is subject to change</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="prizes">
+    <div class="gacha-scene">
+      <img src="assets/img/Gachapon Ball.png" class="ball"/>
+      <img src="assets/img/Gachapon.png" class="gachapon"/>
+      <h2 id="prizes-anchor">You Win!</h2>
+    </div>
+    <div class="marquee" id="general-marquee">
+      <span class="marquee-item mqg1">General Tracks</span>
+      <span class="marquee-item mqg2">General Tracks</span>
+      <span class="marquee-item mqg3">General Tracks</span>
+      <span class="marquee-item mqg4">General Tracks</span>
+      <span class="marquee-item mqg5">General Tracks</span>
+    </div>
+    <div id="normal-tracks" class="prizes-flex"></div>
+    <div class="marquee" id="AI-marquee">
+      <span class="marquee-item mqai1">AI Tracks</span>
+      <span class="marquee-item mqai2">AI Tracks</span>
+      <span class="marquee-item mqai3">AI Tracks</span>
+      <span class="marquee-item mqai4">AI Tracks</span>
+      <span class="marquee-item mqai5">AI Tracks</span>
+      <span class="marquee-item mqai6">AI Tracks</span>
+      <span class="marquee-item mqai7">AI Tracks</span>
+    </div>
+    <div id="AI-tracks" class="prizes-flex"></div>
+  </section>
+  <section id="faq">
+    <div class="faq-title heading-1">Any questions?</div>
+    <div id="faq-container">
+      <div class="faq-col" id="faq-col-left"></div>
+      <div class="faq-col" id="faq-col-right"></div>
+    </div>
+    <div class="faq-feedback">
+      <div class="got-more-questions subheading-2">
+          Got more questions?
+      </div>
+      <div class="let-us-know">
+        Let us know!
+        <a href="mailto:hello@freetailhackers.com">hello@freetailhackers.com</a>
+      </div>
+      <div class="media-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/freetail-hackers/">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTLinkedIn.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/freetailhackers/">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTInsta.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/freetailhackers/">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTFacebook.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@freetailhackers">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTTikTok.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://x.com/freetailhackers">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTTwitter.png" alt="media" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sponsors">
+    <div class="sponsors-title">
+      <h2 class="heading-1">A BIG THANK YOU TO OUR</h2>
+      <h1 class="title">AMAZING SPONSORS</h1>
+      <p>Want to sponsor HackTX 2024? Contact us at <a href="mailto:corporate@freetailhackers.com">corporate@freetailhackers.com</a></p></h3>
+    </div>
+    <div id="sponsors-flex">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.samsung.com"><img src="assets/sponsors/Samsung.png" class="white-logo"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.google.com"><img src="assets/sponsors/Google.png"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.dell.com"><img src="assets/sponsors/Dell.svg"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.intel.com"><img src="assets/sponsors/Intel.svg"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.intersystems.com"><img src="assets/sponsors/InterSystems.svg"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.boundaryml.com"><img src="assets/sponsors/BoundaryML.png" class="white-logo"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://telora.com/"><img src="assets/sponsors/Telora.png" class="white-logo"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.ifml.institute/"><img src="assets/sponsors/IFML.svg"></a>
+    </div>
+  </section>
+
+  <footer>
+        <div class="footer-cols">
+          <div class="footer-col" id="freetail-column">
+            <div class="freetail-hackers-1"><img src="assets/img/freetail-bat.svg" id="freetail-bat">Freetail Hackers</div>
+            <div class="freetail-links">
+              <a href="https://www.freetailhackers.com" id="freetail-link">freetailhackers.com</a>
+              <a href="mailto:hello@freetailhackers.com"> hello@freetailhackers.com</a>
+            </div>
+            <div class="media-links">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/freetail-hackers/">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTLinkedIn.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/freetailhackers/">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTInsta.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/freetailhackers/">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTFacebook.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@freetailhackers">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTTikTok.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://x.com/freetailhackers">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTTwitter.png" alt="media" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">HackTX 2023</div>
+            <div class="footer-links">
+              <a>Website</a>
+              <a href="https://hacktx-2023.devpost.com/">Devpost</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">Hacker Resources</div>
+            <div class="footer-links">
+              
+              <a>Devpost</a>
+              <a href="https://discord.com/invite/FEbE5rGw">Discord</a>
+              <a href="https://mlh.io/seasons/2025/events">MLH</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">Other Resources</div>
+            <div class="footer-links">
+              <a href="https://uhsg.freetailhackers.com/">UHSG</a>
+              <a href="https://yearofai.utexas.edu/">Year of AI</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">Other Hackathons</div>
+            <div class="footer-links">
+              <a href="https://tamuhack.org/">TAMUHack</a>
+              <a href="https://rowdyhacks.org/">Rowdyhacks</a>
+              <a href="https://www.hackuta.org/">HackUTA</a>
+              <a href="https://www.unthackathon.com/">HackUNT</a>
+              <a href="https://hackutd.co/">HackUTD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <a id="code-of-conduct" href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">Code of Conduct</a>
+        <p class="copyright-freetail-hackers-2024">
+          Copyright @ Freetail Hackers 2024
+        </p>
+      </div>
+    </div>
+    <div><h1 class="title">Freetail Hackers</h1>
+      <h2 class="made-with-love">Made with 🧡 by Freetail Hackers</h2>
+      <img id="claw-machine" src="assets/img/Updated Claw Machine.png">
+    </div>
+    </div>
+  </footer>
+</body>
+</html>
