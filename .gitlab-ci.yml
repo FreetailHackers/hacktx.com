@@ -2,6 +2,7 @@ stages:
   - deploy
 
 pages:
+  image: node:22-alpine3.19
   stage: deploy
   environment: production
   # rules:
