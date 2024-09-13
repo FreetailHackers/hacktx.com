@@ -1,390 +1,320 @@
-<!DOCTYPE html>
+<!doctype html>
+<html>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-    <title>HackTX 2023</title>
-    <link rel="icon" type="image/png" href="./static/favicon.png" />
-    <link rel="stylesheet" href="./styles.css" />
-    <!-- CHANGE THE BELOW -->
-    <meta name="theme-color" content="#bae6ff" />
-    <meta
-      name="description"
-      content="HackTX 2023 is a 24-hour hackathon held at the University of Texas at Austin."
-    />
-    <meta name="og:title" content="HackTX 2023" />
-    <meta
-      name="og:description"
-      content="HackTX 2023 is a 24-hour hackathon held at the University of Texas at Austin."
-    />
-    <meta
-      name="og:image"
-      content="https://freetailhackers.com/img/assets/freetailLogo.png"
-    />
-    <link rel="stylesheet" href="https://use.typekit.net/nzn4fpd.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preload" href="./static/livesite_button(hover).svg" as="image" />
-    <link rel="preload" href="./static/mentor_button(hover).svg" as="image" />
-    <link rel="preload" href="./static/register_button(hover).svg" as="image" />
-    <link
-      rel="preload"
-      href="./static/volunteer_button(hover).svg"
-      as="image"
-    />
-  </head>
+<head>
+  <title>HackTX 2024</title>
+  <link rel="icon" type="image/x-icon" href="/assets/img/bat-logo.svg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1" />
 
-  <body>
-    <div id="schedule-contents" class="rodeo-link">
-      <br />
-      Check out the full schedule on our
-      <a href="https://rodeo.hacktx.com/schedule">live site!</a><br /><br />
-      <br />
-      SATURDAY, OCTOBER 21
-      <br /><br />
-      <ol>
-        <li>8:00 AM-10:30 AM: Check-in</li>
-        <li>10:30 AM-11:30 AM: Opening Ceremony</li>
-        <li>11:30 AM: Hacking Starts</li>
-        <li>12:30 PM-2:30 PM: Lunch</li>
-        <li>3:00 PM-4:00 PM: Sponsor Expo</li>
-        <li>6:00 PM-8:00 PM: Dinner</li>
-        <li>11:00 PM: Midnight Snack</li>
-      </ol>
+  <meta name="og:type" content="website" />
+  <meta name="twitter:card" content="photo" />
+  <script src="/src/main.js" type="module"></script>
+  <script src="/src/emailSignup.js" type="module" defer></script>
+  <script src="/src/countdown.js" type="module" defer></script>
+  <script src="/src/prizes.js" type="module" defer></script>
+  <script type="module">
+    import { filterEvents } from "/src/schedule.js"
+    import { togglefaq } from "/src/faq.js";
+    window.togglefaq = togglefaq;
+    window.filterEvents = filterEvents;
+  </script>
 
-      <br /><br />
-      SUNDAY, OCTOBER 22
-      <br /><br />
-      <ol>
-        <li>8:00 AM-9:00 AM: Breakfast</li>
-        <li>11:00 AM: Hacking Ends</li>
-        <li>11:30 AM-1:30 PM: Lunch</li>
-        <li>1:30 PM-4:30 PM: Judging</li>
-        <li>5 PM: Closing Ceremony</li>
-      </ol>
+  <!-- <link rel="stylesheet" href="styleguide.css">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="hifidelity-idea.css"> -->
+</head>
+
+<a id="mlh-trust-badge"
+  style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000"
+  href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
+  target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
+    alt="Major League Hacking 2025 Hackathon Season" style="width:100%"></a>
+
+<body>
+  <canvas id="bg"></canvas>
+  <nav id="desktop-nav">
+    <a href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="bat-logo" /></a>
+    <div class="navbar-options">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#prizes-anchor">Prizes</a>
+      <a href="#faq">FAQ</a>
+      <!-- <a href="" id="desktop-apply">Apply</a> -->
+    </div>
+  </nav>
+
+  <nav id="mobile-nav">
+    <a href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="WIP" /></a>
+    <a href="#about"><img src="assets/img/about.svg"></a>
+    <a href="#schedule"><img src="assets/img/schedule.svg"></a>
+    <a href="#prizes-anchor"><img src="assets/img/prizes.svg"></a>
+    <a href="#faq"><img src="assets/img/faq.svg"></a>
+    <!-- <a href="" id="mobile-apply">Apply</a> -->
+  </nav>
+  <section class="landing" id="landing">
+    FREETAIL HACKERS X YEAR OF AI PRESENTS
+    <h1 class="title">HackTX 2024</h1>
+    <div class="tags">
+      <p class="tag">November 2-3</p>
+      <p class="tag">Austin, TX</p>
+      <p class="tag">24 Hours</p>
     </div>
 
-    <a
-      id="mlh-trust-badge"
-      style="
-        display: block;
-        max-width: 100px;
-        min-width: 60px;
-        position: fixed;
-        right: 50px;
-        top: 0;
-        width: 10%;
-        z-index: 10000;
-      "
-      href="https://mlh.io/na"
-      target="_blank"
-      ><img
-        src="./mlh-trust-badge-white-2024.svg"
-        alt="Major League Hacking 2023 Hackathon Season"
-        style="width: 100%"
-    /></a>
-
-    <div id="sponsors-contents">
-      <a href="https://www.analog.com/en/index.html"
-        ><img id="analog" src="./sponsors/analog_devices.png"
-      /></a>
-      <a href="https://www.capitalone.com/"
-        ><img id="capitalone" src="./sponsors/C1_Core_NG_RGB_R_Logo.png" />
-      </a>
-      <a
-        href="https://devrev.ai/?utm_source=devrev_hacktx&utm_medium=HackTX_website&utm_campaign=devrev_hacktx&utm_id=HackTX2023"
-      >
-        <img id="devrev" src="./sponsors/devrev.png" />
-      </a>
-      <a href="https://dish.com"
-        ><img id="dish" src="./sponsors/DISH_WORDMARK_RED_LOGO_1115818_RGB.png"
-      /></a>
-      <a href="https://google.com">
-        <img id="google" src="./sponsors/google-logo-transparent.png" />
-      </a>
-      <a href="https://procore.com">
-        <img id="procore" src="./sponsors/Procore_Logo_FC_Black_RGB.png" />
-      </a>
-      <a href="https://www.quantiqpartners.com/"
-        ><img id="quantiq" src="./sponsors/quantiq_partners.png"
-      /></a>
-      <a href="https://www.swri.org/"
-        ><img
-          id="swri"
-          src="./sponsors/swri-logo-text-combo-vert 2014-blue-pantone-2728.png"
-      /></a>
-      <a href="https://mule.to/p4vd"
-        ><img
-          id="stickermule"
-          src="./sponsors/sticker-mule-logo-dark-stacked.png"
-      /></a>
+    <div href="#" class="mailing-list">
+      <form id="email-form" class="mailing-list">
+        <input 
+        class="join-the-mailing-list" 
+        placeholder="Join the mailing list!" 
+        type="email" 
+        name="email" 
+        required />
+        <button class="signup">Sign up</button>
+      </form>
+    </div>
+    <div class="dont-miss-out">
+      Don't miss out! <b>Applications open</b>
+      <p class="applications-open">September 21st at 9:00 AM CDT</p>
     </div>
 
-    <p id="special-thanks" class="rodeo-link">Special thanks</p>
-    <div id="special-thanks-contents">
-      <a href="https://cns.utexas.edu/"
-        ><img src="./sponsors/special-thanks/CNS.png"
-      /></a>
-      <a href="https://www.cs.utexas.edu/">
-        <img src="./sponsors/special-thanks/CS.png" />
-      </a>
-      <a href="https://universityunions.utexas.edu/events-entertainment">
-        <img src="./sponsors/special-thanks/EE.png" />
-      </a>
-      <a href="https://github.com">
-        <img src="./sponsors/special-thanks/GitHub_Logo.png" />
-      </a>
-      <a href="https://graduatestudentassembly.utexas.edu/">
-        <img src="./sponsors/special-thanks/gsa_logo.png" />
-      </a>
-      <a href="https://heb.com">
-        <img src="./sponsors/special-thanks/h-e-b-main-racetrack-logo.png" />
-      </a>
-      <a href="https://cloud.google.com/">
-        <img src="./sponsors/special-thanks/logo_googleCloud.png" />
-      </a>
-      <a href="https://senateofcollegecouncils.utexas.edu/">
-        <img src="./sponsors/special-thanks/scc-logo.png" />
-      </a>
+      <!-- <img draggable="false" class = "eyes" id = "left" src="assets/img/lefteye.png">
+      <img draggable="false" class = "eyes" id = "right" src="assets/img/righteye.png"> -->
+
+      <!-- <img class="splash-image" src="assets/img/Temp Landing.png"> -->
+      <div class="splash-image">
+        
+          <img draggable="false" id = "screen" src="assets/img/screen.png">
+          <img draggable="false" id = "eyes" src="assets/img/eyes.png">
+          <img draggable="false" id = "body" src="assets/img/body.png">
+          <!-- <img draggable="false" id = "splash-bg" src="assets/img/Temp Landing BKGD.png"> -->
+        
+      
+        <img draggable="false" class="scroll-image" src="assets/img/scroll down.png">
     </div>
+  </section>
 
-    <div id="desktop">
-      <!-- Background images -->
-      <img id="mainwall" src="./static/mainwall_bkgd.svg" />
-      <img id="background" src="./static/floor_mainbkgd.svg" />
-      <img id="candypile" src="./static/candypile_section.svg" />
-      <img id="sewer" src="./static/wallsewer_bottomsection.svg" />
-      <img id="conveyor" src="./static/conveyor_belt.svg" />
 
-      <!-- Conveyor belt decorations -->
-      <img id="caramel" src="./static/caramel_candygroup.svg" />
-      <img id="candycane" src="./static/cane_candygroup.svg" />
-      <img id="circles" src="./static/circles_candygroup.svg" />
-      <img id="chocballs" src="./static/chocballs_candygroup.svg" />
-      <img id="olivia" src="./static/olivia_candygroup.svg" />
-      <img id="jellycake" src="./static/jellycake_candygroup.svg" />
-      <img id="star" src="./static/star_candygroup.svg" />
-      <img id="bars" src="./static/bars_candygroup.svg" />
-      <img id="corn" src="./static/corn_candygroup.svg" />
-      <img id="wrappers" src="./static/wrappers_candygroup.svg" />
-
-      <!-- Header -->
-      <img id="title" src="./static/hacktx_title.svg" />
-      <a href="https://forms.gle/PzWTbHhs6SaTFhTq6"
-        ><img id="mentor" src="./static/mentor_button.svg"
-      /></a>
-      <a href="https://rodeo.hacktx.com">
-        <img id="register" src="./static/register_button.svg"
-      /></a>
-      <a href="https://forms.gle/Hgke595ZDu8fS2Af6"
-        ><img id="volunteer" src="./static/volunteer_button.svg"
-      /></a>
-
-      <!-- Text boxes -->
-      <div class="box" id="what">
-        <h2>What is HackTX?</h2>
-        <p>
-          HackTX is an annual hackathon at the University of Texas at Austin
-          occurring on October 21st-22nd, 2023. A hackathon is simply a space
-          for students of any major to come together and come up with creative
-          solutions using technology. They are a place to learn, to meet others,
-          and to innovate. We design our hackathons to be beginner-friendly and
-          will have plenty of mentors and workshops to guide you!
-        </p>
-      </div>
-      <div class="box" id="who">
-        <h2>Who are Freetail Hackers?</h2>
-        <p>
-          We're a group of UT Austin students who love bringing students who are
-          passionate about inspiring others, learning new skills, and being
-          involved in the hackathon and tech communities. We love organizing
-          hackathons and having fun together while doing so! If this sounds like
-          a good fit for you, you should apply to join our team when
-          applications open in January. Applications will be posted on our
-          <a href="https://freetailhackers.com">website</a> and
-          <a href="https://www.instagram.com/freetailhackers">Instagram page</a
-          >. Need to reach out to us for any further questions or want to work
-          with us for the next event? Email us at
-          <a href="mailto:hello@freetailhackers.com"
-            >hello@freetailhackers.com</a
-          >!
-        </p>
-      </div>
-      <div class="box" id="inclusion">
-        <h2>Inclusion</h2>
-        <p>
-          To embrace inclusivity, all participants are expected to follow
-          <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-            >MLH's Code of Conduct</a
-          >
-          to facilitate a safe space and a positive hackathon experience for
-          everyone! Please reach out to a staff member if you have any questions
-          or concerns.
-        </p>
-      </div>
-      <div class="box" id="attend">
-        <h2>Who can attend?</h2>
-        <p>
-          The event is open to students over 18 years old, including
-          undergraduate and graduate students from UT and other universities.
-          All levels of experience and all majors are welcome! Beginner? No
-          problem! The majority of hackers from HackTX 2022 were first-timers,
-          and we'll have mentors and workshops to help you develop new skills;
-          all you need to bring is a desire to create. Interested in learning
-          something new? We'll have plenty of people to help teach you how to
-          make an impact right from your own workspace!
+  <section class="about" id="about">
+    <div class="hack-words chillax-normal-white-32px">
+      <div class="about-mobile-grouping">
+        <div id="countdown"><b>00:00:00:00</b></div>
+        <div id="countdown-labels">
+          <div id="countdown-label">day</div>
+          <div id="countdown-label">hour</div>
+          <div id="countdown-label">min</div>
+          <div id="countdown-label">sec</div>
+        </div>
+        <p class="hack">
+          <b>HackTX</b> is a <b>24 hour</b> event where tech enthusiasts can
+          come together to create something amazing!
         </p>
       </div>
 
-      <img id="schedule" src="./static/schedule_title.svg" />
-      <!-- Side decorations -->
-      <img id="clutter1" src="./static/clutter_group1.svg" />
-      <img id="clutter2" src="./static/clutter_group2.svg" />
-      <img id="clutter3" src="./static/clutter_group3.svg" />
-      <img id="clutter4" src="./static/clutter_grp4chocspill.svg" />
-      <img id="clutter5" src="./static/clutter_group5.svg" />
-      <img id="clutter6" src="./static/clutter_group6.svg" />
-
-      <!-- TODO: FAQ -->
-      <img id="faq" src="./static/faq_title.svg" />
-      <p id="faq-contents" class="rodeo-link">
-        Check out the FAQ on our
-        <a href="https://rodeo.hacktx.com/info#faq">live site!</a>
-      </p>
-
-      <!-- TODO: Sponsors -->
-      <img id="sponsors" src="./static/sponsors_title.svg" />
+      <div id="over-the-years">
+        Over the years, we've had
+        <div id="stats">
+          <span><b>5,000+</b>
+            <p>participants</p>
+          </span>
+          <div class="headerDivider"></div>
+          <span><b>$100K+</b>
+            <p>in prizes</p>
+          </span>
+          <div class="headerDivider"></div>
+          <span><b>12</b>
+            <p>years</p>
+          </span>
+        </div>
+        And so much more to come!
+      </div>
     </div>
-    <div id="mobile">
-      <!-- background images -->
-      <img
-        id="conveyor-what"
-        src="./mobile-assets/background_conveyorbelt_component.svg"
-      />
-      <img id="title-screen" src="./mobile-assets/open_titlescreen.svg" />
-      <img
-        id="conveyor-who"
-        src="./mobile-assets/background_conveyorbelt_component.svg"
-      />
-      <img
-        id="conveyor-attend"
-        src="./mobile-assets/background_conveyorbelt_component.svg"
-      />
-      <img id="mid-schedule" src="./mobile-assets/middle_block_schedule.svg" />
-      <img
-        id="conveyor-inclusion"
-        src="./mobile-assets/background_conveyorbelt_component.svg"
-      />
-      <img id="end-screen" src="./mobile-assets/end_block_faq_sponser.svg" />
-      <p id="faq-contents" class="rodeo-link">
-        Check out the FAQ on our
-        <a href="https://rodeo.hacktx.com/info#faq">live site!</a>
-      </p>
+  </section>
 
-      <!-- candy decorations -->
-      <img id="candycanes" src="./mobile-assets/cane_candygroup.svg" />
-      <img id="caramel" src="./mobile-assets/caramel_candygroup.svg" />
-      <img id="cherrystar" src="./mobile-assets/cherrystar_candygroup.svg" />
-      <img id="chocoballs" src="./mobile-assets/chocballs_candygroup.svg" />
-      <img id="chocobars" src="./mobile-assets/chocbars_candygroup.svg" />
-      <img id="circlecandy" src="./mobile-assets/circle_candygroup.svg" />
-      <img id="creepycandy" src="./mobile-assets/creepy_candygroup.svg" />
-      <img id="jellycake" src="./mobile-assets/jellycake_candygroup.svg" />
-      <img id="wrappedcandy" src="./mobile-assets/wrapped_candygroup.svg" />
-
-      <!-- header -->
-      <img id="mobile-title" src="./mobile-assets/mobile_hacktxlogo.svg" />
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSc0yZgTn9dExzlJe1PAaGKDKzBTCgHtbfLcdG0LL_ueVG_KPA/viewform"
-        ><img id="mobile-mentor" src="./mobile-assets/mentor_button.svg"
-      /></a>
-      <a href="https://rodeo.hacktx.com"
-        ><img id="mobile-register" src="./mobile-assets/register_button.svg"
-      /></a>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSc0yZgTn9dExzlJe1PAaGKDKzBTCgHtbfLcdG0LL_ueVG_KPA/viewform"
-        ><img id="mobile-volunteer" src="./mobile-assets/volunteer_button.svg"
-      /></a>
-
-      <!-- text boxes -->
-
-      <div class="box" id="what">
-        <h2>What is HackTX?</h2>
-        <p>
-          HackTX is an annual hackathon at the University of Texas at Austin
-          occurring on October 21st-22nd, 2023. A hackathon is simply a space
-          for students of any major to come together and come up with creative
-          solutions using technology. They are a place to learn, to meet others,
-          and to innovate. We design our hackathons to be beginner-friendly and
-          will have plenty of mentors and workshops to guide you!
-        </p>
-      </div>
-      <div class="box" id="who">
-        <h2>Who are Freetail Hackers?</h2>
-        <p>
-          We're a group of UT Austin students who love bringing students who are
-          passionate about inspiring others, learning new skills, and being
-          involved in the hackathon and tech communities. We love organizing
-          hackathons and having fun together while doing so! If this sounds like
-          a good fit for you, you should apply to join our team when
-          applications open in January. Applications will be posted on our
-          <a href="freetailhackers.com">website</a> and
-          <a href="https://www.instagram.com/freetailhackers">Instagram page</a
-          >. Need to reach out to us for any further questions or want to work
-          with us for the next event? Email us at
-          <a href="mailto:hello@freetailhackers.com"
-            >hello@freetailhackers.com</a
-          >!
-        </p>
-      </div>
-      <div class="box" id="inclusion">
-        <h2>Inclusion</h2>
-        <p>
-          To embrace inclusivity, all participants are expected to follow
-          <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-            >MLH's Code of Conduct</a
-          >
-          to facilitate a safe space and a positive hackathon experience for
-          everyone! Please reach out to a staff member if you have any questions
-          or concerns.
-        </p>
-      </div>
-      <div class="box" id="attend">
-        <h2>Who can attend?</h2>
-        <p>
-          The event is open to students over 18 years old, including
-          undergraduate and graduate students from UT and other universities.
-          All levels of experience and all majors are welcome! Beginner? No
-          problem! The majority of hackers from HackTX 2022 were first-timers,
-          and we'll have mentors and workshops to help you develop new skills;
-          all you need to bring is a desire to create. Interested in learning
-          something new? We'll have plenty of people to help teach you how to
-          make an impact right from your own workspace!
-        </p>
-      </div>
-
-      <!-- TODO: schedule -->
-      <img
-        id="mobile-schedule-title"
-        src="./mobile-assets/schedule_title.svg"
-      />
-
-      <!-- TODO: FAQ -->
-      <img id="mobile-faq-title" src="./mobile-assets/faq_title.svg" />
-
-      <!-- TODO: sponsers -->
-      <img
-        id="mobile-sponsers-title"
-        src="./mobile-assets/sponsors_title.svg"
-      />
+  <section id="arcade-container">
+    hello
+  </section>
+  <section id="schedule">
+    <div class="schedule-title">What's next?</div>
+    <div class="schedule-button-filters">
+      <button onclick="filterEvents('all')" class="schedule-button" id="all">
+        All
+      </button>
+      <button onclick="filterEvents('required')" class="schedule-button" id="required">
+        Required
+      </button>
+      <button onclick="filterEvents('event')" class="schedule-button" id="event">
+        Event
+      </button>
+      <button onclick="filterEvents('food')" class="schedule-button" id="food">
+        Food
+      </button>
+      <button onclick="filterEvents('fun')" class="schedule-button" id="fun">
+        For Fun
+      </button>
     </div>
-  </body>
+    <div class="schedule-columns">
+      <div class="schedule-column" id="saturday-events">
+        <h2 class="schedule-subheading heading-2">Saturday</h2>
+      </div>
+      <div class="schedule-subject-to-change">
+        <div class="schedule-column" id="sunday-events">
+          <h2 class="schedule-subheading heading-2">Sunday</h2>
+        </div>
+        <h3>* Schedule is subject to change</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="prizes">
+    <div class="gacha-scene">
+      <img src="assets/img/Gachapon Ball.png" class="ball"/>
+      <img src="assets/img/Gachapon.png" class="gachapon"/>
+      <h2 id="prizes-anchor">You Win!</h2>
+    </div>
+    <div class="marquee" id="general-marquee">
+      <span class="marquee-item mqg1">General Tracks</span>
+      <span class="marquee-item mqg2">General Tracks</span>
+      <span class="marquee-item mqg3">General Tracks</span>
+      <span class="marquee-item mqg4">General Tracks</span>
+      <span class="marquee-item mqg5">General Tracks</span>
+    </div>
+    <div id="normal-tracks" class="prizes-flex"></div>
+    <div class="marquee" id="AI-marquee">
+      <span class="marquee-item mqai1">AI Tracks</span>
+      <span class="marquee-item mqai2">AI Tracks</span>
+      <span class="marquee-item mqai3">AI Tracks</span>
+      <span class="marquee-item mqai4">AI Tracks</span>
+      <span class="marquee-item mqai5">AI Tracks</span>
+      <span class="marquee-item mqai6">AI Tracks</span>
+      <span class="marquee-item mqai7">AI Tracks</span>
+    </div>
+    <div id="AI-tracks" class="prizes-flex"></div>
+  </section>
+  <section id="faq">
+    <div class="faq-title heading-1">Any questions?</div>
+    <div id="faq-container">
+      <div class="faq-col" id="faq-col-left"></div>
+      <div class="faq-col" id="faq-col-right"></div>
+    </div>
+    <div class="faq-feedback">
+      <div class="got-more-questions subheading-2">
+          Got more questions?
+      </div>
+      <div class="let-us-know">
+        Let us know!
+        <a href="mailto:hello@freetailhackers.com">hello@freetailhackers.com</a>
+      </div>
+      <div class="media-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/freetail-hackers/">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTLinkedIn.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/freetailhackers/">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTInsta.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/freetailhackers/">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTFacebook.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@freetailhackers">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTTikTok.png" alt="media" />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://x.com/freetailhackers">
+          <img class="footer-media" height="30px" width="auto" src="assets/img/FTTwitter.png" alt="media" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sponsors">
+    <div class="sponsors-title">
+      <h2 class="heading-1">A BIG THANK YOU TO OUR</h2>
+      <h1 class="title">AMAZING SPONSORS</h1>
+      <p>Want to sponsor HackTX 2024? Contact us at <a href="mailto:corporate@freetailhackers.com">corporate@freetailhackers.com</a></p></h3>
+    </div>
+    <div id="sponsors-flex">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.samsung.com"><img src="assets/sponsors/Samsung.png" class="white-logo"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.google.com"><img src="assets/sponsors/Google.png"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.dell.com"><img src="assets/sponsors/Dell.svg"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.intel.com"><img src="assets/sponsors/Intel.svg"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.intersystems.com"><img src="assets/sponsors/InterSystems.svg"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.boundaryml.com"><img src="assets/sponsors/BoundaryML.png" class="white-logo"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://telora.com/"><img src="assets/sponsors/Telora.png" class="white-logo"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.ifml.institute/"><img src="assets/sponsors/IFML.svg"></a>
+    </div>
+  </section>
+
+  <footer>
+        <div class="footer-cols">
+          <div class="footer-col" id="freetail-column">
+            <div class="freetail-hackers-1"><img src="assets/img/freetail-bat.svg" id="freetail-bat">Freetail Hackers</div>
+            <div class="freetail-links">
+              <a href="https://www.freetailhackers.com" id="freetail-link">freetailhackers.com</a>
+              <a href="mailto:hello@freetailhackers.com"> hello@freetailhackers.com</a>
+            </div>
+            <div class="media-links">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/freetail-hackers/">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTLinkedIn.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/freetailhackers/">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTInsta.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/freetailhackers/">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTFacebook.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@freetailhackers">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTTikTok.png" alt="media" />
+              </a>
+              <a target="_blank" rel="noopener noreferrer" href="https://x.com/freetailhackers">
+                <img class="footer-media" height="30px" width="auto" src="assets/img/FTTwitter.png" alt="media" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">HackTX 2023</div>
+            <div class="footer-links">
+              <a>Website</a>
+              <a href="https://hacktx-2023.devpost.com/">Devpost</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">Hacker Resources</div>
+            <div class="footer-links">
+              
+              <a>Devpost</a>
+              <a href="https://discord.com/invite/FEbE5rGw">Discord</a>
+              <a href="https://mlh.io/seasons/2025/events">MLH</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">Other Resources</div>
+            <div class="footer-links">
+              <a href="https://uhsg.freetailhackers.com/">UHSG</a>
+              <a href="https://yearofai.utexas.edu/">Year of AI</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <div class="other">Other Hackathons</div>
+            <div class="footer-links">
+              <a href="https://tamuhack.org/">TAMUHack</a>
+              <a href="https://rowdyhacks.org/">Rowdyhacks</a>
+              <a href="https://www.hackuta.org/">HackUTA</a>
+              <a href="https://www.unthackathon.com/">HackUNT</a>
+              <a href="https://hackutd.co/">HackUTD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <a id="code-of-conduct" href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">Code of Conduct</a>
+        <p class="copyright-freetail-hackers-2024">
+          Copyright @ Freetail Hackers 2024
+        </p>
+      </div>
+    </div>
+    <div><h1 class="title">Freetail Hackers</h1>
+      <h2 class="made-with-love">Made with 🧡 by Freetail Hackers</h2>
+      <img id="claw-machine" src="assets/img/Updated Claw Machine.png">
+    </div>
+    </div>
+  </footer>
+</body>
 </html>
