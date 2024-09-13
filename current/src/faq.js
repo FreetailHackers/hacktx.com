@@ -3,7 +3,7 @@ function createFAQItem (question, answer) {
     return `
     <div class="faq-item">
         <a onclick="togglefaq('${sanitizedQuestion}')" id="${sanitizedQuestion + 'q'}"class="faq-question">
-          <img id="${sanitizedQuestion + 'i'}" class="faq-dot" src="/assets/img/Dropdown_icon.svg">
+          <img id="${sanitizedQuestion + 'i'}" class="faq-dot" src="assets/img/Dropdown_icon.svg">
           ${question}
         </a>
       <div id="${sanitizedQuestion + 'a'}"class="faq-answer"style="max-height: 0px">${answer}</div>
