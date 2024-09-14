@@ -484,7 +484,7 @@ nav {
 }
 
 .splash-image img{
-  width: 50%;
+  width: 65%;
   margin: 5%;
   overflow: clip;
   user-select: none;
@@ -940,10 +940,15 @@ nav {
 
 #AI-tracks {
   padding-top: 50px;
+  padding-bottom: 40px;
 }
 
 .prize-card:hover {
   box-shadow: 0 0 2em var(--purple);
+}
+
+#AI-tracks .prize-card:hover {
+  box-shadow: 0 0 2em var(--blue);
 }
 
 .prize-card h2 {
