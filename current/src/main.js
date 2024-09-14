@@ -555,7 +555,7 @@ function changeCSS(typeAndClass, newRule, newValue)
     // console.log("FOUNDS");
   }
 
-onscrollend = (event) => {
+// onscrollend = (event) => {
 
 //   console
 //   if (scrollDelta > 0) {
@@ -582,7 +582,7 @@ onscrollend = (event) => {
 //       });
 //     } 
 //   }
-};
+// };
 
 // const targetSection = document.querySelector('#arcade-container');
 // let isInTargetSection = false;
