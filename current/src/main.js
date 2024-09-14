@@ -456,12 +456,10 @@ let anchorScrolling = false;
 // Function to set the boolean to true for 1 second
 function setBooleanTrue() {
     anchorScrolling = true;
-    console.log("on!!");
 
     // Set a timeout to revert it back to false after 1 second
     setTimeout(() => {
         anchorScrolling = false;
-        console.log("off.......");
         if (
           scrollProgress > landingHeight - 100 &&
           scrollProgress < landingHeight + aboutHeight + arcadeContainerHeight - 100
