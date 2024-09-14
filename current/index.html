@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-mandatory">
 
 <head>
   <title>HackTX 2024</title>
@@ -19,10 +19,6 @@
     window.togglefaq = togglefaq;
     window.filterEvents = filterEvents;
   </script>
-
-  <!-- <link rel="stylesheet" href="styleguide.css">
-  <link rel="stylesheet" href="globals.css">
-  <link rel="stylesheet" href="hifidelity-idea.css"> -->
 </head>
 
 <a id="mlh-trust-badge"
@@ -34,22 +30,22 @@
 <body>
   <canvas id="bg"></canvas>
   <nav id="desktop-nav">
-    <a href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="bat-logo" /></a>
+    <a class="navlink" href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="bat-logo" /></a>
     <div class="navbar-options">
-      <a href="#about">About</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#prizes-anchor">Prizes</a>
-      <a href="#faq">FAQ</a>
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#schedule">Schedule</a>
+      <a class="navlink" href="#prizes-anchor">Prizes</a>
+      <a class="navlink" href="#faq">FAQ</a>
       <!-- <a href="" id="desktop-apply">Apply</a> -->
     </div>
   </nav>
 
   <nav id="mobile-nav">
-    <a href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="WIP" /></a>
-    <a href="#about"><img src="assets/img/about.svg"></a>
-    <a href="#schedule"><img src="assets/img/schedule.svg"></a>
-    <a href="#prizes-anchor"><img src="assets/img/prizes.svg"></a>
-    <a href="#faq"><img src="assets/img/faq.svg"></a>
+    <a class="navlink" href="#landing"><img class="bat" src="assets/img/bat-logo.svg" alt="WIP" /></a>
+    <a class="navlink" href="#about"><img src="assets/img/about.svg"></a>
+    <a class="navlink" href="#schedule"><img src="assets/img/schedule.svg"></a>
+    <a class="navlink" href="#prizes-anchor"><img src="assets/img/prizes.svg"></a>
+    <a class="navlink" href="#faq"><img src="assets/img/faq.svg"></a>
     <!-- <a href="" id="mobile-apply">Apply</a> -->
   </nav>
   <section class="landing" id="landing">
@@ -76,25 +72,16 @@
       Don't miss out! <b>Applications open</b>
       <p class="applications-open">September 21st at 9:00 AM CDT</p>
     </div>
-
-      <!-- <img draggable="false" class = "eyes" id = "left" src="assets/img/lefteye.png">
-      <img draggable="false" class = "eyes" id = "right" src="assets/img/righteye.png"> -->
-
-      <!-- <img class="splash-image" src="assets/img/Temp Landing.png"> -->
       <div class="splash-image">
-        
           <img draggable="false" id = "screen" src="assets/img/screen.png">
           <img draggable="false" id = "eyes" src="assets/img/eyes.png">
-          <img draggable="false" id = "body" src="assets/img/body.png">
-          <!-- <img draggable="false" id = "splash-bg" src="assets/img/Temp Landing BKGD.png"> -->
-        
-      
+          <img draggable="false" id = "body" src="assets/img/body.png">      
         <img draggable="false" class="scroll-image" src="assets/img/scroll down.png">
     </div>
   </section>
 
 
-  <section class="about" id="about">
+  <section class="about snap-section" id="about">
     <div class="hack-words chillax-normal-white-32px">
       <div class="about-mobile-grouping">
         <div id="countdown"><b>00:00:00:00</b></div>
@@ -130,10 +117,10 @@
     </div>
   </section>
 
-  <section id="arcade-container">
+  <section id="arcade-container" class="snap-section">
     hello
   </section>
-  <section id="schedule">
+  <section id="schedule" class="snap-section">
     <div class="schedule-title">What's next?</div>
     <div class="schedule-button-filters">
       <button onclick="filterEvents('all')" class="schedule-button" id="all">

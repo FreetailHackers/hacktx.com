@@ -220,8 +220,13 @@ b {
   }
 }
 
+.scroll-mandatory {
+  scroll-snap-type: y mandatory;
+}
+
 section {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 canvas {
@@ -252,6 +257,10 @@ nav {
   align-items: center;
   position: fixed;
   z-index: 2;
+}
+
+.navlink{
+
 }
 
 #desktop-nav {

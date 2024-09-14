@@ -446,29 +446,64 @@ function animate() {
 document.body.onscroll = () => {
   scrollProgress =
     document.documentElement.scrollTop || document.body.scrollTop;
-  if (
-    scrollProgress > landingHeight - 100 &&
-    scrollProgress < landingHeight + aboutHeight + arcadeContainerHeight - 100
-  ) {
-    changeCSS("html", "scrollSnapType", "y mandatory");
-  } else {
-    changeCSS("html", "scrollSnapType", "none");
-  }
 
   anchorY = rect.top + rect.height / 2 - scrollProgress;
 };
 
-function changeCSS(typeAndClass, newRule, newValue) {
-  var thisCSS = document.styleSheets[0];
-  var ruleSearch = thisCSS.cssRules ? thisCSS.cssRules : thisCSS.rules;
-  for (let i = 0; i < ruleSearch.length; i++) {
-    if (ruleSearch[i].selectorText == typeAndClass) {
-      var target = ruleSearch[i];
-      break;
-    }
-  }
-  if (target != null) target.style[newRule] = newValue;
+// Initialize the boolean variable
+let anchorScrolling = false;
+
+// Function to set the boolean to true for 1 second
+function setBooleanTrue() {
+    anchorScrolling = true;
+    console.log("on!!");
+
+    // Set a timeout to revert it back to false after 1 second
+    setTimeout(() => {
+        anchorScrolling = false;
+        console.log("off.......");
+        if (
+          scrollProgress > landingHeight - 100 &&
+          scrollProgress < landingHeight + aboutHeight + arcadeContainerHeight - 100
+        ) {
+          document.documentElement.classList.add('scroll-mandatory');
+        } else {
+          document.documentElement.classList.remove('scroll-mandatory');
+        }
+    }, 1000);
 }
+
+// Select all <a> elements in the navbar
+const navLinks = document.querySelectorAll('.navlink');
+
+// Add click event listener to each link
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        // event.preventDefault(); // Prevent default anchor behavior if necessary
+        document.documentElement.classList.remove('scroll-mandatory');
+        setBooleanTrue();
+    });
+});
+
+const sections = document.querySelectorAll('.snap-section');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (!anchorScrolling){  
+      document.documentElement.classList.remove('scroll-mandatory');
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document.documentElement.classList.add('scroll-mandatory');
+        }
+      });
+    }
+  },
+  { rootMargin: '-50% 0px -50% 0px' }
+);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
 
 animate();
 
