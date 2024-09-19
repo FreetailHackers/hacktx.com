@@ -24,7 +24,7 @@ function populatefaq() {
   const faqDataLeft = [
     {
       q: "What is HackTX?",
-      a: "HackTX is a beginner friendly spring hackathon only open to University of Texas at Austin and Austin Community College students hosted by Freetail Hackers! HackTX 2024 aims to promote novel ideas, creations, and conversations centered around fast-paced innovation and artificial intelligence.<br><br>This hackathon serves to provide an electric environment where the creators of tomorrow can collaborate to learn, create change, and, above all, have fun creating something new! No prior experience is required and all majors are welcome!",
+      a: "HackTX is the annual hackathon hosted by Freetail Hackers! HackTX 2024 aims to promote novel ideas, creations, and conversations centered around fast-paced innovation and artificial intelligence.<br><br>This hackathon serves to provide an electric environment where the creators of tomorrow can collaborate to learn, create change, and, above all, have fun creating something new! No prior experience is required and all majors are welcome!",
     },
     {
       q: "When is HackTX?",
