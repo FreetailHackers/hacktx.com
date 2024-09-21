@@ -188,16 +188,13 @@ var mouseDown = false,
   mouseY = 0;
 
 var canvas = renderer.domElement;
-console.log(canvas);
 canvas.addEventListener(
   "mousemove",
   function (evt) {
-    console.log("canvas");
     if (mouseDown) {
       evt.preventDefault();
       var deltaX = evt.clientX - mouseX;
       vely = lerp(deltaX / 200, vely, 0.5);
-      console.log(vely);
     }
     mouseX = evt.clientX;
     mouseY = evt.clientY;
@@ -205,33 +202,9 @@ canvas.addEventListener(
   false
 );
 
-var touchX = 0;
-canvas.addEventListener(
-  "touch",
-  function (evt) {
-    console.log("touich");
-    var deltaX = evt.screenX - touchX;
-      vely = lerp(deltaX / 200, vely, 0.5);
-      console.log(vely);
-    touchX = evt.screenX;
-  }
-)
-
-// console.log("Adding event listener");
-// canvas.addEventListener(
-//   "mousedown",
-//   function (evt) {
-//     evt.preventDefault();
-//     console.log("mouseDown is true");
-//     mouseDown = true;
-//   },
-//   false
-// );
-
 window.addEventListener(
   "mousedown",
   function (evt) {
-    console.log("mouse down is true");
     mouseDown = true;
 
     //button interact
@@ -315,7 +288,7 @@ scrollScripts.push({
         camera.position.z = lerp(cameraInitPos, 8, percent);
 
         cabinet.position.x = 0;
-        cabinet.position.y = 1.5;
+        cabinet.position.y = 1;
         cabinet.position.z = 0;
       }
 
@@ -364,7 +337,7 @@ scrollScripts.push({
         camera.position.z = lerp(8, cameraInitPos, linPercent);
 
         cabinet.position.x = 0;
-        cabinet.position.y = lerp(1.5, 20, linPercent);
+        cabinet.position.y = lerp(1, 20, linPercent);
         cabinet.position.z = lerp(0, -20, percent);
       }
     }
