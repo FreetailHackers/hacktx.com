@@ -261,7 +261,7 @@ scrollScripts.push({
       camera.position.y = lerp(11, 1, scalePercent(this.start, this.end));
       camera.position.z = cameraInitPos;
   } else {
-      camera.position.y = lerp(8, 0, scalePercent(this.start, this.end));
+      camera.position.y = lerp(10, 0, scalePercent(this.start, this.end));
       camera.position.z = cameraInitPos + 3;
   }
   },
