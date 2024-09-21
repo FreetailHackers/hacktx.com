@@ -521,17 +521,6 @@ nav {
   animation: bob 2s ease-in-out infinite;
 }
 
-/* .splash-image #splash-bg{
-  position:unset;
-  display:none;
-  z-index: -100;
-  animation: bob 5s ease-in-out infinite;
-} */
-
-#bg {
-  z-index: -100;
-}
-
 /* 
 .splash-image #left{
   z-index: -2;

@@ -188,40 +188,51 @@ var mouseDown = false,
   mouseY = 0;
 
 var canvas = renderer.domElement;
-
+console.log(canvas);
 canvas.addEventListener(
   "mousemove",
   function (evt) {
-    mouseX = evt.clientX;
-    mouseY = evt.clientY;
-
+    console.log("canvas");
     if (mouseDown) {
       evt.preventDefault();
-      var deltaX = evt.clientX - mouseX,
-        vely = lerp(deltaX / 200, vely, 0.5);
+      var deltaX = evt.clientX - mouseX;
+      vely = lerp(deltaX / 200, vely, 0.5);
+      console.log(vely);
     }
-  },
-  false
-);
-
-canvas.addEventListener(
-  "mousedown",
-  function (evt) {
-    evt.preventDefault();
-    mouseDown = true;
     mouseX = evt.clientX;
     mouseY = evt.clientY;
   },
   false
 );
+
+var touchX = 0;
+canvas.addEventListener(
+  "touch",
+  function (evt) {
+    console.log("touich");
+    var deltaX = evt.screenX - touchX;
+      vely = lerp(deltaX / 200, vely, 0.5);
+      console.log(vely);
+    touchX = evt.screenX;
+  }
+)
+
+// console.log("Adding event listener");
+// canvas.addEventListener(
+//   "mousedown",
+//   function (evt) {
+//     evt.preventDefault();
+//     console.log("mouseDown is true");
+//     mouseDown = true;
+//   },
+//   false
+// );
 
 window.addEventListener(
   "mousedown",
   function (evt) {
-    evt.preventDefault();
+    console.log("mouse down is true");
     mouseDown = true;
-    mouseX = evt.clientX;
-    mouseY = evt.clientY;
 
     //button interact
     pointer.x = (mouseX / window.innerWidth) * 2 - 1;
@@ -246,7 +257,7 @@ window.addEventListener(
   false
 );
 
-canvas.addEventListener(
+document.addEventListener(
   "mouseup",
   function (evt) {
     evt.preventDefault();
