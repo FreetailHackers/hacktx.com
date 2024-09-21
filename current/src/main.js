@@ -257,12 +257,13 @@ scrollScripts.push({
       cabinet.getWorldQuaternion(cabinetLastQuat);
     }
     camera.position.x = 0;
-    camera.position.z = cameraInitPos;
     if (window.innerWidth > 910) {
       camera.position.y = lerp(11, 1, scalePercent(this.start, this.end));
-    } else {
+      camera.position.z = cameraInitPos;
+  } else {
       camera.position.y = lerp(8, 0, scalePercent(this.start, this.end));
-    }
+      camera.position.z = cameraInitPos + 3;
+  }
   },
 });
 
@@ -285,10 +286,10 @@ scrollScripts.push({
       } else {
         camera.position.x = 0;
         camera.position.y = lerp(0, 2, percent);
-        camera.position.z = lerp(cameraInitPos, 8, percent);
+        camera.position.z = lerp(cameraInitPos + 3, 8, percent);
 
         cabinet.position.x = 0;
-        cabinet.position.y = 1;
+        cabinet.position.y = 1.5;
         cabinet.position.z = 0;
       }
 
@@ -337,7 +338,7 @@ scrollScripts.push({
         camera.position.z = lerp(8, cameraInitPos, linPercent);
 
         cabinet.position.x = 0;
-        cabinet.position.y = lerp(1, 20, linPercent);
+        cabinet.position.y = lerp(1.5, 20, linPercent);
         cabinet.position.z = lerp(0, -20, percent);
       }
     }
