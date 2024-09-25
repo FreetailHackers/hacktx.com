@@ -444,33 +444,26 @@ nav {
 }
 
 .dont-miss-out-apply {
-  margin-top: 32px;
-  margin-bottom: 12px;
+  margin: 0.5em;
 }
 
-.applications-close {
+.landing-text {
   color: var(--white);
   display: flex;
   flex: 0;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  padding: 16px;
+  margin: 1em;
 }
-/* .dont-miss-out::before {
-  content: '';
-  position: absolute;
-  top: 80px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -5;
-  filter: blur(3.5px);
-  mask-image: radial-gradient(circle at center, #000000 10%, transparent 100%);
-} */
 
-.applications-close b {
+.landing-text b {
   font-weight: 700;
+}
+
+.landing-text a {
+  font-weight: 500;
+  color: var(--pink);
 }
 
 .applications-open {
