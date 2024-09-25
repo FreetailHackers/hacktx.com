@@ -24,7 +24,7 @@ function populatefaq() {
   const faqDataLeft = [
     {
       q: "What is HackTX?",
-      a: "HackTX is the annual hackathon hosted by Freetail Hackers! HackTX 2024 aims to promote novel ideas, creations, and conversations centered around fast-paced innovation and artificial intelligence.<br><br>This hackathon serves to provide an electric environment where the creators of tomorrow can collaborate to learn, create change, and, above all, have fun creating something new! No prior experience is required and all majors are welcome!",
+      a: "HackTX is the annual hackathon hosted by Freetail Hackers! At HackTX 2024, Freetail and UT's Year of AI aim to promote novel ideas, creations, and conversations centered around fast-paced innovation and artificial intelligence.<br><br>This hackathon serves to provide an electric environment where the creators of tomorrow can collaborate to learn, create change, and, above all, have fun creating something new! No prior experience is required and all majors are welcome!",
     },
     {
       q: "When is HackTX?",
@@ -36,11 +36,11 @@ function populatefaq() {
     },
     {
       q: "When is the application due?",
-      a: "Applications will open on September 2nd and close on October 2nd at 11:59PM CDT. However, please apply early since we will be releasing decisions in waves!",
+      a: "Applications open on September 21st and close on October 19th at 9:00 AM CT. However, please apply early since we will be releasing decisions in waves!",
     },
     {
       q: "What's the schedule?",
-      a: "We'll release a more detailed schedule in the coming weeks, but our event will start roughly around 9am on Saturday, November 2nd and end around 8pm on March 23rd.",
+      a: "We'll release a more detailed schedule in the coming weeks, but our event will start around 8am on Saturday, November 2nd and end around 6pm on November 3rd.",
     },
     {
       q: "How do teams work?",
