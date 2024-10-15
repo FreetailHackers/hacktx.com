@@ -1235,6 +1235,7 @@ nav {
   justify-content: space-around;
   margin-top: 50px;
   margin-bottom: 100px;
+  max-width: 100vw;
 }
 
 #sponsors-flex h2 {
@@ -1244,7 +1245,7 @@ nav {
 #sponsors-flex img {
   object-fit: contain;
   height: 72px;
-  filter: saturate(0);
+  filter: saturate(0) contrast(0.5);
 }
 
 #sponsors-flex img:hover {
