@@ -1244,7 +1244,7 @@ nav {
 #sponsors-flex img {
   object-fit: contain;
   height: 72px;
-  filter: saturate(0);
+  filter: saturate(0) contrast(0.5);
 }
 
 #sponsors-flex img:hover {
