@@ -1204,14 +1204,9 @@ nav {
 }
 
 #sponsors {
-  /* align-items: center;
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 39px;
-  margin-left: 1px;
-  margin-top: 217px;
-  position: relative;
-  width: 1190px; */
+  flex-direction: column; 
   z-index: 1;
   text-align: center;
   font-family: var(--font-family-chillax);
@@ -1235,6 +1230,7 @@ nav {
   justify-content: space-around;
   margin-top: 50px;
   margin-bottom: 100px;
+  max-width: 90vw;
 }
 
 #sponsors-flex h2 {
@@ -1244,7 +1240,8 @@ nav {
 #sponsors-flex img {
   object-fit: contain;
   height: 72px;
-  filter: saturate(0);
+  max-width: 90vw;
+  filter: saturate(0) contrast(0.5);
 }
 
 #sponsors-flex img:hover {
