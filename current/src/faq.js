@@ -52,7 +52,7 @@ function populatefaq() {
     },
     {
       q: "How do I volunteer?",
-      a: "We are always looking for mentors to answer student questions or workshop suggestions, as well as general volunteers to help run our event. If you want to help out at our event, apply at <a href='tinyurl.com/HackTXVolunteering'>this link!</a> If you are looking to help outside of volunteering and mentoring shoot us an email at hello@freetailhackers.com.",
+      a: "We are always looking for mentors to answer student questions or workshop suggestions, as well as general volunteers to help run our event. If you want to help out at our event, apply at <a href='https://tinyurl.com/HackTXVolunteering'>this link!</a> If you are looking to help outside of volunteering and mentoring shoot us an email at hello@freetailhackers.com.",
     },
   ];
 
