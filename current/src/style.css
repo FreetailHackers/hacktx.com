@@ -445,6 +445,7 @@ nav {
 
 .dont-miss-out-apply {
   margin: 0.5em;
+  margin-bottom: 3rem;
 }
 
 .landing-text {
@@ -455,6 +456,8 @@ nav {
   justify-content: center;
   gap: 8px;
   margin: 1em;
+  margin-top: 2em;
+  font-weight: 600;
 }
 
 .landing-text b {
