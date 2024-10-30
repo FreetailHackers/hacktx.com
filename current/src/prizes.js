@@ -28,14 +28,6 @@ function populatePrizes() {
       t: "BEST ARCADE-THEMED",
       d: "HackTX 2024 is arcade-themed, so this prize will go to those who embrace the aesthetic and the culture of old arcades! Whether you make the next Dance-Dance-Revolution or replicate the old Mortal Kombat, this prize goes to those who truly embody the arcade spirit.",
     },
-    {
-      t: "BEST ARCADE-THEMED",
-      d: "HackTX 2024 is arcade-themed, so this prize will go to those who embrace the aesthetic and the culture of old arcades! Whether you make the next Dance-Dance-Revolution or replicate the old Mortal Kombat, this prize goes to those who truly embody the arcade spirit.",
-    },
-    {
-      t: "BEST ARCADE-THEMED",
-      d: "HackTX 2024 is arcade-themed, so this prize will go to those who embrace the aesthetic and the culture of old arcades! Whether you make the next Dance-Dance-Revolution or replicate the old Mortal Kombat, this prize goes to those who truly embody the arcade spirit.",
-    },
   ];
 
   const AIData = [
@@ -50,6 +42,14 @@ function populatePrizes() {
     {
       t: "BEST GROUND-UP MODEL",
       d: "We’ve all used pre-trained models and created a good use out of them, but what about actually training a model for your purpose? This award goes to the hackers that train a model from the ground-up that has a great use case and creative parameters.",
+    },
+    {
+      t: "Best use of GenAI using InterSystems IRIS Vector Search",
+      d: "This award celebrates the most innovative application of Generative AI utilizing InterSystems IRIS Vector Search. Judges will evaluate entries based on the effectiveness and creativity of GenAI integration, the complexity and precision of the vector search solution, and the real-world impact and potential for scaling this technology.",
+    },
+    {
+      t: "Best Use of Intel AI",
+      d: "Unleash your creativity and build cutting-edge AI applications with Intel-optimized software on the latest Intel hardware including Intel Tiber Developer Cloud and AI PC Dev Kits.Tackle real-world challenges using Intel technology in your hackathon project for a chance to win awesome prizes. Join the Best Use of Intel AI track and demonstrate the future of AI innovation.",
     },
   ];
 

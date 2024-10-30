@@ -139,9 +139,9 @@ function populateSchedule() {
     //     image: "assets/img/ns_pink.png"
     // },
     {
-      time: "10:00 PM",
+      time: "9:00 PM",
       event: "Cup Stacking",
-      location: "GDC 1.304",
+      location: "GDC 2.502",
       notes:
         "A hackathon tradition! Find a team and stack the most cups for a prize!",
       category: "fun",
@@ -160,14 +160,14 @@ function populateSchedule() {
   const sundayEvents = [
     {
       time: "7:00 AM",
-      event: "Sunrise",
+      event: "Sunrise Watch Party",
       location: "GDC Courtyard",
       notes: "Watch the sun rise on the big day with us!",
       category: "fun",
       image: "assets/img/ns_pink.png",
     },
     {
-      time: "8:00 AM",
+      time: "8:30 AM",
       event: "Breakfast",
       location: "Welch Grand Hallway",
       notes:
