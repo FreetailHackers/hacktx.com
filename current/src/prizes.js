@@ -28,6 +28,14 @@ function populatePrizes() {
       t: "BEST ARCADE-THEMED",
       d: "HackTX 2024 is arcade-themed, so this prize will go to those who embrace the aesthetic and the culture of old arcades! Whether you make the next Dance-Dance-Revolution or replicate the old Mortal Kombat, this prize goes to those who truly embody the arcade spirit.",
     },
+    {
+      t: "BEST ARCADE-THEMED",
+      d: "HackTX 2024 is arcade-themed, so this prize will go to those who embrace the aesthetic and the culture of old arcades! Whether you make the next Dance-Dance-Revolution or replicate the old Mortal Kombat, this prize goes to those who truly embody the arcade spirit.",
+    },
+    {
+      t: "BEST ARCADE-THEMED",
+      d: "HackTX 2024 is arcade-themed, so this prize will go to those who embrace the aesthetic and the culture of old arcades! Whether you make the next Dance-Dance-Revolution or replicate the old Mortal Kombat, this prize goes to those who truly embody the arcade spirit.",
+    },
   ];
 
   const AIData = [
