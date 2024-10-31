@@ -64,22 +64,30 @@ function populateSchedule() {
       category: "event",
       image: "assets/img/ns_green.png",
     },
-    // {
-    //     time: "12:00 PM",
-    //     event: "Corporate Workshops",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
-    // {
-    //     time: "1:00 PM",
-    //     event: "ECLAIR Workship (AI + Using AI at a hackthon)",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
+    {
+        time: "12:00 PM",
+        event: "Intersystems Workshop",
+        location: "",
+        notes: "Learn to use InterSystems' Vector Search with SQL, Python, Langchain, and Llamaindex to build RAG and GenAI applications with your data!",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
+    {
+      time: "12:30 PM",
+      event: "Intel Workshop",
+      location: "",
+      notes: "Discover how to leverage Intel hardware, AI PCs, and the Intel® Developer Cloud with oneAPI tools to excel in hackathons and build AI applications for future projects.",
+      category: "event",
+      image: "assets/img/ns_green.png"
+  },
+    {
+        time: "1:00 PM",
+        event: "ECLAIR Workship (AI + Using AI at a hackthon)",
+        location: "",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
     {
       time: "2:00 PM",
       event: "Lunch",
@@ -89,30 +97,30 @@ function populateSchedule() {
       category: "food",
       image: "assets/img/ns_yellow.png",
     },
-    // {
-    //     time: "3:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
-    // {
-    //     time: "4:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
-    // {
-    //     time: "5:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
+    {
+        time: "3:00 PM",
+        event: "MLH Workshop (Figma)",
+        location: "",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
+    {
+        time: "4:00 PM",
+        event: "MLDS Workshop (intro to ML with scikit-learn)",
+        location: "",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
+    {
+        time: "5:00 PM",
+        event: "ISSS Vulnerable Web Apps Workshop",
+        location: "",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
     {
       time: "6:00 PM",
       event: "Dinner",
@@ -122,22 +130,14 @@ function populateSchedule() {
       category: "food",
       image: "assets/img/ns_yellow.png",
     },
-    // {
-    //     time: "8:00 PM",
-    //     event: "!!!",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "fun",
-    //     image: "assets/img/ns_pink.png"
-    // },
-    // {
-    //     time: "9:00 PM",
-    //     event: "!!!",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "fun",
-    //     image: "assets/img/ns_pink.png"
-    // },
+    {
+      time: "8:00 PM",
+      event: "MLH TechTogether Meetup",
+      location: "",
+      notes: "The TechTogether Meetup offers a supportive space for underrepresented genders and allies in tech to connect, share experiences, and discuss diversity, featuring an open Q&A and free scrunchies and stickers for attendees.",
+      category: "event",
+      image: "assets/img/ns_green.png"
+  },
     {
       time: "9:00 PM",
       event: "Cup Stacking",
