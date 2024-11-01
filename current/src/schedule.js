@@ -26,7 +26,7 @@ function populateSchedule() {
     {
       time: "8:00 AM",
       event: "Check-In",
-      location: "",
+      location: "GDC Atrium",
       notes: "",
       category: "required",
       image: "assets/img/ns_blue.png",
@@ -34,10 +34,18 @@ function populateSchedule() {
     {
       time: "10:00 AM",
       event: "Opening Ceremony",
-      location: "",
+      location: "Hogg Memorial Auditorium",
       notes: "",
       category: "required",
       image: "assets/img/ns_blue.png",
+    },
+    {
+      time: "10:00 AM",
+      event: "Late Check In",
+      location: "GDC Atrium",
+      notes: "",
+      category: "event",
+      image: "assets/img/ns_green.png",
     },
     {
       time: "11:00 AM",
@@ -49,91 +57,91 @@ function populateSchedule() {
     },
     {
       time: "11:00 AM",
-      event: "Team Matching + Ideation Workshop",
-      location: "",
+      event: "Workshop: Team Matching + Ideation",
+      location: "GDC 1.304",
       notes:
         "Meet new people, find a team, and start brainstorming projects at this workshop!",
       category: "event",
       image: "assets/img/ns_green.png",
     },
-    // {
-    //     time: "12:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
-    // {
-    //     time: "1:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
+    {
+        time: "12:00 PM",
+        event: "Intersystems Workshop",
+        location: "GDC 2.216",
+        notes: "Learn to use InterSystems' Vector Search with SQL, Python, Langchain, and Llamaindex to build RAG and GenAI applications with your data!",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
+    {
+      time: "12:30 PM",
+      event: "Intel Workshop",
+      location: "GDC 2.216",
+      notes: "Discover how to leverage Intel hardware, AI PCs, and the Intel® Developer Cloud with oneAPI tools to excel in hackathons and build AI applications for future projects.",
+      category: "event",
+      image: "assets/img/ns_green.png"
+  },
+    {
+        time: "1:00 PM",
+        event: "ECLAIR Workshop (AI + Using AI at a hackthon)",
+        location: "GDC 1.304",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
     {
       time: "2:00 PM",
       event: "Lunch",
-      location: "",
+      location: "Welch Grand Hallway",
       notes:
         "Wait until your group is called, and have your hacker ID out to scan!",
       category: "food",
       image: "assets/img/ns_yellow.png",
     },
-    // {
-    //     time: "3:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
-    // {
-    //     time: "4:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
-    // {
-    //     time: "5:00 PM",
-    //     event: "Workshop ???",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "event",
-    //     image: "assets/img/ns_green.png"
-    // },
+    {
+        time: "3:00 PM",
+        event: "MLH Workshop (Figma)",
+        location: "GDC 1.304",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
+    {
+        time: "4:00 PM",
+        event: "MLDS Workshop (intro to ML with scikit-learn)",
+        location: "GDC 2.216",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
+    {
+        time: "5:00 PM",
+        event: "ISSS Vulnerable Web Apps Workshop",
+        location: "GDC 1.406",
+        notes: "",
+        category: "event",
+        image: "assets/img/ns_green.png"
+    },
     {
       time: "6:00 PM",
       event: "Dinner",
-      location: "",
+      location: "Welch Grand Hallway",
       notes:
         "Wait until your group is called, and have your hacker ID out to scan!",
       category: "food",
       image: "assets/img/ns_yellow.png",
     },
-    // {
-    //     time: "8:00 PM",
-    //     event: "!!!",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "fun",
-    //     image: "assets/img/ns_pink.png"
-    // },
-    // {
-    //     time: "9:00 PM",
-    //     event: "!!!",
-    //     location: "",
-    //     notes: "TBD",
-    //     category: "fun",
-    //     image: "assets/img/ns_pink.png"
-    // },
     {
-      time: "10:00 PM",
+      time: "8:00 PM",
+      event: "MLH TechTogether Meetup",
+      location: "GDC 2.216",
+      notes: "The TechTogether Meetup offers a supportive space for underrepresented genders and allies in tech to connect, share experiences, and discuss diversity, featuring an open Q&A and free scrunchies and stickers for attendees.",
+      category: "event",
+      image: "assets/img/ns_green.png"
+  },
+    {
+      time: "9:00 PM",
       event: "Cup Stacking",
-      location: "",
+      location: "GDC 2.502",
       notes:
         "A hackathon tradition! Find a team and stack the most cups for a prize!",
       category: "fun",
@@ -142,7 +150,7 @@ function populateSchedule() {
     {
       time: "12:00 AM",
       event: "Midnight Snack",
-      location: "",
+      location: "GDC Atrium",
       notes: "Enjoy a sweet treat to keep you recharged!",
       category: "food",
       image: "assets/img/ns_yellow.png",
@@ -151,17 +159,17 @@ function populateSchedule() {
 
   const sundayEvents = [
     {
-      time: "7:30 AM",
-      event: "Sunrise",
-      location: "",
+      time: "7:00 AM",
+      event: "Sunrise Watch Party",
+      location: "GDC Courtyard",
       notes: "Watch the sun rise on the big day with us!",
       category: "fun",
       image: "assets/img/ns_pink.png",
     },
     {
-      time: "8:00 AM",
+      time: "8:30 AM",
       event: "Breakfast",
-      location: "",
+      location: "Welch Grand Hallway",
       notes:
         "Wait until your group is called, and have your hacker ID out to scan!",
       category: "food",
@@ -171,30 +179,30 @@ function populateSchedule() {
       time: "11:00 AM",
       event: "Hacking Ends",
       location: "",
-      notes: "Submit what you have, and keep an eye out for judging info",
+      notes: "Submit what you have, and keep an eye out for judging info!",
       category: "required",
       image: "assets/img/ns_blue.png",
     },
     {
       time: "11:00 AM",
       event: "Lunch",
-      location: "",
+      location: "Welch Grand Hallway",
       notes:
         "Wait until your group is called, and have your hacker ID out to scan!",
       category: "food",
       image: "assets/img/ns_yellow.png",
     },
     {
-      time: "12:00 PM",
+      time: "1:00 PM",
       event: "Judging Begins",
-      location: "",
+      location: "WEL 2.246 WEL 2.306 WEL 2.310 WEL 1.316",
       notes:
         "Show up early and set up your project before judges start going around!",
       category: "required",
       image: "assets/img/ns_blue.png",
     },
     {
-      time: "3:00 PM",
+      time: "4:00 PM",
       event: "Judging Ends",
       location: "",
       notes: "Make your way to pitching!",
@@ -202,16 +210,16 @@ function populateSchedule() {
       image: "assets/img/ns_blue.png",
     },
     {
-      time: "3:00 PM",
+      time: "4:00 PM",
       event: "Pitching Begins",
-      location: "",
+      location: "WEL 1.308",
       notes:
         "If you're pitching, be ready - this is a rapid fire round! 30 seconds to a minute per person",
       category: "event",
       image: "assets/img/ns_green.png",
     },
     {
-      time: "4:00 PM",
+      time: "4:30 PM",
       event: "Pitching Ends",
       location: "",
       notes: "",
@@ -219,9 +227,9 @@ function populateSchedule() {
       image: "assets/img/ns_green.png",
     },
     {
-      time: "4:30 PM",
+      time: "5:00 PM",
       event: "Closing Ceremony",
-      location: "",
+      location: "Hogg Memorial Auditorium",
       notes: "Awards and prizes!",
       category: "required",
       image: "assets/img/ns_blue.png",

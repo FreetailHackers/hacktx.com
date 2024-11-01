@@ -892,6 +892,33 @@ nav {
   position: relative;
 }
 
+#food-menu {
+  z-index: 1;
+  width: 100%;
+}
+
+#food-menu h2 {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-xxl);
+  padding: 1rem;
+  text-shadow: 0 0 30px var(--moody-blue), 0 0 10px var(--moody-blue);
+}
+
+#food-menus {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  border: 4px solid #7B86CB;
+  background: linear-gradient(#0707337f 0%, #1625577f 53%, #6041777f 100%);
+}
+
+#food-menus img {
+  flex-grow: 1;
+  flex-basis: 30rem;
+  min-width: 0;
+  max-width: 100vw;
+}
+
 /* PRIZES CSS */
 
 #prizes-anchor {
@@ -927,6 +954,16 @@ nav {
 #AI-tracks {
   padding-top: 50px;
   padding-bottom: 40px;
+}
+
+#sponsor-tracks {
+  padding: 2em;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+#sponsor-tracks .prize-card {
+  flex-basis: 30em;
 }
 
 .prize-card:hover {
@@ -992,19 +1029,27 @@ nav {
 }
 
 #general-marquee {
-  --mq-gen-width: 11em;
+  --mq-width: 11em;
   --mq-gen-count: 5;
-  min-width: calc(4 * var(--mq-gen-width));
+  min-width: calc(4 * var(--mq-width));
   color: var(--purple);
   filter: drop-shadow(0 0 0.5em var(--purple));
 }
 
 #AI-marquee {
-  --mq-ai-width: 10em;
-  --mq-ai-count: 7;
-  min-width: calc(4 * var(--mq-ai-width));
+  --mq-width: 10em;
+  --mq-count: 7;
+  min-width: calc(4 * var(--mq-width));
   color: var(--blue);
   filter: drop-shadow(0 0 1em var(--blue));
+}
+
+#sponsor-marquee {
+  --mq-width: 18em;
+  --mq-count: 7;
+  min-width: calc(4 * var(--mq-width));
+  color: #c50;
+  filter: drop-shadow(0 0 1em #c50);
 }
 
 .marquee-item {
@@ -1043,37 +1088,73 @@ nav {
 
 .mqai1 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 1) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 1) * -1
   );
 }
 .mqai2 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 2) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 2) * -1
   );
 }
 .mqai3 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 3) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 3) * -1
   );
 }
 .mqai4 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 4) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 4) * -1
   );
 }
 .mqai5 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 5) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 5) * -1
   );
 }
 .mqai6 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 6) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 6) * -1
   );
 }
 .mqai7 {
   animation-delay: calc(
-    var(--mq-anim-length) / var(--mq-ai-count) * (var(--mq-ai-count) - 7) * -1
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 7) * -1
+  );
+}
+
+.mqs1 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 1) * -1
+  );
+}
+.mqs2 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 2) * -1
+  );
+}
+.mqs3 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 3) * -1
+  );
+}
+.mqs4 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 4) * -1
+  );
+}
+.mqs5 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 5) * -1
+  );
+}
+.mqs6 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 6) * -1
+  );
+}
+.mqs7 {
+  animation-delay: calc(
+    var(--mq-anim-length) / var(--mq-count) * (var(--mq-count) - 7) * -1
   );
 }
 
