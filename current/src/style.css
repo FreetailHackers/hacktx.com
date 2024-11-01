@@ -894,15 +894,25 @@ nav {
 
 #food-menu {
   z-index: 1;
+  width: 100%;
+}
+
+#food-menu h2 {
+  font-family: var(--font-family-sabo-filled);
+  font-size: var(--font-size-xxl);
+  padding: 1rem;
+  text-shadow: 0 0 30px var(--moody-blue), 0 0 10px var(--moody-blue);
+}
+
+#food-menus {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   margin-bottom: 4rem;
   border: 4px solid #7B86CB;
   background: linear-gradient(#0707337f 0%, #1625577f 53%, #6041777f 100%);
 }
 
-#food-menu img {
+#food-menus img {
   flex-grow: 1;
   flex-basis: 30rem;
   min-width: 0;

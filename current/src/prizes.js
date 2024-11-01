@@ -53,7 +53,7 @@ function populatePrizes() {
     },
     {
       t: "Best Use of Intel AI",
-      d: "Unleash your creativity and build cutting-edge AI applications with Intel-optimized software on the latest Intel hardware including Intel Tiber Developer Cloud and AI PC Dev Kits.Tackle real-world challenges using Intel technology in your hackathon project for a chance to win awesome prizes. Join the Best Use of Intel AI track and demonstrate the future of AI innovation.",
+      d: "Unleash your creativity and build cutting-edge AI applications with Intel-optimized software on the latest Intel hardware including Intel Tiber Developer Cloud and AI PC Dev Kits. Tackle real-world challenges using Intel technology in your hackathon project for a chance to win awesome prizes. Join the Best Use of Intel AI track and demonstrate the future of AI innovation!",
     },
   ]
 
