@@ -79,7 +79,7 @@ function populateSchedule() {
       notes: "Discover how to leverage Intel hardware, AI PCs, and the Intel® Developer Cloud with oneAPI tools to excel in hackathons and build AI applications for future projects.",
       category: "event",
       image: "assets/img/ns_green.png"
-  },
+    },
     {
         time: "1:00 PM",
         event: "ECLAIR Workshop (AI + Using AI at a hackthon)",
@@ -87,6 +87,14 @@ function populateSchedule() {
         notes: "",
         category: "event",
         image: "assets/img/ns_green.png"
+    },
+    {
+      time: "1:30 PM",
+      event: "Sponsor Expo",
+      location: "GDC Atrium",
+      notes: "Come check out our sponsor expo from 1:30pm - 5pm and see what our sponsors have to offer!",
+      category: "event",
+      image: "assets/img/ns_green.png"
     },
     {
       time: "2:00 PM",
