@@ -45,7 +45,7 @@ function populatePrizes() {
     },
     {
       t: "Best use of GenAI using InterSystems IRIS Vector Search",
-      d: "This award celebrates the most innovative application of Generative AI utilizing InterSystems IRIS Vector Search. Judges will evaluate entries based on the effectiveness and creativity of GenAI integration, the complexity and precision of the vector search solution, and the real-world impact and potential for scaling this technology.",
+      d: "This award celebrates the most innovative application of Generative AI utilizing InterSystems IRIS Vector Search. Judges will evaluate entries based on the effectiveness and creativity of GenAI integration, the complexity and precision of the vector search solution, and the real-world impact and potential for scaling this technology. For more information, check out <a href='/https://developer.intersystems.com/intersystems-genai-challenge-hacktx-2024/'> here </a>!",
     },
     {
       t: "Best Use of Intel AI",

@@ -67,7 +67,7 @@ function populateSchedule() {
     {
         time: "12:00 PM",
         event: "Intersystems Workshop",
-        location: "",
+        location: "GDC 2.216",
         notes: "Learn to use InterSystems' Vector Search with SQL, Python, Langchain, and Llamaindex to build RAG and GenAI applications with your data!",
         category: "event",
         image: "assets/img/ns_green.png"
@@ -75,15 +75,15 @@ function populateSchedule() {
     {
       time: "12:30 PM",
       event: "Intel Workshop",
-      location: "",
+      location: "GDC 2.216",
       notes: "Discover how to leverage Intel hardware, AI PCs, and the Intel® Developer Cloud with oneAPI tools to excel in hackathons and build AI applications for future projects.",
       category: "event",
       image: "assets/img/ns_green.png"
   },
     {
         time: "1:00 PM",
-        event: "ECLAIR Workship (AI + Using AI at a hackthon)",
-        location: "",
+        event: "ECLAIR Workshop (AI + Using AI at a hackthon)",
+        location: "GDC 1.304",
         notes: "",
         category: "event",
         image: "assets/img/ns_green.png"
@@ -100,7 +100,7 @@ function populateSchedule() {
     {
         time: "3:00 PM",
         event: "MLH Workshop (Figma)",
-        location: "",
+        location: "GDC 1.304",
         notes: "",
         category: "event",
         image: "assets/img/ns_green.png"
@@ -108,7 +108,7 @@ function populateSchedule() {
     {
         time: "4:00 PM",
         event: "MLDS Workshop (intro to ML with scikit-learn)",
-        location: "",
+        location: "GDC 2.216",
         notes: "",
         category: "event",
         image: "assets/img/ns_green.png"
@@ -116,7 +116,7 @@ function populateSchedule() {
     {
         time: "5:00 PM",
         event: "ISSS Vulnerable Web Apps Workshop",
-        location: "",
+        location: "GDC 1.406",
         notes: "",
         category: "event",
         image: "assets/img/ns_green.png"
@@ -133,7 +133,7 @@ function populateSchedule() {
     {
       time: "8:00 PM",
       event: "MLH TechTogether Meetup",
-      location: "",
+      location: "GDC 2.216",
       notes: "The TechTogether Meetup offers a supportive space for underrepresented genders and allies in tech to connect, share experiences, and discuss diversity, featuring an open Q&A and free scrunchies and stickers for attendees.",
       category: "event",
       image: "assets/img/ns_green.png"
@@ -219,7 +219,7 @@ function populateSchedule() {
       image: "assets/img/ns_green.png",
     },
     {
-      time: "5:00 PM",
+      time: "4:30 PM",
       event: "Pitching Ends",
       location: "",
       notes: "",
@@ -227,7 +227,7 @@ function populateSchedule() {
       image: "assets/img/ns_green.png",
     },
     {
-      time: "5:30 PM",
+      time: "5:00 PM",
       event: "Closing Ceremony",
       location: "Hogg Memorial Auditorium",
       notes: "Awards and prizes!",
