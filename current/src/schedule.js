@@ -167,6 +167,14 @@ function populateSchedule() {
 
   const sundayEvents = [
     {
+      time: "1:00 AM",
+      event: "ACM Gaming Night",
+      location: "GDC 6.202",
+      notes: "",
+      category: "fun",
+      image: "assets/img/ns_pink.png"
+    },
+    {
       time: "7:00 AM",
       event: "Sunrise Watch Party",
       location: "GDC Courtyard",
