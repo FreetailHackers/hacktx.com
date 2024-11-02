@@ -895,6 +895,7 @@ nav {
 #food-menu {
   z-index: 1;
   width: 100%;
+  scroll-margin-top: 5rem;
 }
 
 #food-menu h2 {
