@@ -448,6 +448,11 @@ nav {
   margin-bottom: 3rem;
 }
 
+.dont-miss-out-apply a {
+  font-weight: 500;
+  color: var(--pink);
+}
+
 .landing-text {
   color: var(--white);
   display: flex;
