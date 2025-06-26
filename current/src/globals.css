@@ -1,0 +1,20 @@
+
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "RELIGATH";
+  src: url("../assets/RELIGATH.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "RELIGATH", sans-serif;
+  --color-primary: #fdebaf;
+}
+
+html,
+body {
+  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden overscroll-none bg-gradient-to-b from-[#020612] to-[#131D46];
+}

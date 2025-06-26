@@ -1,6 +1,6 @@
-# HackTX 2025
+# HackTX 2024
 The static frontend for HackTX 2024.
-Built with React, Vite
+Built with Node, Vite, ThreeJS.
 
 ## Getting started
 
