@@ -1,9 +1,4 @@
 import React from "react";
-import freetailLogo from "../assets/freetail_logo.svg";
-import mlhBadge from "../assets/mlh_badge.svg";
-import headingImage from "../assets/heading.svg";
-import interestFormButton from "../assets/interest_form.svg";
-import starsBackground from "../assets/stars_bg.svg";
 
 function App() {
   return (
@@ -13,14 +8,14 @@ function App() {
           <a href="https://freetailhackers.com/" target="_blank">
             <img
               className="relative top-3 left-3 size-9"
-              src={freetailLogo}
+              src="/freetail_logo.png"
             />
           </a>
 
           <a href="https://mlh.io/" target="_blank">
             <img
               className="relative h-[144px] sm:h-auto xl:right-20"
-              src={mlhBadge}
+              src="/mlh_badge.svg"
             />
           </a>
         </div>
@@ -30,15 +25,17 @@ function App() {
           <div>
             <img
               className="w-full max-w-[56.25rem] min-w-[22.5rem]"
-              src={headingImage}
+              src="/heading.svg"
             />
           </div>
 
           <p className="mb-5 text-2xl uppercase sm:text-3xl">MID OCTOBER</p>
-
-          <button className="transition-shadow hover:cursor-pointer hover:shadow-[0px_0px_14px] hover:shadow-[#DDB945]">
-            <img src={interestFormButton}/>
-          </button>
+        
+          <a href="https://forms.gle/SahZJw8p7s1gb7yEA" target="_blank">
+            <button className="transition-shadow hover:cursor-pointer hover:shadow-[0px_0px_14px] hover:shadow-[#DDB945]">
+              <img src="/interest_form.svg " />
+            </button>
+          </a>
         </div>
 
         <footer className="mt-auto flex w-full flex-col items-center justify-between gap-3 pb-6 sm:flex-row xl:px-20 xl:pb-20">
@@ -55,7 +52,7 @@ function App() {
       </main>
 
       <img
-        src={starsBackground}
+        src="/stars_bg.svg"
         className="absolute inset-0 size-full object-cover"
         alt="Background Stars"
       />

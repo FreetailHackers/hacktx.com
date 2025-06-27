@@ -1,10 +1,8 @@
-
-
 @import "tailwindcss";
 
 @font-face {
   font-family: "RELIGATH";
-  src: url("../assets/RELIGATH.otf") format("opentype");
+  src: url("./RELIGATH.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
