@@ -33,7 +33,7 @@ function App() {
         
           <a href="https://forms.gle/SahZJw8p7s1gb7yEA" target="_blank">
             <button className="transition-shadow hover:cursor-pointer hover:shadow-[0px_0px_14px] hover:shadow-[#DDB945]">
-              <img src="/interest_form.svg " />
+              <img src="/interest_form.svg"/>
             </button>
           </a>
         </div>
