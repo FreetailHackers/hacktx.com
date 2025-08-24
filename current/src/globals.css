@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "RELIGATH";
+  font-family: "Satoshi";
   src: url("/RELIGATH.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @theme {
-  --font-sans: "RELIGATH", sans-serif;
+  --font-serif: "RELIGATH", serif;
 
   --color-primary: #fdebaf;
   --color-white: #F5F0E9;
   --color-blue: #000C44;
   --color-dark-blue: #01051A;
   --color-yellow: #E8D8A1;
+}
+
+:root {
+  font-size: 20px;
 }
 
 html,
