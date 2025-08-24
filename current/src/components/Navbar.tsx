@@ -10,7 +10,7 @@ function NavbarLink({
   children: React.ReactNode;
 }) {
   return (
-    <a href={href} className="text-lg hover:underline">
+    <a href={href} className="text-lg hover:drop-shadow-custom transition-all ease-out">
       {children}
     </a>
   );
@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="relative max-w-7xl h-[76px] mt-6 mx-auto px-3 flex justify-between items-center bg-[#000C4446]">
         <a href="https://freetailhackers.com/" target="_blank">
           <img
-            className="h-[72px] sm:h-auto hover:drop-shadow-[0_0_4px] transition-all duration-300 ease-out"
+            className="h-[72px] sm:h-auto hover:drop-shadow-custom transition-all duration-300 ease-out"
             src="/images/HackTX25_logo.png"
             alt="Freetail Hackers Logo"
           />

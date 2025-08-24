@@ -15,6 +15,9 @@
   --color-blue: #000C44;
   --color-dark-blue: #01051A;
   --color-yellow: #E8D8A1;
+  --color-grey: #9E9691;
+
+  --drop-shadow-custom: 0 0 3px var(--color-yellow);
 }
 
 :root {

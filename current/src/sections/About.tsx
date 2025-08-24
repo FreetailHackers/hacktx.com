@@ -53,7 +53,7 @@ export default function About() {
           </div>
 
           <a href="https://forms.gle/SahZJw8p7s1gb7yEA" className="group mt-6">
-            <img src="/vectors/Fancy Button.svg" alt="Apply Now" className="group-hover:drop-shadow-[0_0_3px] transition-all ease-out"/>
+            <img src="/vectors/Fancy Button.svg" alt="Apply Now" className="group-hover:drop-shadow-custom transition-all ease-out"/>
             {/* <img src="/vectors/Fancy Button.svg" alt="Apply Now" className="group-hover:hidden"/>
             <img src="/vectors/Fancy Button Glow.svg" alt="Apply Now" className="hidden group-hover:block"/> */}
           </a>
