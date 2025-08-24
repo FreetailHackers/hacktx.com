@@ -9,10 +9,15 @@
 
 @theme {
   --font-sans: "RELIGATH", sans-serif;
+
   --color-primary: #fdebaf;
+  --color-white: #F5F0E9;
+  --color-blue: #000C44;
+  --color-dark-blue: #01051A;
+  --color-yellow: #E8D8A1;
 }
 
 html,
 body {
-  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden overscroll-none bg-gradient-to-b from-[#020612] to-[#131D46];
+  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden overscroll-none bg-gradient-to-b from-[#01051A] to-[#131D46];
 }

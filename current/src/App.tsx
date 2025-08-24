@@ -1,21 +1,16 @@
 import React from "react";
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
     <>
+      <Navbar />
       <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5">
         <div className="relative flex w-full justify-between">
           <a href="https://freetailhackers.com/" target="_blank">
             <img
               className="relative top-3 left-3 size-9"
               src="/freetail_logo.png"
-            />
-          </a>
-
-          <a href="https://mlh.io/" target="_blank">
-            <img
-              className="relative h-[144px] sm:h-auto xl:right-20"
-              src="/mlh_badge.svg"
             />
           </a>
         </div>
