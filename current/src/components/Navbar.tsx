@@ -27,16 +27,16 @@ function Button({ href, children }: { href: string; children: React.ReactNode })
 export default function Navbar() {
   return (
     <nav className="fixed z-50 top-0 left-0 right-0">
-      <div className="relative max-w-6xl h-[76px] mt-6 mx-auto px-3 flex justify-between items-center bg-[#000C44B2]">
+      <div className="relative max-w-6xl h-[76px] mt-6 mx-auto flex justify-between items-center lg:bg-[#000C44B2]">
         <a href="https://freetailhackers.com/" target="_blank">
           <img
-            className="h-[72px] sm:h-auto hover:drop-shadow-custom transition-all duration-300 ease-out"
+            className="h-auto mx-6 hover:drop-shadow-custom transition-all duration-300 ease-out"
             src="/images/HackTX25_logo.png"
             alt="Freetail Hackers Logo"
           />
         </a>
 
-        <div className="flex gap-8">
+        <div className="flex gap-8 max-lg:hidden">
           <NavbarLink href="#about">About</NavbarLink>
 
           <Button href="https://forms.gle/SahZJw8p7s1gb7yEA">Apply</Button>
@@ -44,7 +44,7 @@ export default function Navbar() {
 
         <a href="https://mlh.io/" target="_blank">
           <img
-            className="absolute h-[144px] sm:h-auto xl:right-6 top-2"
+            className="absolute h-[144px] sm:h-auto right-6 top-2"
             src="/mlh_badge.svg"
           />
         </a>

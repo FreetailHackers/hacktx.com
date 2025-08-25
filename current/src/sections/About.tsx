@@ -3,7 +3,7 @@ import LandingStars from "../components/LandingStars";
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="px-2 py-1 text-yellow ring-1 ring-yellow text-blue rounded-full text-sm font-semibold">
+    <span className="px-2 py-1 text-white lg:text-yellow ring-1 ring-white lg:ring-yellow rounded-full max-sm:text-xs">
       {children}
     </span>
   );
@@ -11,10 +11,10 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 export default function About() {
   return (
-    <section className="relative w-screen">
+    <section className="relative w-full">
       <LandingStars />
 
-      <div className="mx-auto flex flex-row flex-wrap-reverse w-screen max-w-[1200px] justify-between">
+      <div className="mx-auto flex flex-col-reverse lg:flex-row items-center w-full max-w-[1200px] lg:justify-between">
         {/* Left Side */}
         <img
           src="/images/Splash.png"
@@ -24,7 +24,7 @@ export default function About() {
         />
 
         {/* Right Side */}
-        <div className="mt-24 flex flex-col justify-center items-end">
+        <div className="mt-24 mb-8 flex flex-col justify-center items-center lg:items-end text-center lg:text-right">
           <div className="flex gap-5 justify-center mb-8">
             <Tag>Mid-October</Tag>
             <Tag>Austin, TX</Tag>
@@ -38,13 +38,13 @@ export default function About() {
             draggable={false}
           />
 
-          <div className="text-right text-base text-white mt-0.5">
-            <span className="text-2xl">Applications will open soon!</span>
+          <div className="text-white mt-0.5">
+            <span className="text-xl">Applications will open soon!</span>
             <br />
             Interested in sponsoring us?{" "}
             <a
               href="mailto:corporate@freetailhackers.com"
-              className="underline"
+              className="underline whitespace-nowrap"
             >
               Interest Form
             </a>

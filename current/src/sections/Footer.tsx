@@ -8,7 +8,7 @@ function Column({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="min-w-max mb-8">
       <h4 className="font-bold mb-4">{title}</h4>
       <div className="flex flex-col gap-2">{children}</div>
     </div>
@@ -29,7 +29,7 @@ function Link({ href, children }: { href: string; children: React.ReactNode }) {
 export default function Footer() {
   return (
     <footer>
-      <div className="flex flex-row justify-between max-w-7xl mx-auto w-full py-10 text-white">
+      <div className="flex flex-row flex-wrap justify-between max-w-7xl mx-auto w-full my-10 text-white">
         <Column title="HackTX 2024">
           <Link href="https://hacktx.com/24/">Website</Link>
           <Link href="https://hacktx-2024.devpost.com/">Devpost</Link>
@@ -54,11 +54,11 @@ export default function Footer() {
           <Link href="https://www.hackrice.com/">HackRice</Link>
         </Column>
       </div>
-      <div className="py-6 w-full flex flex-row justify-between max-w-7xl mx-auto text-grey">
-        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" className="underline hover:drop-shadow-custom transition-all ease-out" >
+      <div className="py-6 w-full flex flex-row flex-wrap justify-between max-w-7xl mx-auto text-grey">
+        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" className="underline hover:drop-shadow-custom transition-all ease-out min-w-max" >
           Code of Conduct
         </a>
-        <div>Copyright @ Freetail Hackers 2025</div>
+        <div className="text-right">Copyright @ Freetail Hackers 2025</div>
       </div>
     </footer>
   );
