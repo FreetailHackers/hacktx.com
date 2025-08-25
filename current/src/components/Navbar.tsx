@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="relative max-w-6xl h-[76px] mt-6 mx-auto flex justify-between items-center lg:bg-[#000C44B2]">
         <a href="https://freetailhackers.com/" target="_blank">
           <img
-            className="h-auto mx-6 hover:drop-shadow-custom transition-all duration-300 ease-out"
+            className="h-[48px] mx-6 hover:drop-shadow-custom transition-all duration-300 ease-out"
             src="/images/HackTX25_logo.png"
             alt="Freetail Hackers Logo"
           />
