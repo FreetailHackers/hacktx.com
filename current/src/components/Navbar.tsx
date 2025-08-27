@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex gap-8 max-lg:hidden">
           <NavbarLink href="#about">About</NavbarLink>
 
-          <Button href="https://forms.gle/SahZJw8p7s1gb7yEA">Apply</Button>
+          <Button href="https://rodeo.freetailhackers.com/">Apply</Button>
         </div>
 
         <a href="https://mlh.io/" target="_blank">

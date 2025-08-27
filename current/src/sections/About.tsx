@@ -51,8 +51,9 @@ export default function About() {
           </div>
 
           <a
-            href="https://forms.gle/SahZJw8p7s1gb7yEA"
+            href="https://rodeo.freetailhackers.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="group mt-6"
           >
             <img
