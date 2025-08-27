@@ -39,7 +39,7 @@ export default function About() {
           />
 
           <div className="text-white mt-0.5">
-            <span className="text-xl">Applications will open soon!</span>
+            <span className="text-xl">Applications are now open! Don't miss out!</span>
             <br />
             Interested in sponsoring us?{" "}
             <a
