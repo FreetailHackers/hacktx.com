@@ -1,67 +1,36 @@
 import React from "react";
-import LandingStars from "../components/LandingStars";
-
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="px-2 py-1 text-white lg:text-yellow ring-1 ring-white lg:ring-yellow rounded-full max-sm:text-xs">
-      {children}
-    </span>
-  );
-}
 
 export default function About() {
   return (
-    <section className="relative w-full">
-      <LandingStars />
-
-      <div className="mx-auto flex flex-col-reverse lg:flex-row items-center w-full max-w-[1200px] lg:justify-between">
-        {/* Left Side */}
-        <img
-          src="/images/Splash.png"
-          alt="HackTX 2025 Logo"
-          className="select-none"
-          draggable={false}
-        />
-
-        {/* Right Side */}
-        <div className="mt-24 mb-8 flex flex-col justify-center items-center lg:items-end text-center lg:text-right">
-          <div className="flex gap-5 justify-center mb-8">
-            <Tag>Mid-October</Tag>
-            <Tag>Austin, TX</Tag>
-            <Tag>24 Hours</Tag>
-          </div>
-
-          <img
-            src="/images/HackTX25_title.png"
-            alt="HackTX 25"
-            className="max-h-[263px] select-none"
-            draggable={false}
-          />
-
-          <div className="text-white mt-0.5">
-            <span className="text-xl">Applications are now open! Don't miss out!</span>
-            <br />
-            Interested in sponsoring us?{" "}
-            <a
-              href="mailto:corporate@freetailhackers.com"
-              className="underline whitespace-nowrap"
-            >
-              Interest Form
-            </a>
-          </div>
-
-          <a
-            href="https://rodeo.freetailhackers.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-6"
-          >
-            <img
-              src="/vectors/Fancy Button.svg"
-              alt="Apply Now"
-              className="group-hover:drop-shadow-custom transition-all ease-out"
-            />
-          </a>
+    <section className="relative my-40" id="about">
+      <img src="/vectors/About Stars.svg" alt="About stars" className="absolute top-20 left-1/2 -translate-x-1/2 w-[1605px] overflow-visible select-none pointer-events-none" />
+      <div className="mx-auto flex flex-row items-center w-full max-w-[1200px] lg:justify-between">
+        <div className="max-w-96">
+          <img src="/images/HackTX25_title.png" alt="HackTX image" className="w-[87%]" draggable={false}/>
+          <p className="text-white text-2xl font-light mt-10">
+            HackTX is a 36 hour event where tech enthusiasts can come together
+            to create something amazing together!
+          </p>
+        </div>
+        <div className="relative max-w-[25rem] mb-40">
+          <p className="text-white">
+            With the best and the brightest of hackers from across the country
+            coming to Austin, teams work together to find new tech solutions to
+            important issues.
+            <br /> <br/>
+            Join us for HackTX 2025, and be part of an innovative tech
+            tradition, where we’ve hosted over 5000+ participants and $100K+ in
+            prizes across over a decades worth of HackTXs, with much more to
+            come this year!
+          </p>
+          <span className="absolute right-2 -bottom-32 text-white text-center">
+            <h2 className="font-serif text-5xl">5000+</h2>
+            <p>participants</p>
+          </span>
+          <span className="absolute left-2 -bottom-40 text-white text-center">
+            <h2 className="font-serif text-5xl">$100K</h2>
+            <p>in prizes</p>
+          </span>
         </div>
       </div>
     </section>

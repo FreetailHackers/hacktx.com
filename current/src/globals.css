@@ -26,5 +26,9 @@
 
 html,
 body {
-  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden overscroll-none bg-gradient-to-b from-[#01051A] to-[#131D46] bg-[auto_13000px];
+  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden overscroll-none bg-gradient-to-b from-[#01051A] to-[#131D46] bg-[auto_13000px] scroll-smooth;
+}
+
+section {
+ @apply scroll-mt-24;
 }

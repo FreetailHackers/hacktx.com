@@ -27,10 +27,10 @@ function Button({ href, children }: { href: string; children: React.ReactNode })
 export default function Navbar() {
   return (
     <nav className="fixed z-50 top-0 left-0 right-0">
-      <div className="relative max-w-6xl h-[76px] mt-6 mx-auto flex justify-between items-center lg:bg-[#000C44B2]">
-        <a href="https://freetailhackers.com/" target="_blank">
+      <div className="relative max-w-6xl h-[76px] mt-6 mx-auto flex justify-center items-center lg:bg-[#000C44B2]">
+        <a href="/#landing" className="absolute left-6">
           <img
-            className="h-[48px] mx-6 hover:drop-shadow-custom transition-all duration-300 ease-out"
+            className="h-[48px] hover:drop-shadow-custom transition-all duration-300 ease-out"
             src="/images/HackTX25_logo.png"
             alt="Freetail Hackers Logo"
           />
