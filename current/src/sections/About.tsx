@@ -39,17 +39,26 @@ export default function About() {
           />
 
           <div className="text-white mt-0.5">
-            <span className="text-xl">Applications are now open! Don't miss out!</span>
+            <span className="text-xl">
+              Applications close September 20th at 11:59PM CDT
+            </span>
+            <br />
+            Want to volunteer, judge, or mentor?{" "}
+            <a
+              href="https://rodeo.freetailhackers.com/"
+              className="underline whitespace-nowrap"
+            >
+              Apply here
+            </a>
             <br />
             Interested in sponsoring us?{" "}
             <a
               href="mailto:corporate@freetailhackers.com"
               className="underline whitespace-nowrap"
             >
-              Interest Form
+              Learn more
             </a>
           </div>
-
           <a
             href="https://rodeo.freetailhackers.com/"
             target="_blank"
