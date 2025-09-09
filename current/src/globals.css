@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Satoshi";
-  src: url("/RELIGATH.otf") format("opentype");
+  font-family: "RELIGATH";
+  src: url("/RELIGATH.ttf") format("opentype");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/Satoshi-Variable.ttf");
+  font-weight: 100 900;
   font-style: normal;
 }
 
@@ -21,6 +27,7 @@
 }
 
 :root {
+  font-family: Satoshi;
   font-size: 20px;
 }
 

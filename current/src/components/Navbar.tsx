@@ -26,7 +26,7 @@ function Button({ href, children }: { href: string; children: React.ReactNode })
 
 export default function Navbar() {
   return (
-    <nav className="fixed z-50 top-0 left-0 right-0">
+    <nav className="fixed max-sm:absolute z-50 top-0 left-0 right-0">
       <div className="relative max-w-6xl h-[76px] mt-6 mx-auto flex justify-between items-center lg:bg-[#000C44B2]">
         <a href="https://freetailhackers.com/" target="_blank">
           <img

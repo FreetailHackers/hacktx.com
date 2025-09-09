@@ -26,7 +26,7 @@ export default function About() {
         {/* Right Side */}
         <div className="mt-24 mb-8 flex flex-col justify-center items-center lg:items-end text-center lg:text-right">
           <div className="flex gap-5 justify-center mb-8">
-            <Tag>Mid-October</Tag>
+            <Tag>Oct 18-19</Tag>
             <Tag>Austin, TX</Tag>
             <Tag>24 Hours</Tag>
           </div>
