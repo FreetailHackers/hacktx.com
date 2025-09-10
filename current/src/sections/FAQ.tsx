@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { supabase, type FAQItem } from "../lib/supabase";
+import { type FAQItem } from "../lib/supabase";
 
 // Fallback data in case Supabase is unavailable
 const fallbackFaqData: FAQItem[] = [
