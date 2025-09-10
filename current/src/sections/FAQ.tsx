@@ -112,7 +112,7 @@ function FAQEntry({ question, answer }: { question: string; answer: string }) {
         aria-expanded={isOpen}
         type="button"
       >
-        <h3 className="text-2xl font-bold mb-3 flex items-start cursor-pointer transition-opacity duration-300">
+        <h3 className="text-xl font-bold mb-3 flex items-start cursor-pointer transition-opacity duration-300">
           <img
             src={
               isOpen
@@ -135,7 +135,7 @@ function FAQEntry({ question, answer }: { question: string; answer: string }) {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="pb-3">{answer}</p>
+        <p className="ml-10 mb-3 max-sm:text-sm">{answer}</p>
       </div>
     </div>
   );
@@ -190,37 +190,6 @@ export default function FAQ() {
   return (
     <section className="relative w-screen py-20 -mx-5 lg:mt-60 lg:mb-40 overflow-visible">
       {/* Background squiggles */}
-      <div
-        className="absolute inset-0 w-screen overflow-visible pointer-events-none"
-        style={{
-          backgroundImage: "url(/vectors/faq-squiggle.svg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          left: "50%",
-          transform: "translateX(-30%)",
-          height: "1200px",
-        }}
-      />
-
-      {/* Gradient overlays to fade top and bottom */}
-      <div
-        className="absolute inset-x-0 top-0 h-32 w-screen overflow-visible pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, #01051A 0%, transparent 100%)",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-32 w-screen overflow-visible pointer-events-none"
-        style={{
-          background: "linear-gradient(to top, #01051A 0%, transparent 100%)",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      />
 
       <div className="relative max-w-[850px]  lg:max-w-[1200px] mx-auto xl:px-5 lg:px-15 px-5">
         {/* Top border decorations */}
@@ -294,7 +263,7 @@ export default function FAQ() {
         <Star className="top-96 right-[5%] animate-pulse" size="small" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-left mb-8 text-white tracking-wider">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-left mb-8 text-white tracking-wider max-sm:text-center max-sm:text-xl">
             ASK THE CRYSTAL BALL
           </h2>
 
