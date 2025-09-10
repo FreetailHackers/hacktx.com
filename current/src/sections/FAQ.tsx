@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { type FAQItem } from "../lib/supabase";
+import { supabase, type FAQItem } from "../lib/supabase";
 
 // Fallback data in case Supabase is unavailable
 const fallbackFaqData: FAQItem[] = [
@@ -82,31 +82,61 @@ function Star({
 
   return (
     <img
-      src="/images/faq-star.svg"
+      src="/vectors/faq-star.svg"
       alt=""
-      className={`absolute ${dimension} ${className}`}
+      className={`absolute ${dimension} ${className} pointer-events-none`}
       draggable={false}
     />
   );
 }
 
 function FAQEntry({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   const textShadowStyle = {
-    textShadow: "0 4px 4px rgba(221, 185, 69, 0.25), 0 0 4px #DDB945",
+    textShadow:
+      isHovered || isOpen
+        ? "0 4px 4px rgba(221, 185, 69, 0.25), 0 0 4px #DDB945"
+        : "none",
+    transition: "text-shadow 0.3s ease-in-out",
   };
 
   return (
     <div className="mb-15 text-white">
-      <h3 className="text-2xl font-bold mb-3 flex items-start">
-        <img
-          src="/images/faq-star.svg"
-          alt=""
-          className="w-6 h-6 mr-3 mt-0.5 flex-shrink-0"
-          draggable={false}
-        />
-        <span style={textShadowStyle}>{question}</span>
-      </h3>
-      <p>{answer}</p>
+      <button
+        className="w-full text-left cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        aria-expanded={isOpen}
+        type="button"
+      >
+        <h3 className="text-xl font-bold mb-3 flex items-start cursor-pointer transition-opacity duration-300">
+          <img
+            src={
+              isOpen
+                ? "/vectors/faq-glowiest-star.svg"
+                : isHovered
+                  ? "/vectors/faq-glow-star.svg"
+                  : "/vectors/faq-star.svg"
+            }
+            alt=""
+            className={`w-6 h-6 mr-3 mt-0.5 flex-shrink-0 transition-transform duration-300 ${
+              isOpen ? "rotate-180" : isHovered ? "rotate-12" : "rotate-0"
+            }`}
+            draggable={false}
+          />
+          <span style={textShadowStyle}>{question}</span>
+        </h3>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <p className="ml-10 mb-3 max-sm:text-sm">{answer}</p>
+      </div>
     </div>
   );
 }
@@ -158,37 +188,28 @@ export default function FAQ() {
   }
 
   return (
-    <section className="relative w-screen py-20 -mx-5 lg:mt-60">
+    <section className="relative w-screen py-20 -mx-5 lg:mt-60 lg:mb-40 overflow-visible">
       {/* Background squiggles */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: "url(/faq-squiggle.svg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-
-      {/* Top border decorations */}
-      <img
-        src="/faq-border-top-left.png"
-        alt=""
-        className="absolute -top-18 -left-7 pointer-events-none hidden lg:block"
-        draggable={false}
-      />
-      <img
-        src="/faq-border-bottom-right.png"
-        alt=""
-        className="absolute -bottom-15 -right-7 pointer-events-none hidden lg:block"
-        draggable={false}
-      />
 
       <div className="relative max-w-[850px]  lg:max-w-[1200px] mx-auto xl:px-5 lg:px-15 px-5">
+        {/* Top border decorations */}
+        <img
+          src="/vectors/faq-border-top-left.png"
+          alt=""
+          className="absolute -top-32 -left-30 pointer-events-none hidden lg:block"
+          draggable={false}
+        />
+        <img
+          src="/vectors/faq-border-bottom-right.png"
+          alt=""
+          className="absolute -bottom-32 -right-30 pointer-events-none hidden lg:block"
+          draggable={false}
+        />
         {/* Background constellation lines */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
           preserveAspectRatio="none"
+          aria-label="Constellation lines"
         >
           <line
             x1="10%"
@@ -226,10 +247,7 @@ export default function FAQ() {
 
         {/* Decorative stars */}
         <Star className="top-10 left-[5%] animate-pulse" size="small" />
-        <Star
-          className="top-32 right-[10%] animate-pulse [animation-delay:500ms]"
-          size="large"
-        />
+
         <Star
           className="top-64 left-[15%] animate-pulse [animation-delay:1000ms]"
           size="small"
@@ -245,7 +263,7 @@ export default function FAQ() {
         <Star className="top-96 right-[5%] animate-pulse" size="small" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-left mb-8 text-white tracking-wider">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-left mb-8 text-white tracking-wider max-sm:text-center max-sm:text-xl">
             ASK THE CRYSTAL BALL
           </h2>
 
