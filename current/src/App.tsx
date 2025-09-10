@@ -12,7 +12,7 @@ function App() {
         <About />
         <FAQ />
         <Footer />
-        <img src="/images/Nebula.png" alt="Nebula" className="absolute -z-10 -bottom-96 left-1/2 -translate-x-1/2 w-[1520px]" />
+        <img src="/images/Nebula.png" alt="Nebula" className="absolute -z-10 top-[600px] left-1/2 -translate-x-1/2 w-[1520px]" />
       </main>
     </>
   );
