@@ -199,7 +199,7 @@ export default function FAQ() {
           backgroundRepeat: "no-repeat",
           left: "50%",
           transform: "translateX(-30%)",
-          height: "2400px",
+          height: "1200px",
         }}
       />
 
