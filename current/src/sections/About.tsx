@@ -40,7 +40,7 @@ export default function About() {
 
           <div className="text-white mt-0.5">
             <span className="text-xl">
-              Applications close September 20th at 11:59PM CDT
+              Applications close September 27th at 11:59PM CDT
             </span>
             <br />
             Want to volunteer, judge, or mentor?{" "}
