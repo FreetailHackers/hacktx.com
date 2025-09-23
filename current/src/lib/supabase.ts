@@ -9,3 +9,12 @@ export interface FAQItem {
   question: string;
   answer: string;
 }
+
+export interface Event {
+  start: string;
+  end: string;
+  name: string;
+  description: string;
+  location: string;
+  type: string;
+}
