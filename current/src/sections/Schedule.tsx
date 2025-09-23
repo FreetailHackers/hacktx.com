@@ -30,21 +30,26 @@ function ScheduleItem({
   name,
   description,
   location,
-  type,
+  category,
+  active,
 }: {
   start: string;
   end: string;
   name: string;
   description: string;
   location: string;
-  type: string;
+  category: string;
+  active: boolean;
 }) {
   const time = new Date(start).toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
   });
   return (
-    <div className="" data-category="${category}">
+    <div
+      className={`${active ? "opacity-100" : "opacity-50"}`}
+      data-category="${category}"
+    >
       <img src="/vectors/event-header.svg" alt="" className="" />
       <div className="flex w-full h-fit px-2">
         <div className="flex-basis-0">
@@ -64,6 +69,45 @@ function ScheduleItem({
 export default function Schedule() {
   const [schedule, setSchedule] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
+  // list of strings
+  const [filter, setFilter] = useState<Set<string>>(new Set());
+
+  const addFilter = (category: string) => {
+    setFilter((prev) => new Set(prev).add(category));
+  };
+
+  const removeFilter = (category: string) => {
+    setFilter((prev) => {
+      const newSet = new Set(prev);
+      newSet.delete(category);
+      return newSet;
+    });
+  };
+
+  const containsFilter = (category: string) => filter.has(category);
+
+  const categories = React.useMemo(() => {
+    const cats = new Set<string>();
+    schedule.forEach((item) => {
+      cats.add(item.type);
+    });
+    for (const cat of cats) {
+      addFilter(cat);
+    }
+    return Array.from(cats);
+  }, [schedule]);
+
+  const toggleFilter = (category: string) => {
+    setFilter((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(category)) 
+        newSet.delete(category);
+      else 
+        newSet.add(category);
+      return newSet;
+    });
+  };
+
   // Group events by weekday name (e.g., "Monday", "Tuesday")
   const days = React.useMemo(() => {
     const grouped: { [key: string]: Event[] } = {};
@@ -84,9 +128,10 @@ export default function Schedule() {
     });
     return grouped;
   }, [schedule]);
+
   const fetchSchedule = async () => {
     const { data, error } = await supabase
-      .from("schedule")
+      .from("Event  ")
       .select("*")
       .order("start", { ascending: true });
 
@@ -116,7 +161,18 @@ export default function Schedule() {
       <h2 className="text-5xl font-bold font-serif mb-8 text-center uppercase">
         What's your future like?
       </h2>
-      <div className="flex flex-col gap-6">{/* filter buttons */}</div>
+      <div className="flex gap-6 items-center justify-center my-4">
+        {/* filter buttons */}
+        {categories.map((category) => (
+          <button
+            key={category}
+            className="px-4 py-2 border border-white rounded-full w-fit"
+            onClick={() => toggleFilter(category)}
+          >
+            {category} {containsFilter(category) ? "✓" : ""}
+          </button>
+        ))}
+      </div>
 
       <div className="flex gap-10">
         {Object.keys(days).map((day) => (
@@ -130,7 +186,8 @@ export default function Schedule() {
                 name={item.name}
                 description={item.description}
                 location={item.location}
-                type={item.type}
+                category={item.type}
+                active={containsFilter(item.type)}
               />
             ))}
           </div>
