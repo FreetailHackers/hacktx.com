@@ -40,7 +40,9 @@ export default function About() {
 
           <div className="text-white mt-0.5">
             <span className="text-xl">
-              Applications close September 20th at 11:59PM CDT
+              Priority deadline finished on September 27 
+              <br/>
+              Submit applications soon for consideration
             </span>
             <br />
             Want to volunteer, judge, or mentor?{" "}
