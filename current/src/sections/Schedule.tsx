@@ -20,8 +20,30 @@ const fallbackSchedule: Event[] = [
   },
 ];
 
+const categoryNameMap: Record<string, string> = {
+  "Key-Event": "Required",
+  Workshop: "Event",
+  "Regular-Event": "Food",
+  "Fun-Event": "Fun!",
+};
+
+function getDisplayName(category: string) {
+  return categoryNameMap[category] ?? category;
+}
+
+const categoryStarMap: Record<string, string> = {
+  "Key-Event": "/images/Star 1.png",
+  Workshop: "/images/Star 2.png",
+  "Regular-Event": "/images/Star 3.png",
+  "Fun-Event": "/images/Star 4.png",
+};
+
+function getStarForCategory(category: string) {
+  return categoryStarMap[category] ?? "/vectors/star-default.svg";
+}
+
 function Divider() {
-  return <div className="h-full w-[2px] bg-white mx-4" />;
+  return <div className="h-full min-h-[50px] w-[2px] bg-white mx-4" />;
 }
 
 function ScheduleItem({
@@ -52,7 +74,7 @@ function ScheduleItem({
     >
       <img src="/vectors/event-header.svg" alt="" className="" />
       <div className="flex w-full h-fit px-2">
-        <div className="flex-basis-0">
+        <div className="flex-basis-0 min-w-[100px]">
           <div className="font-bold">{time}</div>
         </div>
         <Divider />
@@ -60,7 +82,12 @@ function ScheduleItem({
           <div className="event chillax-normal-white-large">{name}</div>
           <div className="text-gray-400">{location}</div>
         </div>
-        <img src="/vectors/star2.svg" alt="" className="ml-auto self-start" />
+        <img
+          src={getStarForCategory(category)}
+          alt=""
+          className="select-none h-4 ml-auto self-start"
+          draggable={false}
+        />
       </div>
     </div>
   );
@@ -74,14 +101,6 @@ export default function Schedule() {
 
   const addFilter = (category: string) => {
     setFilter((prev) => new Set(prev).add(category));
-  };
-
-  const removeFilter = (category: string) => {
-    setFilter((prev) => {
-      const newSet = new Set(prev);
-      newSet.delete(category);
-      return newSet;
-    });
   };
 
   const containsFilter = (category: string) => filter.has(category);
@@ -100,10 +119,8 @@ export default function Schedule() {
   const toggleFilter = (category: string) => {
     setFilter((prev) => {
       const newSet = new Set(prev);
-      if (newSet.has(category)) 
-        newSet.delete(category);
-      else 
-        newSet.add(category);
+      if (newSet.has(category)) newSet.delete(category);
+      else newSet.add(category);
       return newSet;
     });
   };
@@ -139,7 +156,19 @@ export default function Schedule() {
       console.error("Error fetching schedule:", error);
       setSchedule(fallbackSchedule);
     } else if (data) {
-      setSchedule(data);
+      const formattedData = data.map((event: any) => ({
+        ...event,
+        start: new Date(event.start).toLocaleDateString("en-US", {
+          timeZone: "Etc/GMT+10",
+          hour: "2-digit",
+          minute: "2-digit",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }),
+        end: new Date(event.end).toISOString(),
+      }));
+      setSchedule(formattedData);
     } else {
       setSchedule(fallbackSchedule);
     }
@@ -155,42 +184,58 @@ export default function Schedule() {
   }
   return (
     <section
-      className="w-full max-w-4xl mx-auto my-16 text-white"
+      className="w-full max-w-4xl mx-auto my-16 text-white overflow-y-visible relative"
       id="schedule"
     >
-      <h2 className="text-5xl font-bold font-serif mb-8 text-center uppercase">
-        What's your future like?
+      <div className="w-[1523px] -z-10 h-[1462px] absolute left-1/2 -translate-x-1/2">
+        <img src="/images/Schedule Nebula.png" alt="Schedule Nebula" className="absolute top-0 w-[1523px] h-[1462px] object-cover overflow-visible" />
+        <img src="/images/Schedule Stars.png" alt="Schedule Nebula" className="absolute top-0 w-[1354] h-[1838] object-cover overflow-visible left-1/2 -translate-x-1/2" />
+      </div>
+      <h2 className="text-5xl max-sm:text-3xl font-bold font-serif pt-4 mb-8 text-center uppercase">
+        What's in your future?
       </h2>
-      <div className="flex gap-6 items-center justify-center my-4">
+      <div className="flex flex-wrap md:gap-6 items-center justify-center my-4">
         {/* filter buttons */}
         {categories.map((category) => (
           <button
             key={category}
-            className="px-4 py-2 border border-white rounded-full w-fit"
+            id={category}
+            className={
+              "px-4 py-2 w-fit cursor-pointer text-yellow" +
+              (containsFilter(category)
+                ? " drop-shadow-[0_0_4px_rgba(232,216,161,1)]"
+                : "")
+            }
             onClick={() => toggleFilter(category)}
           >
-            {category} {containsFilter(category) ? "✓" : ""}
+            <img
+              src={getStarForCategory(category)}
+              alt=""
+              className="select-none h-6 ml-auto self-start inline"
+              draggable={false}
+            />{" "}
+            {getDisplayName(category)}
           </button>
         ))}
       </div>
 
-      <div className="flex gap-10">
+      <div className="flex gap-10 max-md:flex-col">
         {Object.keys(days).map((day) => (
-          <div className="flex flex-col" key={day}>
-            <div className="font-serif text-2xl">{day}</div>
-            {days[day].map((item, index) => (
-              <ScheduleItem
-                key={index}
-                start={item.start}
-                end={item.end}
-                name={item.name}
-                description={item.description}
-                location={item.location}
-                category={item.type}
-                active={containsFilter(item.type)}
-              />
-            ))}
-          </div>
+            <div className="flex flex-col gap-4 items-center" key={day}>
+            <div className="font-serif text-2xl w-full">{day}</div>
+              {days[day].map((item, index) => (
+                <ScheduleItem
+                  key={index}
+                  start={item.start}
+                  end={item.end}
+                  name={item.name}
+                  description={item.description}
+                  location={item.location}
+                  category={item.type}
+                  active={containsFilter(item.type)}
+                />
+              ))}
+            </div>
         ))}
       </div>
     </section>
