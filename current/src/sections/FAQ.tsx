@@ -47,7 +47,7 @@ const fallbackFaqData: FAQItem[] = [
     question:
       "What can I do if I missed the application deadline or got rejected?",
     answer:
-      "We will have walk-in registration on Saturday, November 2nd. The specific closing time for walk-in registration will be announced on our website during the event week, so be on the lookout! This is first come, first serve until we hit capacity. Admission to the event is not guaranteed so we advise non-Austin attendees to not travel for walk-in registration.",
+      "We will have walk-in registration on Saturday, October 18th. The specific closing time for walk-in registration will be announced on our website during the event week, so be on the lookout! This is first come, first serve until we hit capacity. Admission to the event is not guaranteed so we advise non-Austin attendees to not travel for walk-in registration.",
   },
   {
     question: "How do teams work?",
