@@ -11,7 +11,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 export default function About() {
   return (
-    <section className="relative w-full">
+    <section className="relative w-full" id="about">
       <LandingStars />
 
       <div className="mx-auto flex flex-col-reverse lg:flex-row items-center w-full max-w-[1200px] lg:justify-between">
@@ -148,7 +148,7 @@ export default function About() {
 
       {/* Freetail Hackers Section */}
       <div className="relative mx-auto flex flex-col items-center text-center w-full max-w-[1200px] pt-40 lg:pt-56">
-        <div className="absolute -top-[400px] w-[1680px] h-[1066px] -z-10">
+        <div className="absolute -top-[25vw] max-w-[1680px] max-h-[1066px] w-[120vw] -z-10">
           <img
             src="/vectors/About Lines.svg"
             alt="Background"
@@ -158,7 +158,7 @@ export default function About() {
         <p className="text-white text-lg mb-6 lg:mb-8 italic">
           "We do hackathons"
         </p>
-        <h2 className="font-serif text-3xl lg:text-5xl text-white mb-6 lg:mb-8 tracking-wider">
+        <h2 className="font-serif text-2xl lg:text-5xl text-white mb-6 lg:mb-8 tracking-wider">
           FREETAIL HACKERS
         </h2>
         <p className="text-white max-sm:text-sm max-w-[720px] text-center">
