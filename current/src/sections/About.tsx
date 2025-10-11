@@ -116,14 +116,16 @@ export default function About() {
             </div>
 
             {/* Right Side - Offset Statistics */}
-            <div className="relative w-full flex flex-col lg:mt-8 gap-8 lg:gap-0 items-center">
-              <div className="text-center lg:self-end mb-0 lg:mb-12">
+            <div className="relative w-full flex flex-col lg:mt-8 gap-8 lg:gap-0 items-center max-lg:px-[10%]">
+              <div className="relative text-center self-end mb-0 lg:mb-12">
+                <img src="/images/5000 Constellation.png" alt="5000 Constellation" draggable={false} className="absolute -top-[30px] -right-[60px]"/>
                 <div className="font-serif text-5xl lg:text-6xl text-white">
                   5000+
                 </div>
                 <div className="text-base text-white">participants</div>
               </div>
-              <div className="text-center lg:self-start">
+              <div className="relative text-center self-start">
+                <img src="/images/100K Constellation.png" alt="100K Constellation" draggable={false} className="absolute -top-[60px] -left-[30px]"/>
                 <div className="font-serif text-5xl lg:text-6xl text-white">
                   $100K+
                 </div>
@@ -132,30 +134,53 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 w-[1523px] h-[1051px] -z-10">
+        <div className="absolute -right-[100px] -top-[200px] w-[1523px] h-[1051px] -z-10">
           <img
-            src="/images/About Nebula.png"
+            src="/images/Stats Nebula.png"
             alt="Background"
             draggable={false}
           />
         </div>
+        <div className="absolute w-[1287px] h-[933px] -bottom-[600px] left-1/2 -translate-x-1/2 -z-10">
+          <img src="/vectors/Stats Stars.svg" alt="Stars" draggable={false} className=" w-[1287px]"/>
+        </div>
       </div>
 
       {/* Freetail Hackers Section */}
-      <div className="mx-auto flex flex-col items-center text-center w-full max-w-[1200px] mt-32 lg:mt-40">
+      <div className="relative mx-auto flex flex-col items-center text-center w-full max-w-[1200px] pt-40 lg:pt-56">
+        <div className="absolute -top-[400px] w-[1680px] h-[1066px] -z-10">
+          <img
+            src="/vectors/About Lines.svg"
+            alt="Background"
+            draggable={false}
+          />
+        </div>
         <p className="text-white text-lg mb-6 lg:mb-8 italic">
           "We do hackathons"
         </p>
-        <h2 className="font-serif text-4xl lg:text-7xl text-white mb-6 lg:mb-8 tracking-wider">
+        <h2 className="font-serif text-3xl lg:text-5xl text-white mb-6 lg:mb-8 tracking-wider">
           FREETAIL HACKERS
         </h2>
-        <p className="text-white text-base max-w-[720px] text-center">
+        <p className="text-white max-sm:text-sm max-w-[720px] text-center">
           For over a decade, Freetail Hackers has been hosting the premier UT
           Austin hackathon, HackTX. With a team of over 40 members organizing
           tirelessly across six teams, we always have exceptional events that
           foster creativity, innovation, and collaboration, while pushing the
           boundaries of tech and learning!
         </p>
+        <img
+          src="/images/Whale Constellation.png"
+          alt="Whale Constellation"
+          draggable={false}
+          className="relative"
+        />
+        <div className="absolute -left-[700px] top-0 w-[1523px] h-[1051px] -z-10">
+          <img
+            src="/images/Whale Nebula.png"
+            alt="Whale nebula"
+            draggable={false}
+          />
+        </div>
       </div>
     </section>
   );
