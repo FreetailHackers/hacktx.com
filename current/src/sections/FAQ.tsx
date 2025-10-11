@@ -190,6 +190,9 @@ export default function FAQ() {
   return (
     <section className="relative w-screen py-20 -mx-5 lg:mt-40 lg:mb-40 overflow-visible">
       {/* Background squiggles */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1523px] h-[1650px] -z-10">
+        <img src="/images/FAQ Nebula.png" alt="FAQ Nebula" draggable={false} />
+      </div>
 
       <div className="relative max-w-[850px]  lg:max-w-[1200px] mx-auto xl:px-5 lg:px-15 px-5">
         {/* Top border decorations */}
