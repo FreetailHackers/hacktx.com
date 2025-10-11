@@ -17,11 +17,11 @@
   --font-serif: "RELIGATH", serif;
 
   --color-primary: #fdebaf;
-  --color-white: #F5F0E9;
-  --color-blue: #000C44;
-  --color-dark-blue: #01051A;
-  --color-yellow: #E8D8A1;
-  --color-grey: #9E9691;
+  --color-white: #f5f0e9;
+  --color-blue: #000c44;
+  --color-dark-blue: #01051a;
+  --color-yellow: #e8d8a1;
+  --color-grey: #9e9691;
 
   --drop-shadow-custom: 0 0 3px var(--color-yellow);
 }
@@ -33,5 +33,5 @@
 
 html,
 body {
-  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden scroll-smooth overscroll-none bg-gradient-to-b from-[#01051A] to-[#000C44] bg-local;
+  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden scroll-smooth overscroll-none bg-gradient-to-b from-[#01051A] to-[#131D46] bg-[auto_13000px] bg-local;
 }
