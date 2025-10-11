@@ -188,7 +188,7 @@ export default function FAQ() {
   }
 
   return (
-    <section className="relative w-screen py-20 -mx-5 lg:mt-60 lg:mb-40 overflow-visible">
+    <section className="relative w-screen py-20 -mx-5 lg:mt-40 lg:mb-40 overflow-visible">
       {/* Background squiggles */}
 
       <div className="relative max-w-[850px]  lg:max-w-[1200px] mx-auto xl:px-5 lg:px-15 px-5">
