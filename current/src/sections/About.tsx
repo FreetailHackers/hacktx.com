@@ -38,8 +38,8 @@ export default function About() {
             draggable={false}
           />
 
-          <div className="text-white mt-0.5">
-            <span className="text-xl">
+          <div className="text-white mt-0.5 text-sm lg:text-lg">
+            <span>
               Priority deadline finished on September 27
               <br />
               Submit applications soon for consideration
@@ -90,7 +90,7 @@ export default function About() {
             />
 
             {/* Right Side - Intro Paragraphs */}
-            <div className="flex flex-col text-white max-w-[600px] lg:mt-12">
+            <div className="flex flex-col text-white max-w-[600px] lg:mt-12 text-center lg:text-left">
               <p className="text-base mb-6">
                 With the best and the brightest of hackers from across the
                 country coming to Austin, teams work together to find new tech
@@ -141,7 +141,7 @@ export default function About() {
             draggable={false}
           />
         </div>
-        <div className="absolute w-[1287px] h-[933px] -bottom-[600px] left-1/2 -translate-x-1/2 -z-10">
+        <div className="absolute w-[1287px] h-[933px] top-[350px] left-1/2 -translate-x-1/2 -z-10">
           <img src="/vectors/Stats Stars.svg" alt="Stars" draggable={false} className=" w-[1287px]"/>
         </div>
       </div>
