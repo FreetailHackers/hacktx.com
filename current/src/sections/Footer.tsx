@@ -11,7 +11,7 @@ function Column({ title, children }: { title: string; children: React.ReactNode 
 
 function Link({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a href={href} className="underline hover:drop-shadow-custom transition-all ease-out" target="_blank">
+    <a href={href} className="underline hover:drop-shadow-custom transition-all ease-out">
       {children}
     </a>
   );
