@@ -157,7 +157,8 @@ export default function FAQ() {
 
       const { data, error: supabaseError } = await supabase
         .from("FAQ")
-        .select("*");
+        .select("*")
+        .order('id', { ascending: true });
 
       if (supabaseError) {
         throw supabaseError;
@@ -272,7 +273,7 @@ export default function FAQ() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-16 lg:gap-y-4">
             <div className="space-y-16">
-              {faqData.slice(0, 7).map((faq) => (
+              {faqData.slice(0, faqData.length / 2).map((faq) => (
                 <FAQEntry
                   key={faq.question}
                   question={faq.question}
@@ -281,7 +282,7 @@ export default function FAQ() {
               ))}
             </div>
             <div className="space-y-16">
-              {faqData.slice(7).map((faq) => (
+              {faqData.slice(faqData.length / 2, faqData.length).map((faq) => (
                 <FAQEntry
                   key={faq.question}
                   question={faq.question}
