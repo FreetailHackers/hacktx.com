@@ -140,7 +140,6 @@ export default function Footer() {
             draggable={false}
           />
         </div>
-        <h2 className="font-serif text-5xl text-white mt-20">What's in your <br/> future?</h2>
       </div>
     </footer>
   );
