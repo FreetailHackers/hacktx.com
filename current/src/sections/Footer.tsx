@@ -20,6 +20,7 @@ function Link({ href, children }: { href: string; children: React.ReactNode }) {
     <a
       href={href}
       className="underline hover:drop-shadow-custom transition-all ease-out"
+      target="_blank"
     >
       {children}
     </a>
