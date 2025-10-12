@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import About from "./sections/About";
 import FAQ from "./sections/FAQ";
+import Partners from "./sections/Partners";
 import Footer from "./sections/Footer";
 import Paths from "./sections/Paths";
 
@@ -13,6 +14,7 @@ function App() {
         <About />
         <Paths />
         <FAQ />
+        <Partners />
         <Footer />
       </main>
     </>
