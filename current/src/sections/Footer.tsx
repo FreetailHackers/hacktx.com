@@ -109,8 +109,8 @@ export default function Footer() {
         </Column>
 
         <Column title="Hacker Resources">
-          <Link href="#">Devpost</Link>
-          <Link href="#">Discord</Link>
+          <Link href="https://hacktx2025.devpost.com">Devpost</Link>
+          <Link href="https://discord.gg/PE8bUBQMfr">Discord</Link>
           <Link href="https://mlh.io/seasons/2025/events">MLH</Link>
         </Column>
 
