@@ -29,13 +29,6 @@ function Link({ href, children }: { href: string; children: React.ReactNode }) {
 export default function Footer() {
   return (
     <footer className="relative max-w-7xl w-full mx-auto">
-      <div className="absolute w-[1680px] h-[1200px] -z-10 overflow-visible">
-        <img
-          src="/images/Footer Nebula.png"
-          alt="Footer Nebula"
-          draggable={false}
-        />
-      </div>
       <div className="absolute left-1/2 -translate-x-1/2 w-[1400px] h-[970px] top-[180px] -z-10">
         <img
           src="/vectors/Footer Stars.svg"
@@ -55,11 +48,11 @@ export default function Footer() {
           Freetail hackers
         </h3>
         <div className="mb-3">
-          <a href="https://freetailhackers.com" className="text-grey">
+          <a href="https://freetailhackers.com" className="text-grey hover:drop-shadow-custom">
             freetailhackers.com
           </a>
           <br />
-          <a href="mailto:admin@freetailhackers.com" className="text-grey">
+          <a href="mailto:admin@freetailhackers.com" className="text-grey hover:drop-shadow-custom">
             admin@freetailhackers.com
           </a>
         </div>
