@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 // Fallback data in case Supabase is unavailable
 type PathItem = { role: string; description: string };
@@ -51,7 +50,9 @@ function PathCard({ role, description, index }: { role: string; description: str
 
   const cardStyle: React.CSSProperties = {
     width: "100%",
+    maxWidth: 271,
     height: "100%",
+    maxHeight: 390,
     display: "flex",
     alignItems: "center",
     position: "relative",
@@ -68,8 +69,8 @@ function PathCard({ role, description, index }: { role: string; description: str
     transform: "translate(-50%, -50%)",
     backfaceVisibility: "hidden",
     WebkitBackfaceVisibility: "hidden",
-    width: "90%",
-    height: "66%",
+    width: "100%",
+    height: "100%",
     objectFit: "cover",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -85,10 +86,10 @@ function PathCard({ role, description, index }: { role: string; description: str
     inset: 0,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start", // Changed from "center" to "flex-start"
+    justifyContent: "flex-start",
     alignItems: "center",
     padding: 16,
-    paddingTop: 32, // Add more padding at the top
+    paddingTop: 32,
     color: "white",
     textAlign: "center" as const,
     textShadow: "0 2px 6px rgba(0,0,0,0.8)",
@@ -97,7 +98,7 @@ function PathCard({ role, description, index }: { role: string; description: str
   return (
     <div
       style={wrapperStyle}
-      className="w-[302px] h-[585px] transition-transform duration-300 hover:scale-[1.1] hover:-translate-y-6 hover:z-10 relative self-center"
+      className="w-full max-w-[330px] h-[585px] transition-transform duration-300 hover:scale-[1.1] hover:-translate-y-6 hover:z-10 relative mx-auto flex items-center justify-center"
     >
       <div style={cardStyle} onClick={() => setFlipped((s) => !s)}>
         <div
@@ -113,10 +114,10 @@ function PathCard({ role, description, index }: { role: string; description: str
           }}
         >
           <div style={overlayStyle}>
-            <div className="font-serif text-2xl mb-15 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,1)] ">
+            <div className="font-serif text-2xl mb-15 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,1)]">
               {role}
             </div>
-            <div className="text-xs -mt-8 text-left ml-3 mb-6 ">{description}</div>
+            <div className="text-xs -mt-8 text-left ml-3 mb-6">{description}</div>
           </div>
         </div>
       </div>
@@ -125,37 +126,51 @@ function PathCard({ role, description, index }: { role: string; description: str
 }
 
 export default function Paths() {
-  const settings = {
-    dots: false,
-    slidesToShow: 5,
-    infinite: false,
-    responsive: [
-      { breakpoint: 1200, settings: { slidesToShow: 3 } }, // large tablets / small desktops
-      {
-        breakpoint: 900,
-        settings: { slidesToShow: 1 },
-      }, // tablets
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 1 },
-      }, // phones
-    ],
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      partialVisibilityGutter: 60,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
   };
 
   return (
-    <>
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-4 text-white tracking-wider max-sm:text-center max-sm:text-xl">
-        CHOOSE YOUR PATHS
-      </h2>
-      <div className="overflow-visible">
-        <Slider {...settings}>
-          {pathData.map((path, index) => (
-            <div key={index} className="flex justify-center">
-              <PathCard role={path.role} description={path.description} index={index}></PathCard>
-            </div>
-          ))}
-        </Slider>
+    <section className="relative w-full min-h-screen flex items-center justify-center" id="Paths">
+      <div className="mx-auto w-full max-w-[1200px] px-4 ">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-4 text-white tracking-wider max-sm:text-center max-sm:text-xl">
+          CHOOSE YOUR PATHS
+        </h2>
+
+        <Carousel
+          swipeable={true}
+          draggable={true}
+          responsive={responsive}
+          ssr
+          showDots={false}
+          infinite={false}
+          arrows={false}
+          partialVisbile={true}
+          containerClass="carousel-container"
+        >
+          {pathData.map((path, index) => {
+            return (
+              <div key={index} className="px-2">
+                <PathCard role={path.role} description={path.description} index={index} />
+              </div>
+            );
+          })}
+        </Carousel>
       </div>
-    </>
+    </section>
   );
 }
