@@ -38,9 +38,10 @@ export default function Navbar() {
 
         <div className="flex gap-8 max-lg:hidden">
           <NavbarLink href="#about">About</NavbarLink>
+          <NavbarLink href="#schedule">Schedule</NavbarLink>
           <NavbarLink href="#faq">FAQ</NavbarLink>
 
-          <Button href="https://rodeo.freetailhackers.com/">Apply</Button>
+          <Button href="https://rodeo.freetailhackers.com/">Login</Button>
         </div>
 
         <a href="https://mlh.io/" target="_blank">
