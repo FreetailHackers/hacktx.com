@@ -108,8 +108,8 @@ export default function Footer() {
         </Column>
 
         <Column title="Hacker Resources">
-          <Link href="#">Devpost</Link>
-          <Link href="#">Discord</Link>
+          <Link href="https://hacktx2025.devpost.com">Devpost</Link>
+          <Link href="https://hacktx.com/discord">Discord</Link>
           <Link href="https://mlh.io/seasons/2025/events">MLH</Link>
         </Column>
 
@@ -139,7 +139,6 @@ export default function Footer() {
             draggable={false}
           />
         </div>
-        <h2 className="font-serif text-5xl text-white mt-20">What's in your <br/> future?</h2>
       </div>
     </footer>
   );
