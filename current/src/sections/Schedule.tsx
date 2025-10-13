@@ -21,9 +21,9 @@ const fallbackSchedule: Event[] = [
 ];
 
 const categoryNameMap: Record<string, string> = {
+  "Regular-Event": "Event",
   "Key-Event": "Required",
-  Workshop: "Event",
-  "Regular-Event": "Food",
+  Workshop: "Workshop",
   "Fun-Event": "Fun!",
 };
 
@@ -63,23 +63,27 @@ function ScheduleItem({
   category: string;
   active: boolean;
 }) {
-  const time = new Date(start).toLocaleTimeString("en-US", {
-    hour: "2-digit",
+  const startTime = new Date(start).toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+  const endTime = new Date(end).toLocaleTimeString("en-US", {
+    hour: "numeric",
     minute: "2-digit",
   });
   return (
     <div
-      className={`${active ? "opacity-100" : "opacity-50"}`}
+      className={`max-w-[500px] ` + `${active ? "opacity-100" : "opacity-50"}`}
       data-category="${category}"
     >
       <img src="/vectors/event-header.svg" alt="" className="" />
       <div className="flex w-full h-fit px-2">
         <div className="flex-basis-0 min-w-[100px]">
-          <div className="font-bold">{time}</div>
+          <div className="font-bold text-right">{startTime} <br/> <p className="text-grey text-right text-xs">to {endTime}</p></div>
         </div>
         <Divider />
         <div className="flex flex-col">
-          <div className="event chillax-normal-white-large">{name}</div>
+          <div className="">{name}</div>
           <div className="text-gray-400">{location}</div>
         </div>
         <img
@@ -166,7 +170,14 @@ export default function Schedule() {
           month: "2-digit",
           day: "2-digit",
         }),
-        end: new Date(event.end).toISOString(),
+        end: new Date(event.end).toLocaleDateString("en-US", {
+          timeZone: "Etc/GMT+10",
+          hour: "2-digit",
+          minute: "2-digit",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }),
       }));
       setSchedule(formattedData);
     } else {
