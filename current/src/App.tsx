@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar"
 import About from "./sections/About";
+import Schedule from "./sections/Schedule";
 import FAQ from "./sections/FAQ";
 import Partners from "./sections/Partners";
 import Footer from "./sections/Footer";
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <main className="relative z-10 flex min-h-screen flex-col pt-28 px-5 overflow-clip">
         <About />
+        <Schedule />
         <FAQ />
         <Partners />
         <Footer />
