@@ -112,7 +112,7 @@ function FAQEntry({ question, answer }: { question: string; answer: string }) {
         aria-expanded={isOpen}
         type="button"
       >
-        <h3 className="text-xl font-bold mb-3 flex items-start cursor-pointer transition-opacity duration-300">
+        <h3 className="lg:text-xl font-bold mb-3 flex items-start cursor-pointer transition-opacity duration-300">
           <img
             src={
               isOpen
@@ -157,7 +157,8 @@ export default function FAQ() {
 
       const { data, error: supabaseError } = await supabase
         .from("FAQ")
-        .select("*");
+        .select("*")
+        .order('id', { ascending: true });
 
       if (supabaseError) {
         throw supabaseError;
@@ -188,8 +189,11 @@ export default function FAQ() {
   }
 
   return (
-    <section className="relative w-screen py-20 -mx-5 lg:mt-60 lg:mb-40 overflow-visible">
+    <section className="relative w-screen py-20 -mx-5 lg:mt-20 lg:mb-20 overflow-visible" id="faq">
       {/* Background squiggles */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1523px] h-[1650px] -z-10">
+        <img src="/images/FAQ Nebula.png" alt="FAQ Nebula" draggable={false} />
+      </div>
 
       <div className="relative max-w-[850px]  lg:max-w-[1200px] mx-auto xl:px-5 lg:px-15 px-5">
         {/* Top border decorations */}
@@ -269,7 +273,7 @@ export default function FAQ() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-16 lg:gap-y-4">
             <div className="space-y-16">
-              {faqData.slice(0, 7).map((faq) => (
+              {faqData.slice(0, faqData.length / 2).map((faq) => (
                 <FAQEntry
                   key={faq.question}
                   question={faq.question}
@@ -278,7 +282,7 @@ export default function FAQ() {
               ))}
             </div>
             <div className="space-y-16">
-              {faqData.slice(7).map((faq) => (
+              {faqData.slice(faqData.length / 2, faqData.length).map((faq) => (
                 <FAQEntry
                   key={faq.question}
                   question={faq.question}
