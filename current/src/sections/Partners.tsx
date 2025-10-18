@@ -88,6 +88,105 @@ export default function Partners() {
               className="w-[140px] lg:w-[240px]"
             />
           </a>
+
+          <a
+            href="https://mastra.ai/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/Mastra.png"
+              alt="Mastra"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+          <a
+            href="https://itbridge-outreach.com/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/IT Bridge.png"
+              alt="IT Bridge Outreach"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+
+          <a
+            href="https://nordvpn.com/hackathons"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/NordVPN.png"
+              alt="NordVPN"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+          <a
+            href="https://incogni.com/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/Incogni.png"
+              alt="Incogni"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+          <a
+            href="https://nordpass.com/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/Nordpass.png"
+              alt="Nordpass"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+          <a
+            href="https://saily.com/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/Saily.png"
+              alt="Saily"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+          <a
+            href="https://nordprotect.com/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/Nord Protect.png"
+              alt="Nord Protect"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+          <a
+            href="https://nexos.ai/"
+            target="_blank"
+            rel="nofollow"
+            className="partners corporate"
+          >
+            <img
+              src="/partners/Nexos.png"
+              alt="Nexos"
+              className="w-[140px] lg:w-[240px]"
+            />
+          </a>
+
           <a
             href="https://cns.utexas.edu/"
             target="_blank"
