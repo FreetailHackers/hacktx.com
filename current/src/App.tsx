@@ -13,6 +13,8 @@ function App() {
       <main className="relative z-10 flex min-h-screen flex-col pt-28 px-5 overflow-clip">
         <About />
         <Schedule />
+        <img src="/images/HackTX25 Saturday Menu.png" alt="HackTX25 Saturday menu" className="mx-auto my-10 w-full max-w-4xl rounded-lg shadow-lg" />
+        <img src="/images/HackTX25 Sunday Menu.png" alt="HackTX25 Saturday menu" className="mx-auto my-10 w-full max-w-4xl rounded-lg shadow-lg" />
         <FAQ />
         <Partners />
         <Footer />
