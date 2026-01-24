@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "RELIGATH";
+  src: url("/RELIGATH.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/Satoshi-Variable.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@theme {
+  --font-serif: "RELIGATH", serif;
+
+  --color-primary: #fdebaf;
+  --color-white: #F5F0E9;
+  --color-blue: #000C44;
+  --color-dark-blue: #01051A;
+  --color-yellow: #E8D8A1;
+  --color-grey: #9E9691;
+
+  --drop-shadow-custom: 0 0 3px var(--color-yellow);
+}
+
+:root {
+  font-family: Satoshi;
+  font-size: 20px;
+}
+
+html,
+body {
+  @apply text-primary relative h-screen min-h-screen w-screen max-w-screen overflow-x-hidden scroll-smooth overscroll-none bg-gradient-to-b from-[#01051A] to-[#000C44] bg-local;
+}
