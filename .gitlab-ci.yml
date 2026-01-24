@@ -16,6 +16,12 @@ pages:
     - cd ..
     - mv current/dist/* archive
     - mv archive public
+
+        # Build 2025 React site
+    - cd ..
+    - cd 25
+    - npm install
+    - npm run build
   artifacts:
     paths:
       - public
