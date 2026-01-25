@@ -19,17 +19,10 @@ pages:
     - cd archive/25
     - npm install
     - npm run build
-    - cd ../..
-
-    # Create public directory structure
-    - mkdir -p public
+    - cd ..
 
     - mv current/dist/* archive
     - mv archive public
-
-    # Move built React site to /25 (hacktx.com/25)
-    - mkdir -p public/25
-    - mv archive/25/dist/* public/25/
 
   artifacts:
     paths:
