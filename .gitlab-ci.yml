@@ -19,7 +19,7 @@ pages:
     - cd archive/25
     - npm install
     - npm run build
-    - cd ..
+    - cd ../..
 
     - mv current/dist/* archive
     - mv archive public
