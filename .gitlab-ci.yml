@@ -21,7 +21,9 @@ pages:
     - npm run build
     - cd ../..
 
-    - mv current/dist/* archive
+    - mv archive/25/dist archive/25-temp
+    - rm -rf archive/25
+    - mv archive/25-temp archive/25
     - mv archive public
 
   artifacts:
