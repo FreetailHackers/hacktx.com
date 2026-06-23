@@ -27,7 +27,7 @@ export default function Home() {
         <div className="v2-topbar">
           <div className="v2-r1">
             <img
-              src="/logo-transparent.png"
+              src="./logo-transparent.png"
               alt="Freetail Hackers"
               width={130}
               height={130}
