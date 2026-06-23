@@ -9,7 +9,6 @@ pages:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - when: never # Don't run for other branches
   script:
-    # Build Next.js project (outputs to current/out/)
     - cd current
     - npm install
     - npm run build
@@ -22,9 +21,7 @@ pages:
     - cd ../..
 
     # Move Next.js static export to archive root (serves as hacktx.com/)
-    - cp -r current/out/. archive/
-
-    # Replace archive/25 source with its built output
+    - mv current/dist/* archive
     - mv archive/25/dist archive/25-temp
     - rm -rf archive/25
     - mv archive/25-temp archive/25

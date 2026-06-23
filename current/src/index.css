@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  --font-anton: 'Anton', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
   --ft-black: #231F20;
   --ft-white: #FFFFFF;
   --ft-purple: #513E99;

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <>
@@ -11,7 +9,6 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://logged-assets.s3.amazonaws.com/trust-badge/2027/mlh-trust-badge-2027-black.svg"
           alt="Major League Hacking 2026 Hackathon Season"
@@ -29,12 +26,11 @@ export default function Home() {
         {/* Top bar */}
         <div className="v2-topbar">
           <div className="v2-r1">
-            <Image
+            <img
               src="/logo-transparent.png"
               alt="Freetail Hackers"
               width={130}
               height={130}
-              priority
               className="v2-logo"
             />
           </div>
