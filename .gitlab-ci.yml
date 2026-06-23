@@ -21,7 +21,8 @@ pages:
     - cd ../..
 
     # Move Next.js static export to archive root (serves as hacktx.com/)
-    - mv current/dist/* archive
+    - cp -r current/dist/. archive
+    - rm -rf current/dist
     - mv archive/25/dist archive/25-temp
     - rm -rf archive/25
     - mv archive/25-temp archive/25
