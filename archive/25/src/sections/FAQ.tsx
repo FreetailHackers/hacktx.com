@@ -35,8 +35,7 @@ const fallbackFaqData: FAQItem[] = [
   },
   {
     question: "When is HackTX?",
-    answer:
-      "HackTX 2025 starts at 8am on October 18, 2025 and ends at 5pm on October 19, 2025.",
+    answer: "HackTX 2025 starts at 8am on October 18, 2025 and ends at 5pm on October 19, 2025.",
   },
   {
     question: "When is the application due?",
@@ -44,8 +43,7 @@ const fallbackFaqData: FAQItem[] = [
       "Applications open on August 18th, 2025. However, please apply early since we will be releasing decisions in waves!",
   },
   {
-    question:
-      "What can I do if I missed the application deadline or got rejected?",
+    question: "What can I do if I missed the application deadline or got rejected?",
     answer:
       "We will have walk-in registration on Saturday, October 18th. The specific closing time for walk-in registration will be announced on our website during the event week, so be on the lookout! This is first come, first serve until we hit capacity. Admission to the event is not guaranteed so we advise non-Austin attendees to not travel for walk-in registration.",
   },
@@ -71,18 +69,12 @@ const fallbackFaqData: FAQItem[] = [
   },
 ];
 
-function Star({
-  className = "",
-  size = "small",
-}: {
-  className?: string;
-  size?: "small" | "large";
-}) {
+function Star({ className = "", size = "small" }: { className?: string; size?: "small" | "large" }) {
   const dimension = size === "large" ? "w-12 h-12" : "w-8 h-8";
 
   return (
     <img
-      src="/vectors/faq-star.svg"
+      src="./vectors/faq-star.svg"
       alt=""
       className={`absolute ${dimension} ${className} pointer-events-none`}
       draggable={false}
@@ -95,10 +87,7 @@ function FAQEntry({ question, answer }: { question: string; answer: string }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const textShadowStyle = {
-    textShadow:
-      isHovered || isOpen
-        ? "0 4px 4px rgba(221, 185, 69, 0.25), 0 0 4px #DDB945"
-        : "none",
+    textShadow: isHovered || isOpen ? "0 4px 4px rgba(221, 185, 69, 0.25), 0 0 4px #DDB945" : "none",
     transition: "text-shadow 0.3s ease-in-out",
   };
 
@@ -116,10 +105,10 @@ function FAQEntry({ question, answer }: { question: string; answer: string }) {
           <img
             src={
               isOpen
-                ? "/vectors/faq-glowiest-star.svg"
+                ? "./vectors/faq-glowiest-star.svg"
                 : isHovered
-                  ? "/vectors/faq-glow-star.svg"
-                  : "/vectors/faq-star.svg"
+                  ? "./vectors/faq-glow-star.svg"
+                  : "./vectors/faq-star.svg"
             }
             alt=""
             className={`w-6 h-6 mr-3 mt-0.5 flex-shrink-0 transition-transform duration-300 ${
@@ -158,7 +147,7 @@ export default function FAQ() {
       const { data, error: supabaseError } = await supabase
         .from("FAQ")
         .select("*")
-        .order('id', { ascending: true });
+        .order("id", { ascending: true });
 
       if (supabaseError) {
         throw supabaseError;
@@ -192,19 +181,19 @@ export default function FAQ() {
     <section className="relative w-screen py-20 -mx-5 lg:mt-20 lg:mb-20 overflow-visible" id="faq">
       {/* Background squiggles */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1523px] h-[1650px] -z-10">
-        <img src="/images/FAQ Nebula.png" alt="FAQ Nebula" draggable={false} />
+        <img src="./images/FAQ Nebula.png" alt="FAQ Nebula" draggable={false} />
       </div>
 
       <div className="relative max-w-[850px]  lg:max-w-[1200px] mx-auto xl:px-5 lg:px-15 px-5">
         {/* Top border decorations */}
         <img
-          src="/vectors/faq-border-top-left.png"
+          src="./vectors/faq-border-top-left.png"
           alt=""
           className="absolute -top-32 -left-30 pointer-events-none hidden lg:block"
           draggable={false}
         />
         <img
-          src="/vectors/faq-border-bottom-right.png"
+          src="./vectors/faq-border-bottom-right.png"
           alt=""
           className="absolute -bottom-32 -right-30 pointer-events-none hidden lg:block"
           draggable={false}
@@ -215,55 +204,18 @@ export default function FAQ() {
           preserveAspectRatio="none"
           aria-label="Constellation lines"
         >
-          <line
-            x1="10%"
-            y1="20%"
-            x2="25%"
-            y2="35%"
-            stroke="#E8D8A1"
-            strokeWidth="0.5"
-          />
-          <line
-            x1="25%"
-            y1="35%"
-            x2="15%"
-            y2="60%"
-            stroke="#E8D8A1"
-            strokeWidth="0.5"
-          />
-          <line
-            x1="75%"
-            y1="25%"
-            x2="85%"
-            y2="45%"
-            stroke="#E8D8A1"
-            strokeWidth="0.5"
-          />
-          <line
-            x1="85%"
-            y1="45%"
-            x2="90%"
-            y2="70%"
-            stroke="#E8D8A1"
-            strokeWidth="0.5"
-          />
+          <line x1="10%" y1="20%" x2="25%" y2="35%" stroke="#E8D8A1" strokeWidth="0.5" />
+          <line x1="25%" y1="35%" x2="15%" y2="60%" stroke="#E8D8A1" strokeWidth="0.5" />
+          <line x1="75%" y1="25%" x2="85%" y2="45%" stroke="#E8D8A1" strokeWidth="0.5" />
+          <line x1="85%" y1="45%" x2="90%" y2="70%" stroke="#E8D8A1" strokeWidth="0.5" />
         </svg>
 
         {/* Decorative stars */}
         <Star className="top-10 left-[5%] animate-pulse" size="small" />
 
-        <Star
-          className="top-64 left-[15%] animate-pulse [animation-delay:1000ms]"
-          size="small"
-        />
-        <Star
-          className="bottom-40 right-[20%] animate-pulse [animation-delay:1500ms]"
-          size="small"
-        />
-        <Star
-          className="bottom-20 left-[8%] animate-pulse [animation-delay:2000ms]"
-          size="large"
-        />
+        <Star className="top-64 left-[15%] animate-pulse [animation-delay:1000ms]" size="small" />
+        <Star className="bottom-40 right-[20%] animate-pulse [animation-delay:1500ms]" size="small" />
+        <Star className="bottom-20 left-[8%] animate-pulse [animation-delay:2000ms]" size="large" />
         <Star className="top-96 right-[5%] animate-pulse" size="small" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -274,20 +226,12 @@ export default function FAQ() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-16 lg:gap-y-4">
             <div className="space-y-16">
               {faqData.slice(0, faqData.length / 2).map((faq) => (
-                <FAQEntry
-                  key={faq.question}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
+                <FAQEntry key={faq.question} question={faq.question} answer={faq.answer} />
               ))}
             </div>
             <div className="space-y-16">
               {faqData.slice(faqData.length / 2, faqData.length).map((faq) => (
-                <FAQEntry
-                  key={faq.question}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
+                <FAQEntry key={faq.question} question={faq.question} answer={faq.answer} />
               ))}
             </div>
           </div>

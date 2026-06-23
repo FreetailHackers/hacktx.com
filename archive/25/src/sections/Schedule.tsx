@@ -32,10 +32,10 @@ function getDisplayName(category: string) {
 }
 
 const categoryStarMap: Record<string, string> = {
-  "Key-Event": "/images/Star 1.png",
-  Workshop: "/images/Star 2.png",
-  "Regular-Event": "/images/Star 3.png",
-  "Fun-Event": "/images/Star 4.png",
+  "Key-Event": "./images/Star 1.png",
+  Workshop: "./images/Star 2.png",
+  "Regular-Event": "./images/Star 3.png",
+  "Fun-Event": "./images/Star 4.png",
 };
 
 function getStarForCategory(category: string) {
@@ -79,7 +79,9 @@ function ScheduleItem({
       <img src="/vectors/event-header.svg" alt="" className="" />
       <div className="flex w-full h-fit px-2">
         <div className="flex-basis-0 min-w-[100px]">
-          <div className="font-bold text-right">{startTime} <br/> <p className="text-grey text-right text-xs">to {endTime}</p></div>
+          <div className="font-bold text-right">
+            {startTime} <br /> <p className="text-grey text-right text-xs">to {endTime}</p>
+          </div>
         </div>
         <Divider />
         <div className="flex flex-col">
@@ -143,18 +145,13 @@ export default function Schedule() {
     });
     // Sort each weekday's events by start time
     Object.keys(grouped).forEach((weekday) => {
-      grouped[weekday].sort(
-        (a, b) => new Date(a.start).getTime() - new Date(b.start).getTime()
-      );
+      grouped[weekday].sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
     });
     return grouped;
   }, [schedule]);
 
   const fetchSchedule = async () => {
-    const { data, error } = await supabase
-      .from("Event  ")
-      .select("*")
-      .order("start", { ascending: true });
+    const { data, error } = await supabase.from("Event  ").select("*").order("start", { ascending: true });
 
     if (error) {
       console.error("Error fetching schedule:", error);
@@ -194,13 +191,18 @@ export default function Schedule() {
     return <div>Loading schedule...</div>;
   }
   return (
-    <section
-      className="w-full max-w-4xl mx-auto my-16 text-white overflow-y-visible relative"
-      id="schedule"
-    >
+    <section className="w-full max-w-4xl mx-auto my-16 text-white overflow-y-visible relative" id="schedule">
       <div className="w-[1523px] -z-10 h-[1462px] absolute left-1/2 -translate-x-1/2">
-        <img src="/images/Schedule Nebula.png" alt="Schedule Nebula" className="absolute top-0 w-[1523px] h-[1462px] object-cover overflow-visible" />
-        <img src="/images/Schedule Stars.png" alt="Schedule Nebula" className="absolute top-0 w-[1354] h-[1838] object-cover overflow-visible left-1/2 -translate-x-1/2" />
+        <img
+          src="./images/Schedule Nebula.png"
+          alt="Schedule Nebula"
+          className="absolute top-0 w-[1523px] h-[1462px] object-cover overflow-visible"
+        />
+        <img
+          src="./images/Schedule Stars.png"
+          alt="Schedule Nebula"
+          className="absolute top-0 w-[1354] h-[1838] object-cover overflow-visible left-1/2 -translate-x-1/2"
+        />
       </div>
       <h2 className="text-5xl max-sm:text-3xl font-bold font-serif pt-4 mb-8 text-center uppercase">
         What's in your future?
@@ -213,9 +215,7 @@ export default function Schedule() {
             id={category}
             className={
               "px-4 py-2 w-fit cursor-pointer text-yellow" +
-              (containsFilter(category)
-                ? " drop-shadow-[0_0_4px_rgba(232,216,161,1)]"
-                : "")
+              (containsFilter(category) ? " drop-shadow-[0_0_4px_rgba(232,216,161,1)]" : "")
             }
             onClick={() => toggleFilter(category)}
           >
@@ -232,21 +232,21 @@ export default function Schedule() {
 
       <div className="flex gap-10 max-md:flex-col">
         {Object.keys(days).map((day) => (
-            <div className="flex flex-col gap-4 items-center" key={day}>
+          <div className="flex flex-col gap-4 items-center" key={day}>
             <div className="font-serif text-2xl w-full">{day}</div>
-              {days[day].map((item, index) => (
-                <ScheduleItem
-                  key={index}
-                  start={item.start}
-                  end={item.end}
-                  name={item.name}
-                  description={item.description}
-                  location={item.location}
-                  category={item.type}
-                  active={containsFilter(item.type)}
-                />
-              ))}
-            </div>
+            {days[day].map((item, index) => (
+              <ScheduleItem
+                key={index}
+                start={item.start}
+                end={item.end}
+                name={item.name}
+                description={item.description}
+                location={item.location}
+                category={item.type}
+                active={containsFilter(item.type)}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </section>

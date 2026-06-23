@@ -1,12 +1,6 @@
 import React from "react";
 
-function NavbarLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
+function NavbarLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a href={href} className="text-lg hover:drop-shadow-custom transition-all ease-out">
       {children}
@@ -31,7 +25,7 @@ export default function Navbar() {
         <a href="https://freetailhackers.com/" target="_blank" className="absolute left-0">
           <img
             className="h-[48px] mx-6 hover:drop-shadow-custom transition-all duration-300 ease-out"
-            src="/images/HackTX25_logo.png"
+            src="./images/HackTX25_logo.png"
             alt="Freetail Hackers Logo"
           />
         </a>
@@ -45,10 +39,7 @@ export default function Navbar() {
         </div>
 
         <a href="https://mlh.io/" target="_blank">
-          <img
-            className="absolute h-[144px] sm:h-auto right-6 top-2"
-            src="/mlh_badge.svg"
-          />
+          <img className="absolute h-[144px] sm:h-auto right-6 top-2" src="./mlh_badge.svg" />
         </a>
       </div>
     </nav>

@@ -1,12 +1,6 @@
 import React from "react";
 
-function Column({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function Column({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="min-w-max mb-8">
       <h4 className="font-bold mb-4">{title}</h4>
@@ -17,11 +11,7 @@ function Column({
 
 function Link({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a
-      href={href}
-      className="underline hover:drop-shadow-custom transition-all ease-out"
-      target="_blank"
-    >
+    <a href={href} className="underline hover:drop-shadow-custom transition-all ease-out" target="_blank">
       {children}
     </a>
   );
@@ -32,7 +22,7 @@ export default function Footer() {
     <footer className="relative max-w-7xl w-full mx-auto">
       <div className="absolute left-1/2 -translate-x-1/2 w-[1400px] h-[970px] top-[180px] -z-10">
         <img
-          src="/vectors/Footer Stars.svg"
+          src="./vectors/Footer Stars.svg"
           alt="Footer Stars"
           draggable={false}
           className="w-[1400px] h-[970px]"
@@ -40,12 +30,7 @@ export default function Footer() {
       </div>
       <div className="w-min lg:absolute">
         <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2.5">
-          <img
-            src="/vectors/FH Bat.svg"
-            alt="logo"
-            draggable={false}
-            className="inline"
-          />
+          <img src="./vectors/FH Bat.svg" alt="logo" draggable={false} className="inline" />
           Freetail hackers
         </h3>
         <div className="mb-3">
@@ -62,37 +47,37 @@ export default function Footer() {
             href="https://www.linkedin.com/company/freetail-hackers"
             className="hover:drop-shadow-custom transition-all ease-out"
           >
-            <img src="/vectors/linkedin.svg" />
+            <img src="./vectors/linkedin.svg" />
           </a>
           <a
             href="https://www.instagram.com/freetailhackers"
             className="hover:drop-shadow-custom transition-all ease-out"
           >
-            <img src="/vectors/instagram.svg" />
+            <img src="./vectors/instagram.svg" />
           </a>
           <a
             href="https://www.facebook.com/freetailhackers/ "
             className="hover:drop-shadow-custom transition-all ease-out"
           >
-            <img src="/vectors/facebook.svg" />
+            <img src="./vectors/facebook.svg" />
           </a>
           <a
             href="https://www.tiktok.com/@freetailhackers"
             className="hover:drop-shadow-custom transition-all ease-out"
           >
-            <img src="/vectors/tiktok.svg" />
+            <img src="./vectors/tiktok.svg" />
           </a>
           <a
             href="https://x.com/freetailhackers"
             className="hover:drop-shadow-custom transition-all ease-out"
           >
-            <img src="/vectors/twitter.svg" />
+            <img src="./vectors/twitter.svg" />
           </a>
         </div>
       </div>
       <div>
         <img
-          src="/images/Freetail Constellation.png"
+          src="./images/Freetail Constellation.png"
           alt="Freetail Constellation"
           draggable={false}
           className="w-full mt-10"
@@ -134,11 +119,7 @@ export default function Footer() {
       </div>
       <div className="relative h-[400px]">
         <div className="absolute left-1/2 -translate-x-1/2 w-[1287px] h-[892px] -top-[400px] -z-10 overflow-visible">
-          <img
-            src="/images/Footer Stars 2.png"
-            alt="Footer Stars 2"
-            draggable={false}
-          />
+          <img src="./images/Footer Stars 2.png" alt="Footer Stars 2" draggable={false} />
         </div>
       </div>
     </footer>
