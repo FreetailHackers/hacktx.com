@@ -49,6 +49,12 @@ export default function Home() {
             </div>
           </h1>
 
+          <div className="v2-r1 mb-4">
+            <span className="font-(--font-dm-sans) text-[16px] text-white/60 tracking-[0.28em] uppercase">
+              UT Austin&nbsp;&nbsp;·&nbsp;&nbsp;Oct 2026
+            </span>
+          </div>
+
           <div className="v2-r1 v2-wordmark mb-10">
             <span className="font-(--font-dm-sans) text-[28px] text-white/55 tracking-[0.22em] uppercase">
               Freetail Hackers
@@ -60,7 +66,12 @@ export default function Home() {
               Coming Soon
             </span>
             <span className="v2-dot text-white/25">·</span>
-            <a href="https://forms.gle/8zh88fMAxiiQXBVA7" className="v2-cta">
+            <a
+              href="https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="v2-cta"
+            >
               Interest Form
             </a>
           </div>
