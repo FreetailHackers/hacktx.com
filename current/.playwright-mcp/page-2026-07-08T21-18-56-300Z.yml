@@ -1,0 +1,6 @@
+- main [ref=e3]:
+  - generic: "viewport: 0, 0 | abs: 0, 0 | scroll: 0"
+  - img "HackTX Landing" [ref=e4]
+  - img "HackTX Logo" [ref=e5]
+  - img "Bottle" [ref=e6]
+  - img "Cookie" [ref=e7]
