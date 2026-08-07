@@ -4,6 +4,9 @@ import hourHandPng from "../assets/hour-hand.png";
 import minuteHandPng from "../assets/minute-hand.png";
 import glassSlipperPng from "../assets/glass-slipper.png";
 import sparklePng from "../assets/sparkle-star.png";
+import sparkleLine1Png from "../assets/countdown/sparkle line 1.png";
+import sparkleLine2Png from "../assets/countdown/sparkle line 2.png";
+import sparkleLine3Png from "../assets/countdown/sparkle line 3.png";
 
 const SHOE_KEYFRAMES = [
   { top: "51.2%", left: "20%", width: "6%", rotate: 10 },
@@ -137,8 +140,25 @@ export default function CountdownSection() {
       className="relative w-full min-h-screen flex items-center justify-center py-24"
       style={{ background: "#27231C" }}
     >
-      <div className="relative w-full md:w-1/2 mx-auto">
-        <img src={castleSvg} alt="Castle" className="w-full relative z-[2]" />
+      <div className="relative overflow-visible w-full md:w-1/2 mx-auto">
+        <img src={castleSvg} alt="Castle" className="w-full relative z-[3]" />
+
+        {/* Sparkle lines — behind castle tower, above countdown timer box */}
+        <img
+          src={sparkleLine1Png}
+          alt=""
+          className="absolute pointer-events-none top-[-50%] -left-[50%] w-[70%] z-[2] opacity-80"
+        />
+        <img
+          src={sparkleLine2Png}
+          alt=""
+          className="absolute pointer-events-none top-[-10%] -right-[50%] w-[90%] h-[110%] z-[0] opacity-80 scale-x-150 origin-right"
+        />
+        <img
+          src={sparkleLine3Png}
+          alt=""
+          className="absolute pointer-events-none bottom-[-10%] left-0 w-full scale-x-200 scale-y-150 z-[2] opacity-80"
+        />
 
         {/* Hour hand */}
         <div

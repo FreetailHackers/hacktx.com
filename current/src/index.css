@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Aunt Mildred MVB";
+  src: url("./assets/fonts/AuntMildred-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Pirata One", serif;
   font-weight: 400;

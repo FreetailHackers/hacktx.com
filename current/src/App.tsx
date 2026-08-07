@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import DesktopLanding from "./components/DesktopLanding";
 import MobileLanding from "./components/MobileLanding";
 import CountdownSection from "./components/Countdown";
+import AboutSection from "./components/About";
 
 export default function App() {
   const [pos, setPos] = useState({ x: 0, y: 0, absY: 0 });
@@ -102,6 +103,18 @@ export default function App() {
       </div>
 
       <CountdownSection />
+
+      {/* Gradient seam between Countdown and About — sits behind About's vines since About renders after */}
+      <div
+        className="relative w-full pointer-events-none"
+        style={{
+          height: "18vw",
+          marginTop: "-18vw",
+          background: "linear-gradient(to bottom, #27231C 0%, #EFE8CE 100%)",
+        }}
+      />
+
+      <AboutSection />
 
       <footer className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 text-white/60 text-xs tracking-wide pointer-events-none">
         <span>&copy; Freetail Hackers 2026</span>

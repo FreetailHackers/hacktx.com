@@ -1,0 +1,44 @@
+- main [ref=e3]:
+  - link "Major League Hacking 2027 Hackathon Season":
+    - /url: https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=black
+    - img "Major League Hacking 2027 Hackathon Season"
+  - generic [ref=e6]:
+    - img "HackTX Landing" [ref=e7]
+    - link [ref=e26] [cursor=pointer]:
+      - /url: https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c
+      - img "Bottle" [ref=e27]
+    - link [ref=e28] [cursor=pointer]:
+      - /url: https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c
+      - img "Cookie" [ref=e29]
+  - generic [ref=e30]:
+    - generic:
+      - img "Castle"
+      - generic:
+        - generic:
+          - paragraph:
+            - generic: "00"
+            - text: "d :"
+            - generic: "07"
+            - text: "h :"
+            - generic: "21"
+            - text: "m :"
+            - generic: "55"
+            - text: s
+          - paragraph: left until midnight
+      - img "Glass slipper"
+  - generic [ref=e32]:
+    - heading "About" [level=2] [ref=e33]
+    - generic [ref=e34]:
+      - article [ref=e35]:
+        - heading "What is HackTX?" [level=3] [ref=e36]
+        - paragraph [ref=e37]: HackTX is the University of Texas at Austin's largest hackathon, bringing together hundreds of students from across the country for 24 hours of building, learning, and creating. Whether you're a seasoned engineer or picking up your first line of code, HackTX is the place to turn bold ideas into real projects.
+      - article [ref=e38]:
+        - heading "What to Expect" [level=3] [ref=e39]
+        - paragraph [ref=e40]: Over the course of one weekend, hackers team up to design and build projects from scratch — apps, hardware, games, and everything in between. Between hacking sessions, you'll find workshops led by industry engineers, networking opportunities with top sponsors, free food, and a whole lot of fun.
+      - article [ref=e41]:
+        - heading "Who Can Join?" [level=3] [ref=e42]
+        - paragraph [ref=e43]: HackTX is open to all currently enrolled college students, regardless of major, experience level, or school. We believe the best hacks come from diverse teams with different perspectives. Apply as an individual and we'll help you find a team, or come with friends — everyone is welcome.
+  - generic:
+    - generic: © Freetail Hackers 2026
+    - link "Code of Conduct" [ref=e44] [cursor=pointer]:
+      - /url: https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md
