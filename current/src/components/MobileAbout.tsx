@@ -1,10 +1,11 @@
-import leftTopVine from "../assets/about/Left-Vines.png";
+import leftTopVine from "../assets/about/left-top-vine-mobile.png";
+import leftVine from "../assets/about/left-vine-mobile.png";
 import rightVine from "../assets/about/Right-Vine.png";
 
-export default function AboutSection() {
+export default function MobileAboutSection() {
   return (
     <section
-      className="relative w-full overflow-visible pb-250"
+      className="relative w-full overflow-visible"
       style={{ background: "#EFE8CE", marginTop: "-2px" }}
     >
       {/* ── Vines ── */}
@@ -12,21 +13,27 @@ export default function AboutSection() {
         src={leftTopVine}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute top-[35%] left-0 z-[1] w-[50%] vine-top-transform"
+        className="pointer-events-none absolute top-65 left-0 z-[1] w-[55%] vine-top-transform"
+      />
+      <img
+        src={leftVine}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-295 left-0 z-[1] w-[55%] vine-top-transform"
       />
       <img
         src={rightVine}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 z-[1] w-[44%] top-[20%] vine-right-transform"
+        className="pointer-events-none absolute right-0 z-[1] w-[60%] top-[27%] vine-right-transform"
       />
 
       {/* ══ Content ══ */}
       <div className="relative z-[5]">
         {/* Title */}
-        <div className="pt-25 -ml-[15%] pl-[0%] pr-[5%] pb-2 text-left">
+        <div className="pl-30 pr-[10%] pt-25 pb-2 text-left">
           <h2
-            className="font-['Pirata_One',serif] text-[7.8rem] leading-tight whitespace-nowrap"
+            className="font-['Pirata_One',serif] text-7xl sm:text-8xl leading-tight"
             style={{ color: "#27231C" }}
           >
             About Us
@@ -34,9 +41,9 @@ export default function AboutSection() {
         </div>
 
         {/* Block 1 */}
-        <div className="pl-[30%] pr-[10%] pt-20 pb-14 text-center">
+        <div className="pl-[20%] pr-[5%] pt-6 pb-10 text-center min-h-[120vw]">
           <p
-            className="text-[2.52rem] leading-snug w-full px-3 py-2"
+            className="text-xl leading-snug w-full px-3 py-2"
             style={{
               color: "#3D3726",
               fontFamily: "'Aunt Mildred MVB', serif",
@@ -53,9 +60,9 @@ export default function AboutSection() {
         </div>
 
         {/* Block 2 */}
-        <div className="pl-[10%] pr-[45%] pb-10 text-center mt-55">
+        <div className="pl-[5%] pr-[40%] pb-0 text-center mt-[-20vw] min-h-[140vw]">
           <p
-            className="text-[2.52rem] leading-snug w-full px-3 py-2"
+            className="text-xl leading-snug w-full px-3 py-2"
             style={{
               color: "#3D3726",
               fontFamily: "'Aunt Mildred MVB', serif",
@@ -72,9 +79,9 @@ export default function AboutSection() {
         </div>
 
         {/* Block 3 */}
-        <div className="pl-[25%] pr-[40%] pb-15 text-center mt-30">
+        <div className="pl-[50%] pr-[5%] pb-10 text-center -mt-[25vw] min-h-[90vw]">
           <p
-            className="text-[2.52rem] leading-snug w-full px-3 py-2"
+            className="text-xl leading-snug w-full px-3 py-2"
             style={{
               color: "#3D3726",
               fontFamily: "'Aunt Mildred MVB', serif",

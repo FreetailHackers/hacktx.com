@@ -1,0 +1,126 @@
+- main [ref=f9e3]:
+  - link [ref=f9e4] [cursor=pointer]:
+    - /url: https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=black
+    - img "Major League Hacking 2027 Hackathon Season" [ref=f9e5]
+  - generic [ref=f9e8]:
+    - img "HackTX Landing" [ref=f9e9]
+    - link [ref=f9e28] [cursor=pointer]:
+      - /url: https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c
+      - img "Bottle" [ref=f9e29]
+    - link [ref=f9e30] [cursor=pointer]:
+      - /url: https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c
+      - img "Cookie" [ref=f9e31]
+  - generic [ref=f9e33]:
+    - img "Castle" [ref=f9e34]
+    - generic:
+      - generic:
+        - paragraph:
+          - generic: "00"
+          - text: "d :"
+          - generic: "04"
+          - text: "h :"
+          - generic: "36"
+          - text: "m :"
+          - generic: "37"
+          - text: s
+        - paragraph: left until midnight
+    - img "Glass slipper"
+  - generic [ref=f9e37]:
+    - heading "About Us" [level=2] [ref=f9e39]
+    - paragraph [ref=f9e41]: HackTX is a 24-hour hackathon where technologists from across the country gather in Austin to build, imagine, and create together. Like any good fairy tale, it begins with curious minds, bold ideas, and the belief that something meaningful can be made from nothing.
+    - paragraph [ref=f9e43]: Join us for HackTX 2026 and become part of a growing tradition. Over the past decade, HackTX has welcomed more than 5,000 participants and awarded over $100,000 in prizes — and this year's story is just getting started.
+    - paragraph [ref=f9e45]: Backed by a dedicated team of over 60 organizers across six committees, we design events that spark creativity, encourage collaboration, and push the boundaries of what's possible, one chapter at a time.
+  - generic [ref=f9e46]:
+    - button "Open schedule" [ref=f9e48]:
+      - img "Genie lamp" [ref=f9e49]
+    - generic [ref=f9e50]:
+      - heading "✦ Schedule ✦" [level=2] [ref=f9e53]
+      - generic [ref=f9e54]:
+        - button "Required Event" [ref=f9e55]
+        - button "Food" [ref=f9e56]
+        - button "For Fun" [ref=f9e57]
+      - generic [ref=f9e59]:
+        - generic [ref=f9e60]:
+          - generic [ref=f9e61]: 9:00 AM
+          - generic [ref=f9e62]:
+            - paragraph [ref=f9e63]: Opening Ceremony
+            - paragraph [ref=f9e64]: Main Hall
+          - img "Required Event" [ref=f9e66]
+        - generic [ref=f9e67]:
+          - generic [ref=f9e68]: 10:00 AM
+          - generic [ref=f9e69]:
+            - paragraph [ref=f9e70]: Hacking Begins
+            - paragraph [ref=f9e71]: Hack Floor
+          - img "Required Event" [ref=f9e73]
+        - generic [ref=f9e74]:
+          - generic [ref=f9e75]: 11:30 AM
+          - generic [ref=f9e76]:
+            - paragraph [ref=f9e77]: Breakfast Burritos
+            - paragraph [ref=f9e78]: Dining Hall
+          - img "Food" [ref=f9e80]
+        - generic [ref=f9e81]:
+          - generic [ref=f9e82]: 12:00 PM
+          - generic [ref=f9e83]:
+            - paragraph [ref=f9e84]: Sponsor Expo
+            - paragraph [ref=f9e85]: Atrium
+          - img "Required Event" [ref=f9e87]
+        - generic [ref=f9e88]:
+          - generic [ref=f9e89]: 1:00 PM
+          - generic [ref=f9e90]:
+            - paragraph [ref=f9e91]: Magic Show & Games
+            - paragraph [ref=f9e92]: Recreation Room
+          - img "For Fun" [ref=f9e94]
+        - generic [ref=f9e95]:
+          - generic [ref=f9e96]: 2:00 PM
+          - generic [ref=f9e97]:
+            - paragraph [ref=f9e98]: Pizza Party
+            - paragraph [ref=f9e99]: Dining Hall
+          - img "Food" [ref=f9e101]
+        - generic [ref=f9e102]:
+          - generic [ref=f9e103]: 3:30 PM
+          - generic [ref=f9e104]:
+            - paragraph [ref=f9e105]: "Workshop: AI Wizardry"
+            - paragraph [ref=f9e106]: Room 101
+          - img "For Fun" [ref=f9e108]
+        - generic [ref=f9e109]:
+          - generic [ref=f9e110]: 6:00 PM
+          - generic [ref=f9e111]:
+            - paragraph [ref=f9e112]: Enchanted Dinner Feast
+            - paragraph [ref=f9e113]: Dining Hall
+          - generic [ref=f9e114]:
+            - img "Food" [ref=f9e115]
+            - img "For Fun" [ref=f9e116]
+        - generic [ref=f9e117]:
+          - generic [ref=f9e118]: 8:00 PM
+          - generic [ref=f9e119]:
+            - paragraph [ref=f9e120]: Midnight Snack Drop
+            - paragraph [ref=f9e121]: Hack Floor
+          - img "Food" [ref=f9e123]
+        - generic [ref=f9e124]:
+          - generic [ref=f9e125]: 10:00 PM
+          - generic [ref=f9e126]:
+            - paragraph [ref=f9e127]: Mini-Games Tournament
+            - paragraph [ref=f9e128]: Recreation Room
+          - img "For Fun" [ref=f9e130]
+        - generic [ref=f9e131]:
+          - generic [ref=f9e132]: 11:59 PM
+          - generic [ref=f9e133]:
+            - paragraph [ref=f9e134]: Hacking Ends — Submit!
+            - paragraph [ref=f9e135]: Hack Floor
+          - img "Required Event" [ref=f9e137]
+        - generic [ref=f9e138]:
+          - generic [ref=f9e139]: 12:30 AM
+          - generic [ref=f9e140]:
+            - paragraph [ref=f9e141]: Judging Begins
+            - paragraph [ref=f9e142]: Main Hall
+          - img "Required Event" [ref=f9e144]
+        - generic [ref=f9e145]:
+          - generic [ref=f9e146]: 2:00 AM
+          - generic [ref=f9e147]:
+            - paragraph [ref=f9e148]: Awards Ceremony
+            - paragraph [ref=f9e149]: Main Hall
+          - img "Required Event" [ref=f9e151]
+  - generic:
+    - generic: © Freetail Hackers 2026
+    - link "Code of Conduct" [ref=f9e153] [cursor=pointer]:
+      - /url: https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md

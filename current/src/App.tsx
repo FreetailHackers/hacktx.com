@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import DesktopLanding from "./components/DesktopLanding";
 import MobileLanding from "./components/MobileLanding";
 import CountdownSection from "./components/Countdown";
 import AboutSection from "./components/About";
+import MobileAboutSection from "./components/MobileAbout";
+import Schedule from "./components/Schedule";
 
 export default function App() {
   const [pos, setPos] = useState({ x: 0, y: 0, absY: 0 });
   const [scrollY, setScrollY] = useState(0);
-  const landingRef = useRef<HTMLDivElement>(null);
-  const isSnapping = useRef(false);
   const devMode = false; // Set to true to enable dev mode
 
   useEffect(() => {
@@ -25,23 +25,6 @@ export default function App() {
     setTimeout(scroll, 0);
   }, []);
 
-  // Snap to next section once user scrolls past 60% of the landing
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isSnapping.current || !landingRef.current) return;
-      const landingHeight = landingRef.current.offsetHeight;
-      const threshold = landingHeight * 0.6;
-      if (window.scrollY > threshold && window.scrollY < landingHeight) {
-        isSnapping.current = true;
-        window.scrollTo({ top: landingHeight, behavior: "smooth" });
-        setTimeout(() => {
-          isSnapping.current = false;
-        }, 1000);
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <main className="relative" onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY, absY: e.pageY })}>
@@ -93,7 +76,7 @@ export default function App() {
         </>
       )}
 
-      <div ref={landingRef}>
+      <div>
         <div className="hidden md:block">
           <DesktopLanding />
         </div>
@@ -102,7 +85,20 @@ export default function App() {
         </div>
       </div>
 
+      {/* Gradient seam between Landing and Countdown */}
+      <div
+        className="relative w-full pointer-events-none"
+        style={{
+          height: "18vw",
+          marginTop: "-18vw",
+          background: "linear-gradient(to bottom, transparent 0%, #27231C 100%)",
+        }}
+      />
+
       <CountdownSection />
+      {/* <div className="-mt-[30vw] relative z-10">
+        
+      </div> */}
 
       {/* Gradient seam between Countdown and About — sits behind About's vines since About renders after */}
       <div
@@ -114,7 +110,14 @@ export default function App() {
         }}
       />
 
-      <AboutSection />
+      <div className="hidden md:block">
+        <AboutSection />
+      </div>
+      <div className="block md:hidden">
+        <MobileAboutSection />
+      </div>
+
+      <Schedule />
 
       <footer className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 text-white/60 text-xs tracking-wide pointer-events-none">
         <span>&copy; Freetail Hackers 2026</span>

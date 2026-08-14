@@ -1,0 +1,38 @@
+- main [ref=f1e3]:
+  - link [ref=f1e4] [cursor=pointer]:
+    - /url: https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=black
+    - img "Major League Hacking 2027 Hackathon Season" [ref=f1e5]
+  - generic [ref=f1e8]:
+    - img "HackTX Landing" [ref=f1e9]
+    - link [ref=f1e28] [cursor=pointer]:
+      - /url: https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c
+      - img "Bottle" [ref=f1e29]
+    - link [ref=f1e30] [cursor=pointer]:
+      - /url: https://cumbersome-puma-4a6.notion.site/38b7fa08b4598043b425ec91f2136b7c
+      - img "Cookie" [ref=f1e31]
+  - generic [ref=f1e32]:
+    - generic:
+      - img "Castle"
+      - generic:
+        - generic:
+          - paragraph:
+            - generic: "00"
+            - text: "d :"
+            - generic: "08"
+            - text: "h :"
+            - generic: "34"
+            - text: "m :"
+            - generic: "35"
+            - text: s
+          - paragraph: left until midnight
+      - img "Glass slipper"
+  - generic [ref=f1e34]:
+    - generic [ref=f1e35]:
+      - heading "About Us" [level=2]
+    - paragraph [ref=f1e37]: HackTX is a 24-hour hackathon where technologists from across the country gather in Austin to build, imagine, and create together. Like any good fairy tale, it begins with curious minds, bold ideas, and the belief that something meaningful can be made from nothing.
+    - paragraph [ref=f1e39]: Join us for HackTX 2026 and become part of a growing tradition. Over the past decade, HackTX has welcomed more than 5,000 participants and awarded over $100,000 in prizes — and this year's story is just getting started.
+    - paragraph [ref=f1e41]: Backed by a dedicated team of over 60 organizers across six committees, we design events that spark creativity, encourage collaboration, and push the boundaries of what's possible, one chapter at a time.
+  - generic:
+    - generic: © Freetail Hackers 2026
+    - link "Code of Conduct" [ref=f1e42] [cursor=pointer]:
+      - /url: https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md
