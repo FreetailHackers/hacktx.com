@@ -22,6 +22,20 @@ body {
   text-align: center;
 }
 
+@keyframes cloud-drift {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(2.5vw); }
+  75%       { transform: translateX(-2.5vw); }
+}
+.cloud-a { animation: cloud-drift 22s ease-in-out infinite; }
+.cloud-b { animation: cloud-drift 28s ease-in-out 6s infinite; }
+.cloud-c { animation: cloud-drift 18s ease-in-out 11s infinite reverse; }
+.cloud-d { animation: cloud-drift 32s ease-in-out 3s infinite reverse; }
+.cloud-e { animation: cloud-drift 25s ease-in-out 9s infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .cloud-a, .cloud-b, .cloud-c, .cloud-d, .cloud-e { animation: none; }
+}
+
 @keyframes mlh-drop {
   from { transform: translateY(-100%); }
   to   { transform: translateY(0); }
