@@ -5,6 +5,7 @@ import CountdownSection from "./components/Countdown";
 import AboutSection from "./components/About";
 import MobileAboutSection from "./components/MobileAbout";
 import Schedule from "./components/Schedule";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [pos, setPos] = useState({ x: 0, y: 0, absY: 0 });
@@ -24,7 +25,6 @@ export default function App() {
     const scroll = () => window.scrollTo({ top: 125 });
     setTimeout(scroll, 0);
   }, []);
-
 
   return (
     <main className="relative" onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY, absY: e.pageY })}>
@@ -117,19 +117,9 @@ export default function App() {
         <MobileAboutSection />
       </div>
 
-      <Schedule />
+      {/* <Schedule /> */}
 
-      <footer className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 text-white/60 text-xs tracking-wide pointer-events-none">
-        <span>&copy; Freetail Hackers 2026</span>
-        <a
-          href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pointer-events-auto hover:text-white/90 transition-colors duration-150 underline underline-offset-2"
-        >
-          Code of Conduct
-        </a>
-      </footer>
+      <Footer />
     </main>
   );
 }
