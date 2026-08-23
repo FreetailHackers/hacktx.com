@@ -111,3 +111,138 @@ src/components/splash/
 
 ## Deliverable
 A working `SplashPage` component using the provided asset files directly, with two scene sub-components whose layouts are verified pixel-by-pixel against `/tmp/desktop-final.png` and `/tmp/mobile-final.png`.
+
+---
+
+## Positioning & Animation Patterns (established in session)
+
+These are the techniques we settled on. Follow them for all future landing work so the scene stays consistent.
+
+### 1. Aspect-ratio scaling container
+
+Every scene wrapper uses a fixed aspect ratio so all children scale as a unit:
+
+```tsx
+<div className="relative w-full overflow-hidden aspect-[1440/1324]">
+  {/* desktop */}
+</div>
+<div className="relative w-full overflow-hidden aspect-[390/1050]">
+  {/* mobile */}
+</div>
+```
+
+- Read the exact `width` and `height` from the SVG's root element to get the ratio — don't assume 16:9 or 4:3.
+- The background image becomes `absolute inset-0 w-full h-full` (not `h-auto`) so it fills the declared box rather than driving its own height.
+- All overlay widths/positions use `%`, never `vw`. `vw` is relative to the viewport; `%` is relative to the container. They coincide only when the component is full-width, which breaks the moment there's padding or the component is used in a narrower context.
+
+### 2. Multi-piece SVG scenes as a single scalable unit
+
+When a design element is made of several SVG pieces (e.g. the tree), compose them into **one parent `<svg>` with a master `viewBox`** rather than positioning each piece individually:
+
+```tsx
+<svg viewBox="0 0 935 768" className="w-full h-auto">
+  <image href={piece1} x={…} y={…} width={…} height={…} />
+  <image href={piece2} x={…} y={…} width={…} height={…} />
+</svg>
+```
+
+- Get `viewBox` dimensions from the Figma group's `width × height`.
+- Get each piece's `x/y` by subtracting the group's origin: `childX - group.x`, `childY - group.y`.
+- Use Figma's bounding-box `w/h` for each `<image>` element's `width`/`height`.
+- **Get values from Figma directly** using `use_figma` + `figma.getNodeByIdAsync` rather than estimating. URL format: `figma.com/design/{fileKey}?node-id={id}`.
+- Z-order in SVG = document order (later = on top). Match the Figma children array order (index 0 = back).
+- The composed SVG is then placed in the scene with a single `position: absolute` + `width: %` + `top/left: %`.
+
+### 3. CSS animations inside inline SVGs
+
+Animations on individual pieces within a composite SVG go inside a `<style>` block inside that SVG:
+
+```tsx
+<svg viewBox="…">
+  <style>{`
+    @keyframes canopy-bob {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-14px); }
+    }
+    .canopy { animation: canopy-bob 3s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .canopy { animation: none; } }
+  `}</style>
+  <g className="canopy" style={{ animationDelay: "0.3s" }}>
+    <image href={…} … />
+  </g>
+</svg>
+```
+
+- Wrap each animated piece in a `<g>` and apply `className` + inline `animationDelay`.
+- `transform: translateY(px)` inside an SVG moves by screen pixels, not SVG coordinate units.
+- **Wave stagger**: delay ∝ element's center-x divided by canvas width. `delay = (centerX / canvasW) * spreadSeconds`. This makes animations travel left → right naturally.
+- Always add `prefers-reduced-motion` inside the same `<style>` block.
+- Static pieces (e.g. the stump) are bare `<image>` tags with no `<g>` wrapper.
+
+### 4. Global CSS animations (index.css)
+
+Scene-wide animations that apply to multiple components (clouds, sparkles, etc.) go in `src/index.css`:
+
+```css
+@keyframes cloud-drift {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(2.5vw); }
+  75%       { transform: translateX(-2.5vw); }
+}
+.cloud-a { animation: cloud-drift 22s ease-in-out infinite; }
+.cloud-b { animation: cloud-drift 28s ease-in-out 6s infinite; }
+/* … */
+@media (prefers-reduced-motion: reduce) {
+  .cloud-a, .cloud-b, … { animation: none; }
+}
+```
+
+- Use `vw` in global keyframes (not `px`) so drift scales with viewport width.
+- For pendulum back-and-forth, keyframe at 25% (positive) and 75% (negative) — not just 50%.
+- The `reverse` animation-direction on some classes makes clouds drift in opposite directions without extra keyframes.
+
+### 5. Asset sources & file locations
+
+| Asset group | Location |
+|---|---|
+| Tree pieces | `src/assets/Landing/Tree/` — stump.svg + Vector 1–10.svg |
+| Clouds | `src/assets/Landing/clouds/` — `cloud 1.svg`, `cloud 2.svg`, `small cloud.svg` |
+| Wind sprites | `src/assets/Landing/wind/W401-1.png … W401-16.png` (16-frame sprite sheet) |
+| Background scenes | `src/assets/Landing/landing.svg` (desktop), `src/assets/Landing/landing_mobile.svg` (mobile) |
+
+- Missing SVG pieces (e.g. Vector 7) can be exported on-demand from Figma using `use_figma` → `node.exportAsync({ format: "SVG_STRING" })` and saved to the Tree folder.
+
+### 6. WindSprite placement guidelines
+
+`WindSprite` takes percentage ranges (`xRange`, `yRange`) relative to its container. Key parameters:
+
+```tsx
+<WindSprite
+  xRange={[minPct, maxPct]}   // horizontal spawn zone
+  yRange={[minPct, maxPct]}   // vertical spawn zone
+  width="8%"                  // size as % of container width
+  opacity={0.75}
+  initialDelay={0}            // ms before first play
+  pauseMs={2800}              // ms gap between loops
+  fps={12}
+  zIndex={6}
+/>
+```
+
+- Stagger `initialDelay` across instances so they never all fire at once.
+- Use 2 sprites near the tree and 3 spread across the rest of the page on desktop.
+- On mobile use 4 total: 2 in the upper sky, 2 lower in the canopy zone.
+- Size sprites ~20% larger on mobile than desktop equivalents (narrower viewport makes them feel smaller).
+- `zIndex={6}` puts them above clouds and tree but below interactive elements.
+
+### 7. Z-order layering (back → front)
+
+Render elements in this order inside the scene container so stacking is correct:
+
+1. Background SVG (`absolute inset-0 w-full h-full`)
+2. Clouds (`absolute`, low z-index, before Tree in JSX)
+3. Tree composite SVG
+4. Wind sprites (`zIndex: 6`)
+5. Logo / props / interactive elements (highest, rendered last)
+
+JSX document order determines paint order — later siblings are on top.

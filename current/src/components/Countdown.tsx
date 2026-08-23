@@ -50,9 +50,8 @@ function interpolateShoe(progress: number) {
 
 function getTimeUntilMidnight() {
   const now = new Date();
-  const midnight = new Date(now);
-  midnight.setHours(24, 0, 0, 0);
-  const diff = Math.max(0, midnight.getTime() - now.getTime());
+  const target = new Date("2026-10-24T00:00:00");
+  const diff = Math.max(0, target.getTime() - now.getTime());
   const totalSecs = Math.floor(diff / 1000);
   const days = Math.floor(totalSecs / 86400);
   const hours = Math.floor((totalSecs % 86400) / 3600);
