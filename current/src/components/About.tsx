@@ -4,7 +4,7 @@ import rightVine from "../assets/about/Right-Vine.png";
 export default function AboutSection() {
   return (
     <section
-      className="relative w-full overflow-visible pb-250"
+      className="relative w-full overflow-visible pb-150"
       style={{ background: "#EFE8CE", marginTop: "-2px" }}
     >
       {/* ── Vines ── */}
@@ -53,7 +53,7 @@ export default function AboutSection() {
         </div>
 
         {/* Block 2 */}
-        <div className="pl-[10%] pr-[45%] pb-10 text-center mt-55">
+        <div className="pl-[10%] pr-[45%] pb-10 text-center mt-35">
           <p
             className="text-[2.52rem] leading-snug w-full px-3 py-2"
             style={{
@@ -72,7 +72,7 @@ export default function AboutSection() {
         </div>
 
         {/* Block 3 */}
-        <div className="pl-[25%] pr-[40%] pb-15 text-center mt-30">
+        <div className="pl-[25%] pr-[40%] pb-15 text-center mt-10">
           <p
             className="text-[2.52rem] leading-snug w-full px-3 py-2"
             style={{

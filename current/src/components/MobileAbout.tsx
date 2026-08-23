@@ -79,7 +79,7 @@ export default function MobileAboutSection() {
         </div>
 
         {/* Block 3 */}
-        <div className="pl-[50%] pr-[5%] pb-10 text-center -mt-[25vw] min-h-[90vw]">
+        <div className="pl-[50%] pr-[5%] pb-10 text-center mt-[10vw] min-h-[90vw]">
           <p
             className="text-xl leading-snug w-full px-3 py-2"
             style={{

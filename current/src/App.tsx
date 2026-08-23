@@ -27,7 +27,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="relative" onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY, absY: e.pageY })}>
+    <main className="relative" style={{ overflowClipMargin: 0, overflow: "clip" }} onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY, absY: e.pageY })}>
       <a
         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=black"
         target="_blank"
