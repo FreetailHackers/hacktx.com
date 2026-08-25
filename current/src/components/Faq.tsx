@@ -7,7 +7,7 @@ const BORDER = "#6B7A3A";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is HackTX?",
-    a: "HackTX is the annual hackathon hosted by Freetail Hackers! At HackTX 2024, Freetail was 1 of 3 winners of AI aim to promote novel ideas, creations, and conversations centered around fast-paced innovation and artificial intelligence. This hackathon serves to provide an electric environment where the creators of tomorrow can collaborate to learn, create change, and, above all, have fun creating something new! No prior experience is required and all majors are welcome!",
+    a: "HackTX is the annual hackathon hosted by Freetail Hackers! No prior experience is required and all majors are welcome!",
   },
   {
     q: "Where is HackTX?",
