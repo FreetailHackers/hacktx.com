@@ -21,14 +21,8 @@ const EVENTS: EventRow[] = [
   { time: "10:00 AM", title: "Late Check In",             categories: ["required"] },
   { time: "11:00 AM", title: "Hacking Starts",            categories: ["required"] },
   { time: "11:00 AM", title: "Workshop: Team Matching",   categories: ["fun"] },
-  { time: "12:00 PM", title: "Workshop (TBD)",            categories: ["fun"] },
-  { time: "12:30 PM", title: "Workshop (TBD)",            categories: ["fun"] },
-  { time: "1:00 PM",  title: "Workshop (TBD)",            categories: ["fun"] },
   { time: "1:30 PM",  title: "Sponsor Expo",              categories: ["required"] },
   { time: "2:00 PM",  title: "Lunch",                     categories: ["food"] },
-  { time: "3:00 PM",  title: "Workshop (TBD)",            categories: ["fun"] },
-  { time: "4:00 PM",  title: "Workshop (TBD)",            categories: ["fun"] },
-  { time: "5:00 PM",  title: "Workshop (TBD)",            categories: ["fun"] },
   { time: "6:00 PM",  title: "Dinner",                    categories: ["food"] },
   { time: "8:00 PM",  title: "TechTogether Meetup",       categories: ["fun"] },
   { time: "12:00 AM", title: "Midnight Snack",            categories: ["food"] },
@@ -83,7 +77,14 @@ export default function Schedule() {
   };
 
   return (
-    <section className="relative w-full pb-20" style={{ background: "#EFE8CE" }}>
+    <section
+      className="relative w-full"
+      style={{
+        background: "#EFE8CE",
+        paddingBottom: open ? "5rem" : "2rem",
+        transition: "padding-bottom 0.9s cubic-bezier(0.2,0,0.2,1)",
+      }}
+    >
 
       {/* ── Background decorations — scattered stars ── */}
       <img src={sparkleStar} alt="" aria-hidden="true" className="pointer-events-none absolute z-0" style={{ width: "3%",   top: "4%",    left: "7%",   opacity: 0.5  }} />
@@ -163,7 +164,14 @@ export default function Schedule() {
           )}
         </div>
 
-        {/* Schedule box */}
+        {/* Schedule box — expands section as it opens */}
+        <div
+          style={{
+            maxHeight: open ? "6000px" : "0px",
+            overflow: "hidden",
+            transition: "max-height 2s cubic-bezier(0.2,0,0.2,1)",
+          }}
+        >
         <div
           style={{
             opacity: boxVisible ? 1 : 0,
@@ -271,7 +279,7 @@ export default function Schedule() {
             <div style={{ height: "2.5rem", background: "#9B5B6B", borderRadius: "50% 50% 1.8rem 1.8rem / 2rem 2rem 1.8rem 1.8rem", marginTop: "0.5rem" }} />
           </div>
         </div>
-
+        </div>
       </div>
 
       <style>{`

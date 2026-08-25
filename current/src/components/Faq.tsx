@@ -15,7 +15,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Who can participate?",
-    a: "HackTX is open only to currently enrolled students at The University of Texas at Austin.",
+    a: "HackTX is open to all students!",
   },
   {
     q: "How much does it cost?",
@@ -35,7 +35,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How do I apply?",
-    a: "Applications are closed right now! However, we are taking walk-ins day of the event as space provides.",
+    a: "You can apply at rodeo.freetailhackers.com",
   },
   {
     q: "How can I volunteer or mentor?",
@@ -119,10 +119,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section
-      className="relative w-full"
-      style={{ background: BG, paddingBottom: "8rem" }}
-    >
+    <section className="relative w-full" style={{ background: BG, paddingBottom: "8rem" }}>
       {/* ── Content ── */}
       <div className="relative z-[5] max-w-6xl mx-auto px-6 md:px-14">
         {/* Title */}
