@@ -32,11 +32,47 @@ export default function MobileLanding() {
       <Tree className="absolute" style={{ width: "200%", top: "14%", left: "-80%" }} />
 
       {/* Wind sprites — upper sky */}
-      <WindSprite xRange={[5,  35]} yRange={[8,  35]} width="16.8%" opacity={0.75} initialDelay={0}    pauseMs={3000} fps={12} zIndex={6} />
-      <WindSprite xRange={[50, 85]} yRange={[5,  30]} width="14.4%" opacity={0.65} initialDelay={1800} pauseMs={3600} fps={11} zIndex={6} />
+      <WindSprite
+        xRange={[5, 35]}
+        yRange={[8, 35]}
+        width="16.8%"
+        opacity={0.75}
+        initialDelay={0}
+        pauseMs={3000}
+        fps={12}
+        zIndex={6}
+      />
+      <WindSprite
+        xRange={[50, 85]}
+        yRange={[5, 30]}
+        width="14.4%"
+        opacity={0.65}
+        initialDelay={1800}
+        pauseMs={3600}
+        fps={11}
+        zIndex={6}
+      />
       {/* Wind sprites — lower canopy / mid-scene */}
-      <WindSprite xRange={[8,  45]} yRange={[42, 60]} width="15.6%" opacity={0.70} initialDelay={900}  pauseMs={2800} fps={12} zIndex={6} />
-      <WindSprite xRange={[48, 82]} yRange={[48, 65]} width="13.2%" opacity={0.60} initialDelay={2700} pauseMs={3400} fps={11} zIndex={6} />
+      <WindSprite
+        xRange={[8, 45]}
+        yRange={[42, 60]}
+        width="15.6%"
+        opacity={0.7}
+        initialDelay={900}
+        pauseMs={2800}
+        fps={12}
+        zIndex={6}
+      />
+      <WindSprite
+        xRange={[48, 82]}
+        yRange={[48, 65]}
+        width="13.2%"
+        opacity={0.6}
+        initialDelay={2700}
+        pauseMs={3400}
+        fps={11}
+        zIndex={6}
+      />
 
       {/* Logo */}
       <AnimatedLogo className="absolute left-1/2 -translate-x-1/2" style={{ top: "4%", width: "90%" }} />
@@ -55,7 +91,7 @@ export default function MobileLanding() {
           letterSpacing: "0.05em",
         }}
       >
-        10.24 — 10.25 · Apply by 9-24
+        10.24 — 10.25 · Apply by 9.11
       </p>
 
       {/* Cookie */}
