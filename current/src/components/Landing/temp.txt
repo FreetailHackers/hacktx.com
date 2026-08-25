@@ -1,0 +1,69 @@
+/**
+ * Tree — composite SVG scene assembled from the individual pieces in
+ * src/assets/Landing/Tree/.
+ *
+ * Everything lives inside a single <svg viewBox="…"> so the whole tree
+ * scales as one unit when you set className="w-full h-auto" (or any
+ * percentage width) on the parent container.  No per-breakpoint repositioning
+ * needed — the viewBox handles it.
+ *
+ * Piece z-order (SVG paints bottom → top):
+ *   Vector 10  → root/soil mass (tan, behind everything)
+ *   Vector 4   → lower light canopy layer (behind trunk)
+ *   stump      → trunk
+ *   Vector 3   → mid canopy (olive)
+ *   Vector 9   → small twig accent
+ *   Vector 5   → upper-mid green canopy
+ *   Vector 2   → left branch
+ *   Vector 1   → main dark crown (front)
+ */
+
+import frontLeaf from "../../assets/Landing/Tree/Vector 10.svg";
+import topBackLeaf from "../../assets/Landing/Tree/Vector 4.svg";
+import stump from "../../assets/Landing/Tree/stump.svg";
+import rightLeaf from "../../assets/Landing/Tree/Vector 3.svg";
+import backRightLeaf from "../../assets/Landing/Tree/Vector 5.svg";
+import leftLeaf from "../../assets/Landing/Tree/Vector 2.svg";
+import backLeaf from "../../assets/Landing/Tree/Vector 1.svg";
+
+interface Props {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+// Native dimensions for each piece (taken from each SVG's width/height attrs).
+// Positions are percentage-estimated relative to a 650 × 900 canvas;
+// adjust x/y/width/height values to match the reference screenshot.
+const CANVAS_W = 650;
+const CANVAS_H = 900;
+
+export default function Tree({ className = "", style }: Props) {
+  return (
+    <svg
+      viewBox={`0 0 ${CANVAS_W} ${CANVAS_H}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={style}
+    >
+      {/* backLeaf — far back */}
+      <image href={backLeaf} x={100} y={230} width={541} height={370} />
+
+      {/* Lower light canopy — behind trunk */}
+      {/* <image href={topBackLeaf} x={125} y={390} width={401} height={249} /> */}
+
+      {/* Trunk */}
+      <image href={stump} x={141} y={386} width={368} height={464} />
+
+      {/* Mid canopy layers */}
+      {/* <image href={backRightLeaf} x={180} y={160} width={347} height={316} />
+      <image href={rightLeaf} x={94} y={290} width={463} height={219} /> */}
+
+      {/* Left branch */}
+      {/* <image href={leftLeaf} x={60} y={160} width={74} height={264} /> */}
+
+      {/* Main crown — front */}
+      {/* <image href={frontLeaf} x={104} y={590} width={442} height={255} /> */}
+    </svg>
+  );
+}

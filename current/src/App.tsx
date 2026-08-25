@@ -4,6 +4,7 @@ import MobileLanding from "./components/MobileLanding";
 import CountdownSection from "./components/Countdown";
 import AboutSection from "./components/About";
 import MobileAboutSection from "./components/MobileAbout";
+import FaqSection from "./components/Faq";
 import Schedule from "./components/Schedule";
 import Footer from "./components/Footer";
 
@@ -22,7 +23,12 @@ export default function App() {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
-    const scroll = () => window.scrollTo({ top: 125 });
+    const scroll = () => {
+      // Only scroll down on desktop (≥768px); mobile starts at the top
+      if (window.innerWidth >= 768) {
+        window.scrollTo({ top: 125 });
+      }
+    };
     setTimeout(scroll, 0);
   }, []);
 
@@ -117,7 +123,9 @@ export default function App() {
         <MobileAboutSection />
       </div>
 
-      {/* <Schedule /> */}
+      <FaqSection />
+
+      <Schedule />
 
       <div className="relative z-10">
         <Footer />

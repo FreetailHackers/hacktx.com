@@ -40,6 +40,23 @@ export default function MobileLanding() {
 
       {/* Logo */}
       <AnimatedLogo className="absolute left-1/2 -translate-x-1/2" style={{ top: "4%", width: "90%" }} />
+      <p
+        className="absolute left-1/2 -translate-x-1/2"
+        style={{
+          top: "25%",
+          width: "90%",
+          textAlign: "center",
+          fontFamily: "'Pirata One', serif",
+          fontSize: "clamp(1.2rem, 5vw, 2rem)",
+          color: "#413720",
+          opacity: 0,
+          animation: "date-fade-in 0.8s ease forwards",
+          animationDelay: "1.9s",
+          letterSpacing: "0.05em",
+        }}
+      >
+        10.24 — 10.25 · Apply by 9-24
+      </p>
 
       {/* Cookie */}
       <a

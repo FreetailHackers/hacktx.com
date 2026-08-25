@@ -103,6 +103,24 @@ export default function DesktopLanding() {
         zIndex={6}
       />
       <AnimatedLogo className="absolute top-[15%] right-[8%]" style={{ width: "42%" }} />
+      <p
+        className="absolute"
+        style={{
+          top: "43%",
+          right: "8%",
+          width: "42%",
+          textAlign: "center",
+          fontFamily: "'Pirata One', serif",
+          fontSize: "clamp(1rem, 2.2vw, 2rem)",
+          color: "#413720",
+          opacity: 0,
+          animation: "date-fade-in 0.8s ease forwards",
+          animationDelay: "1.9s",
+          letterSpacing: "0.05em",
+        }}
+      >
+        10.24 — 10.25 · Apply by 9-24
+      </p>
       <a
         href="https://rodeo.freetailhackers.com/"
         target="_blank"
