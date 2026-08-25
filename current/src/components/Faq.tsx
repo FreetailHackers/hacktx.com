@@ -7,51 +7,55 @@ const BORDER = "#6B7A3A";
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is HackTX?",
-    a: "HackTX is a 24-hour hackathon where students come together to build creative projects, learn new skills, and have fun!",
-  },
-  {
-    q: "When is HackTX?",
-    a: "Oct 24–25!",
-  },
-  {
-    q: "Who can participate?",
-    a: "HackTX is open to all students!",
-  },
-  {
-    q: "How much does it cost?",
-    a: "Nothing! HackTX is completely free for all participants. We provide meals, snacks, and swag.",
-  },
-  {
-    q: "Do I need a team?",
-    a: "Nope! You can come solo and find a team at the event, or bring your own team of up to 4 people.",
-  },
-  {
-    q: "What should I bring?",
-    a: "Bring your laptop, charger, and anything else you need to be comfortable for 24 hours. We'll provide the rest!",
+    a: "HackTX is the annual hackathon hosted by Freetail Hackers! At HackTX 2024, Freetail was 1 of 3 winners of AI aim to promote novel ideas, creations, and conversations centered around fast-paced innovation and artificial intelligence. This hackathon serves to provide an electric environment where the creators of tomorrow can collaborate to learn, create change, and, above all, have fun creating something new! No prior experience is required and all majors are welcome!",
   },
   {
     q: "Where is HackTX?",
-    a: "Check back soon for location details! Follow our socials for the latest updates.",
+    a: "HackTX 26 will take place on the University of Texas at Austin campus! Hacking, judging, mini-events, and more will occur fully in-person!",
   },
   {
-    q: "How do I apply?",
-    a: "You can apply at rodeo.freetailhackers.com",
+    q: "What's the schedule?",
+    a: "We'll release a more detailed schedule on our website in the coming weeks, stay tuned on social media for more updates!",
   },
   {
-    q: "How can I volunteer or mentor?",
-    a: "We are always looking for mentors to answer student questions or workshop suggestions, as well as general volunteers to help run our event. If you want to help out, shoot us an email at admin@freetailhackers.com!",
+    q: "Any rules?",
+    a: "All work must be done at the event. You can't demo something you didn't build. All attendees (hackers, supporters, mentors, volunteers, etc.) must abide by the MLH Code of Conduct.",
   },
   {
-    q: "What are the rules?",
-    a: "All work must be done at the event. You can't demo something you didn't build. Don't talk about Fight Club. All attendees must abide by the MLH Code of Conduct.",
+    q: "What should I bring?",
+    a: "Yourself, your valid university ID, a form of ID proving you are over 18 years old, a laptop, chargers, or anything else you might need within the 24 hours. Firearms, weapons, alcohol, illegal drugs, and power tools are not allowed. Smiles and high-fives are welcome :)",
+  },
+  {
+    q: "How much money will this cost me?",
+    a: "Zero. Zip. Zilch. Nada. Nothing. Gratis. It's free! Freetail Hackers provides students with Wi-Fi, meals, swag, workspace, and prizes for all of our events!",
+  },
+  {
+    q: "When is HackTX?",
+    a: "HackTX 26 starts at 8am on October 24, 2025 and ends at 5pm on October 25, 2025.",
+  },
+  {
+    q: "When is the application due?",
+    a: "Applications open on August 25th, 2025. Please apply early since we will be releasing decisions in waves! The application deadline is September 24th, 2025.",
+  },
+  {
+    q: "What can I do if I missed the application deadline?",
+    a: "We will have walk-in registration on Saturday, October 24th. The specific closing time for walk-in registration will be announced on our website during the event week, so be on the lookout! This is first come, first serve until we hit capacity. Admission to the event is not guaranteed so we advise non-Austin attendees to not travel for walk-in registration.",
+  },
+  {
+    q: "How do teams work?",
+    a: "Teams can be up to 4 members. If you don't have a team, don't worry! Joining a team of new friends is the best part of a hackathon. We will have team matching available for everyone on the day of the event. If you would like to create a team beforehand, that works too!",
+  },
+  {
+    q: "How do I volunteer?",
+    a: "We are always looking for mentors to answer student questions or workshop suggestions, as well as general volunteers to help run our event. If you want to help out at our event, apply at this link! If you are looking to help outside of volunteering and mentoring shoot us an email at hello@freetailhackers.com.",
   },
   {
     q: "Will there be prizes?",
-    a: "Yes! There will be $25k+ in prizes.",
+    a: "Yes! We will have prizes for our challenges as well as smaller activities and mini-events! Specific details will be revealed at the opening ceremony!",
   },
   {
-    q: "I have more questions!",
-    a: "Don't hesitate to reach out to admin@freetailhackers.com.",
+    q: "Do y'all give travel reimbursements?",
+    a: "Unfortunately, we will not be able to provide travel reimbursements this year. We encourage you to look at low-cost transportation methods if you are coming from Texas such as Amtrak, Flixbus, and Redcoach.",
   },
 ];
 

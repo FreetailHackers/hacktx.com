@@ -1,5 +1,5 @@
 import leftTopVine from "../assets/about/Left-Vines.png";
-import rightVine from "../assets/about/Right-Vine.png";
+import rightVine from "../assets/about/Right-Vine.svg";
 
 export default function AboutSection() {
   return (

@@ -1,6 +1,5 @@
-import leftTopVine from "../assets/about/left-top-vine-mobile.png";
-import leftVine from "../assets/about/left-vine-mobile.png";
-import rightVine from "../assets/about/Right-Vine.png";
+import leftVine from "../assets/about/Left-Vine-Mobile.svg";
+import rightVine from "../assets/about/Right-Vine-Mobile.svg";
 
 export default function MobileAboutSection() {
   return (
@@ -10,28 +9,23 @@ export default function MobileAboutSection() {
     >
       {/* ── Vines ── */}
       <img
-        src={leftTopVine}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute top-65 left-0 z-[1] w-[55%] vine-top-transform"
-      />
-      <img
         src={leftVine}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute top-295 left-0 z-[1] w-[55%] vine-top-transform"
+        className="pointer-events-none absolute top-[-5%] left-0 z-[1] w-[100%]"
       />
+
       <img
         src={rightVine}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 z-[1] w-[60%] top-[27%] vine-right-transform"
+        className="pointer-events-none absolute right-0 z-[1] w-[70%] top-[-7%]"
       />
 
       {/* ══ Content ══ */}
       <div className="relative z-[5]">
         {/* Title */}
-        <div className="pl-30 pr-[10%] pt-25 pb-2 text-left">
+        <div className="pl-10 pr-[30%] pt-15 pb-2 text-left">
           <h2
             className="font-['Pirata_One',serif] text-7xl sm:text-8xl leading-tight"
             style={{ color: "#27231C" }}
@@ -60,7 +54,7 @@ export default function MobileAboutSection() {
         </div>
 
         {/* Block 2 */}
-        <div className="pl-[5%] pr-[40%] pb-0 text-center mt-[-20vw] min-h-[140vw]">
+        <div className="pl-[5%] pr-[40%] pb-0 text-center mt-[-3vw] min-h-[140vw]">
           <p
             className="text-xl leading-snug w-full px-3 py-2"
             style={{
@@ -73,13 +67,12 @@ export default function MobileAboutSection() {
             }}
           >
             Join us for HackTX 2026 and become part of a growing tradition. Over the past decade, HackTX has
-            welcomed more than 5,000 participants and awarded over $100,000 in prizes — and this year's story
-            is just getting started.
+            welcomed more than 5,000 participants and awarded over $100,000 in prizes.
           </p>
         </div>
 
         {/* Block 3 */}
-        <div className="pl-[50%] pr-[5%] pb-10 text-center mt-[10vw] min-h-[90vw]">
+        <div className="pl-[30%] pr-[5%] pb-10 text-center mt-[-63%] min-h-[90vw]">
           <p
             className="text-xl leading-snug w-full px-3 py-2"
             style={{
