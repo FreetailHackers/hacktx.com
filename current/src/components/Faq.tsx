@@ -1,10 +1,11 @@
 import { useState } from "react";
+import type { ReactNode } from "react";
 
 const BG = "#EFE8CE";
 const TEXT = "#3D3726";
 const BORDER = "#6B7A3A";
 
-const faqs: { q: string; a: string }[] = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "What is HackTX?",
     a: "HackTX is the annual hackathon hosted by Freetail Hackers! No prior experience is required and all majors are welcome!",
@@ -47,7 +48,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How do I volunteer?",
-    a: "We are always looking for mentors to answer student questions or workshop suggestions, as well as general volunteers to help run our event. If you want to help out at our event, apply at this link! If you are looking to help outside of volunteering and mentoring shoot us an email at hello@freetailhackers.com.",
+    a: <>We are always looking for mentors to answer student questions or workshop suggestions, as well as general volunteers to help run our event. If you want to help out at our event, apply at <a href="https://rodeo.freetailhackers.com/" target="_blank" rel="noopener noreferrer" style={{ color: BORDER, textDecoration: "underline" }}>this link</a>! If you are looking to help outside of volunteering and mentoring shoot us an email at hello@freetailhackers.com.</>,
   },
   {
     q: "Will there be prizes?",
@@ -59,7 +60,7 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-function FaqItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
+function FaqItem({ q, a, open, onToggle }: { q: string; a: ReactNode; open: boolean; onToggle: () => void }) {
   return (
     <div
       style={{
