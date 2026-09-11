@@ -116,7 +116,7 @@ export default function Tree({ className = "", style }: Props) {
           fontWeight={400}
           fill="#413720"
         >
-          Sept 15
+          Sept 11
         </text>
       </g>
 
