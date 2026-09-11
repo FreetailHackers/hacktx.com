@@ -119,7 +119,7 @@ export default function DesktopLanding() {
           letterSpacing: "0.05em",
         }}
       >
-        10.24 — 10.25 · Apply by 9.11
+        10.24 — 10.25
       </p>
       <a
         href="https://rodeo.freetailhackers.com/"

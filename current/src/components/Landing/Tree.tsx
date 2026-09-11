@@ -22,6 +22,7 @@ import vector5 from "../../assets/Landing/Tree/Vector 5.svg";
 import vector2 from "../../assets/Landing/Tree/Vector 2.svg";
 import vector3 from "../../assets/Landing/Tree/Vector 3.svg";
 import vector10 from "../../assets/Landing/Tree/Vector 10.svg";
+import banner from "../../assets/Landing/banner.svg";
 
 interface Props {
   className?: string;
@@ -45,8 +46,17 @@ export default function Tree({ className = "", style }: Props) {
         .canopy {
           animation: canopy-bob 3s ease-in-out infinite;
         }
+        @keyframes banner-sway {
+          0%, 100% { transform: rotate(-3deg); }
+          50%       { transform: rotate(3deg); }
+        }
+        .banner-group {
+          transform-origin: 516px 455px;
+          animation: banner-sway 4s ease-in-out infinite;
+        }
         @media (prefers-reduced-motion: reduce) {
           .canopy { animation: none; }
+          .banner-group { animation: none; }
         }
       `}</style>
 
@@ -81,6 +91,33 @@ export default function Tree({ className = "", style }: Props) {
       {/* Vector 10 — front upper canopy; center-x ≈ 449 → delay 0.34s */}
       <g className="canopy" style={{ animationDelay: "0.34s" }}>
         <image href={vector10} x={173} y={166} width={552} height={246} />
+      </g>
+
+      {/* Banner + text — swaying group, pivots at top-center of banner (516, 455) */}
+      <g className="banner-group">
+        <image href={banner} x={461} y={455} width={102} height={240} />
+        <text
+          x={511}
+          y={605}
+          textAnchor="middle"
+          fontFamily="Aunt Mildred MVB"
+          fontSize={26}
+          fontWeight={400}
+          fill="#413720"
+        >
+          Apply by
+        </text>
+        <text
+          x={513}
+          y={645}
+          textAnchor="middle"
+          fontFamily="Pirata One, serif"
+          fontSize={33}
+          fontWeight={400}
+          fill="#413720"
+        >
+          Sept 15
+        </text>
       </g>
 
       {/* Vector 7 — front-left leaf, rendered last so it sits on top; center-x ≈ 131 → delay 0.10s */}
