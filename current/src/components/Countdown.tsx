@@ -246,6 +246,7 @@ export default function CountdownSection() {
           <img src={minuteHandPng} alt="" className="clock-hand" />
         </div>
       </div>
+
     </div>
   );
 }

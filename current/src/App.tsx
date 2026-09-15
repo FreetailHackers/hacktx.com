@@ -106,14 +106,16 @@ export default function App() {
         
       </div> */}
 
-      {/* Gradient seam between Countdown and About — sits behind About's vines since About renders after */}
+      {/* Visible transition band between Countdown and About. */}
       <div
-        className="relative w-full pointer-events-none"
+        className="relative w-full h-[14vw] min-h-24 max-h-56 pointer-events-none"
         style={{
-          height: "18vw",
-          marginTop: "-18vw",
-          background: "linear-gradient(to bottom, #27231C 0%, #EFE8CE 100%)",
+          marginTop: "-1px",
+          marginBottom: "-1px",
+          background:
+            "linear-gradient(to bottom, #27231C 0%, #514D40 28%, #918B76 55%, #C9C1A7 78%, #EFE8CE 100%)",
         }}
+        aria-hidden="true"
       />
 
       <div className="hidden md:block">
