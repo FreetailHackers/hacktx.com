@@ -8,6 +8,7 @@ type Category = "required" | "food" | "fun";
 
 interface ScheduleEvent {
   time: string;
+  endTime?: string;
   title: string;
   categories: Category[];
 }
@@ -16,27 +17,30 @@ type EventRow = ScheduleEvent | { divider: string };
 
 const EVENTS: EventRow[] = [
   { divider: "Saturday" },
-  { time: "8:00 AM",  title: "Check-In",                 categories: ["required"] },
-  { time: "10:00 AM", title: "Opening Ceremony",          categories: ["required"] },
-  { time: "10:00 AM", title: "Late Check In",             categories: ["required"] },
-  { time: "11:00 AM", title: "Hacking Starts",            categories: ["required"] },
-  { time: "11:00 AM", title: "Workshop: Team Matching",   categories: ["fun"] },
-  { time: "1:30 PM",  title: "Sponsor Expo",              categories: ["required"] },
-  { time: "2:00 PM",  title: "Lunch",                     categories: ["food"] },
-  { time: "6:00 PM",  title: "Dinner",                    categories: ["food"] },
-  { time: "8:00 PM",  title: "TechTogether Meetup",       categories: ["fun"] },
-  { time: "12:00 AM", title: "Midnight Snack",            categories: ["food"] },
+  { time: "8:00 AM",  endTime: "10:00 AM", title: "Check-In",                 categories: ["required"] },
+  { time: "8:00 AM",  endTime: "12:00 PM", title: "Sponsor Expo",             categories: ["required"] },
+  { time: "10:30 AM", endTime: "11:30 AM", title: "Opening Ceremony",         categories: ["required"] },
+  { time: "11:30 AM", endTime: "1:30 PM",  title: "Late Check In",            categories: ["required"] },
+  { time: "11:30 AM",                      title: "Hacking Starts",           categories: ["required"] },
+  { time: "12:00 PM", endTime: "1:00 PM",  title: "Workshop: Team Matching",  categories: ["fun"] },
+  { time: "1:00 PM",  endTime: "3:00 PM",  title: "Lunch",                    categories: ["food"] },
+  { time: "3:00 PM",  endTime: "4:00 PM",  title: "TechTogether Meetup",      categories: ["fun"] },
+  { time: "3:00 PM",  endTime: "4:00 PM",  title: "Game Development Workshop",categories: ["fun"] },
+  { time: "4:00 PM",  endTime: "5:00 PM",  title: "Sponsor Workshop [TBA]",   categories: ["fun"] },
+  { time: "7:00 PM",  endTime: "9:00 PM",  title: "Dinner",                   categories: ["food"] },
+  { time: "9:00 PM",  endTime: "10:00 PM", title: "Cupstacking Competition",  categories: ["fun"] },
+  { time: "11:00 PM", endTime: "12:00 AM", title: "Bullet Chess Workshop",    categories: ["fun"] },
+  { time: "12:00 AM", endTime: "1:00 AM",  title: "Midnight Snack",           categories: ["food"] },
   { divider: "Sunday" },
-  { time: "1:00 AM",  title: "Gaming Night",              categories: ["fun"] },
-  { time: "7:00 AM",  title: "Sunrise Watch Party",       categories: ["fun"] },
-  { time: "8:30 AM",  title: "Breakfast",                 categories: ["food"] },
-  { time: "11:00 AM", title: "Hacking Ends",              categories: ["required"] },
-  { time: "11:00 AM", title: "Lunch",                     categories: ["food"] },
-  { time: "1:00 PM",  title: "Judging Begins",            categories: ["required"] },
-  { time: "4:00 PM",  title: "Judging Ends",              categories: ["required"] },
-  { time: "4:00 PM",  title: "Pitching Begins",           categories: ["required"] },
-  { time: "4:30 PM",  title: "Pitching Ends",             categories: ["required"] },
-  { time: "5:00 PM",  title: "Closing Ceremony",          categories: ["required"] },
+  { time: "8:00 AM",  endTime: "10:00 AM", title: "Breakfast",            categories: ["food"] },
+  { time: "10:00 AM", endTime: "12:00 PM", title: "Therapy Dogs",         categories: ["fun"] },
+  { time: "10:00 AM", endTime: "12:00 PM", title: "Fairytale Festivities",categories: ["fun"] },
+  { time: "11:30 AM",                      title: "Hacking Ends",         categories: ["required"] },
+  { time: "12:00 PM", endTime: "2:00 PM",  title: "Lunch",                categories: ["food"] },
+  { time: "1:00 PM",  endTime: "2:00 PM",  title: "Pitching Workshop",    categories: ["fun"] },
+  { time: "2:00 PM",  endTime: "5:00 PM",  title: "Judging",              categories: ["required"] },
+  { time: "5:30 PM",  endTime: "6:00 PM",  title: "Pitching Competition", categories: ["required"] },
+  { time: "6:30 PM",  endTime: "7:30 PM",  title: "Closing Ceremony",     categories: ["required"] },
 ];
 
 const FILTERS: { key: Category; label: string; color: string }[] = [
@@ -258,9 +262,10 @@ export default function Schedule() {
                       transition: `opacity 0.5s ease ${i * 55}ms, transform 0.5s ease ${i * 55}ms`,
                     }}
                   >
-                    <span className="font-mono font-bold flex-shrink-0 mt-0.5 text-base" style={{ color: "#7A3A4A", minWidth: "5rem" }}>
-                      {row.time}
-                    </span>
+                    <div className="font-mono font-bold flex-shrink-0 mt-0.5 flex flex-col leading-tight" style={{ color: "#7A3A4A", minWidth: "5rem" }}>
+                      <span className="text-base">{row.time}</span>
+                      {row.endTime && <span className="text-base opacity-70">– {row.endTime}</span>}
+                    </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-lg leading-tight" style={{ color: "#3D1A22" }}>{row.title}</p>
                     </div>
