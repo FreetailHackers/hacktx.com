@@ -71,7 +71,7 @@ export default function AnimatedLogo({ className = '', style }: Props) {
         ${paths.map((_, i) => `.logo-path:nth-child(${i + 1}) { animation-delay: ${(i * STAGGER).toFixed(2)}s; }`).join('\n')}
       `}</style>
       {paths.map((d, i) => (
-        <path key={i} d={d} pathLength="1" className="logo-path" />
+        <path key={i} d={d} pathLength="1" className="logo-path" fillRule="evenodd" clipRule="evenodd" />
       ))}
     </svg>
   );
