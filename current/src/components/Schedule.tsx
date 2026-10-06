@@ -18,7 +18,7 @@ type EventRow = ScheduleEvent | { divider: string };
 const EVENTS: EventRow[] = [
   { divider: "Saturday" },
   { time: "8:00 AM",  endTime: "10:00 AM", title: "Check-In",                 categories: ["required"] },
-  { time: "8:00 AM",  endTime: "12:00 PM", title: "Sponsor Expo",             categories: ["required"] },
+  { time: "8:00 AM",  endTime: "12:00 PM", title: "Partner Expo",             categories: ["required"] },
   { time: "10:30 AM", endTime: "11:30 AM", title: "Opening Ceremony",         categories: ["required"] },
   { time: "11:30 AM", endTime: "1:30 PM",  title: "Late Check In",            categories: ["required"] },
   { time: "11:30 AM",                      title: "Hacking Starts",           categories: ["required"] },
@@ -26,7 +26,7 @@ const EVENTS: EventRow[] = [
   { time: "1:00 PM",  endTime: "3:00 PM",  title: "Lunch",                    categories: ["food"] },
   { time: "3:00 PM",  endTime: "4:00 PM",  title: "TechTogether Meetup",      categories: ["fun"] },
   { time: "3:00 PM",  endTime: "4:00 PM",  title: "Game Development Workshop",categories: ["fun"] },
-  { time: "4:00 PM",  endTime: "5:00 PM",  title: "Sponsor Workshop [TBA]",   categories: ["fun"] },
+  { time: "4:00 PM",  endTime: "5:00 PM",  title: "Partner Workshop [TBA]",   categories: ["fun"] },
   { time: "7:00 PM",  endTime: "9:00 PM",  title: "Dinner",                   categories: ["food"] },
   { time: "9:00 PM",  endTime: "10:00 PM", title: "Cupstacking Competition",  categories: ["fun"] },
   { time: "11:00 PM", endTime: "12:00 AM", title: "Bullet Chess Workshop",    categories: ["fun"] },

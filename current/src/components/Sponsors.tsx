@@ -65,20 +65,20 @@ interface MattressLayer {
 
 // Bottom-to-top order controls both the final overlap and landing sequence.
 const MATTRESS_LAYERS: MattressLayer[] = [
-  { src: bottomMattress,      top: 90.7, width: 93.5, angle: -1.5 },
-  { src: blueFloralMattress, top: 83.2, width: 90.5, angle:  1.2 },
-  { src: diamondMattress,    top: 75.5, width: 94.0, angle: -1.1 },
-  { src: blueMattress,       top: 70.1, width: 91.0, angle:  0.8 },
-  { src: greenGridMattress,  top: 62.2, width: 94.5, angle: -0.8 },
-  { src: beigeMattress,      top: 55.4, width: 92.8, angle:  1.0 },
-  { src: zigzagMattress,     top: 45.8, width: 92.0, angle: -1.2 },
-  { src: redDotMattress,     top: 36.8, width: 93.0, angle:  1.1 },
-  { src: stripedMattress,    top: 30.0, width: 95.5, angle: -0.8 },
-  { src: dustyMattress,      top: 21.6, width: 92.0, angle:  0.9 },
-  { src: lavenderMattress,   top: 13.2, width: 89.5, angle: -0.7 },
-  { src: navyFloralMattress, top:  6.1, width: 91.5, angle:  0.8 },
+  { src: bottomMattress, top: 90.7, width: 93.5, angle: -1.5 },
+  { src: blueFloralMattress, top: 83.2, width: 90.5, angle: 1.2 },
+  { src: diamondMattress, top: 75.5, width: 94.0, angle: -1.1 },
+  { src: blueMattress, top: 70.1, width: 91.0, angle: 0.8 },
+  { src: greenGridMattress, top: 62.2, width: 94.5, angle: -0.8 },
+  { src: beigeMattress, top: 55.4, width: 92.8, angle: 1.0 },
+  { src: zigzagMattress, top: 45.8, width: 92.0, angle: -1.2 },
+  { src: redDotMattress, top: 36.8, width: 93.0, angle: 1.1 },
+  { src: stripedMattress, top: 30.0, width: 95.5, angle: -0.8 },
+  { src: dustyMattress, top: 21.6, width: 92.0, angle: 0.9 },
+  { src: lavenderMattress, top: 13.2, width: 89.5, angle: -0.7 },
+  { src: navyFloralMattress, top: 6.1, width: 91.5, angle: 0.8 },
   // The header asset includes wider transparent side padding than the other layers.
-  { src: headerMattress,     top:  0.0, width: 99.8, angle: -0.6 },
+  { src: headerMattress, top: 0.0, width: 99.8, angle: -0.6 },
 ];
 
 const MATTRESS_STAGGER_MS = 115;
@@ -140,7 +140,7 @@ export default function Sponsors() {
     <section ref={sectionRef} className="sponsors-section" aria-labelledby="sponsors-title">
       <div className={`sponsors-bed${animationStarted ? " sponsors-bed-animated" : ""}`}>
         <h2 id="sponsors-title" className="sponsors-title">
-          Thank you to our sponsors!
+          Thank you to our partners!
         </h2>
 
         <div className="sponsors-mattress-stack" aria-hidden="true">
@@ -151,13 +151,15 @@ export default function Sponsors() {
               className="sponsors-mattress"
               src={mattress.src}
               alt=""
-              style={{
-                top: `${mattress.top}%`,
-                width: `${mattress.width}%`,
-                zIndex: index + 1,
-                animationDelay: `${index * MATTRESS_STAGGER_MS}ms`,
-                "--drop-angle": `${mattress.angle}deg`,
-              } as CSSProperties}
+              style={
+                {
+                  top: `${mattress.top}%`,
+                  width: `${mattress.width}%`,
+                  zIndex: index + 1,
+                  animationDelay: `${index * MATTRESS_STAGGER_MS}ms`,
+                  "--drop-angle": `${mattress.angle}deg`,
+                } as CSSProperties
+              }
             />
           ))}
         </div>
