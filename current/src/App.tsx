@@ -6,6 +6,7 @@ import AboutSection from "./components/About";
 import MobileAboutSection from "./components/MobileAbout";
 import FaqSection from "./components/Faq";
 import Schedule from "./components/Schedule";
+import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -128,6 +129,8 @@ export default function App() {
       <FaqSection />
 
       <Schedule />
+
+      <Sponsors />
 
       <div className="relative z-10">
         <Footer />
