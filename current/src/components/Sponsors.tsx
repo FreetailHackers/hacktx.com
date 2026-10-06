@@ -1,11 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
-import bedPillar from "../assets/sponsors/bed pillar.png";
+import bedPillar from "../assets/sponsors/bed pillar.svg";
 import centerFrame from "../assets/sponsors/center frame.png";
 import frameDesign from "../assets/sponsors/frame design.png";
 import outerFrame from "../assets/sponsors/outer frame.png";
-import pillow from "../assets/sponsors/pillow.png";
-import metaLogo from "../assets/sponsors/logos/meta.svg";
+import pillow from "../assets/sponsors/pillow.svg";
+import metaLogo from "../assets/sponsors/logos/meta.png";
+import annapurnaLogo from "../assets/sponsors/logos/TRANSPARENT Annapurna Logo Horizontal.png";
+import nmc2Logo from "../assets/sponsors/logos/NMC2 Logo.png";
+import tfsLogo from "../assets/sponsors/logos/TFS_logo_horiz_black_RGB_2021 (2).png";
+import visaLogo from "../assets/sponsors/logos/Visa Logo.png";
+import bhwLogo from "../assets/sponsors/logos/BHW-logo-black.png";
+import descoLogo from "../assets/sponsors/logos/DESCO_Logo_2C.jpg";
+import capitalOneLogo from "../assets/sponsors/logos/capitalone_logo_logo_colored (1).jpg";
 import bottomMattress from "../assets/sponsors/mattresses/bottom mattress.png";
 import blueFloralMattress from "../assets/sponsors/mattresses/mattress.png";
 import diamondMattress from "../assets/sponsors/mattresses/diamond.png";
@@ -26,6 +33,7 @@ interface Sponsor {
   href: string;
   logo?: string;
   showName?: boolean;
+  gold?: boolean;
 }
 
 // Add sponsors here. New entries automatically fill the pillow slots below.
@@ -34,7 +42,42 @@ const SPONSORS: Sponsor[] = [
     name: "Meta",
     href: "https://www.meta.com/",
     logo: metaLogo,
-    showName: true,
+    gold: true,
+  },
+  {
+    name: "Visa",
+    href: "https://www.visa.com/",
+    logo: visaLogo,
+  },
+  {
+    name: "Annapurna",
+    href: "https://www.linkedin.com/company/annapurna-labs/",
+    logo: annapurnaLogo,
+  },
+  {
+    name: "NMC2",
+    href: "https://nmc2.com/",
+    logo: nmc2Logo,
+  },
+  {
+    name: "TFS",
+    href: "https://www.toyotafinancial.com/us/en.html",
+    logo: tfsLogo,
+  },
+  {
+    name: "BHW",
+    href: "https://thebhwgroup.com/",
+    logo: bhwLogo,
+  },
+  {
+    name: "D. E. Shaw",
+    href: "https://www.deshaw.com/",
+    logo: descoLogo,
+  },
+  {
+    name: "Capital One",
+    href: "https://www.capitalone.com/",
+    logo: capitalOneLogo,
   },
 ];
 
@@ -45,11 +88,9 @@ interface PillowSlot {
 }
 
 const PILLOW_ROWS = [
-  { top: 20.6, width: 28, positions: [50] },
-  { top: 36.3, width: 21, positions: [25, 50, 75] },
-  { top: 50.1, width: 17.5, positions: [19, 39.7, 60.3, 81] },
-  { top: 58.9, width: 17.5, positions: [19, 39.7, 60.3, 81] },
-  { top: 67.5, width: 17.5, positions: [19, 39.7, 60.3, 81] },
+  { top: 20.6, width: 28,   positions: [50] },
+  { top: 43.0, width: 21,   positions: [25, 50, 75] },
+  { top: 64.0, width: 17.5, positions: [19, 39.7, 60.3, 81] },
 ];
 
 const PILLOW_SLOTS: PillowSlot[] = PILLOW_ROWS.flatMap((row) =>
@@ -104,7 +145,12 @@ function SponsorPillow({ sponsor, slot, index }: { sponsor: Sponsor; slot: Pillo
       }}
     >
       <span className="sponsor-pillow-contents">
-        <img className="sponsor-pillow-shape" src={pillow} alt="" aria-hidden="true" />
+        <img
+          className={`sponsor-pillow-shape${sponsor.gold ? " sponsor-pillow-shape--gold" : ""}`}
+          src={pillow}
+          alt=""
+          aria-hidden="true"
+        />
         <span className={`sponsor-pillow-logo${showName ? " sponsor-pillow-logo-with-name" : ""}`}>
           {sponsor.logo && <img src={sponsor.logo} alt="" aria-hidden="true" />}
           {showName && <span className="sponsor-name">{sponsor.name}</span>}

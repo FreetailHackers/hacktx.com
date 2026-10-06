@@ -50,9 +50,6 @@ const FILTERS: { key: Category; label: string; color: string }[] = [
 ];
 
 export default function Schedule() {
-  const [open, setOpen] = useState(false);
-  const [boxVisible, setBoxVisible] = useState(false);
-  const [itemsVisible, setItemsVisible] = useState(false);
   const [active, setActive] = useState<Set<Category>>(new Set());
 
   const toggleFilter = (key: Category) => {
@@ -68,25 +65,12 @@ export default function Schedule() {
   const isHighlighted = (event: ScheduleEvent) =>
     active.size === 0 || event.categories.some((c) => active.has(c));
 
-  const handleLampClick = () => {
-    if (open) {
-      setOpen(false);
-      setBoxVisible(false);
-      setItemsVisible(false);
-      return;
-    }
-    setOpen(true);
-    setTimeout(() => setBoxVisible(true), 150);
-    setTimeout(() => setItemsVisible(true), 550);
-  };
-
   return (
     <section
       className="relative w-full"
       style={{
         background: "#EFE8CE",
-        paddingBottom: open ? "5rem" : "2rem",
-        transition: "padding-bottom 0.9s cubic-bezier(0.2,0,0.2,1)",
+        paddingBottom: "5rem",
       }}
     >
 
@@ -130,60 +114,19 @@ export default function Schedule() {
 
         {/* Lamp */}
         <div className="flex flex-col items-end pt-4 pb-2">
-          <button
-            onClick={handleLampClick}
-            aria-label={open ? "Close schedule" : "Open schedule"}
-            className="focus:outline-none hover:scale-110 active:scale-95"
+          <img
+            src={genieLamp}
+            alt="Genie lamp"
+            className="w-28 md:w-40 object-contain"
             style={{
-              filter: open
-                ? "drop-shadow(0 0 16px #9B5B6B) drop-shadow(0 0 32px #E4C9CE)"
-                : "drop-shadow(0 0 8px #C4956A) drop-shadow(0 0 20px #E4C9CE)",
-              transition: "filter 0.4s ease, transform 0.2s ease",
-              animation: open ? "none" : "lamp-pulse 2s ease-in-out infinite",
+              filter: "drop-shadow(0 0 16px #9B5B6B) drop-shadow(0 0 32px #E4C9CE)",
+              transform: "rotate(-20deg)",
             }}
-          >
-            <img
-              src={genieLamp}
-              alt="Genie lamp"
-              className="w-28 md:w-40 object-contain"
-              style={{
-                transform: open ? "rotate(-20deg)" : "rotate(0deg)",
-                transition: "transform 0.5s ease",
-              }}
-            />
-          </button>
-          {!open && (
-            <p
-              style={{
-                fontFamily: "'Aunt Mildred MVB', serif",
-                fontSize: "clamp(0.8rem, 1.2vw, 1rem)",
-                color: "#7A3A4A",
-                opacity: 0.75,
-                marginTop: "0.25rem",
-                animation: "lamp-pulse 2s ease-in-out infinite",
-              }}
-            >
-              rub the lamp...
-            </p>
-          )}
+          />
         </div>
 
-        {/* Schedule box — expands section as it opens */}
-        <div
-          style={{
-            maxHeight: open ? "6000px" : "0px",
-            overflow: "hidden",
-            transition: "max-height 2s cubic-bezier(0.2,0,0.2,1)",
-          }}
-        >
-        <div
-          style={{
-            opacity: boxVisible ? 1 : 0,
-            transform: boxVisible ? "translateY(0)" : "translateY(-24px)",
-            transition: "opacity 0.9s cubic-bezier(0.2,0,0.2,1), transform 0.9s cubic-bezier(0.2,0,0.2,1)",
-            pointerEvents: boxVisible ? "auto" : "none",
-          }}
-        >
+        {/* Schedule box */}
+        <div>
           <div
             className="mx-auto mt-2 mb-10"
             style={{
@@ -234,10 +177,7 @@ export default function Schedule() {
                     <div
                       key={`divider-${i}`}
                       className="col-span-1 md:col-span-2 text-center py-2"
-                      style={{
-                        opacity: itemsVisible ? 1 : 0,
-                        transition: `opacity 0.5s ease ${i * 55}ms`,
-                      }}
+                      style={{ opacity: 1 }}
                     >
                       <span
                         className="font-['Pirata_One',serif] text-2xl md:text-3xl px-6"
@@ -257,9 +197,8 @@ export default function Schedule() {
                     style={{
                       background: highlighted ? "rgba(255,255,255,0.72)" : "rgba(255,255,255,0.18)",
                       borderColor: highlighted && matchedFilter ? matchedFilter.color : highlighted ? "#9B5B6B" : "transparent",
-                      opacity: itemsVisible ? (active.size > 0 && !highlighted ? 0.3 : 1) : 0,
-                      transform: itemsVisible ? "translateY(0)" : "translateY(10px)",
-                      transition: `opacity 0.5s ease ${i * 55}ms, transform 0.5s ease ${i * 55}ms`,
+                      opacity: active.size > 0 && !highlighted ? 0.3 : 1,
+                      transition: "opacity 0.2s ease",
                     }}
                   >
                     <div className="font-mono font-bold flex-shrink-0 mt-0.5 flex flex-col leading-tight" style={{ color: "#7A3A4A", minWidth: "5rem" }}>
@@ -284,18 +223,7 @@ export default function Schedule() {
             <div style={{ height: "2.5rem", background: "#9B5B6B", borderRadius: "50% 50% 1.8rem 1.8rem / 2rem 2rem 1.8rem 1.8rem", marginTop: "0.5rem" }} />
           </div>
         </div>
-        </div>
       </div>
-
-      <style>{`
-        @keyframes lamp-pulse {
-          0%, 100% { opacity: 1; }
-          50%       { opacity: 0.5; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          button[aria-label] { animation: none !important; }
-        }
-      `}</style>
     </section>
   );
 }
