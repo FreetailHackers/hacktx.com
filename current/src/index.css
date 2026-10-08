@@ -1,5 +1,163 @@
 @import "tailwindcss";
 
+@property --navbar-reveal {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+.storybook-nav {
+  position: fixed;
+  top: -20px;
+  left: 24px;
+  z-index: 60;
+  width: clamp(220px, 16vw, 240px);
+  pointer-events: none;
+  isolation: isolate;
+  transform-origin: 48.5% 5%;
+  transform: rotate(var(--navbar-sway, 0deg));
+}
+
+.storybook-nav-sign {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  aspect-ratio: 262 / 172;
+  filter: drop-shadow(0 3px 2px rgb(65 55 32 / 18%));
+}
+
+.storybook-nav-toggle {
+  position: absolute;
+  z-index: 4;
+  top: 44.2%;
+  left: 0;
+  width: 100%;
+  height: 55.8%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.storybook-nav-dropdown {
+  --navbar-reveal: 0%;
+  position: absolute;
+  z-index: 1;
+  top: calc(100% - 5px);
+  left: 0.2%;
+  width: 99.6%;
+  aspect-ratio: 261 / 153;
+  transition: --navbar-reveal 550ms cubic-bezier(0.65, 0, 0.35, 1);
+  visibility: hidden;
+}
+
+.storybook-nav[data-open="true"] .storybook-nav-dropdown {
+  --navbar-reveal: 100%;
+  visibility: visible;
+  transition: --navbar-reveal 850ms cubic-bezier(0.22, 1.08, 0.36, 1);
+}
+
+.storybook-nav[data-open="false"] .storybook-nav-dropdown {
+  transition: --navbar-reveal 550ms cubic-bezier(0.65, 0, 0.35, 1), visibility 0s 550ms;
+}
+
+.storybook-nav-sheet {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 0 calc(100% - var(--navbar-reveal)) 0);
+  transform: translateY(calc((var(--navbar-reveal) - 100%) * 0.08));
+}
+
+.storybook-nav-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.storybook-nav-lettering-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.storybook-nav-lettering {
+  fill: #302819;
+  stroke: #302819;
+  stroke-width: 0.35;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+
+.storybook-nav:has(.storybook-nav-toggle:hover, .storybook-nav-toggle:focus-visible) .storybook-nav-sign-lettering,
+.storybook-nav-sheet:has(.storybook-nav-schedule:hover, .storybook-nav-schedule:focus-visible) .storybook-nav-schedule-lettering,
+.storybook-nav-sheet:has(.storybook-nav-faq:hover, .storybook-nav-faq:focus-visible) .storybook-nav-faq-lettering {
+  opacity: 1;
+}
+
+.storybook-nav-link {
+  position: absolute;
+  left: 3%;
+  width: 94%;
+  pointer-events: auto;
+}
+
+.storybook-nav-schedule {
+  top: 18.3%;
+  height: 36.6%;
+}
+
+.storybook-nav-faq {
+  top: 54.9%;
+  height: 36.6%;
+}
+
+.storybook-nav-toggle:focus-visible,
+.storybook-nav-link:focus-visible {
+  outline: 3px solid #413720;
+  outline-offset: -5px;
+}
+
+.storybook-nav-roll {
+  position: absolute;
+  top: var(--navbar-reveal);
+  left: 0;
+  width: 100%;
+  aspect-ratio: 261 / 16;
+  transform: translateY(-100%);
+  opacity: clamp(0, calc((100% - var(--navbar-reveal)) / 8%), 1);
+  filter: drop-shadow(0 -2px 2px rgb(65 55 32 / 25%));
+}
+
+#schedule, #faq {
+  scroll-margin-top: 20px;
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .storybook-nav { transform: none; }
+  .storybook-nav-dropdown,
+  .storybook-nav[data-open] .storybook-nav-dropdown {
+    transition: none;
+  }
+  .storybook-nav-sheet { transform: none; }
+  .storybook-nav-roll { display: none; }
+  .storybook-nav-lettering { transition: none; }
+}
+
+@media (max-width: 767px) {
+  .storybook-nav { display: none; }
+}
+
 html, body {
   overflow-x: hidden;
   max-width: 100%;

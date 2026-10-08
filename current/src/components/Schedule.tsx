@@ -67,6 +67,8 @@ export default function Schedule() {
 
   return (
     <section
+      id="schedule"
+      tabIndex={-1}
       className="relative w-full"
       style={{
         background: "#EFE8CE",
