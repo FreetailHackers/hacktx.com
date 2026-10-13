@@ -3,45 +3,7 @@ import genieLamp from "../assets/Schedule/genie lamp.png";
 import ribbonTop from "../assets/Schedule/ribbon top.png";
 import ribbonBottom from "../assets/Schedule/ribbon bottom.png";
 import sparkleStar from "../assets/sparkle-star.png";
-
-type Category = "required" | "food" | "fun";
-
-interface ScheduleEvent {
-  time: string;
-  endTime?: string;
-  title: string;
-  categories: Category[];
-}
-
-type EventRow = ScheduleEvent | { divider: string };
-
-const EVENTS: EventRow[] = [
-  { divider: "Saturday" },
-  { time: "8:00 AM",  endTime: "10:00 AM", title: "Check-In",                 categories: ["required"] },
-  { time: "8:00 AM",  endTime: "12:00 PM", title: "Partner Expo",             categories: ["required"] },
-  { time: "10:30 AM", endTime: "11:30 AM", title: "Opening Ceremony",         categories: ["required"] },
-  { time: "11:30 AM", endTime: "1:30 PM",  title: "Late Check In",            categories: ["required"] },
-  { time: "11:30 AM",                      title: "Hacking Starts",           categories: ["required"] },
-  { time: "12:00 PM", endTime: "1:00 PM",  title: "Workshop: Team Matching",  categories: ["fun"] },
-  { time: "1:00 PM",  endTime: "3:00 PM",  title: "Lunch",                    categories: ["food"] },
-  { time: "3:00 PM",  endTime: "4:00 PM",  title: "TechTogether Meetup",      categories: ["fun"] },
-  { time: "3:00 PM",  endTime: "4:00 PM",  title: "Game Development Workshop",categories: ["fun"] },
-  { time: "4:00 PM",  endTime: "5:00 PM",  title: "Partner Workshop [TBA]",   categories: ["fun"] },
-  { time: "7:00 PM",  endTime: "9:00 PM",  title: "Dinner",                   categories: ["food"] },
-  { time: "9:00 PM",  endTime: "10:00 PM", title: "Cupstacking Competition",  categories: ["fun"] },
-  { time: "11:00 PM", endTime: "12:00 AM", title: "Bullet Chess Workshop",    categories: ["fun"] },
-  { time: "12:00 AM", endTime: "1:00 AM",  title: "Midnight Snack",           categories: ["food"] },
-  { divider: "Sunday" },
-  { time: "8:00 AM",  endTime: "10:00 AM", title: "Breakfast",            categories: ["food"] },
-  { time: "10:00 AM", endTime: "12:00 PM", title: "Therapy Dogs",         categories: ["fun"] },
-  { time: "10:00 AM", endTime: "12:00 PM", title: "Fairytale Festivities",categories: ["fun"] },
-  { time: "11:30 AM",                      title: "Hacking Ends",         categories: ["required"] },
-  { time: "12:00 PM", endTime: "2:00 PM",  title: "Lunch",                categories: ["food"] },
-  { time: "1:00 PM",  endTime: "2:00 PM",  title: "Pitching Workshop",    categories: ["fun"] },
-  { time: "2:00 PM",  endTime: "5:00 PM",  title: "Judging",              categories: ["required"] },
-  { time: "5:30 PM",  endTime: "6:00 PM",  title: "Pitching Competition", categories: ["required"] },
-  { time: "6:30 PM",  endTime: "7:30 PM",  title: "Closing Ceremony",     categories: ["required"] },
-];
+import { useRodeoSchedule, type Category, type EventRow, type ScheduleEvent } from "../lib/rodeoSchedule";
 
 const FILTERS: { key: Category; label: string; color: string }[] = [
   { key: "required", label: "Required Event", color: "#7C3AED" },
@@ -51,6 +13,7 @@ const FILTERS: { key: Category; label: string; color: string }[] = [
 
 export default function Schedule() {
   const [active, setActive] = useState<Set<Category>>(new Set());
+  const { rows, error } = useRodeoSchedule();
 
   const toggleFilter = (key: Category) => {
     setActive((prev) => {
@@ -171,7 +134,17 @@ export default function Schedule() {
 
             {/* Event grid */}
             <div className="px-6 pb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
-              {EVENTS.map((row, i) => {
+              {rows === null && (
+                <p className="col-span-1 md:col-span-2 text-center py-6" style={{ color: "#3D1A22" }}>
+                  {error ? "The schedule couldn't be loaded. Please try again soon." : "Loading schedule…"}
+                </p>
+              )}
+              {rows?.length === 0 && (
+                <p className="col-span-1 md:col-span-2 text-center py-6" style={{ color: "#3D1A22" }}>
+                  The schedule hasn't been announced yet.
+                </p>
+              )}
+              {rows?.map((row: EventRow, i) => {
                 if (!isEvent(row)) {
                   return (
                     <div
@@ -192,7 +165,7 @@ export default function Schedule() {
                 const matchedFilter = FILTERS.find((f) => active.has(f.key) && row.categories.includes(f.key));
                 return (
                   <div
-                    key={i}
+                    key={row.id}
                     className="flex items-start gap-3 rounded-xl px-5 py-4 border-2"
                     style={{
                       background: highlighted ? "rgba(255,255,255,0.72)" : "rgba(255,255,255,0.18)",
