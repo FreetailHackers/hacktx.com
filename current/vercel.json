@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/rodeo/:path*",
+      "destination": "https://rodeo.freetailhackers.com/:path*"
+    }
+  ]
+}

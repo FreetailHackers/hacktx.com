@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { RODEO_URL } from "../config";
 
-/** In dev the Vite proxy forwards /rodeo/* to the Rodeo server, avoiding CORS. */
-const SCHEDULE_ENDPOINT =
-  import.meta.env.DEV ? "/rodeo/api/schedule" : `${RODEO_URL}/api/schedule`;
+/** Proxied through Vite (dev) and Vercel (prod) to avoid CORS. */
+const SCHEDULE_ENDPOINT = "/rodeo/api/schedule";
 
 export type Category = "required" | "food" | "fun";
 
