@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { RODEO_URL } from "../config";
 
+/** In dev the Vite proxy forwards /rodeo/* to the Rodeo server, avoiding CORS. */
+const SCHEDULE_ENDPOINT =
+  import.meta.env.DEV ? "/rodeo/api/schedule" : `${RODEO_URL}/api/schedule`;
+
 export type Category = "required" | "food" | "fun";
 
 /** Shape of one row from Rodeo's `GET /api/schedule`. */
@@ -81,7 +85,7 @@ export function useRodeoSchedule() {
 
     const load = async () => {
       try {
-        const res = await fetch(`${RODEO_URL}/api/schedule`, { signal: controller.signal });
+        const res = await fetch(SCHEDULE_ENDPOINT, { signal: controller.signal });
         if (!res.ok) throw new Error(String(res.status));
         setRows(toRows((await res.json()) as RodeoFeed));
         setError(false);

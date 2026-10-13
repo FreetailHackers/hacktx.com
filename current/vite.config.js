@@ -6,4 +6,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/",
+  server: {
+    proxy: {
+      "/rodeo": {
+        target: process.env.VITE_RODEO_URL ?? "https://rodeo.freetailhackers.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/rodeo/, ""),
+      },
+    },
+  },
 });
