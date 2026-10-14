@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { RODEO_URL } from "../config";
 
 /** Proxied through Vite (dev) and Vercel (prod) to avoid CORS. */
-const SCHEDULE_ENDPOINT = "/rodeo/api/schedule";
+const SCHEDULE_ENDPOINT = "/rodeo/api/trpc/schedule.list";
+
+/** HackTX is held in Austin, TX. */
+const TIMEZONE = "America/Chicago";
 
 export type Category = "required" | "food" | "fun";
 
-/** Shape of one row from Rodeo's `GET /api/schedule`. */
 interface RodeoEvent {
   id: string;
   name: string;
@@ -15,11 +16,6 @@ interface RodeoEvent {
   end: string;
   location: string;
   type: "EVENT" | "WORKSHOP" | "MEAL" | "CEREMONY";
-}
-
-interface RodeoFeed {
-  timezone: string;
-  events: RodeoEvent[];
 }
 
 export interface ScheduleEvent {
@@ -43,17 +39,16 @@ const CATEGORY_BY_TYPE: Record<RodeoEvent["type"], Category> = {
 const POLL_MS = 60_000;
 const NIGHT_OWL_MS = 4 * 60 * 60 * 1000;
 
-/** Turns Rodeo's flat, start-sorted event list into rows with day dividers, in the hackathon's timezone. */
-export function toRows(feed: RodeoFeed): EventRow[] {
-  const tz = feed.timezone;
-  const day = new Intl.DateTimeFormat("en-US", { timeZone: tz, weekday: "long" });
-  const dayKey = new Intl.DateTimeFormat("en-CA", { timeZone: tz });
-  const clock = new Intl.DateTimeFormat("en-US", { timeZone: tz, hour: "numeric", minute: "2-digit" });
+/** Turns Rodeo's flat, start-sorted event list into rows with day dividers. */
+export function toRows(events: RodeoEvent[]): EventRow[] {
+  const day = new Intl.DateTimeFormat("en-US", { timeZone: TIMEZONE, weekday: "long" });
+  const dayKey = new Intl.DateTimeFormat("en-CA", { timeZone: TIMEZONE });
+  const clock = new Intl.DateTimeFormat("en-US", { timeZone: TIMEZONE, hour: "numeric", minute: "2-digit" });
 
-  const events = [...feed.events].sort((a, b) => +new Date(a.start) - +new Date(b.start));
+  const sorted = [...events].sort((a, b) => +new Date(a.start) - +new Date(b.start));
   const rows: EventRow[] = [];
   let lastDay = "";
-  for (const e of events) {
+  for (const e of sorted) {
     const start = new Date(e.start);
     // Events before 4 AM belong to the night before (Midnight Snack stays under Saturday).
     const dayStart = new Date(start.getTime() - NIGHT_OWL_MS);
@@ -86,7 +81,10 @@ export function useRodeoSchedule() {
       try {
         const res = await fetch(SCHEDULE_ENDPOINT, { signal: controller.signal });
         if (!res.ok) throw new Error(String(res.status));
-        setRows(toRows((await res.json()) as RodeoFeed));
+        // tRPC v11 wraps responses with superjson: { result: { data: { json: T } } }
+        const body = await res.json();
+        const events = body.result.data.json as RodeoEvent[];
+        setRows(toRows(events));
         setError(false);
       } catch (err) {
         if (!controller.signal.aborted) setError(true);
