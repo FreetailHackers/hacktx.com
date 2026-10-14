@@ -139,7 +139,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative w-full" style={{ background: BG, paddingBottom: "8rem" }}>
+    <section id="faq" tabIndex={-1} className="relative w-full" style={{ background: BG, paddingBottom: "8rem" }}>
       {/* ── Content ── */}
       <div className="relative z-[5] max-w-6xl mx-auto px-6 md:px-14">
         {/* Title */}

@@ -8,6 +8,7 @@ import FaqSection from "./components/Faq";
 import Schedule from "./components/Schedule";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [pos, setPos] = useState({ x: 0, y: 0, absY: 0 });
@@ -26,14 +27,18 @@ export default function App() {
     }
     const scroll = () => {
       // Only scroll down on desktop (≥768px); mobile starts at the top
-      if (window.innerWidth >= 768) {
-        window.scrollTo({ top: 125 });
+      if (window.location.hash) {
+        document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "instant" });
+      } else if (window.innerWidth >= 768) {
+        window.scrollTo({ top: 125, behavior: "instant" });
       }
     };
     setTimeout(scroll, 0);
   }, []);
 
   return (
+    <>
+    <Navbar />
     <main className="relative" style={{ overflowClipMargin: 0, overflow: "clip" }} onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY, absY: e.pageY })}>
       <a
         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=black"
@@ -136,5 +141,6 @@ export default function App() {
         <Footer />
       </div>
     </main>
+    </>
   );
 }
