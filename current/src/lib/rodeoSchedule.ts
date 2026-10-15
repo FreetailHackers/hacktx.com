@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
-/** Proxied through Vite (dev) and Vercel (prod) to avoid CORS. */
-const SCHEDULE_ENDPOINT = "/rodeo/api/trpc/schedule.list";
+/** Proxied through Vite in dev; calls Rodeo directly in prod (CORS allowed on Rodeo's end). */
+const SCHEDULE_ENDPOINT = import.meta.env.PROD
+  ? "https://rodeo.freetailhackers.com/api/trpc/schedule.list"
+  : "/rodeo/api/trpc/schedule.list";
 
 /** HackTX is held in Austin, TX. */
 const TIMEZONE = "America/Chicago";
