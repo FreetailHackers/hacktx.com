@@ -612,8 +612,8 @@ body {
 .about-copy h2 {
   margin: 0 0 0.7rem;
   color: #27231c;
-  font-size: clamp(6.3rem, 10.9vw, 11.25rem);
-  line-height: 0.9;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 1;
   text-align: left;
 }
 
@@ -653,8 +653,8 @@ body {
 
   .about-copy h2 {
     margin-bottom: 2rem;
-    font-size: clamp(2.75rem, 9.5vw, 4.75rem);
-    line-height: 0.85;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1;
     text-align: center;
     transform: translateY(-4vw);
   }

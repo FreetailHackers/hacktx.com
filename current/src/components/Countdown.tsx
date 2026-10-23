@@ -48,33 +48,43 @@ function interpolateShoe(progress: number) {
   };
 }
 
-function getTimeUntilMidnight() {
+// HackTX 26 opens at 8:00 AM CST (UTC-6) on October 24, 2026
+const HACKTX_START = new Date("2026-10-24T14:00:00Z");
+
+function getTimeUntilHackTX() {
   const now = new Date();
-  const target = new Date("2026-10-24T00:00:00");
-  const diff = Math.max(0, target.getTime() - now.getTime());
+  const diff = Math.max(0, HACKTX_START.getTime() - now.getTime());
   const totalSecs = Math.floor(diff / 1000);
   const days = Math.floor(totalSecs / 86400);
   const hours = Math.floor((totalSecs % 86400) / 3600);
   const minutes = Math.floor((totalSecs % 3600) / 60);
   const seconds = totalSecs % 60;
-  return { days, hours, minutes, seconds };
+  const done = diff === 0;
+  return { days, hours, minutes, seconds, done };
 }
 
-function getClockAngles() {
+function getClockAngles(done: boolean) {
+  // When countdown is over both hands rest at midnight (12 o'clock = 0°)
+  if (done) return { hourDeg: 0, minuteDeg: 0 };
+
   const now = new Date();
-  const s = now.getSeconds();
-  const ms = now.getMilliseconds();
-  const totalSec = s + ms / 1000;
-  // Minute hand: full 360° every 30 seconds
-  const minuteDeg = ((totalSec % 30) / 30) * 360;
-  // Hour hand: 30° every 30 seconds (1°/s)
-  const hourDeg = totalSec * 1;
+  const diffMs = Math.max(0, HACKTX_START.getTime() - now.getTime());
+  const totalSecs = diffMs / 1000;
+
+  // Minute hand: one full rotation per hour of remaining time
+  const secsIntoCurrentHour = totalSecs % 3600;
+  const minuteDeg = (secsIntoCurrentHour / 3600) * 360;
+
+  // Hour hand: one full rotation per 12 hours (classic clock)
+  const secsInto12Hours = totalSecs % (12 * 3600);
+  const hourDeg = (secsInto12Hours / (12 * 3600)) * 360;
+
   return { hourDeg, minuteDeg };
 }
 
 export default function CountdownSection() {
-  const [clock, setClock] = useState(getClockAngles);
-  const [timeLeft, setTimeLeft] = useState(getTimeUntilMidnight);
+  const [timeLeft, setTimeLeft] = useState(getTimeUntilHackTX);
+  const [clock, setClock] = useState(() => getClockAngles(timeLeft.done));
   const [shoeProgress, setShoeProgress] = useState(0);
   const [showSparkles, setShowSparkles] = useState(false);
   const [sparklesVisible, setSparklesVisible] = useState(false);
@@ -82,19 +92,26 @@ export default function CountdownSection() {
   const hasAnimated = useRef(false);
 
   useEffect(() => {
+    const id = setInterval(() => {
+      const t = getTimeUntilHackTX();
+      setTimeLeft(t);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (timeLeft.done) {
+      setClock({ hourDeg: 0, minuteDeg: 0 });
+      return;
+    }
     let raf: number;
     const tick = () => {
-      setClock(getClockAngles());
+      setClock(getClockAngles(false));
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(() => setTimeLeft(getTimeUntilMidnight()), 1000);
-    return () => clearInterval(id);
-  }, []);
+  }, [timeLeft.done]);
 
   // Trigger shoe animation once when the castle section enters view
   useEffect(() => {
@@ -184,7 +201,7 @@ export default function CountdownSection() {
               <span className="inline-block w-[2.4ch] text-center">{pad(timeLeft.seconds)}</span>s
             </p>
             <p className="font-['Pirata_One',serif] text-[4.3vw] md:text-[2.3vw] font-normal uppercase leading-normal text-black m-0 whitespace-nowrap text-right">
-              left until midnight
+              {timeLeft.done ? "HackTX has begun!" : "until HackTX begins"}
             </p>
           </div>
         </div>

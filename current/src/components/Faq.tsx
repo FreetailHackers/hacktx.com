@@ -40,7 +40,21 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "What can I do if I missed the application deadline?",
-    a: "We will have walk-in registration on Saturday, October 24th. The specific closing time for walk-in registration will be announced on our website during the event week, so be on the lookout! This is first come, first serve until we hit capacity. Admission to the event is not guaranteed so we advise non-Austin attendees to not travel for walk-in registration.",
+    a: (
+      <>
+        We will have walk-in registration on Saturday, October 24th! To participate, create an account on{" "}
+        <a
+          href="https://rodeo.freetailhackers.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: BORDER, textDecoration: "underline" }}
+        >
+          Rodeo
+        </a>{" "}
+        before arriving, then come to check in after the opening ceremony. Walk-in spots are first come, first
+        served until we hit capacity — admission is not guaranteed.
+      </>
+    ),
   },
   {
     q: "How do teams work?",
@@ -139,7 +153,12 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" tabIndex={-1} className="relative w-full" style={{ background: BG, paddingBottom: "8rem" }}>
+    <section
+      id="faq"
+      tabIndex={-1}
+      className="relative w-full"
+      style={{ background: BG, paddingBottom: "8rem" }}
+    >
       {/* ── Content ── */}
       <div className="relative z-[5] max-w-6xl mx-auto px-6 md:px-14">
         {/* Title */}

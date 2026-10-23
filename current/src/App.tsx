@@ -29,8 +29,6 @@ export default function App() {
       // Only scroll down on desktop (≥768px); mobile starts at the top
       if (window.location.hash) {
         document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "instant" });
-      } else if (window.innerWidth >= 768) {
-        window.scrollTo({ top: 125, behavior: "instant" });
       }
     };
     setTimeout(scroll, 0);

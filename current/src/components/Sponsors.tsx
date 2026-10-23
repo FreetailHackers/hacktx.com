@@ -13,6 +13,8 @@ import visaLogo from "../assets/sponsors/logos/Visa Logo.png";
 import bhwLogo from "../assets/sponsors/logos/BHW-logo-black.png";
 import descoLogo from "../assets/sponsors/logos/DESCO_Logo_2C.jpg";
 import capitalOneLogo from "../assets/sponsors/logos/capitalone_logo_logo_colored (1).jpg";
+import serpApiLogo from "../assets/sponsors/logos/serpapi.png";
+import coxLogo from "../assets/sponsors/logos/COX.png";
 import bottomMattress from "../assets/sponsors/mattresses/bottom mattress.png";
 import blueFloralMattress from "../assets/sponsors/mattresses/mattress.png";
 import diamondMattress from "../assets/sponsors/mattresses/diamond.png";
@@ -34,51 +36,28 @@ interface Sponsor {
   logo?: string;
   showName?: boolean;
   gold?: boolean;
+  blendMultiply?: boolean;
 }
 
 // Add sponsors here. New entries automatically fill the pillow slots below.
+// Row 1 (1 slot, largest):  Title sponsor
+// Row 2 (3 slots, medium):  Platinum sponsors
+// Row 3 (3 slots, smaller): Gold sponsors
+// Row 4 (3 slots, smaller): Silver / other sponsors
 const SPONSORS: Sponsor[] = [
-  {
-    name: "Meta",
-    href: "https://www.meta.com/",
-    logo: metaLogo,
-    gold: true,
-  },
-  {
-    name: "Visa",
-    href: "https://www.visa.com/",
-    logo: visaLogo,
-  },
-  {
-    name: "Annapurna",
-    href: "https://www.linkedin.com/company/annapurna-labs/",
-    logo: annapurnaLogo,
-  },
-  {
-    name: "NMC2",
-    href: "https://nmc2.com/",
-    logo: nmc2Logo,
-  },
-  {
-    name: "TFS",
-    href: "https://www.toyotafinancial.com/us/en.html",
-    logo: tfsLogo,
-  },
-  {
-    name: "BHW",
-    href: "https://thebhwgroup.com/",
-    logo: bhwLogo,
-  },
-  {
-    name: "D. E. Shaw",
-    href: "https://www.deshaw.com/",
-    logo: descoLogo,
-  },
-  {
-    name: "Capital One",
-    href: "https://www.capitalone.com/",
-    logo: capitalOneLogo,
-  },
+  // Title
+  { name: "Meta", href: "https://www.meta.com/", logo: metaLogo, gold: true },
+  // Platinum
+  { name: "Annapurna", href: "https://www.linkedin.com/company/annapurna-labs/", logo: annapurnaLogo },
+  { name: "NMC2", href: "https://nmc2.com/", logo: nmc2Logo },
+  { name: "Toyota Financial Services", href: "https://www.toyotafinancial.com/us/en.html", logo: tfsLogo },
+  // Gold / Silver
+  { name: "Capital One", href: "https://www.capitalone.com/", logo: capitalOneLogo, blendMultiply: true },
+  { name: "Visa", href: "https://www.visa.com/", logo: visaLogo },
+  { name: "D. E. Shaw", href: "https://www.deshaw.com/", logo: descoLogo },
+  { name: "The BHW Group", href: "https://thebhwgroup.com/", logo: bhwLogo },
+  { name: "SerpApi", href: "https://serpapi.com/", logo: serpApiLogo },
+  { name: "Cox", href: "https://www.cox.com/", logo: coxLogo },
 ];
 
 interface PillowSlot {
@@ -90,7 +69,8 @@ interface PillowSlot {
 const PILLOW_ROWS = [
   { top: 20.6, width: 28,   positions: [50] },
   { top: 43.0, width: 21,   positions: [25, 50, 75] },
-  { top: 64.0, width: 17.5, positions: [19, 39.7, 60.3, 81] },
+  { top: 59.5, width: 17.5, positions: [19.5, 50, 80.5] },
+  { top: 76.5, width: 17.5, positions: [19.5, 50, 80.5] },
 ];
 
 const PILLOW_SLOTS: PillowSlot[] = PILLOW_ROWS.flatMap((row) =>
@@ -152,7 +132,14 @@ function SponsorPillow({ sponsor, slot, index }: { sponsor: Sponsor; slot: Pillo
           aria-hidden="true"
         />
         <span className={`sponsor-pillow-logo${showName ? " sponsor-pillow-logo-with-name" : ""}`}>
-          {sponsor.logo && <img src={sponsor.logo} alt="" aria-hidden="true" />}
+          {sponsor.logo && (
+            <img
+              src={sponsor.logo}
+              alt=""
+              aria-hidden="true"
+              style={sponsor.blendMultiply ? { mixBlendMode: "multiply" } : undefined}
+            />
+          )}
           {showName && <span className="sponsor-name">{sponsor.name}</span>}
         </span>
       </span>

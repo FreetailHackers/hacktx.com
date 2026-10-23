@@ -83,8 +83,8 @@ const socialLinks = [
 
 const hacktxLinks: LinkItem[] = [
   { label: "Devpost", comingSoon: true },
-  { label: "Hacker Resources", href: "https://uhsg.freetailhackers.com/" },
-  { label: "Discord", comingSoon: true },
+  { label: "Rodeo", href: "https://rodeo.freetailhackers.com/" },
+
   { label: "MLH", href: "https://mlh.io" },
 ];
 
