@@ -8,7 +8,7 @@ const SCHEDULE_ENDPOINT = import.meta.env.PROD
 /** HackTX is held in Austin, TX. */
 const TIMEZONE = "America/Chicago";
 
-export type Category = "required" | "food" | "fun";
+export type Category = "required" | "food" | "fun" | "workshop";
 
 interface RodeoEvent {
   id: string;
@@ -17,7 +17,7 @@ interface RodeoEvent {
   start: string;
   end: string;
   location: string;
-  type: "EVENT" | "WORKSHOP" | "MEAL" | "CEREMONY";
+  type: "EVENT" | "WORKSHOP" | "MEAL" | "CEREMONY" | "REQUIRED" | "NON_HACKER";
 }
 
 export interface ScheduleEvent {
@@ -31,11 +31,13 @@ export interface ScheduleEvent {
 
 export type EventRow = ScheduleEvent | { divider: string };
 
-const CATEGORY_BY_TYPE: Record<RodeoEvent["type"], Category> = {
+const CATEGORY_BY_TYPE: Partial<Record<RodeoEvent["type"], Category>> = {
+  REQUIRED: "required",
   CEREMONY: "required",
   MEAL: "food",
-  WORKSHOP: "fun",
+  WORKSHOP: "workshop",
   EVENT: "fun",
+  // NON_HACKER events are filtered out below
 };
 
 const POLL_MS = 60_000;
@@ -59,6 +61,7 @@ export function toRows(events: RodeoEvent[]): EventRow[] {
       rows.push({ divider: day.format(dayStart) });
       lastDay = key;
     }
+    if (e.type === "NON_HACKER") continue;
     rows.push({
       id: e.id,
       time: clock.format(start),

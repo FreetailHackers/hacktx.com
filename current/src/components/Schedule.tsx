@@ -5,17 +5,20 @@ import ribbonBottom from "../assets/Schedule/ribbon bottom.png";
 import sparkleStar from "../assets/sparkle-star.png";
 import requiredIcon from "../assets/Schedule/Required.svg";
 import foodIcon from "../assets/Schedule/Food.svg";
+import workshopIcon from "../assets/Schedule/Event.svg";
 import forFunIcon from "../assets/Schedule/For Fun.svg";
 import { useRodeoSchedule, type Category, type ScheduleEvent } from "../lib/rodeoSchedule";
 
 const FILTERS: { key: Category; label: string; color: string; icon: string }[] = [
-  { key: "required", label: "Required Event", color: "#7C3AED", icon: requiredIcon },
-  { key: "food",     label: "Food",           color: "#B45309", icon: foodIcon },
-  { key: "fun",      label: "For Fun",        color: "#0369A1", icon: forFunIcon },
+  { key: "required", label: "Required",  color: "#7C3AED", icon: requiredIcon },
+  { key: "workshop", label: "Workshop",  color: "#0369A1", icon: workshopIcon },
+  { key: "food",     label: "Food",      color: "#B45309", icon: foodIcon },
+  { key: "fun",      label: "For Fun",   color: "#0F766E", icon: forFunIcon },
 ];
 
 const CATEGORY_ICON: Record<Category, string> = {
   required: requiredIcon,
+  workshop: workshopIcon,
   food: foodIcon,
   fun: forFunIcon,
 };
@@ -50,9 +53,6 @@ function groupByDay(rows: ReturnType<typeof useRodeoSchedule>["rows"]): DayGroup
     if ("divider" in row) {
       groups.push({ label: row.divider, slots: [] });
     } else {
-      // Filter out internal-only events
-      if (/judging workshop/i.test(row.title)) continue;
-      if (/organizer meetup/i.test(row.title)) continue;
       if (groups.length === 0) continue;
       const day = groups[groups.length - 1];
       const lastSlot = day.slots[day.slots.length - 1];
