@@ -673,6 +673,259 @@ body {
   .about-stat-events { top: 54%; left: auto; right: -2%; width: 55%; transform: rotate(5deg); }
 }
 
+/* ===================== PRIZES ===================== */
+
+.prizes-section {
+  background: #EFE8CE;
+  padding: 4rem 0 6rem;
+}
+
+.prizes-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Heading matches FAQ — Pirata One, left-aligned */
+.prizes-title {
+  font-family: 'Pirata One', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  color: #27231C;
+  line-height: 1;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+/* ── Three deck piles in a row ── */
+.prizes-decks-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: flex-end;    /* bottom-align so shadow cards don't push things */
+  padding-bottom: 0.5rem;
+}
+
+/* ── Individual deck wrapper ── */
+.prize-deck-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* ── Stacked pile button ── */
+.prize-deck-stack {
+  position: relative;
+  width: clamp(125px, 20vw, 225px);
+  aspect-ratio: 820 / 1050;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  /* room below for shadow cards */
+  margin-bottom: clamp(30px, 3.75vw, 50px);
+}
+
+.prize-deck-stack:focus-visible {
+  outline: 3px solid #8b2020;
+  outline-offset: 8px;
+  border-radius: 4px;
+}
+
+/* Shadow cards that peek below/behind */
+.prize-deck-shadow {
+  position: absolute;
+  top: 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* Top card */
+.prize-deck-top {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prize-deck-stack:hover .prize-deck-top {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 14px 30px rgb(0 0 0 / 0.3);
+}
+
+/* Active (open) deck — lifted and highlighted */
+.prize-deck-stack--active .prize-deck-top {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 16px 32px rgb(74 28 28 / 0.35);
+  outline: 3px solid #8b2020;
+  outline-offset: 3px;
+}
+
+/* Track-count badge on the top card */
+.prize-deck-count {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pirata One', serif;
+  font-size: clamp(0.75rem, 1.5vw, 1.06rem);
+  color: #4a1c1c;
+  background: rgb(239 232 206 / 0.9);
+  padding: 0.15em 0.75em;
+  border-radius: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Category label under each pile */
+.prize-deck-category {
+  font-family: 'Pirata One', serif;
+  font-size: clamp(1.06rem, 2vw, 1.44rem);
+  color: #27231C;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .prizes-inner          { padding: 0 1rem; }
+  .prizes-decks-row      { gap: 3.5vw; }
+  .prize-deck-stack      { width: 26vw; margin-bottom: 5.5vw; }
+  .prize-deck-category   { font-size: clamp(0.7rem, 3vw, 1rem); white-space: normal; max-width: 27vw; }
+  .prize-deck-count      { font-size: clamp(0.6rem, 2.2vw, 0.85rem); }
+}
+
+/* ── Fan strip — flex-wrap so partial last rows stay centered ── */
+.prize-fan-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  max-width: 1150px;
+  margin: 2.5rem auto 0;
+  padding: 0 1rem;
+}
+
+/* ── Each dealt card wrapper — JS drives the FLIP animation via inline style ── */
+.prize-fan-card-wrapper {
+  width: clamp(163px, 20vw, 250px);
+  /* opacity/transform controlled by JS; default visible for no-JS */
+}
+
+/* ── Card button ── */
+.prize-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 820 / 1050;
+  /* card fills its wrapper width (set on .prize-fan-card-wrapper) */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  perspective: 900px;
+}
+
+.prize-card:focus-visible {
+  outline: 3px solid #8b2020;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ── 3-D flip inner ── */
+.prize-card-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prize-card-inner--flipped {
+  transform: rotateY(180deg);
+}
+
+/* Both faces */
+.prize-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.prize-card-face--back {
+  transform: rotateY(180deg);
+}
+
+.prize-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Prize text on the back face */
+.prize-card-back-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14% 10%;
+}
+
+.prize-card-prize-label {
+  font-family: 'Pirata One', serif;
+  font-size: clamp(0.7rem, 1.4vw, 1.1rem);
+  color: #4a1c1c;
+  line-height: 1.35;
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* ── Track name — appears on hover as an overlay above the card ── */
+.prize-card-name-overlay {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(39 35 28 / 0.92);
+  color: #EFE8CE;
+  font-family: 'Pirata One', serif;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  line-height: 1.3;
+  padding: 0.45em 0.9em;
+  border-radius: 3px;
+  max-width: 400px;
+  white-space: normal;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 20;
+}
+
+.prize-card:hover .prize-card-name-overlay,
+.prize-card:focus-visible .prize-card-name-overlay {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prize-card-inner        { transition: none; }
+  .prize-deck-top          { transition: none; }
+  .prize-fan-card-wrapper  { animation: none; }
+}
+
+/* ================================================= */
+
 /* Vine transforms — mobile stretches, desktop originals */
 .vine-top-transform  { transform: translate(0%, -40%) scaleY(1.25); }
 .vine-right-transform { transform: translate(0%, 22%) scaleX(1.2) scaleY(1.75); }
