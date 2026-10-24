@@ -1,0 +1,267 @@
+.signatures-section {
+  --signature-ink: #413720;
+  padding: clamp(2.5rem, 6vw, 6rem) 0 clamp(3.5rem, 7vw, 7rem);
+  overflow: hidden;
+  color: var(--signature-ink);
+  background: #efe8ce;
+}
+
+.signatures-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: clamp(2rem, 8vw, 8rem);
+  width: min(82%, 1020px);
+  margin: 0 auto clamp(1.75rem, 4vw, 3.5rem);
+  text-align: left;
+}
+
+.signatures-heading h2 {
+  margin: 0;
+  font-family: "Aunt Mildred MVB", Georgia, serif;
+  font-size: clamp(1.8rem, 3.3vw, 3rem);
+  line-height: 1.2;
+  text-align: left;
+  text-transform: none;
+}
+
+.signatures-heading h2 span { color: #96394d; }
+
+.signatures-heading p {
+  margin: 0 0 0.2rem;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.signature-scroll {
+  --roll-width: 10.67%;
+  position: relative;
+  isolation: isolate;
+  width: min(96%, 1240px);
+  height: clamp(490px, 52vw, 650px);
+  margin: 0 auto;
+}
+
+.signature-scroll-paper {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 50%);
+  transition: clip-path 1500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.signature-parchment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Hide the baked-in rollers; the separate roller assets move as it opens. */
+  clip-path: inset(0 10%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.signature-roll {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: var(--roll-width);
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  transition: left 1500ms cubic-bezier(0.22, 1, 0.36, 1), right 1500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.signature-roll-left { left: calc(50% - var(--roll-width)); }
+.signature-roll-right { right: calc(50% - var(--roll-width)); }
+.signatures-section[data-open="true"] .signature-scroll-paper { clip-path: inset(0); }
+.signatures-section[data-open="true"] .signature-roll-left { left: 0; }
+.signatures-section[data-open="true"] .signature-roll-right { right: 0; }
+
+.signature-gallery {
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  bottom: 15%;
+  left: 10%;
+  right: 10%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  overscroll-behavior-x: contain;
+  opacity: 0;
+  transition: opacity 600ms ease 350ms;
+}
+
+.signature-gallery::-webkit-scrollbar { display: none; }
+.signature-gallery[data-dragging="true"] { cursor: grabbing; }
+.signatures-section[data-open="true"] .signature-gallery { opacity: 1; }
+
+.signature-gallery:focus-visible {
+  outline: 2px solid #96394d;
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.signature-gallery-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-auto-columns: clamp(112px, 12vw, 152px);
+  column-gap: clamp(22px, 3vw, 42px);
+  row-gap: 20px;
+  width: max-content;
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 2px clamp(22px, 3vw, 42px);
+  list-style: none;
+}
+
+.signature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  gap: 5px;
+}
+
+.signature-portrait {
+  position: relative;
+  aspect-ratio: 248 / 302;
+  width: 100%;
+  max-height: calc(100% - 28px);
+  flex: 0 1 auto;
+}
+
+.signature-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.signature-ink {
+  position: absolute;
+  top: 24%;
+  left: 19%;
+  width: 62%;
+  height: 52%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.signature-name {
+  color: #56452a;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.signature-feather {
+  position: absolute;
+  z-index: 3;
+  right: -0.4%;
+  bottom: 11%;
+  width: clamp(85px, 16%, 200px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(12px, -16px) rotate(9deg);
+  transition: opacity 650ms ease 900ms, transform 900ms ease 900ms;
+}
+
+.signatures-section[data-open="true"] .signature-feather {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
+}
+
+.signature-feather img {
+  display: block;
+  width: 100%;
+  transform-origin: 5% 96%;
+  user-select: none;
+}
+
+.signatures-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: min(80%, 1000px);
+  margin: 1.75rem auto 0;
+}
+
+.signatures-navigation p {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.signatures-controls { display: flex; align-items: center; gap: 1rem; }
+
+.signatures-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 10px;
+  border: 1px solid #9a8459;
+  border-radius: 50%;
+  color: var(--signature-ink);
+  background: transparent;
+  cursor: pointer;
+  transition: background 150ms ease, opacity 150ms ease;
+}
+
+.signatures-controls button:hover:not(:disabled) { background: #e1d1a7; }
+.signatures-controls button:disabled { opacity: 0.3; cursor: default; }
+.signatures-controls button:focus-visible { outline: 2px solid #96394d; outline-offset: 4px; }
+.signatures-controls svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.5; }
+
+.signatures-progress {
+  width: clamp(64px, 10vw, 130px);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #d7c7a0;
+}
+
+.signatures-progress span {
+  display: block;
+  width: 25%;
+  height: 100%;
+  border-radius: inherit;
+  background: #96394d;
+}
+
+@media (max-width: 600px) {
+  .signatures-heading { width: 86%; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .signatures-heading h2 { font-size: clamp(1.55rem, 6.2vw, 2.2rem); }
+  .signatures-heading p { font-size: 0.95rem; }
+  .signatures-heading p br { display: none; }
+  .signature-scroll { width: 98%; height: 480px; }
+  .signature-gallery { top: 14%; bottom: 14%; }
+  .signature-gallery-track { grid-auto-columns: 112px; column-gap: 24px; row-gap: 18px; padding-inline: 20px; }
+  .signature-feather { right: 0; bottom: 7%; width: 100px; }
+  .signatures-navigation { width: 84%; flex-direction: column; margin-top: 1.5rem; gap: 0.9rem; }
+  .signatures-navigation p { text-align: center; }
+  .signatures-controls { gap: 1.25rem; }
+  .signatures-progress { width: 110px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-scroll-paper { clip-path: inset(0); transition: none; }
+  .signature-roll { transition: none; }
+  .signature-roll-left { left: 0; }
+  .signature-roll-right { right: 0; }
+  .signature-gallery { opacity: 1; transition: none; }
+  .signature-feather { opacity: 1; transform: none; transition: none; }
+  .signature-feather img { transform: none !important; }
+  .signatures-controls button { transition: none; }
+}

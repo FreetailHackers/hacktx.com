@@ -8,6 +8,7 @@ import FaqSection from "./components/Faq";
 import Schedule from "./components/Schedule";
 import Sponsors from "./components/Sponsors";
 import Prizes from "./components/Prizes";
+import Signatures from "./components/Signatures";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
@@ -137,6 +138,8 @@ export default function App() {
       <Prizes />
 
       <Sponsors />
+
+      <Signatures />
 
       <div className="relative z-10">
         <Footer />
